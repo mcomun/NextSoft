@@ -1,0 +1,364 @@
+﻿@using Delfin.Web.Std.Resources.Shared
+@using Delfin.Web.Std.Resources.LoadingListImportacion.Detallado
+@using Delfin.Web.Std.Areas.LoadingListImportacion.Models
+@model LoadingListImportacionModel
+
+@{
+   ViewBag.Title = @Html.Raw(IndexResource.EtiquetaTitulo);
+   Layout = "~/Views/Shared/_Layout.cshtml";
+}
+
+<style>
+   div.scroll
+   {
+   
+   /*height:40px;*/
+   overflow-x:scroll;
+   white-space: nowrap;
+   }
+
+
+   /* Tables */
+				/* Tables should never be used for visual */
+				/* formatting: that is the role of CSS!   */
+
+table.grid {
+   color:           inherit;
+   background:      inherit;	/* Don't make tables transparent */
+   border-collapse: collapse;
+   border-spacing:  0;
+   empty-cells:     show;
+   margin:          0.5em 2.5em;
+   padding:         0;
+   border:          1px solid #999999;
+}
+
+table.grid caption {
+   text-align:      center;
+   caption-side:    top;
+   margin:          0 2.5em 0.75em;
+   padding:         0;
+   border:          none;
+}
+
+table.grid td,
+table.grid th {
+   text-align:      center;
+   vertical-align:  middle;
+   margin:          0;
+   padding:         0.25em 0.5em;
+   border:          1px solid #999999;
+}
+
+table.grid th,
+table.grid td.highlight,
+table.grid th.highlight {
+   font-weight:     bold;
+   color:           inherit;
+   background:      #F0F0F0;
+}
+
+table.grid td.lighter,
+table.grid th.lighter {
+   color:           inherit;
+   background:      #F8F8F8;
+}
+
+table.grid td.left,
+table.grid th.left {
+   text-align:      left;
+}
+
+table.grid td.center,
+table.grid th.center {
+   text-align:      center;
+}
+
+table.grid td.right,
+table.grid th.right {
+   text-align:      right;
+}
+
+</style>
+
+<script type="text/javascript">
+   $(document).ready(function () {
+ 
+      $.ajaxSetup({ cache: false });
+           
+      $("#openDialog").live("click", function (e) {
+            e.preventDefault();
+            var url = $(this).attr('href');
+ 
+            $("#dialog-edit").dialog({
+               title: 'Add Student',
+               autoOpen: false,
+               resizable: false,
+               height: 355,
+               width: 400,
+               show: { effect: 'drop', direction: "up" },
+               modal: true,
+               draggable: true,
+               open: function (event, ui) {
+                  $(this).load(url);
+               },
+               close: function (event, ui) {
+                  $(this).dialog('close');
+               }
+            });
+ 
+            $("#dialog-edit").dialog('open');
+            return false;
+      });
+ 
+      $(".editDialog").live("click", function (e) {
+            var url = $(this).attr('href');
+            $("#dialog-edit").dialog({
+               title: 'Edit Loading List',
+               autoOpen: false,
+               resizable: false,
+               height: 355,
+               width: 400,
+               show: { effect: 'drop', direction: "up" },
+               modal: true,
+               draggable: true,
+               open: function (event, ui) {
+                  $(this).load(url);
+ 
+               },
+               close: function (event, ui) {
+                  $(this).dialog('close');
+               }
+            });
+ 
+            $("#dialog-edit").dialog('open');
+            return false;
+      });
+ 
+      $(".confirmDialog").live("click", function (e) {
+ 
+            var url = $(this).attr('href');
+            $("#dialog-confirm").dialog({
+               autoOpen: false,
+               resizable: false,
+               height: 170,
+               width: 350,
+               show: { effect: 'drop', direction: "up" },
+               modal: true,
+               draggable: true,
+               buttons: {
+                  "OK": function () {
+                        $(this).dialog("close");
+                        window.location = url;
+ 
+                  },
+                  "Cancel": function () {
+                        $(this).dialog("close");
+ 
+                  }
+               }
+            });
+            $("#dialog-confirm").dialog('open');
+            return false;
+      });
+ 
+      $(".viewDialog").live("click", function (e) {
+            var url = $(this).attr('href');
+            $("#dialog-view").dialog({
+               title: 'View Customer',
+               autoOpen: false,
+               resizable: false,
+               height: 355,
+               width: 400,
+               show: { effect: 'drop', direction: "up" },
+               modal: true,
+               draggable: true,
+               open: function (event, ui) {
+                  $(this).load(url);
+ 
+               },
+               buttons: {
+                  "Close": function () {
+                        $(this).dialog("close");
+ 
+                  }
+               },
+               close: function (event, ui) {
+                  $(this).dialog('close');
+               }
+            });
+ 
+            $("#dialog-view").dialog('open');
+            return false;
+      });
+ 
+      $("#btncancel").live("click", function (e) {
+            $("#dialog-edit").dialog('close');
+ 
+      });
+   });  
+</script>
+
+@section breadcrumb{@Html.Raw(Resource.EtiquetaMenuLoadingListImportacionDetallado)}
+
+   <div>
+       <div class="m-b-md">
+           <h4 class="m-b-none col-xs-12 col-sm-9">@Html.Raw(IndexResource.EtiquetaTitulo)</h4>
+       </div>
+      @using (Html.BeginForm("ListImportacion", "Detallado", FormMethod.Get))
+      { 
+      <section id="divCriterioBusqueda" class="panel panel-default">
+               <header class="panel-heading">
+                  <br />
+                  <br />
+                  
+                  <table>
+                     <tr>
+                        <td style="width:30px;"></td>
+                        <td style="width:200px;"></td>
+                        <td style="width:360px;"></td>
+                     </tr>
+                     <tr>
+                        <td></td>
+                        <td>@Html.Label(IndexResource.EtiquetaViaje)</td>
+                        <td>@Html.TextBoxFor(model => model.Viaje, new Dictionary<string, object>(){{"readonly", "true"}})</td>
+                     </tr>
+                     <tr>
+                        <td>@Html.CheckBoxFor(model => model.ShowLoadingListAsociado, new { @checked = "checked" })</td>
+                        <td>@Html.Label(IndexResource.EtiquetaLoadingListAsociado)</td>
+                        <td><strong>@Model.LoadingListAsociado</strong></td>
+                     </tr>
+                     <tr>
+                        <td>@Html.CheckBoxFor(model => model.ShowLoadingListNoAsociado, new { @checked = "checked" })</td>
+                        <td>@Html.Label(IndexResource.EtiquetaLoadingListNoAsociado)</td>
+                        <td><strong>@Model.LoadingListNoAsociado</strong></td>
+                     </tr>
+                     @*<tr>
+                        <td>@Html.CheckBoxFor(model => model.ShowOrdenVentaAsociada, new { @checked = "checked" })</td>
+                        <td>@Html.Label(IndexResource.EtiquetaOrdenVentaNoAsociada)</td>
+                        <td><strong>@Model.OrdenVentaAsociada</strong></td>
+                     </tr>*@
+                     <tr>
+                        <td></td>
+                        <td></td>
+                        <td><input id="btnFilter" type="submit" class="btn btn-primary" value='@Html.Raw(GeneralResource.EtiquetaFiltrar)' /></td>
+                     </tr>
+                  </table>
+               </header>
+           </section>
+      }
+</div>
+
+<div class="scroll">
+   <p>
+      <i>Se esta mostrando la página @Model.CurrentPageIndex  de @Model.PageCount</i>
+   </p>
+   <table class="grid">
+       <tr>
+           @*<th>
+              @Html.Partial("_SmartLink", Model, new ViewDataDictionary { { "ColumnName", "LOAD_Codigo" }, { "DisplayName", "Código" } })
+           </th>
+          <th>
+              @Html.Partial("_SmartLink", Model, new ViewDataDictionary { { "ColumnName", "CCOT_NumDoc" }, { "DisplayName", "Nro. Orden venta" } })
+           </th>
+          
+          <th>
+              @Html.Partial("_SmartLink", Model, new ViewDataDictionary { { "ColumnName", "NVIA_Codigo" }, { "DisplayName", "Código Viaje" } })
+           </th>
+          <th>
+              @Html.Partial("_SmartLink", Model, new ViewDataDictionary { { "ColumnName", "NVIA_NroViaje" }, { "DisplayName", "Nro. Viaje" } })
+           </th>
+          <th>
+              @Html.Partial("_SmartLink", Model, new ViewDataDictionary { { "ColumnName", "NVIA_NroManifiesto" }, { "DisplayName", "Nro. Manifiesto" } })
+           </th>*@
+        
+           <th>
+              @Html.Partial("_SmartLink", Model, new ViewDataDictionary { { "ColumnName", "LOAD_SHIPPER" }, { "DisplayName", "Shipper" } })
+           </th>
+           <th>
+              @Html.Partial("_SmartLink", Model, new ViewDataDictionary { { "ColumnName", "LOAD_CONSIGNEE" }, { "DisplayName", "Consignee" } })
+           </th>
+           <th>
+              @Html.Partial("_SmartLink", Model, new ViewDataDictionary { { "ColumnName", "LOAD_NOTIFY" }, { "DisplayName", "Notify" } })
+           </th>
+           <th>
+              @Html.Partial("_SmartLink", Model, new ViewDataDictionary { { "ColumnName", "LOAD_CARRIER" }, { "DisplayName", "Carrier" } })
+           </th>
+           <th>
+              @Html.Partial("_SmartLink", Model, new ViewDataDictionary { { "ColumnName", "LOAD_BOOKING" }, { "DisplayName", "Nro. Booking" } })
+           </th>
+           <th>
+              @Html.Partial("_SmartLink", Model, new ViewDataDictionary { { "ColumnName", "LOAD_MBL" }, { "DisplayName", "MBL" } })
+           </th>
+           <th>
+              @Html.Partial("_SmartLink", Model, new ViewDataDictionary { { "ColumnName", "LOAD_HBL" }, { "DisplayName", "HBL" } })
+           </th>
+           <th>
+              @Html.Partial("_SmartLink", Model, new ViewDataDictionary { { "ColumnName", "LOAD_ETA" }, { "DisplayName", "ETA" } })
+           </th>
+           <th>
+              @Html.Partial("_SmartLink", Model, new ViewDataDictionary { { "ColumnName", "LOAD_ETD" }, { "DisplayName", "ETD" } })
+           </th>
+           
+       </tr>
+
+   @foreach (var item in Model.ListLoadingListDetallado) {
+       <tr>
+          @*<td>
+               @Html.DisplayFor(modelItem => item.LOAD_Codigo)
+           </td>*@
+          @*<td>
+               @Html.DisplayFor(modelItem => item.CCOT_NumDoc)
+           </td> 
+          
+           <td>
+               @Html.DisplayFor(modelItem => item.NVIA_Codigo)
+           </td>
+
+          <td>
+               @Html.DisplayFor(modelItem => item.NVIA_NroViaje)
+           </td>
+
+          <td>
+               @Html.DisplayFor(modelItem => item.NVIA_NroManifiesto)
+           </td>*@
+
+
+           <td>
+               @Html.DisplayFor(modelItem => item.LOAD_SHIPPER)
+           </td>
+           <td>
+               @Html.DisplayFor(modelItem => item.LOAD_CONSIGNEE)
+           </td>
+           <td>
+               @Html.DisplayFor(modelItem => item.LOAD_NOTIFY)
+           </td>
+           <td>
+               @Html.DisplayFor(modelItem => item.LOAD_CARRIER)
+           </td>
+           <td>
+               @Html.DisplayFor(modelItem => item.LOAD_BOOKING)
+           </td>
+           <td>
+               @Html.DisplayFor(modelItem => item.LOAD_MBL)
+           </td>
+           <td>
+               @Html.DisplayFor(modelItem => item.LOAD_HBL)
+           </td>
+           <td>
+               @Html.DisplayFor(modelItem => item.LOAD_ETA)
+           </td>
+           <td>
+               @Html.DisplayFor(modelItem => item.LOAD_ETD)
+           </td>
+       </tr>
+   }
+
+      <tr>
+           <td class="pager" colspan="5">
+               @Html.Partial("_Pager", Model)
+           </td>
+       </tr>
+
+   </table>
+</div>

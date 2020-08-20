@@ -1,0 +1,79 @@
+﻿@using Kendo.Mvc.UI
+@using System.Collections.ObjectModel;
+@model ObservableCollection<Delfin.Web.Std.Areas.LoadingListImportacion.Models.LoadingListModel>
+
+<style>
+.k-grid tbody tr{
+   height: 50px;
+}
+ 
+.k-grid td{
+   white-space: nowrap;
+}
+
+.k-grid-update {
+   visibility: hidden;
+}
+
+.k-grid-cancel {
+   visibility: hidden;
+}
+
+.k-window-title {
+   visibility: hidden;
+}
+
+.k-window-titlebar {
+   height: 35px;
+}
+
+
+
+/*<a class="k-button k-button-icontext k-grid-update" href="#"><span class="k-icon k-update"></span>Update</a>*/
+/*<span class="k-window-title" style="right: 26px;">Edit</span>*/
+/*<div class="k-window-titlebar k-header" style="margin-top: -17.16px;">&nbsp;<span class="k-window-title" style="right: 26px;">Edit</span><div class="k-window-actions"><a role="button" href="#" class="k-window-action k-link"><span role="presentation" class="k-icon k-i-close">Close</span></a></div></div>*/
+
+</style>
+
+@(Html.Kendo().Grid(Model)
+    .Name("Grid")
+    .Columns(columns =>
+    {
+       columns.Command(command => { command.Edit(); }).Width(80);
+
+       columns.Bound(p => p.LOAD_PrimerOK).Width(60).ClientTemplate("<input type='checkbox' disabled='disabled' #= LOAD_PrimerOK ? checked='checked': '' # class='chkbx' />").HtmlAttributes(new { style = "text-align: center" });
+       columns.Bound(p => p.LOAD_Codigo).Width(60);
+       columns.Bound(p => p.LOAD_Shipper).Width(150);
+       columns.Bound(p => p.LOAD_Consignee).Width(150);
+       columns.Bound(p => p.LOAD_Notify).Width(150);
+       columns.Bound(p => p.LOAD_Carrier).Width(150);
+       columns.Bound(p => p.LOAD_Booking).Width(120);
+       columns.Bound(p => p.LOAD_MBL).Width(120);
+       columns.Bound(p => p.LOAD_HBL).Width(120);
+       columns.Bound(p => p.LOAD_ETA).Width(80);
+       columns.Bound(p => p.LOAD_ETD).Width(80);
+       columns.Bound(p => p.LOAD_Payment).Width(80);
+       //columns.Bound(p => p.LOAD_NaveViaje).Width(100);
+       columns.Bound(p => p.LOAD_ContractNRO).Width(80);
+       columns.Bound(p => p.PUER_NomOrigen).Width(120);
+       columns.Bound(p => p.PUER_NomDestino).Width(120);
+       columns.Bound(p => p.LOAD_CargaUsuario).Width(100);
+       //columns.Bound(p => p.LOAD_CargaFecha).Width(100);
+       //columns.Bound(p => p.LOAD_PrimerOK).Width(100);
+       //columns.Bound(p => p.LOAD_PrimerUsuario).Width(100);
+       //columns.Bound(p => p.LOAD_FecPrimerOK).Width(100);
+    })
+    .Pageable()
+    .Sortable()
+    .Editable(editable => editable.Mode(GridEditMode.PopUp).TemplateName("ConfirmLoadingList") )
+    .Scrollable(scr=>scr.Height(220)) 
+    .Resizable(resize => resize.Columns(true))
+    .DataSource(dataSource => dataSource        
+        .Ajax()
+        .PageSize(20)
+        .Model(model => model.Id(p => p.LOAD_Codigo))
+        .Read(read => read.Action("GetLoadingList", "Resumido"))//GetLoadingList
+        .Update(update => update.Action("Confirm", "Resumido"))
+        
+     )
+)

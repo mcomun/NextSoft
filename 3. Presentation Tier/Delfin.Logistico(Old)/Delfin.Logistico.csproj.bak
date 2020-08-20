@@ -1,0 +1,1029 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Project ToolsVersion="12.0" DefaultTargets="Build" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
+  <Import Project="$(MSBuildExtensionsPath)\$(MSBuildToolsVersion)\Microsoft.Common.props" Condition="Exists('$(MSBuildExtensionsPath)\$(MSBuildToolsVersion)\Microsoft.Common.props')" />
+  <PropertyGroup>
+    <Configuration Condition=" '$(Configuration)' == '' ">Debug</Configuration>
+    <Platform Condition=" '$(Platform)' == '' ">AnyCPU</Platform>
+    <ProjectGuid>{2151598F-8EF2-463E-ACEC-8C7F7327BE2C}</ProjectGuid>
+    <OutputType>Library</OutputType>
+    <AppDesignerFolder>Properties</AppDesignerFolder>
+    <RootNamespace>Delfin.Logistico</RootNamespace>
+    <AssemblyName>Delfin.Logistico</AssemblyName>
+    <TargetFrameworkVersion>v4.5.2</TargetFrameworkVersion>
+    <FileAlignment>512</FileAlignment>
+    <TargetFrameworkProfile />
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Debug|AnyCPU' ">
+    <DebugSymbols>true</DebugSymbols>
+    <DebugType>full</DebugType>
+    <Optimize>false</Optimize>
+    <OutputPath>bin\Debug\</OutputPath>
+    <DefineConstants>DEBUG;TRACE</DefineConstants>
+    <ErrorReport>prompt</ErrorReport>
+    <WarningLevel>4</WarningLevel>
+    <Prefer32Bit>false</Prefer32Bit>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Release|AnyCPU' ">
+    <DebugType>pdbonly</DebugType>
+    <Optimize>true</Optimize>
+    <OutputPath>bin\Release\</OutputPath>
+    <DefineConstants>TRACE</DefineConstants>
+    <ErrorReport>prompt</ErrorReport>
+    <WarningLevel>4</WarningLevel>
+    <Prefer32Bit>false</Prefer32Bit>
+  </PropertyGroup>
+  <PropertyGroup Condition="'$(Configuration)|$(Platform)' == 'Debug|x86'">
+    <DebugSymbols>true</DebugSymbols>
+    <OutputPath>bin\x86\Debug\</OutputPath>
+    <DefineConstants>DEBUG;TRACE</DefineConstants>
+    <DebugType>full</DebugType>
+    <PlatformTarget>x86</PlatformTarget>
+    <ErrorReport>prompt</ErrorReport>
+    <CodeAnalysisRuleSet>MinimumRecommendedRules.ruleset</CodeAnalysisRuleSet>
+    <Prefer32Bit>false</Prefer32Bit>
+  </PropertyGroup>
+  <PropertyGroup Condition="'$(Configuration)|$(Platform)' == 'Release|x86'">
+    <OutputPath>bin\x86\Release\</OutputPath>
+    <DefineConstants>TRACE</DefineConstants>
+    <Optimize>true</Optimize>
+    <DebugType>pdbonly</DebugType>
+    <PlatformTarget>x86</PlatformTarget>
+    <ErrorReport>prompt</ErrorReport>
+    <CodeAnalysisRuleSet>MinimumRecommendedRules.ruleset</CodeAnalysisRuleSet>
+    <Prefer32Bit>false</Prefer32Bit>
+  </PropertyGroup>
+  <PropertyGroup>
+    <SignAssembly>false</SignAssembly>
+  </PropertyGroup>
+  <PropertyGroup>
+    <AssemblyOriginatorKeyFile>DelfinCert.pfx</AssemblyOriginatorKeyFile>
+  </PropertyGroup>
+  <ItemGroup>
+    <Reference Include="ApplicationForm">
+      <HintPath>..\..\Application.UserInterface\bin\Debug\ApplicationForm.exe</HintPath>
+    </Reference>
+    <Reference Include="CrystalDecisions.CrystalReports.Engine, Version=13.0.3500.0, Culture=neutral, PublicKeyToken=692fbea5521e1304, processorArchitecture=MSIL">
+      <SpecificVersion>False</SpecificVersion>
+      <HintPath>..\..\..\..\..\..\..\Program Files (x86)\SAP BusinessObjects\Crystal Reports for .NET Framework 4.0\Common\SAP BusinessObjects Enterprise XI 4.0\win32_x86\dotnet\CrystalDecisions.CrystalReports.Engine.dll</HintPath>
+    </Reference>
+    <Reference Include="CrystalDecisions.ReportSource, Version=13.0.3500.0, Culture=neutral, PublicKeyToken=692fbea5521e1304, processorArchitecture=MSIL">
+      <SpecificVersion>False</SpecificVersion>
+      <HintPath>..\..\..\..\..\..\..\Program Files (x86)\SAP BusinessObjects\Crystal Reports for .NET Framework 4.0\Common\SAP BusinessObjects Enterprise XI 4.0\win32_x86\dotnet\CrystalDecisions.ReportSource.dll</HintPath>
+    </Reference>
+    <Reference Include="CrystalDecisions.Shared, Version=13.0.3500.0, Culture=neutral, PublicKeyToken=692fbea5521e1304, processorArchitecture=MSIL">
+      <SpecificVersion>False</SpecificVersion>
+      <HintPath>..\..\..\..\..\..\..\Program Files (x86)\SAP BusinessObjects\Crystal Reports for .NET Framework 4.0\Common\SAP BusinessObjects Enterprise XI 4.0\win32_x86\dotnet\CrystalDecisions.Shared.dll</HintPath>
+    </Reference>
+    <Reference Include="CrystalDecisions.Windows.Forms, Version=13.0.3500.0, Culture=neutral, PublicKeyToken=692fbea5521e1304, processorArchitecture=MSIL">
+      <SpecificVersion>False</SpecificVersion>
+      <HintPath>..\..\..\..\..\..\..\Program Files (x86)\SAP BusinessObjects\Crystal Reports for .NET Framework 4.0\Common\SAP BusinessObjects Enterprise XI 4.0\win32_x86\dotnet\CrystalDecisions.Windows.Forms.dll</HintPath>
+    </Reference>
+    <Reference Include="Delfin.Controls, Version=3.0.1.3, Culture=neutral, processorArchitecture=MSIL">
+      <SpecificVersion>False</SpecificVersion>
+      <HintPath>..\..\Librerias\Delfin.Controls.dll</HintPath>
+    </Reference>
+    <Reference Include="DevExpress.Data.v13.1, Version=13.1.12.0, Culture=neutral, PublicKeyToken=b88d1754d700e49a, processorArchitecture=MSIL">
+      <Private>True</Private>
+    </Reference>
+    <Reference Include="DevExpress.Pdf.v13.1.Core, Version=13.1.12.0, Culture=neutral, PublicKeyToken=b88d1754d700e49a, processorArchitecture=MSIL">
+      <Private>True</Private>
+    </Reference>
+    <Reference Include="DevExpress.Printing.v13.1.Core, Version=13.1.12.0, Culture=neutral, PublicKeyToken=b88d1754d700e49a, processorArchitecture=MSIL">
+      <Private>True</Private>
+    </Reference>
+    <Reference Include="DevExpress.Office.v13.1.Core, Version=13.1.12.0, Culture=neutral, PublicKeyToken=b88d1754d700e49a">
+      <Private>True</Private>
+    </Reference>
+    <Reference Include="DevExpress.RichEdit.v13.1.Core, Version=13.1.12.0, Culture=neutral, PublicKeyToken=b88d1754d700e49a">
+      <Private>True</Private>
+    </Reference>
+    <Reference Include="DevExpress.Utils.v13.1, Version=13.1.12.0, Culture=neutral, PublicKeyToken=b88d1754d700e49a, processorArchitecture=MSIL">
+      <Private>True</Private>
+    </Reference>
+    <Reference Include="DevExpress.XtraBars.v13.1, Version=13.1.12.0, Culture=neutral, PublicKeyToken=b88d1754d700e49a, processorArchitecture=MSIL">
+      <Private>True</Private>
+    </Reference>
+    <Reference Include="DevExpress.XtraEditors.v13.1, Version=13.1.12.0, Culture=neutral, PublicKeyToken=b88d1754d700e49a, processorArchitecture=MSIL">
+      <Private>True</Private>
+    </Reference>
+    <Reference Include="DevExpress.XtraGrid.v13.1, Version=13.1.12.0, Culture=neutral, PublicKeyToken=b88d1754d700e49a, processorArchitecture=MSIL">
+      <Private>True</Private>
+    </Reference>
+    <Reference Include="DevExpress.XtraLayout.v13.1, Version=13.1.12.0, Culture=neutral, PublicKeyToken=b88d1754d700e49a">
+      <Private>True</Private>
+    </Reference>
+    <Reference Include="DevExpress.XtraPdfViewer.v13.1, Version=13.1.12.0, Culture=neutral, PublicKeyToken=b88d1754d700e49a, processorArchitecture=MSIL">
+      <Private>True</Private>
+    </Reference>
+    <Reference Include="DevExpress.XtraPrinting.v13.1, Version=13.1.12.0, Culture=neutral, PublicKeyToken=b88d1754d700e49a">
+      <Private>True</Private>
+    </Reference>
+    <Reference Include="DevExpress.XtraRichEdit.v13.1, Version=13.1.12.0, Culture=neutral, PublicKeyToken=b88d1754d700e49a, processorArchitecture=MSIL">
+      <Private>True</Private>
+    </Reference>
+    <Reference Include="DotNetMagic">
+      <HintPath>..\..\Librerias\DotNetMagic.DLL</HintPath>
+    </Reference>
+    <Reference Include="Infrastructure.Aspect">
+      <HintPath>..\..\Librerias\Infrastructure.Aspect.dll</HintPath>
+    </Reference>
+    <Reference Include="Infrastructure.Client, Version=1.0.0.0, Culture=neutral, processorArchitecture=MSIL">
+      <SpecificVersion>False</SpecificVersion>
+      <HintPath>..\..\Librerias\Infrastructure.Client.dll</HintPath>
+    </Reference>
+    <Reference Include="Infrastructure.WinForms.Controls">
+      <HintPath>..\..\Librerias\Infrastructure.WinForms.Controls.dll</HintPath>
+    </Reference>
+    <Reference Include="Infrastructure.WinFormsControls">
+      <HintPath>..\..\Librerias\Infrastructure.WinFormsControls.dll</HintPath>
+    </Reference>
+    <Reference Include="MessageSender">
+      <HintPath>..\..\..\HapagLloyd\MessageSender\bin\Debug\MessageSender.dll</HintPath>
+    </Reference>
+    <Reference Include="Microsoft.Office.Interop.Excel, Version=15.0.0.0, Culture=neutral, PublicKeyToken=71e9bce111e9429c, processorArchitecture=MSIL">
+      <SpecificVersion>False</SpecificVersion>
+      <EmbedInteropTypes>True</EmbedInteropTypes>
+      <HintPath>..\..\Librerias\Microsoft.Office.Interop.Excel.dll</HintPath>
+    </Reference>
+    <Reference Include="Microsoft.Practices.Unity">
+      <HintPath>..\..\..\..\Librerias\Microsoft.Practices.Unity.dll</HintPath>
+    </Reference>
+    <Reference Include="Microsoft.Practices.Unity.Configuration">
+      <HintPath>..\..\..\..\Librerias\Microsoft.Practices.Unity.Configuration.dll</HintPath>
+    </Reference>
+    <Reference Include="Microsoft.Practices.Unity.Interception">
+      <HintPath>..\..\..\..\Librerias\Microsoft.Practices.Unity.Interception.dll</HintPath>
+    </Reference>
+    <Reference Include="Microsoft.Practices.Unity.Interception.Configuration">
+      <HintPath>..\..\..\..\Librerias\Microsoft.Practices.Unity.Interception.Configuration.dll</HintPath>
+    </Reference>
+    <Reference Include="Microsoft.ReportViewer.Common, Version=10.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a, processorArchitecture=MSIL">
+      <SpecificVersion>False</SpecificVersion>
+      <HintPath>..\..\Librerias\Microsoft.ReportViewer.Common.dll</HintPath>
+    </Reference>
+    <Reference Include="Microsoft.ReportViewer.WinForms, Version=10.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a, processorArchitecture=MSIL">
+      <SpecificVersion>False</SpecificVersion>
+      <HintPath>..\..\Librerias\Microsoft.ReportViewer.WinForms.dll</HintPath>
+    </Reference>
+    <Reference Include="NextAdmin.BusinessLogic, Version=1.0.0.0, Culture=neutral, processorArchitecture=MSIL">
+      <SpecificVersion>False</SpecificVersion>
+      <HintPath>..\..\LibreriasAdmin\NextAdmin.BusinessLogic.dll</HintPath>
+    </Reference>
+    <Reference Include="NextAdmin.Views, Version=1.0.0.0, Culture=neutral, processorArchitecture=MSIL">
+      <SpecificVersion>False</SpecificVersion>
+      <HintPath>..\..\LibreriasAdmin\NextAdmin.Views.dll</HintPath>
+    </Reference>
+    <Reference Include="System" />
+    <Reference Include="System.configuration" />
+    <Reference Include="System.Core" />
+    <Reference Include="System.Design" />
+    <Reference Include="System.Drawing" />
+    <Reference Include="System.Net" />
+    <Reference Include="System.Runtime.Serialization" />
+    <Reference Include="System.ServiceModel" />
+    <Reference Include="System.Web.Services" />
+    <Reference Include="System.Windows.Forms" />
+    <Reference Include="System.Xml.Linq" />
+    <Reference Include="System.Data.DataSetExtensions" />
+    <Reference Include="Microsoft.CSharp" />
+    <Reference Include="System.Data" />
+    <Reference Include="System.Xml" />
+    <Reference Include="TabControlEX, Version=0.0.2068.35667, Culture=neutral, PublicKeyToken=1db242dc828e4b4e">
+      <SpecificVersion>False</SpecificVersion>
+      <HintPath>..\..\Librerias\TabControlEX.dll</HintPath>
+    </Reference>
+    <Reference Include="Telerik.WinControls, Version=2011.2.11.712, Culture=neutral, PublicKeyToken=5bb2a467cbec794e, processorArchitecture=MSIL">
+      <SpecificVersion>False</SpecificVersion>
+      <HintPath>..\..\LibreriasAdmin\Telerik.WinControls.dll</HintPath>
+      <Private>True</Private>
+    </Reference>
+    <Reference Include="Telerik.WinControls.GridView, Version=2011.2.11.712, Culture=neutral, PublicKeyToken=5bb2a467cbec794e, processorArchitecture=MSIL">
+      <SpecificVersion>False</SpecificVersion>
+      <HintPath>..\..\LibreriasAdmin\Telerik.WinControls.GridView.dll</HintPath>
+      <Private>True</Private>
+    </Reference>
+    <Reference Include="Telerik.WinControls.UI, Version=2011.2.11.712, Culture=neutral, PublicKeyToken=5bb2a467cbec794e, processorArchitecture=MSIL">
+      <SpecificVersion>False</SpecificVersion>
+      <HintPath>..\..\LibreriasAdmin\Telerik.WinControls.UI.dll</HintPath>
+      <Private>True</Private>
+    </Reference>
+    <Reference Include="Telerik.WinControls.UI.Design, Version=2011.2.11.712, Culture=neutral, PublicKeyToken=5bb2a467cbec794e, processorArchitecture=MSIL">
+      <SpecificVersion>False</SpecificVersion>
+      <HintPath>..\..\LibreriasAdmin\Telerik.WinControls.UI.Design.dll</HintPath>
+      <Private>True</Private>
+    </Reference>
+    <Reference Include="TelerikCommon, Version=2011.2.11.712, Culture=neutral, PublicKeyToken=5bb2a467cbec794e, processorArchitecture=MSIL">
+      <SpecificVersion>False</SpecificVersion>
+      <HintPath>..\..\LibreriasAdmin\TelerikCommon.dll</HintPath>
+      <Private>True</Private>
+    </Reference>
+  </ItemGroup>
+  <ItemGroup>
+    <Compile Include="DataSets\DSCabOperacion.cs">
+      <DependentUpon>DSCabOperacion.xsd</DependentUpon>
+    </Compile>
+    <Compile Include="DataSets\DSCabOperacion.Designer.cs">
+      <DependentUpon>DSCabOperacion.cs</DependentUpon>
+    </Compile>
+    <Compile Include="DataSets\DSCabOperacion1.Designer.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>DSCabOperacion.xsd</DependentUpon>
+    </Compile>
+    <Compile Include="DataSets\DSCotizacion.Designer.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>DSCotizacion.xsd</DependentUpon>
+    </Compile>
+    <Compile Include="DataSets\DsFactura.cs">
+      <DependentUpon>DsFactura.xsd</DependentUpon>
+    </Compile>
+    <Compile Include="DataSets\DsFactura.Designer.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>DsFactura.xsd</DependentUpon>
+    </Compile>
+    <Compile Include="DataSets\DsIngresos.Designer.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>DsIngresos.xsd</DependentUpon>
+    </Compile>
+    <Compile Include="DataSets\DsLiquidacion.Designer.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>DsLiquidacion.xsd</DependentUpon>
+    </Compile>
+    <Compile Include="DataSets\DSPagos.Designer.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>DSPagos.xsd</DependentUpon>
+    </Compile>
+    <Compile Include="DataSets\ServiciosAdicionales.Designer.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>ServiciosAdicionales.xsd</DependentUpon>
+    </Compile>
+    <Compile Include="DataSets\TarjaRebate.Designer.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>TarjaRebate.xsd</DependentUpon>
+    </Compile>
+    <Compile Include="Procesos\Cotizacion\PRO002DImprimir.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Procesos\Cotizacion\PRO002DImprimir.Designer.cs">
+      <DependentUpon>PRO002DImprimir.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Procesos\FactProveedores\IPRO008View.cs" />
+    <Compile Include="Procesos\FactProveedores\PRO008LView.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="Procesos\FactProveedores\PRO008LView.Designer.cs">
+      <DependentUpon>PRO008LView.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Procesos\FactProveedores\PRO008MView.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Procesos\FactProveedores\PRO008MView.Designer.cs">
+      <DependentUpon>PRO008MView.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Procesos\FactProveedores\PRO008Presenter.cs" />
+    <Compile Include="Procesos\Facturacion\IPRO007View.cs">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Include="Procesos\Facturacion\PRO007DViewAnulacion.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Procesos\Facturacion\PRO007DViewAnulacion.Designer.cs">
+      <DependentUpon>PRO007DViewAnulacion.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Procesos\Facturacion\PRO007DViewFPG.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Procesos\Facturacion\PRO007DViewFPG.Designer.cs">
+      <DependentUpon>PRO007DViewFPG.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Procesos\Facturacion\PRO007DViewImprimirFE.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Procesos\Facturacion\PRO007DViewImprimirFE.Designer.cs">
+      <DependentUpon>PRO007DViewImprimirFE.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Procesos\Facturacion\PRO007DViewRegenerar.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Procesos\Facturacion\PRO007DViewRegenerar.Designer.cs">
+      <DependentUpon>PRO007DViewRegenerar.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Procesos\Facturacion\PRO007LView.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="Procesos\Facturacion\PRO007LView.Designer.cs">
+      <DependentUpon>PRO007LView.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Procesos\Operacion\PRO007PView.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Procesos\Operacion\PRO007PView.Designer.cs">
+      <DependentUpon>PRO007PView.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Procesos\Facturacion\PRO007MView.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Procesos\Facturacion\PRO007MView.Designer.cs">
+      <DependentUpon>PRO007MView.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Procesos\Facturacion\PRO007MViewFactLibre.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Procesos\Facturacion\PRO007MViewFactLibre.Designer.cs">
+      <DependentUpon>PRO007MViewFactLibre.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Procesos\Facturacion\PRO007Presenter.cs">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Include="Procesos\Facturacion\PRO007RView.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Procesos\Facturacion\PRO007RView.Designer.cs">
+      <DependentUpon>PRO007RView.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Procesos\Facturacion\PRO007RViewFE.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Procesos\Facturacion\PRO007RViewFE.Designer.cs">
+      <DependentUpon>PRO007RViewFE.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Procesos\Facturacion\PRO007RViewRC.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Procesos\Facturacion\PRO007RViewRC.Designer.cs">
+      <DependentUpon>PRO007RViewRC.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Procesos\NotaCredito\IPRO022View.cs" />
+    <Compile Include="Procesos\NotaCredito\PRO022LView.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="Procesos\NotaCredito\PRO022LView.Designer.cs">
+      <DependentUpon>PRO022LView.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Procesos\NotaCredito\PRO022MView.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Procesos\NotaCredito\PRO022MView.Designer.cs">
+      <DependentUpon>PRO022MView.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Procesos\NotaCredito\PRO022Presenter.cs" />
+    <Compile Include="Procesos\NotaCredito\PRO022RView.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Procesos\NotaCredito\PRO022RView.Designer.cs">
+      <DependentUpon>PRO022RView.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Procesos\Operacion\IPRO003View.cs" />
+    <Compile Include="Procesos\Operacion\PRO003DMview.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Procesos\Operacion\PRO003DMview.Designer.cs">
+      <DependentUpon>PRO003DMview.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Procesos\Operacion\PRO003DSMview.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Procesos\Operacion\PRO003DSMview.Designer.cs">
+      <DependentUpon>PRO003DSMview.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Procesos\Operacion\PRO003LView.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="Procesos\Operacion\PRO003LView.Designer.cs">
+      <DependentUpon>PRO003LView.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Procesos\Operacion\PRO003MView.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Procesos\Operacion\PRO003MView.Designer.cs">
+      <DependentUpon>PRO003MView.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Procesos\Operacion\PRO003Presenter.cs" />
+    <Compile Include="Procesos\Cotizacion\PRO002DSMview.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Procesos\Cotizacion\PRO002DSMview.Designer.cs">
+      <DependentUpon>PRO002DSMview.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Procesos\Cotizacion\IPRO002View.cs" />
+    <Compile Include="Procesos\Cotizacion\PRO002DMview.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Procesos\Cotizacion\PRO002DMview.Designer.cs">
+      <DependentUpon>PRO002DMview.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Procesos\Cotizacion\PRO002LView.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="Procesos\Cotizacion\PRO002LView.Designer.cs">
+      <DependentUpon>PRO002LView.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Procesos\Cotizacion\PRO002MView.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Procesos\Cotizacion\PRO002MView.Designer.cs">
+      <DependentUpon>PRO002MView.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Procesos\Cotizacion\PRO002Presenter.cs" />
+    <Compile Include="Procesos\Direccionamiento\IPRO005View.cs" />
+    <Compile Include="Procesos\Direccionamiento\PRO005LView.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="Procesos\Direccionamiento\PRO005LView.Designer.cs">
+      <DependentUpon>PRO005LView.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Procesos\Direccionamiento\PRO005MView.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Procesos\Direccionamiento\PRO005MView.Designer.cs">
+      <DependentUpon>PRO005MView.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Procesos\Direccionamiento\PRO005Presenter.cs" />
+    <Compile Include="Procesos\PagoProveedores\IPRO010View.cs" />
+    <Compile Include="Procesos\PagoProveedores\PRO010LView.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="Procesos\PagoProveedores\PRO010LView.Designer.cs">
+      <DependentUpon>PRO010LView.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Procesos\PagoProveedores\PRO010MView.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Procesos\PagoProveedores\PRO010MView.Designer.cs">
+      <DependentUpon>PRO010MView.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Procesos\PagoProveedores\PRO010Presenter.cs" />
+    <Compile Include="Procesos\PagoProveedores\PRO010RView.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Procesos\PagoProveedores\PRO010RView.Designer.cs">
+      <DependentUpon>PRO010RView.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Procesos\Seguimiento\IPRO006View.cs" />
+    <Compile Include="Procesos\Seguimiento\PRO006DMview.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Procesos\Seguimiento\PRO006DMview.Designer.cs">
+      <DependentUpon>PRO006DMview.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Procesos\Seguimiento\PRO006LView.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="Procesos\Seguimiento\PRO006LView.Designer.cs">
+      <DependentUpon>PRO006LView.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Procesos\Seguimiento\PRO006MView.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Procesos\Seguimiento\PRO006MView.Designer.cs">
+      <DependentUpon>PRO006MView.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Procesos\Seguimiento\PRO006Presenter.cs" />
+    <Compile Include="Procesos\Tarifario\IPRO001View.cs" />
+    <Compile Include="Procesos\Tarifario\PRO001DTarifa.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Procesos\Tarifario\PRO001DTarifa.Designer.cs">
+      <DependentUpon>PRO001DTarifa.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Procesos\Tarifario\PRO001LView.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="Procesos\Tarifario\PRO001LView.Designer.cs">
+      <DependentUpon>PRO001LView.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Procesos\Tarifario\PRO001MView.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Procesos\Tarifario\PRO001MView.Designer.cs">
+      <DependentUpon>PRO001MView.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Procesos\Tarifario\PRO001Presenter.cs" />
+    <Compile Include="Procesos\Tarifario\PRO001DSMview.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Procesos\Tarifario\PRO001DSMview.Designer.cs">
+      <DependentUpon>PRO001DSMview.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Procesos\Tarjas\IPRO004View.cs" />
+    <Compile Include="Procesos\Tarjas\PRO004DMview.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Procesos\Tarjas\PRO004DMview.Designer.cs">
+      <DependentUpon>PRO004DMview.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Procesos\Tarjas\PRO004MView.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Procesos\Tarjas\PRO004MView.Designer.cs">
+      <DependentUpon>PRO004MView.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Procesos\Tarjas\PRO004LView.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="Procesos\Tarjas\PRO004LView.Designer.cs">
+      <DependentUpon>PRO004LView.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Procesos\Tarjas\PRO004Presenter.cs" />
+    <Compile Include="Procesos\TiposCambio\IMAN013View.cs" />
+    <Compile Include="Procesos\TiposCambio\MAN013LView.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="Procesos\TiposCambio\MAN013LView.Designer.cs">
+      <DependentUpon>MAN013LView.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Procesos\TiposCambio\MAN013MView.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Procesos\TiposCambio\MAN013MView.Designer.cs">
+      <DependentUpon>MAN013MView.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Procesos\TiposCambio\MAN013Presenter.cs" />
+    <Compile Include="Properties\AssemblyInfo.cs" />
+    <Compile Include="Properties\Resources.Designer.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>Resources.resx</DependentUpon>
+    </Compile>
+    <Compile Include="Reportes\ServiciosAdicionales\IREP008View.cs" />
+    <Compile Include="Reportes\ServiciosAdicionales\PRO008RMView.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Reportes\ServiciosAdicionales\PRO008RMView.Designer.cs">
+      <DependentUpon>PRO008RMView.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Reportes\ServiciosAdicionales\REP008LView.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="Reportes\ServiciosAdicionales\REP008LView.Designer.cs">
+      <DependentUpon>REP008LView.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Reportes\ServiciosAdicionales\REP008Presenter.cs" />
+    <Compile Include="Reportes\Ingresos\IREP007View.cs" />
+    <Compile Include="Reportes\Ingresos\PRO007RMView.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Reportes\Ingresos\PRO007RMView.Designer.cs">
+      <DependentUpon>PRO007RMView.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Reportes\Ingresos\REP007LView.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="Reportes\Ingresos\REP007LView.Designer.cs">
+      <DependentUpon>REP007LView.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Reportes\Ingresos\REP007Presenter.cs" />
+    <Compile Include="Reportes\TarjaRebate\IREP006View.cs" />
+    <Compile Include="Reportes\TarjaRebate\PRO006RView.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Reportes\TarjaRebate\PRO006RView.Designer.cs">
+      <DependentUpon>PRO006RView.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Reportes\TarjaRebate\REP006LView.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="Reportes\TarjaRebate\REP006LView.Designer.cs">
+      <DependentUpon>REP006LView.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Reportes\TarjaRebate\REP006Presenter.cs" />
+    <Compile Include="Reportes\PreLiquidación\IREP005View.cs" />
+    <Compile Include="Reportes\PreLiquidación\PRO005RView.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Reportes\PreLiquidación\PRO005RView.Designer.cs">
+      <DependentUpon>PRO005RView.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Reportes\PreLiquidación\REP005LView.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="Reportes\PreLiquidación\REP005LView.Designer.cs">
+      <DependentUpon>REP005LView.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Reportes\PreLiquidación\REP005Presenter.cs" />
+    <Compile Include="Service References\AppService\Reference.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>Reference.svcmap</DependentUpon>
+    </Compile>
+  </ItemGroup>
+  <ItemGroup>
+    <ProjectReference Include="..\..\1. Business Tier\Delfin.Entities\Delfin.Entities.csproj">
+      <Project>{f32cdd23-0d2e-4b37-99fc-7a072be8b5f5}</Project>
+      <Name>Delfin.Entities</Name>
+    </ProjectReference>
+    <ProjectReference Include="..\..\2. Services Tier\Delfin.ServiceContracts\Delfin.ServiceContracts.csproj">
+      <Project>{15b3e0d2-6217-493a-a690-158c497f5318}</Project>
+      <Name>Delfin.ServiceContracts</Name>
+    </ProjectReference>
+    <ProjectReference Include="..\..\2. Services Tier\Delfin.ServiceProxy\Delfin.ServiceProxy.csproj">
+      <Project>{e6205c17-c9da-42c9-81e7-721505073e2d}</Project>
+      <Name>Delfin.ServiceProxy</Name>
+    </ProjectReference>
+    <ProjectReference Include="..\Delfin.Comercial\Delfin.Comercial.csproj">
+      <Project>{f5deb6ca-258d-4951-987f-0e453aba8948}</Project>
+      <Name>Delfin.Comercial</Name>
+    </ProjectReference>
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Service References\AppService\DelfinService.disco" />
+    <None Include="Properties\DataSources\System.Data.DataSet.datasource" />
+    <None Include="Service References\AppService\DelfinService.wsdl" />
+    <None Include="Service References\AppService\DelfinService.xsd">
+      <SubType>Designer</SubType>
+    </None>
+    <None Include="Service References\AppService\DelfinService1.xsd">
+      <SubType>Designer</SubType>
+    </None>
+    <None Include="Service References\AppService\DelfinService2.xsd">
+      <SubType>Designer</SubType>
+    </None>
+    <None Include="Service References\AppService\DelfinService3.xsd">
+      <SubType>Designer</SubType>
+    </None>
+    <None Include="Service References\AppService\DelfinService4.xsd">
+      <SubType>Designer</SubType>
+    </None>
+    <None Include="Service References\AppService\Reference.svcmap">
+      <Generator>WCF Proxy Generator</Generator>
+      <LastGenOutput>Reference.cs</LastGenOutput>
+    </None>
+    <None Include="Service References\AppService\configuration.svcinfo" />
+    <None Include="Service References\AppService\configuration91.svcinfo" />
+    <EmbeddedResource Include="Procesos\Cotizacion\PRO002DImprimir.resx">
+      <DependentUpon>PRO002DImprimir.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Procesos\FactProveedores\PRO008LView.resx">
+      <DependentUpon>PRO008LView.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Procesos\FactProveedores\PRO008MView.resx">
+      <DependentUpon>PRO008MView.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Procesos\Facturacion\PRO007DViewAnulacion.resx">
+      <DependentUpon>PRO007DViewAnulacion.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Procesos\Facturacion\PRO007DViewFPG.resx">
+      <DependentUpon>PRO007DViewFPG.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Procesos\Facturacion\PRO007DViewImprimirFE.resx">
+      <DependentUpon>PRO007DViewImprimirFE.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Procesos\Facturacion\PRO007DViewRegenerar.resx">
+      <DependentUpon>PRO007DViewRegenerar.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Procesos\Facturacion\PRO007LView.resx">
+      <DependentUpon>PRO007LView.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Procesos\Operacion\PRO007PView.resx">
+      <DependentUpon>PRO007PView.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Procesos\Facturacion\PRO007MView.resx">
+      <DependentUpon>PRO007MView.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Procesos\Facturacion\PRO007MViewFactLibre.resx">
+      <DependentUpon>PRO007MViewFactLibre.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Procesos\Facturacion\PRO007RView.resx">
+      <DependentUpon>PRO007RView.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Procesos\Facturacion\PRO007RViewFE.resx">
+      <DependentUpon>PRO007RViewFE.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Procesos\Facturacion\PRO007RViewRC.resx">
+      <DependentUpon>PRO007RViewRC.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Procesos\NotaCredito\PRO022LView.resx">
+      <DependentUpon>PRO022LView.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Procesos\NotaCredito\PRO022MView.resx">
+      <DependentUpon>PRO022MView.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Procesos\NotaCredito\PRO022RView.resx">
+      <DependentUpon>PRO022RView.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Procesos\Operacion\PRO003DMview.resx">
+      <DependentUpon>PRO003DMview.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Procesos\Operacion\PRO003DSMview.resx">
+      <DependentUpon>PRO003DSMview.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Procesos\Operacion\PRO003LView.resx">
+      <DependentUpon>PRO003LView.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Procesos\Operacion\PRO003MView.resx">
+      <DependentUpon>PRO003MView.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Procesos\Cotizacion\PRO002DSMview.resx">
+      <DependentUpon>PRO002DSMview.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Procesos\Cotizacion\PRO002DMview.resx">
+      <DependentUpon>PRO002DMview.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Procesos\Cotizacion\PRO002LView.resx">
+      <DependentUpon>PRO002LView.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Procesos\Cotizacion\PRO002MView.resx">
+      <DependentUpon>PRO002MView.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Procesos\Direccionamiento\PRO005LView.resx">
+      <DependentUpon>PRO005LView.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Procesos\PagoProveedores\PRO010LView.resx">
+      <DependentUpon>PRO010LView.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Procesos\PagoProveedores\PRO010MView.resx">
+      <DependentUpon>PRO010MView.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Procesos\PagoProveedores\PRO010RView.resx">
+      <DependentUpon>PRO010RView.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Procesos\Seguimiento\PRO006DMview.resx">
+      <DependentUpon>PRO006DMview.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Procesos\Seguimiento\PRO006LView.resx">
+      <DependentUpon>PRO006LView.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Procesos\Seguimiento\PRO006MView.resx">
+      <DependentUpon>PRO006MView.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Procesos\Tarifario\PRO001DTarifa.resx">
+      <DependentUpon>PRO001DTarifa.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Procesos\Tarifario\PRO001LView.resx">
+      <DependentUpon>PRO001LView.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Procesos\Tarifario\PRO001MView.resx">
+      <DependentUpon>PRO001MView.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Procesos\Tarifario\PRO001DSMview.resx">
+      <DependentUpon>PRO001DSMview.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Procesos\Tarjas\PRO004DMview.resx">
+      <DependentUpon>PRO004DMview.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Procesos\Tarjas\PRO004MView.resx">
+      <DependentUpon>PRO004MView.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Procesos\Tarjas\PRO004LView.resx">
+      <DependentUpon>PRO004LView.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Procesos\TiposCambio\MAN013LView.resx">
+      <DependentUpon>MAN013LView.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Procesos\TiposCambio\MAN013MView.resx">
+      <DependentUpon>MAN013MView.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Properties\licenses.licx" />
+    <EmbeddedResource Include="Properties\Resources.resx">
+      <Generator>ResXFileCodeGenerator</Generator>
+      <LastGenOutput>Resources.Designer.cs</LastGenOutput>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Reportes\ServiciosAdicionales\PRO008RMView.resx">
+      <DependentUpon>PRO008RMView.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Reportes\ServiciosAdicionales\REP008LView.resx">
+      <DependentUpon>REP008LView.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Reportes\Ingresos\PRO007RMView.resx">
+      <DependentUpon>PRO007RMView.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Reportes\Ingresos\REP007LView.resx">
+      <DependentUpon>REP007LView.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Reportes\TarjaRebate\PRO006RView.resx">
+      <DependentUpon>PRO006RView.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Reportes\TarjaRebate\REP006LView.resx">
+      <DependentUpon>REP006LView.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Reportes\PreLiquidación\PRO005RView.resx">
+      <DependentUpon>PRO005RView.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Reportes\PreLiquidación\REP005LView.resx">
+      <DependentUpon>REP005LView.cs</DependentUpon>
+    </EmbeddedResource>
+    <Content Include="Reportes\RptFactBoletaView.rdlc">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </Content>
+    <Content Include="Reportes\RptReciboCaja.rdlc">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </Content>
+    <Content Include="Reportes\RptComprobante.rdlc">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </Content>
+    <Content Include="Reportes\RptCotizacion.rdlc">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </Content>
+    <Content Include="Reportes\RptFactBoleta.rdlc">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </Content>
+    <Content Include="Reportes\RptFactNC.rdlc">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </Content>
+    <Content Include="Reportes\RptIngresos.rdlc">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </Content>
+    <Content Include="Reportes\RptIngresosDetallado.rdlc">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </Content>
+    <Content Include="Reportes\RptPreLiquidacionSinSL.rdlc">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </Content>
+    <Content Include="Reportes\RptLiquidacion.rdlc">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </Content>
+    <Content Include="Reportes\RptFacturacion.rdlc">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </Content>
+    <Content Include="Reportes\RptPreLiquidacion.rdlc">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </Content>
+    <Content Include="Reportes\RptServiciosAdicionales.rdlc">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </Content>
+    <Content Include="Reportes\RptServiciosAdicionalesAduana.rdlc">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </Content>
+    <Content Include="Reportes\RptTarjaRebate.rdlc">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </Content>
+  </ItemGroup>
+  <ItemGroup>
+    <Service Include="{C0C07587-41A7-46C8-8FBD-3F9C8EBE2DDC}" />
+  </ItemGroup>
+  <ItemGroup>
+    <Content Include="Resources\add.png" />
+    <Content Include="Resources\add16x16.png" />
+    <Content Include="Resources\add2.png" />
+    <Content Include="Resources\add24x24.png" />
+    <None Include="App.config" />
+    <None Include="DataSets\DSCotizacion.xsc">
+      <DependentUpon>DSCotizacion.xsd</DependentUpon>
+    </None>
+    <None Include="DataSets\DSCotizacion.xsd">
+      <SubType>Designer</SubType>
+      <Generator>MSDataSetGenerator</Generator>
+      <LastGenOutput>DSCotizacion.Designer.cs</LastGenOutput>
+    </None>
+    <None Include="DataSets\DSCotizacion.xss">
+      <DependentUpon>DSCotizacion.xsd</DependentUpon>
+    </None>
+    <None Include="DataSets\DSPagos.xsc">
+      <DependentUpon>DSPagos.xsd</DependentUpon>
+    </None>
+    <None Include="DataSets\DSPagos.xsd">
+      <SubType>Designer</SubType>
+      <Generator>MSDataSetGenerator</Generator>
+      <LastGenOutput>DSPagos.Designer.cs</LastGenOutput>
+    </None>
+    <None Include="DataSets\DSPagos.xss">
+      <DependentUpon>DSPagos.xsd</DependentUpon>
+    </None>
+    <None Include="DelfinCert.pfx" />
+    <None Include="Resources\Write 11.png" />
+    <None Include="Resources\Write 09.png" />
+    <None Include="Resources\Write 10.png" />
+    <None Include="DataSets\DSCabOperacion.xsc">
+      <DependentUpon>DSCabOperacion.xsd</DependentUpon>
+    </None>
+    <None Include="DataSets\DSCabOperacion.xsd">
+      <Generator>MSDataSetGenerator</Generator>
+      <LastGenOutput>DSCabOperacion1.Designer.cs</LastGenOutput>
+      <SubType>Designer</SubType>
+    </None>
+    <None Include="DataSets\DSCabOperacion.xss">
+      <DependentUpon>DSCabOperacion.xsd</DependentUpon>
+    </None>
+    <None Include="DataSets\DsFactura.xsc">
+      <DependentUpon>DsFactura.xsd</DependentUpon>
+    </None>
+    <None Include="DataSets\DsFactura.xsd">
+      <SubType>Designer</SubType>
+      <Generator>MSDataSetGenerator</Generator>
+      <LastGenOutput>DsFactura.Designer.cs</LastGenOutput>
+    </None>
+    <None Include="DataSets\DsFactura.xss">
+      <DependentUpon>DsFactura.xsd</DependentUpon>
+    </None>
+    <None Include="DataSets\DsIngresos.xsc">
+      <DependentUpon>DsIngresos.xsd</DependentUpon>
+    </None>
+    <None Include="DataSets\DsIngresos.xsd">
+      <SubType>Designer</SubType>
+      <Generator>MSDataSetGenerator</Generator>
+      <LastGenOutput>DsIngresos.Designer.cs</LastGenOutput>
+    </None>
+    <None Include="DataSets\DsIngresos.xss">
+      <DependentUpon>DsIngresos.xsd</DependentUpon>
+    </None>
+    <None Include="DataSets\DsLiquidacion.xsc">
+      <DependentUpon>DsLiquidacion.xsd</DependentUpon>
+    </None>
+    <None Include="DataSets\DsLiquidacion.xsd">
+      <SubType>Designer</SubType>
+      <Generator>MSDataSetGenerator</Generator>
+      <LastGenOutput>DsLiquidacion.Designer.cs</LastGenOutput>
+    </None>
+    <None Include="DataSets\DsLiquidacion.xss">
+      <DependentUpon>DsLiquidacion.xsd</DependentUpon>
+    </None>
+    <None Include="DataSets\ServiciosAdicionales.xsc">
+      <DependentUpon>ServiciosAdicionales.xsd</DependentUpon>
+    </None>
+    <None Include="DataSets\ServiciosAdicionales.xsd">
+      <SubType>Designer</SubType>
+      <Generator>MSDataSetGenerator</Generator>
+      <LastGenOutput>ServiciosAdicionales.Designer.cs</LastGenOutput>
+    </None>
+    <None Include="DataSets\ServiciosAdicionales.xss">
+      <DependentUpon>ServiciosAdicionales.xsd</DependentUpon>
+    </None>
+    <None Include="DataSets\TarjaRebate.xsc">
+      <DependentUpon>TarjaRebate.xsd</DependentUpon>
+    </None>
+    <None Include="DataSets\TarjaRebate.xsd">
+      <SubType>Designer</SubType>
+      <Generator>MSDataSetGenerator</Generator>
+      <LastGenOutput>TarjaRebate.Designer.cs</LastGenOutput>
+    </None>
+    <None Include="DataSets\TarjaRebate.xss">
+      <DependentUpon>TarjaRebate.xsd</DependentUpon>
+    </None>
+    <None Include="Resources\Alert 11.png" />
+    <None Include="Resources\add2_24x24.png" />
+    <Content Include="Resources\arrow_down_blue.png" />
+    <Content Include="Resources\arrow_up_green.png" />
+    <Content Include="Resources\BASC.png" />
+    <Content Include="Resources\book_blue_next.png" />
+    <Content Include="Resources\box_new.ico" />
+    <Content Include="Resources\box_preferences.ico" />
+    <Content Include="Resources\check.png" />
+    <None Include="Resources\check_16x16.png" />
+    <None Include="Resources\check_24x24.png" />
+    <None Include="Resources\check_32x32.png" />
+    <Content Include="Resources\clean24x24.png" />
+    <Content Include="Resources\contract.png" />
+    <Content Include="Resources\copy.png" />
+    <Content Include="Resources\data_refresh.png" />
+    <Content Include="Resources\data_up.png" />
+    <Content Include="Resources\delete.png" />
+    <Content Include="Resources\delete1.png" />
+    <None Include="Resources\disks_16x16.png" />
+    <None Include="Resources\disks_24x24.png" />
+    <None Include="Resources\disks_32x32.png" />
+    <Content Include="Resources\disk_blue_ok.png" />
+    <Content Include="Resources\disk_blue_window.png" />
+    <None Include="Resources\document_exchange_16x16.png" />
+    <None Include="Resources\document_exchange_24x24.png" />
+    <None Include="Resources\document_exchange_32x32.png" />
+    <Content Include="Resources\document_into.png" />
+    <Content Include="Resources\editar16x16.png" />
+    <Content Include="Resources\export.png" />
+    <Content Include="Resources\forbidden.png" />
+    <Content Include="Resources\index_preferences.png" />
+    <Content Include="Resources\index_up.png" />
+    <Content Include="Resources\mail_forward.png" />
+    <Content Include="Resources\money2.png" />
+    <Content Include="Resources\navigate_left.png" />
+    <Content Include="Resources\navigate_right.png" />
+    <Content Include="Resources\note_edit.ico" />
+    <None Include="Resources\Paper 07.ico" />
+    <Content Include="Resources\printer2.png" />
+    <Content Include="Resources\refresh.png" />
+    <Content Include="Resources\replace14x14.png" />
+    <Content Include="Resources\replace2.png" />
+    <Content Include="Resources\replace21.png" />
+    <Content Include="Resources\save.png" />
+    <Content Include="Resources\search.png" />
+    <None Include="Resources\Sign 09.png" />
+    <None Include="Resources\Sign 07.png" />
+    <None Include="Resources\Sign 071.png" />
+    <None Include="Resources\Sign 16.png" />
+    <None Include="Resources\Sign 18.png" />
+    <None Include="Resources\Sign 181.png" />
+    <Content Include="Resources\undo.png" />
+    <Content Include="Resources\undo1.png" />
+    <None Include="Resources\view_16x16.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <WCFMetadata Include="Service References\" />
+  </ItemGroup>
+  <ItemGroup>
+    <WCFMetadataStorage Include="Service References\AppService\" />
+  </ItemGroup>
+  <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
+  <!-- To modify your build process, add your task inside one of the targets below and uncomment it. 
+       Other similar extension points exist, see Microsoft.Common.targets.
+  <Target Name="BeforeBuild">
+  </Target>
+  <Target Name="AfterBuild">
+  </Target>
+  -->
+</Project>

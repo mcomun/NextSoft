@@ -1,0 +1,40 @@
+<?xml version="1.0" encoding="utf-8" ?>
+<!-- UserName       = correo electrónico -->
+<!-- Password       = contraseña del correo electrónico-->
+<!-- Host           = host del servidor de correo saliente SMTP -->
+<!-- Port           = puerto del servidor de correo saliente SMTP -->
+<!-- EnableSSl      = true o false segun corresponda a la configuración del correo -->
+<!-- IsBodyHTML     = true -->
+<!-- IsExchange     = true o false si es que se va utikizar un servidor Exchange -->
+<!-- ServerExchange = nombre del host -->
+<!--UserName="igmarl@nextsoft.com.pe"
+Password="igmarl"
+Host="mail.nextsoft.com.pe"
+Port="25"
+EnableSSL="False"
+IsBodyHTML="True"
+IsExchange="False"
+ServerExchange=""-->
+
+
+<configuracion 
+   UserName ="sistema@delfingroupco.com.pe" 
+   Password ="Sisis8383105"
+   Host     ="smtp.gmail.com" 
+   Port     = "587" 
+   EnableSSL="true" 
+   IsBodyHTML="True"
+   IsExchange="False"
+   ServerExchange=""
+>
+</configuracion>
+<!--<configuracion 
+   UserName="sistema@delfingroupco.com.pe" 
+   Password="Sisis8383105"
+   Host="smtp.gmail.com" 
+   Port="465" 
+   EnableSSL="True" 
+   IsBodyHTML="True"
+   IsExchange="False"
+   ServerExchange="" >
+</configuracion>-->

@@ -1,0 +1,211 @@
+<?xml version="1.0" encoding="utf-8"?>
+<definitions xmlns:wsp="http://www.w3.org/ns/ws-policy" xmlns:wsam="http://www.w3.org/2007/05/addressing/metadata" xmlns:tns="http://service.connector.alfa1lab.efact/" xmlns:xsd="http://www.w3.org/2001/XMLSchema" xmlns:wsp1_2="http://schemas.xmlsoap.org/ws/2004/09/policy" xmlns:wsu="http://docs.oasis-open.org/wss/2004/01/oasis-200401-wss-wssecurity-utility-1.0.xsd" xmlns:soap12="http://schemas.xmlsoap.org/wsdl/soap12/" name="TransactionServiceImplService" targetNamespace="http://service.connector.alfa1lab.efact/" xmlns="http://schemas.xmlsoap.org/wsdl/">
+  <types>
+    <xsd:schema>
+      <xsd:import schemaLocation="http://dev-gw.efact.pe:8686/connectorcsv/TransactionService7ab781c8ce6f11e4b9d61681e6b88ec1?xsd=1" namespace="http://service.connector.alfa1lab.efact/" />
+    </xsd:schema>
+  </types>
+  <message name="sendPing">
+    <part name="Authorization" element="tns:Authorization" />
+  </message>
+  <message name="sendPingResponse">
+    <part name="responseSendPing" type="xsd:boolean" />
+  </message>
+  <message name="sendInvoice">
+    <part name="file" type="xsd:base64Binary" />
+    <part name="Authorization" element="tns:Authorization" />
+  </message>
+  <message name="sendInvoiceResponse">
+    <part name="responseSendInvoice" type="tns:transactionResponseArray" />
+  </message>
+  <message name="InterruptedException">
+    <part name="fault" element="tns:InterruptedException" />
+  </message>
+  <message name="ExecutionException">
+    <part name="fault" element="tns:ExecutionException" />
+  </message>
+  <message name="sendBoleta">
+    <part name="file" type="xsd:base64Binary" />
+    <part name="Authorization" element="tns:Authorization" />
+  </message>
+  <message name="sendBoletaResponse">
+    <part name="responseSendBoleta" type="tns:transactionResponseArray" />
+  </message>
+  <message name="sendCreditNote">
+    <part name="file" type="xsd:base64Binary" />
+    <part name="Authorization" element="tns:Authorization" />
+  </message>
+  <message name="sendCreditNoteResponse">
+    <part name="responseSendCreditNote" type="tns:transactionResponseArray" />
+  </message>
+  <message name="sendDebitNote">
+    <part name="file" type="xsd:base64Binary" />
+    <part name="Authorization" element="tns:Authorization" />
+  </message>
+  <message name="sendDebitNoteResponse">
+    <part name="responseSendDebitNote" type="tns:transactionResponseArray" />
+  </message>
+  <message name="sendVoidedDocument">
+    <part name="file" type="xsd:base64Binary" />
+    <part name="Authorization" element="tns:Authorization" />
+  </message>
+  <message name="sendVoidedDocumentResponse">
+    <part name="responseSendVoidedDocument" type="tns:transactionResponseArray" />
+  </message>
+  <message name="getStatus">
+    <part name="documentType" type="xsd:int" />
+    <part name="identifier" type="xsd:string" />
+    <part name="Authorization" element="tns:Authorization" />
+  </message>
+  <message name="getStatusResponse">
+    <part name="responseSendStatus" type="tns:transactionResult" />
+  </message>
+  <portType name="TransactionService">
+    <operation name="sendPing">
+      <input wsam:Action="http://service.connector.alfa1lab.efact/TransactionService/sendPingRequest" message="tns:sendPing" />
+      <output wsam:Action="http://service.connector.alfa1lab.efact/TransactionService/sendPingResponse" message="tns:sendPingResponse" />
+    </operation>
+    <operation name="sendInvoice" parameterOrder="Authorization file">
+      <input wsam:Action="http://service.connector.alfa1lab.efact/TransactionService/sendInvoiceRequest" message="tns:sendInvoice" />
+      <output wsam:Action="http://service.connector.alfa1lab.efact/TransactionService/sendInvoiceResponse" message="tns:sendInvoiceResponse" />
+      <fault wsam:Action="http://service.connector.alfa1lab.efact/TransactionService/sendInvoice/Fault/InterruptedException" name="InterruptedException" message="tns:InterruptedException" />
+      <fault wsam:Action="http://service.connector.alfa1lab.efact/TransactionService/sendInvoice/Fault/ExecutionException" name="ExecutionException" message="tns:ExecutionException" />
+    </operation>
+    <operation name="sendBoleta" parameterOrder="Authorization file">
+      <input wsam:Action="http://service.connector.alfa1lab.efact/TransactionService/sendBoletaRequest" message="tns:sendBoleta" />
+      <output wsam:Action="http://service.connector.alfa1lab.efact/TransactionService/sendBoletaResponse" message="tns:sendBoletaResponse" />
+      <fault wsam:Action="http://service.connector.alfa1lab.efact/TransactionService/sendBoleta/Fault/InterruptedException" name="InterruptedException" message="tns:InterruptedException" />
+      <fault wsam:Action="http://service.connector.alfa1lab.efact/TransactionService/sendBoleta/Fault/ExecutionException" name="ExecutionException" message="tns:ExecutionException" />
+    </operation>
+    <operation name="sendCreditNote" parameterOrder="Authorization file">
+      <input wsam:Action="http://service.connector.alfa1lab.efact/TransactionService/sendCreditNoteRequest" message="tns:sendCreditNote" />
+      <output wsam:Action="http://service.connector.alfa1lab.efact/TransactionService/sendCreditNoteResponse" message="tns:sendCreditNoteResponse" />
+      <fault wsam:Action="http://service.connector.alfa1lab.efact/TransactionService/sendCreditNote/Fault/InterruptedException" name="InterruptedException" message="tns:InterruptedException" />
+      <fault wsam:Action="http://service.connector.alfa1lab.efact/TransactionService/sendCreditNote/Fault/ExecutionException" name="ExecutionException" message="tns:ExecutionException" />
+    </operation>
+    <operation name="sendDebitNote" parameterOrder="Authorization file">
+      <input wsam:Action="http://service.connector.alfa1lab.efact/TransactionService/sendDebitNoteRequest" message="tns:sendDebitNote" />
+      <output wsam:Action="http://service.connector.alfa1lab.efact/TransactionService/sendDebitNoteResponse" message="tns:sendDebitNoteResponse" />
+      <fault wsam:Action="http://service.connector.alfa1lab.efact/TransactionService/sendDebitNote/Fault/InterruptedException" name="InterruptedException" message="tns:InterruptedException" />
+      <fault wsam:Action="http://service.connector.alfa1lab.efact/TransactionService/sendDebitNote/Fault/ExecutionException" name="ExecutionException" message="tns:ExecutionException" />
+    </operation>
+    <operation name="sendVoidedDocument" parameterOrder="Authorization file">
+      <input wsam:Action="http://service.connector.alfa1lab.efact/TransactionService/sendVoidedDocumentRequest" message="tns:sendVoidedDocument" />
+      <output wsam:Action="http://service.connector.alfa1lab.efact/TransactionService/sendVoidedDocumentResponse" message="tns:sendVoidedDocumentResponse" />
+      <fault wsam:Action="http://service.connector.alfa1lab.efact/TransactionService/sendVoidedDocument/Fault/InterruptedException" name="InterruptedException" message="tns:InterruptedException" />
+      <fault wsam:Action="http://service.connector.alfa1lab.efact/TransactionService/sendVoidedDocument/Fault/ExecutionException" name="ExecutionException" message="tns:ExecutionException" />
+    </operation>
+    <operation name="getStatus" parameterOrder="Authorization documentType identifier">
+      <input wsam:Action="http://service.connector.alfa1lab.efact/TransactionService/getStatusRequest" message="tns:getStatus" />
+      <output wsam:Action="http://service.connector.alfa1lab.efact/TransactionService/getStatusResponse" message="tns:getStatusResponse" />
+    </operation>
+  </portType>
+  <binding name="TransactionServiceImplPortBinding" type="tns:TransactionService">
+    <soap12:binding transport="http://schemas.xmlsoap.org/soap/http" style="rpc" />
+    <operation name="sendPing">
+      <soap12:operation soapAction="" />
+      <input>
+        <soap12:body use="literal" namespace="http://service.connector.alfa1lab.efact/" parts="" />
+        <soap12:header message="tns:sendPing" part="Authorization" use="literal" />
+      </input>
+      <output>
+        <soap12:body use="literal" namespace="http://service.connector.alfa1lab.efact/" />
+      </output>
+    </operation>
+    <operation name="sendInvoice">
+      <soap12:operation soapAction="" />
+      <input>
+        <soap12:body use="literal" namespace="http://service.connector.alfa1lab.efact/" parts="file" />
+        <soap12:header message="tns:sendInvoice" part="Authorization" use="literal" />
+      </input>
+      <output>
+        <soap12:body use="literal" namespace="http://service.connector.alfa1lab.efact/" />
+      </output>
+      <fault name="InterruptedException">
+        <soap12:fault use="literal" name="InterruptedException" namespace="" />
+      </fault>
+      <fault name="ExecutionException">
+        <soap12:fault use="literal" name="ExecutionException" namespace="" />
+      </fault>
+    </operation>
+    <operation name="sendBoleta">
+      <soap12:operation soapAction="" />
+      <input>
+        <soap12:body use="literal" namespace="http://service.connector.alfa1lab.efact/" parts="file" />
+        <soap12:header message="tns:sendBoleta" part="Authorization" use="literal" />
+      </input>
+      <output>
+        <soap12:body use="literal" namespace="http://service.connector.alfa1lab.efact/" />
+      </output>
+      <fault name="InterruptedException">
+        <soap12:fault use="literal" name="InterruptedException" namespace="" />
+      </fault>
+      <fault name="ExecutionException">
+        <soap12:fault use="literal" name="ExecutionException" namespace="" />
+      </fault>
+    </operation>
+    <operation name="sendCreditNote">
+      <soap12:operation soapAction="" />
+      <input>
+        <soap12:body use="literal" namespace="http://service.connector.alfa1lab.efact/" parts="file" />
+        <soap12:header message="tns:sendCreditNote" part="Authorization" use="literal" />
+      </input>
+      <output>
+        <soap12:body use="literal" namespace="http://service.connector.alfa1lab.efact/" />
+      </output>
+      <fault name="InterruptedException">
+        <soap12:fault use="literal" name="InterruptedException" namespace="" />
+      </fault>
+      <fault name="ExecutionException">
+        <soap12:fault use="literal" name="ExecutionException" namespace="" />
+      </fault>
+    </operation>
+    <operation name="sendDebitNote">
+      <soap12:operation soapAction="" />
+      <input>
+        <soap12:body use="literal" namespace="http://service.connector.alfa1lab.efact/" parts="file" />
+        <soap12:header message="tns:sendDebitNote" part="Authorization" use="literal" />
+      </input>
+      <output>
+        <soap12:body use="literal" namespace="http://service.connector.alfa1lab.efact/" />
+      </output>
+      <fault name="InterruptedException">
+        <soap12:fault use="literal" name="InterruptedException" namespace="" />
+      </fault>
+      <fault name="ExecutionException">
+        <soap12:fault use="literal" name="ExecutionException" namespace="" />
+      </fault>
+    </operation>
+    <operation name="sendVoidedDocument">
+      <soap12:operation soapAction="" />
+      <input>
+        <soap12:body use="literal" namespace="http://service.connector.alfa1lab.efact/" parts="file" />
+        <soap12:header message="tns:sendVoidedDocument" part="Authorization" use="literal" />
+      </input>
+      <output>
+        <soap12:body use="literal" namespace="http://service.connector.alfa1lab.efact/" />
+      </output>
+      <fault name="InterruptedException">
+        <soap12:fault use="literal" name="InterruptedException" namespace="" />
+      </fault>
+      <fault name="ExecutionException">
+        <soap12:fault use="literal" name="ExecutionException" namespace="" />
+      </fault>
+    </operation>
+    <operation name="getStatus">
+      <soap12:operation soapAction="" />
+      <input>
+        <soap12:body use="literal" namespace="http://service.connector.alfa1lab.efact/" parts="documentType identifier" />
+        <soap12:header message="tns:getStatus" part="Authorization" use="literal" />
+      </input>
+      <output>
+        <soap12:body use="literal" namespace="http://service.connector.alfa1lab.efact/" />
+      </output>
+    </operation>
+  </binding>
+  <service name="TransactionServiceImplService">
+    <port name="TransactionServiceImplPort" binding="tns:TransactionServiceImplPortBinding">
+      <soap12:address location="http://dev-gw.efact.pe:8686/connectorcsv/TransactionService7ab781c8ce6f11e4b9d61681e6b88ec1" />
+    </port>
+  </service>
+</definitions>

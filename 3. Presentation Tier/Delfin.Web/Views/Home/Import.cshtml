@@ -1,0 +1,189 @@
+﻿@*@model IEnumerable<Delfin.Entities.LoadingList>*@
+@model Delfin.Web.Models.LoadingListGridModel
+
+@{
+    ViewBag.Title = "Import";
+}
+
+<h2>Import</h2>
+
+@*<p>
+    @Html.ActionLink("Create New", "Create")
+</p>*@
+<table class="grid">
+    <tr>
+        <th>
+           @Html.Partial("_SmartLink", Model, new ViewDataDictionary { { "ColumnName", "LOAD_Codigo" }, { "DisplayName", "Código" } })
+        </th>
+       <th>
+           @Html.Partial("_SmartLink", Model, new ViewDataDictionary { { "ColumnName", "CCOT_Tipo" }, { "DisplayName", "Tipo Cotización" } })
+        </th>
+       <th>
+           @Html.Partial("_SmartLink", Model, new ViewDataDictionary { { "ColumnName", "CCOT_Numero" }, { "DisplayName", "Numero Cotización" } })
+        </th>
+       <th>
+           @Html.Partial("_SmartLink", Model, new ViewDataDictionary { { "ColumnName", "NVIA_Codigo" }, { "DisplayName", "Código Viaje" } })
+        </th>
+        
+        <th>
+           @Html.Partial("_SmartLink", Model, new ViewDataDictionary { { "ColumnName", "LOAD_Shipper" }, { "DisplayName", "Shipper" } })
+        </th>
+        <th>
+           @Html.Partial("_SmartLink", Model, new ViewDataDictionary { { "ColumnName", "LOAD_Consignee" }, { "DisplayName", "Consignee" } })
+        </th>
+        <th>
+           @Html.Partial("_SmartLink", Model, new ViewDataDictionary { { "ColumnName", "LOAD_Notify" }, { "DisplayName", "Notify" } })
+        </th>
+        <th>
+           @Html.Partial("_SmartLink", Model, new ViewDataDictionary { { "ColumnName", "LOAD_Carrier" }, { "DisplayName", "Carrier" } })
+        </th>
+        <th>
+           @Html.Partial("_SmartLink", Model, new ViewDataDictionary { { "ColumnName", "LOAD_Booking" }, { "DisplayName", "Nro. Booking" } })
+        </th>
+        <th>
+           @Html.Partial("_SmartLink", Model, new ViewDataDictionary { { "ColumnName", "LOAD_MBL" }, { "DisplayName", "MBL" } })
+        </th>
+        <th>
+           @Html.Partial("_SmartLink", Model, new ViewDataDictionary { { "ColumnName", "LOAD_HBL" }, { "DisplayName", "HBL" } })
+        </th>
+        <th>
+           @Html.Partial("_SmartLink", Model, new ViewDataDictionary { { "ColumnName", "LOAD_ETA" }, { "DisplayName", "ETA" } })
+        </th>
+        <th>
+           @Html.Partial("_SmartLink", Model, new ViewDataDictionary { { "ColumnName", "LOAD_ETD" }, { "DisplayName", "ETD" } })
+        </th>
+        <th>
+           @Html.Partial("_SmartLink", Model, new ViewDataDictionary { { "ColumnName", "LOAD_Payment" }, { "DisplayName", "Payment" } })
+        </th>
+        <th>
+           @Html.Partial("_SmartLink", Model, new ViewDataDictionary { { "ColumnName", "LOAD_NaveViaje" }, { "DisplayName", "Viaje" } })
+        </th>
+
+        
+        <th>
+           @Html.Partial("_SmartLink", Model, new ViewDataDictionary { { "ColumnName", "LOAD_ContractNRO" }, { "DisplayName", "Contract Nro." } })
+        </th>
+        
+       
+       <th>
+           @Html.Partial("_SmartLink", Model, new ViewDataDictionary { { "ColumnName", "PUER_CodOrigen" }, { "DisplayName", "Puerto Origen" } })
+        </th>
+        <th>
+           @Html.Partial("_SmartLink", Model, new ViewDataDictionary { { "ColumnName", "PUER_CodDestino" }, { "DisplayName", "Puerto Destino" } })
+        </th>
+
+       <th>
+           @Html.Partial("_SmartLink", Model, new ViewDataDictionary { { "ColumnName", "LOAD_CargaUsuario" }, { "DisplayName", "Usuario Carga" } })
+        </th>
+       <th>
+           @Html.Partial("_SmartLink", Model, new ViewDataDictionary { { "ColumnName", "LOAD_CargaFecha" }, { "DisplayName", "Fecha Carga" } })
+        </th>
+       
+       <th>
+           @Html.Partial("_SmartLink", Model, new ViewDataDictionary { { "ColumnName", "LOAD_PrimerOK" }, { "DisplayName", "OK" } })
+        </th>
+       <th>
+           @Html.Partial("_SmartLink", Model, new ViewDataDictionary { { "ColumnName", "LOAD_PrimerUsuario" }, { "DisplayName", "Usuario OK" } })
+        </th>
+        <th>
+           @Html.Partial("_SmartLink", Model, new ViewDataDictionary { { "ColumnName", "LOAD_FecPrimerOK" }, { "DisplayName", "Fecha OK" } })
+        </th>
+        
+        
+        @*<th></th>*@
+    </tr>
+
+@foreach (var item in Model.ListLoadingList) {
+    <tr>
+       <td>
+            @Html.DisplayFor(modelItem => item.LOAD_Codigo)
+        </td>
+       <td>
+            @Html.DisplayFor(modelItem => item.CCOT_Tipo)
+        </td> 
+       <td>
+            @Html.DisplayFor(modelItem => item.CCOT_Numero)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.NVIA_Codigo)
+        </td>
+
+
+        <td>
+            @Html.DisplayFor(modelItem => item.LOAD_Shipper)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.LOAD_Consignee)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.LOAD_Notify)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.LOAD_Carrier)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.LOAD_Booking)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.LOAD_MBL)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.LOAD_HBL)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.LOAD_ETA)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.LOAD_ETD)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.LOAD_Payment)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.LOAD_NaveViaje)
+        </td>
+        
+        <td>
+            @Html.DisplayFor(modelItem => item.LOAD_ContractNRO)
+        </td>
+
+       <td>
+            @Html.DisplayFor(modelItem => item.PUER_CodOrigen)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.PUER_CodDestino)
+        </td>
+ 
+        <td>
+            @Html.DisplayFor(modelItem => item.LOAD_CargaUsuario)
+        </td>
+       <td>
+            @Html.DisplayFor(modelItem => item.LOAD_CargaFecha)
+        </td>
+
+        <td>
+            @Html.DisplayFor(modelItem => item.LOAD_PrimerOK)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.LOAD_PrimerUsuario)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.LOAD_FecPrimerOK)
+        </td>
+        
+
+       @* <td>
+            @Html.ActionLink("Edit", "Edit", new { /* id=item.PrimaryKey */ }) |
+            @Html.ActionLink("Details", "Details", new { /* id=item.PrimaryKey */ }) |
+            @Html.ActionLink("Delete", "Delete", new { /* id=item.PrimaryKey */ })
+        </td>*@
+    </tr>
+}
+
+   <tr>
+        <td class="pager" colspan="5">
+            @Html.Partial("_Pager", Model)
+        </td>
+    </tr>
+
+</table>

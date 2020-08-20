@@ -1,0 +1,29 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<xs:schema id="DSEtiqueta" targetNamespace="http://tempuri.org/DSEtiqueta.xsd" xmlns:mstns="http://tempuri.org/DSEtiqueta.xsd" xmlns="http://tempuri.org/DSEtiqueta.xsd" xmlns:xs="http://www.w3.org/2001/XMLSchema" xmlns:msdata="urn:schemas-microsoft-com:xml-msdata" xmlns:msprop="urn:schemas-microsoft-com:xml-msprop" attributeFormDefault="qualified" elementFormDefault="qualified">
+  <xs:annotation>
+    <xs:appinfo source="urn:schemas-microsoft-com:xml-msdatasource">
+      <DataSource DefaultConnectionIndex="0" FunctionsComponentName="QueriesTableAdapter" Modifier="AutoLayout, AnsiClass, Class, Public" SchemaSerializationMode="IncludeSchema" xmlns="urn:schemas-microsoft-com:xml-msdatasource">
+        <Connections />
+        <Tables />
+        <Sources />
+      </DataSource>
+    </xs:appinfo>
+  </xs:annotation>
+  <xs:element name="DSEtiqueta" msdata:IsDataSet="true" msdata:UseCurrentLocale="true" msprop:EnableTableAdapterManager="true" msprop:Generator_DataSetName="DSEtiqueta" msprop:Generator_UserDSName="DSEtiqueta">
+    <xs:complexType>
+      <xs:choice minOccurs="0" maxOccurs="unbounded">
+        <xs:element name="DTEtiqueta" msprop:Generator_TableClassName="DTEtiquetaDataTable" msprop:Generator_TableVarName="tableDTEtiqueta" msprop:Generator_RowChangedName="DTEtiquetaRowChanged" msprop:Generator_TablePropName="DTEtiqueta" msprop:Generator_RowDeletingName="DTEtiquetaRowDeleting" msprop:Generator_RowChangingName="DTEtiquetaRowChanging" msprop:Generator_RowEvHandlerName="DTEtiquetaRowChangeEventHandler" msprop:Generator_RowDeletedName="DTEtiquetaRowDeleted" msprop:Generator_RowClassName="DTEtiquetaRow" msprop:Generator_UserTableName="DTEtiqueta" msprop:Generator_RowEvArgName="DTEtiquetaRowChangeEvent">
+          <xs:complexType>
+            <xs:sequence>
+              <xs:element name="ENTC_NomTransportista" msprop:Generator_ColumnVarNameInTable="columnENTC_NomTransportista" msprop:Generator_ColumnPropNameInRow="ENTC_NomTransportista" msprop:Generator_ColumnPropNameInTable="ENTC_NomTransportistaColumn" msprop:Generator_UserColumnName="ENTC_NomTransportista" type="xs:string" minOccurs="0" />
+              <xs:element name="DOOV_MBL" msprop:Generator_ColumnVarNameInTable="columnDOOV_MBL" msprop:Generator_ColumnPropNameInRow="DOOV_MBL" msprop:Generator_ColumnPropNameInTable="DOOV_MBLColumn" msprop:Generator_UserColumnName="DOOV_MBL" type="xs:string" minOccurs="0" />
+              <xs:element name="PUER_CodDestino" msprop:Generator_ColumnVarNameInTable="columnPUER_CodDestino" msprop:Generator_ColumnPropNameInRow="PUER_CodDestino" msprop:Generator_ColumnPropNameInTable="PUER_CodDestinoColumn" msprop:Generator_UserColumnName="PUER_CodDestino" type="xs:string" minOccurs="0" />
+              <xs:element name="DCOT_Bultos" msprop:Generator_ColumnVarNameInTable="columnDCOT_Bultos" msprop:Generator_ColumnPropNameInRow="DCOT_Bultos" msprop:Generator_ColumnPropNameInTable="DCOT_BultosColumn" msprop:Generator_UserColumnName="DCOT_Bultos" type="xs:string" minOccurs="0" />
+              <xs:element name="DOOV_HBL" msprop:Generator_ColumnVarNameInTable="columnDOOV_HBL" msprop:Generator_ColumnPropNameInRow="DOOV_HBL" msprop:Generator_ColumnPropNameInTable="DOOV_HBLColumn" msprop:Generator_UserColumnName="DOOV_HBL" type="xs:string" minOccurs="0" />
+            </xs:sequence>
+          </xs:complexType>
+        </xs:element>
+      </xs:choice>
+    </xs:complexType>
+  </xs:element>
+</xs:schema>

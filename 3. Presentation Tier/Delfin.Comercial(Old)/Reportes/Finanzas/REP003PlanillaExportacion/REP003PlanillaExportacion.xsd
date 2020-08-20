@@ -1,0 +1,36 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<xs:schema id="REP003PlanillaExportacion" targetNamespace="http://tempuri.org/REP003PlanillaExportacion.xsd" xmlns:mstns="http://tempuri.org/REP003PlanillaExportacion.xsd" xmlns="http://tempuri.org/REP003PlanillaExportacion.xsd" xmlns:xs="http://www.w3.org/2001/XMLSchema" xmlns:msdata="urn:schemas-microsoft-com:xml-msdata" xmlns:msprop="urn:schemas-microsoft-com:xml-msprop" attributeFormDefault="qualified" elementFormDefault="qualified">
+  <xs:annotation>
+    <xs:appinfo source="urn:schemas-microsoft-com:xml-msdatasource">
+      <DataSource DefaultConnectionIndex="0" FunctionsComponentName="QueriesTableAdapter" Modifier="AutoLayout, AnsiClass, Class, Public" SchemaSerializationMode="IncludeSchema" xmlns="urn:schemas-microsoft-com:xml-msdatasource">
+        <Connections />
+        <Tables />
+        <Sources />
+      </DataSource>
+    </xs:appinfo>
+  </xs:annotation>
+  <xs:element name="REP003PlanillaExportacion" msdata:IsDataSet="true" msdata:UseCurrentLocale="true" msprop:EnableTableAdapterManager="true" msprop:Generator_DataSetName="REP003PlanillaExportacion" msprop:Generator_UserDSName="REP003PlanillaExportacion">
+    <xs:complexType>
+      <xs:choice minOccurs="0" maxOccurs="unbounded">
+        <xs:element name="DTDetalle" msprop:Generator_TableClassName="DTDetalleDataTable" msprop:Generator_TableVarName="tableDTDetalle" msprop:Generator_RowChangedName="DTDetalleRowChanged" msprop:Generator_TablePropName="DTDetalle" msprop:Generator_RowDeletingName="DTDetalleRowDeleting" msprop:Generator_RowChangingName="DTDetalleRowChanging" msprop:Generator_RowEvHandlerName="DTDetalleRowChangeEventHandler" msprop:Generator_RowDeletedName="DTDetalleRowDeleted" msprop:Generator_RowClassName="DTDetalleRow" msprop:Generator_UserTableName="DTDetalle" msprop:Generator_RowEvArgName="DTDetalleRowChangeEvent">
+          <xs:complexType>
+            <xs:sequence>
+              <xs:element name="Planilla" msprop:Generator_ColumnVarNameInTable="columnPlanilla" msprop:Generator_ColumnPropNameInRow="Planilla" msprop:Generator_ColumnPropNameInTable="PlanillaColumn" msprop:Generator_UserColumnName="Planilla" type="xs:string" minOccurs="0" />
+              <xs:element name="Fecha" msprop:Generator_ColumnVarNameInTable="columnFecha" msprop:Generator_ColumnPropNameInRow="Fecha" msprop:Generator_ColumnPropNameInTable="FechaColumn" msprop:Generator_UserColumnName="Fecha" type="xs:string" minOccurs="0" />
+              <xs:element name="Tipo" msprop:Generator_ColumnVarNameInTable="columnTipo" msprop:Generator_ColumnPropNameInRow="Tipo" msprop:Generator_ColumnPropNameInTable="TipoColumn" msprop:Generator_UserColumnName="Tipo" type="xs:string" minOccurs="0" />
+              <xs:element name="Serie" msprop:Generator_ColumnVarNameInTable="columnSerie" msprop:Generator_ColumnPropNameInRow="Serie" msprop:Generator_ColumnPropNameInTable="SerieColumn" msprop:Generator_UserColumnName="Serie" type="xs:string" minOccurs="0" />
+              <xs:element name="Numero" msprop:Generator_ColumnVarNameInTable="columnNumero" msprop:Generator_ColumnPropNameInRow="Numero" msprop:Generator_ColumnPropNameInTable="NumeroColumn" msprop:Generator_UserColumnName="Numero" type="xs:string" minOccurs="0" />
+              <xs:element name="FecEmision" msprop:Generator_ColumnVarNameInTable="columnFecEmision" msprop:Generator_ColumnPropNameInRow="FecEmision" msprop:Generator_ColumnPropNameInTable="FecEmisionColumn" msprop:Generator_UserColumnName="FecEmision" type="xs:string" minOccurs="0" />
+              <xs:element name="FecVencimiento" msprop:Generator_ColumnVarNameInTable="columnFecVencimiento" msprop:Generator_ColumnPropNameInRow="FecVencimiento" msprop:Generator_ColumnPropNameInTable="FecVencimientoColumn" msprop:Generator_UserColumnName="FecVencimiento" type="xs:string" minOccurs="0" />
+              <xs:element name="RUC" msprop:Generator_ColumnVarNameInTable="columnRUC" msprop:Generator_ColumnPropNameInRow="RUC" msprop:Generator_ColumnPropNameInTable="RUCColumn" msprop:Generator_UserColumnName="RUC" type="xs:string" minOccurs="0" />
+              <xs:element name="RazonSocial" msprop:Generator_ColumnVarNameInTable="columnRazonSocial" msprop:Generator_ColumnPropNameInRow="RazonSocial" msprop:Generator_ColumnPropNameInTable="RazonSocialColumn" msprop:Generator_UserColumnName="RazonSocial" type="xs:string" minOccurs="0" />
+              <xs:element name="Monto" msprop:Generator_ColumnVarNameInTable="columnMonto" msprop:Generator_ColumnPropNameInRow="Monto" msprop:Generator_ColumnPropNameInTable="MontoColumn" msprop:Generator_UserColumnName="Monto" type="xs:string" minOccurs="0" />
+              <xs:element name="Concepto" msprop:Generator_ColumnVarNameInTable="columnConcepto" msprop:Generator_ColumnPropNameInRow="Concepto" msprop:Generator_ColumnPropNameInTable="ConceptoColumn" msprop:Generator_UserColumnName="Concepto" type="xs:string" minOccurs="0" />
+              <xs:element name="Monto1" msprop:Generator_ColumnVarNameInTable="columnMonto1" msprop:Generator_ColumnPropNameInRow="Monto1" msprop:Generator_ColumnPropNameInTable="Monto1Column" msprop:Generator_UserColumnName="Monto1" type="xs:string" minOccurs="0" />
+            </xs:sequence>
+          </xs:complexType>
+        </xs:element>
+      </xs:choice>
+    </xs:complexType>
+  </xs:element>
+</xs:schema>

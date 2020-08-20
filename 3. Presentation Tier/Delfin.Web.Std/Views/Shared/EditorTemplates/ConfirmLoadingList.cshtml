@@ -1,0 +1,42 @@
+﻿@model Delfin.Web.Std.Areas.LoadingListImportacion.Models.LoadingListModel
+
+@using (Html.BeginForm("ConfirmFile", "Resumido", FormMethod.Post, new {enctype = "multipart/form-data"})) {
+   @Html.ValidationSummary(true)
+   <fieldset>
+      <legend>Confirmar Loading List</legend>
+      <div class="editor-label">
+         @Html.LabelFor(model => model.LOAD_Codigo)
+      </div>
+      <div class="editor-field">
+         @Html.TextBoxFor(model => model.LOAD_Codigo, new {ReadOnly = "true"})
+      </div>
+      <div class="editor-label">
+         @Html.LabelFor(model => model.LOAD_CargaFecha)
+      </div>
+      <div class="editor-field">
+         @Html.EditorFor(model => model.LOAD_CargaFecha, new {Enabled = "false"})
+      </div>
+      <div class="editor-label">
+         @Html.LabelFor(model => model.LOAD_MBL)
+      </div>
+      <div class="editor-field">
+         @Html.TextBoxFor(model => model.LOAD_MBL, new {ReadOnly = "true"})
+      </div>
+      <div class="editor-label">
+         @Html.LabelFor(model => model.LOAD_HBL)
+      </div>
+      <div class="editor-field">
+         @Html.TextBoxFor(model => model.LOAD_HBL, new {ReadOnly = "true"})
+      </div>
+   
+      <div class="editor-label">
+         @Html.LabelFor(model => model.Archivo)
+      </div>
+      <div class="editor-field">
+         @Html.TextBoxFor(model => model.Archivo, new {type = "file"})
+         @Html.ValidationMessageFor(model => model.Archivo)
+      </div>
+   
+      <input id="btnUpload" type="submit" class="btn btn-primary"value='Subir Archivo' />
+   </fieldset>
+}

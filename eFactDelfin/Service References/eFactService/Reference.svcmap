@@ -1,0 +1,31 @@
+<?xml version="1.0" encoding="utf-8"?>
+<ReferenceGroup xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:xsd="http://www.w3.org/2001/XMLSchema" ID="dd34f353-6dcf-4bcf-8b29-bf7fa74dab77" xmlns="urn:schemas-microsoft-com:xml-wcfservicemap">
+  <ClientOptions>
+    <GenerateAsynchronousMethods>false</GenerateAsynchronousMethods>
+    <EnableDataBinding>true</EnableDataBinding>
+    <ExcludedTypes />
+    <ImportXmlTypes>false</ImportXmlTypes>
+    <GenerateInternalTypes>false</GenerateInternalTypes>
+    <GenerateMessageContracts>false</GenerateMessageContracts>
+    <NamespaceMappings />
+    <CollectionMappings />
+    <GenerateSerializableTypes>true</GenerateSerializableTypes>
+    <Serializer>Auto</Serializer>
+    <UseSerializerForFaults>true</UseSerializerForFaults>
+    <ReferenceAllAssemblies>true</ReferenceAllAssemblies>
+    <ReferencedAssemblies />
+    <ReferencedDataContractTypes />
+    <ServiceContractMappings />
+  </ClientOptions>
+  <MetadataSources>
+    <MetadataSource Address="http://dev-gw.efact.pe:8686/connectorcsv/TransactionService7ab781c8ce6f11e4b9d61681e6b88ec1?wsdl" Protocol="http" SourceId="1" />
+  </MetadataSources>
+  <Metadata>
+    <MetadataFile FileName="TransactionServiceImplService.wsdl" MetadataType="Wsdl" ID="b0178469-0f27-489c-90ae-b6ffcd80768b" SourceId="1" SourceUrl="http://dev-gw.efact.pe:8686/connectorcsv/TransactionService7ab781c8ce6f11e4b9d61681e6b88ec1?wsdl" />
+    <MetadataFile FileName="TransactionService7ab781c8ce6f11e4b9d61681e6b88ec1.xsd" MetadataType="Schema" ID="7b84ce86-e328-443f-8703-b283e3a0a54e" SourceId="1" SourceUrl="http://dev-gw.efact.pe:8686/connectorcsv/TransactionService7ab781c8ce6f11e4b9d61681e6b88ec1?xsd=1" />
+  </Metadata>
+  <Extensions>
+    <ExtensionFile FileName="configuration91.svcinfo" Name="configuration91.svcinfo" />
+    <ExtensionFile FileName="configuration.svcinfo" Name="configuration.svcinfo" />
+  </Extensions>
+</ReferenceGroup>

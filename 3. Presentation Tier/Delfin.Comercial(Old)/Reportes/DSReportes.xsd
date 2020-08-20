@@ -1,0 +1,30 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<xs:schema id="DSReportes" targetNamespace="http://tempuri.org/DSReportes.xsd" xmlns:mstns="http://tempuri.org/DSReportes.xsd" xmlns="http://tempuri.org/DSReportes.xsd" xmlns:xs="http://www.w3.org/2001/XMLSchema" xmlns:msdata="urn:schemas-microsoft-com:xml-msdata" xmlns:msprop="urn:schemas-microsoft-com:xml-msprop" attributeFormDefault="qualified" elementFormDefault="qualified">
+  <xs:annotation>
+    <xs:appinfo source="urn:schemas-microsoft-com:xml-msdatasource">
+      <DataSource DefaultConnectionIndex="0" FunctionsComponentName="QueriesTableAdapter" Modifier="AutoLayout, AnsiClass, Class, Public" SchemaSerializationMode="IncludeSchema" xmlns="urn:schemas-microsoft-com:xml-msdatasource">
+        <Connections />
+        <Tables />
+        <Sources />
+      </DataSource>
+    </xs:appinfo>
+  </xs:annotation>
+  <xs:element name="DSReportes" msdata:IsDataSet="true" msdata:UseCurrentLocale="true" msprop:EnableTableAdapterManager="true" msprop:Generator_DataSetName="DSReportes" msprop:Generator_UserDSName="DSReportes">
+    <xs:complexType>
+      <xs:choice minOccurs="0" maxOccurs="unbounded">
+        <xs:element name="DTKPIs" msprop:Generator_TableClassName="DTKPIsDataTable" msprop:Generator_TableVarName="tableDTKPIs" msprop:Generator_TablePropName="DTKPIs" msprop:Generator_RowDeletingName="DTKPIsRowDeleting" msprop:Generator_RowChangingName="DTKPIsRowChanging" msprop:Generator_RowEvHandlerName="DTKPIsRowChangeEventHandler" msprop:Generator_RowDeletedName="DTKPIsRowDeleted" msprop:Generator_UserTableName="DTKPIs" msprop:Generator_RowChangedName="DTKPIsRowChanged" msprop:Generator_RowEvArgName="DTKPIsRowChangeEvent" msprop:Generator_RowClassName="DTKPIsRow">
+          <xs:complexType>
+            <xs:sequence>
+              <xs:element name="DESCRIPCION" msprop:Generator_ColumnVarNameInTable="columnDESCRIPCION" msprop:Generator_ColumnPropNameInRow="DESCRIPCION" msprop:Generator_ColumnPropNameInTable="DESCRIPCIONColumn" msprop:Generator_UserColumnName="DESCRIPCION" type="xs:string" minOccurs="0" />
+              <xs:element name="CANTIDAD" msprop:Generator_ColumnVarNameInTable="columnCANTIDAD" msprop:Generator_ColumnPropNameInRow="CANTIDAD" msprop:Generator_ColumnPropNameInTable="CANTIDADColumn" msprop:Generator_UserColumnName="CANTIDAD" type="xs:int" minOccurs="0" />
+              <xs:element name="SEMAFORO" msprop:Generator_ColumnVarNameInTable="columnSEMAFORO" msprop:Generator_ColumnPropNameInRow="SEMAFORO" msprop:Generator_ColumnPropNameInTable="SEMAFOROColumn" msprop:Generator_UserColumnName="SEMAFORO" type="xs:string" minOccurs="0" />
+              <xs:element name="CNTR_20" msprop:Generator_ColumnVarNameInTable="columnCNTR_20" msprop:Generator_ColumnPropNameInRow="CNTR_20" msprop:Generator_ColumnPropNameInTable="CNTR_20Column" msprop:Generator_UserColumnName="CNTR_20" type="xs:decimal" minOccurs="0" />
+              <xs:element name="CNTR_40" msprop:Generator_ColumnVarNameInTable="columnCNTR_40" msprop:Generator_ColumnPropNameInRow="CNTR_40" msprop:Generator_ColumnPropNameInTable="CNTR_40Column" msprop:Generator_UserColumnName="CNTR_40" type="xs:decimal" minOccurs="0" />
+              <xs:element name="CNTR_45" msprop:Generator_ColumnVarNameInTable="columnCNTR_45" msprop:Generator_ColumnPropNameInRow="CNTR_45" msprop:Generator_ColumnPropNameInTable="CNTR_45Column" msprop:Generator_UserColumnName="CNTR_45" type="xs:decimal" minOccurs="0" />
+            </xs:sequence>
+          </xs:complexType>
+        </xs:element>
+      </xs:choice>
+    </xs:complexType>
+  </xs:element>
+</xs:schema>

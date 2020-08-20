@@ -1,0 +1,71 @@
+﻿@using System.Configuration;
+@using Delfin.Web.Std.Resources.Shared;
+
+@{
+    Layout = null;
+}
+
+<!DOCTYPE html>
+
+<html lang="es" class="app">
+<head>
+    <meta charset="utf-8" />
+    <title>@Html.Raw(Resource.TitleLabel)</title>
+    <meta name="description" content="Delfin, Sistema de Distribucion, Delfin | DIS4WIN" />
+    <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1" /> 
+    
+    @Styles.Render("~/Content/css")
+
+    @Scripts.Render("~/bundles/jquery")
+    @Scripts.Render("~/bundles/jqueryui")
+    @Scripts.Render("~/bundles/jqueryval")
+    @Scripts.Render("~/bundles/knockout")
+    @Scripts.Render("~/bundles/components")
+</head>
+<body>
+    <section id="content" class="m-t-lg wrapper-md animated fadeInUp">
+        <div class="container aside-xl">
+            <a class="block" href="#">
+                <img src="@Url.Content("~/Images/logoDelfin.png")" style="max-height: 70px;"/>
+            </a>
+            <section class="m-b-lg">
+                <header class="wrapper text-center">
+                    <strong>
+                        Ingrese sus credenciales para acceder a la aplicación
+                    </strong>
+                </header>
+               <form id ="frmIngresoSistema" method ="Post" autocomplete="off">
+                        <div class="list-group">
+                        <div class="list-group-item">
+                            <input type="text" class="form-control no-border" id="txtUsuario" placeholder="@Html.Raw(Resource.EtiquetaIngreseUsuario)" onchange="javascript:this.value=this.value.toUpperCase();" autofocus="" validable="required IngreseUsuarioReq">
+                        </div>
+                        <div class="list-group-item">
+                            <input type="password" class="form-control no-border" id="txtContrasenia" placeholder="@Html.Raw(Resource.EtiquetaIngreseContrasenia)" >   @*onchange="javascript:this.value=this.value.toUpperCase();"*@
+                        </div>
+                    </div>
+                    <input type ="button" id="btnIngresoSistema" class="btn btn-lg btn-success btn-rounded btn-block acc-Delfin"  value='@Html.Raw(Resource.IniciarSesionLabel)' />
+               </form>
+                <label id="lblMensaje"></label>
+            </section>
+        </div>
+    </section>
+    <footer id="footer">
+        <div class="text-center padder">
+            <p>© Delfin Web Application @DateTime.Now.Year @ConfigurationManager.AppSettings["VersionAplicacion"]</p>
+        </div>
+    </footer>
+
+   <script type="text/javascript">
+      ns('Delfin.Web.Std.IngresoSistema.Actions')
+      Delfin.Web.Std.IngresoSistema.Actions.IngresoSistema = '@Url.Action("IngresoSistema","IngresoSistema")';
+      Delfin.Web.Std.IngresoSistema.Actions.Ruta = '@Url.Action("Index", "Home", new { Area = string.Empty, Id = '/' })';
+
+      ns('Delfin.Web.Std.ValidacionIngresoSistema.Mensaje.Resources')
+      Delfin.Web.Std.ValidacionIngresoSistema.Mensaje.Resources.IngreseUsuarioReq = '@Html.Raw(Resource.EtiquetaIngreseUsuario)';
+      Delfin.Web.Std.ValidacionIngresoSistema.Mensaje.Resources.IngreseContraseniaReq = '@Html.Raw(Resource.EtiquetaIngreseContrasenia)';
+    </script>
+
+    <script type="text/javascript" src="~/Scripts/Views/IngresoSistema/Index/Controller.js"></script>
+    <script type="text/javascript" src="~/Scripts/Views/IngresoSistema/Index/Index.js"></script>
+</body>
+</html>

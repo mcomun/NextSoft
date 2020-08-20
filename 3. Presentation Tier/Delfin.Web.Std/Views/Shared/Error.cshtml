@@ -1,0 +1,17 @@
+﻿@using Delfin.Web.Std.Resources.Shared;
+@model System.Web.Mvc.HandleErrorInfo
+@{
+    ViewBag.Title = "Error";
+    Layout = "~/Views/Shared/_Layout.cshtml";
+}
+
+<div>
+    <ul class="breadcrumb no-border no-radius b-b b-light pull-in">
+        <li></li>
+    </ul>
+
+    <div class="text-center m-t-lg clearfix wrapper-lg animated fadeInRightBig">
+        <p class="m-t-lg"><i class="fa fa-exclamation-triangle fa fa-5x"></i></p>
+        <h1>@Resource.EtiquetaMsgeError</h1>
+    </div>
+</div>

@@ -1,0 +1,38 @@
+<?xml version="1.0" encoding="utf-8"?>
+<ReferenceGroup xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:xsd="http://www.w3.org/2001/XMLSchema" ID="c9098ef4-af17-482c-873c-aba481a9d207" xmlns="urn:schemas-microsoft-com:xml-wcfservicemap">
+  <ClientOptions>
+    <GenerateAsynchronousMethods>false</GenerateAsynchronousMethods>
+    <GenerateTaskBasedAsynchronousMethod>true</GenerateTaskBasedAsynchronousMethod>
+    <EnableDataBinding>true</EnableDataBinding>
+    <ExcludedTypes />
+    <ImportXmlTypes>false</ImportXmlTypes>
+    <GenerateInternalTypes>false</GenerateInternalTypes>
+    <GenerateMessageContracts>false</GenerateMessageContracts>
+    <NamespaceMappings />
+    <CollectionMappings />
+    <GenerateSerializableTypes>true</GenerateSerializableTypes>
+    <Serializer>Auto</Serializer>
+    <UseSerializerForFaults>true</UseSerializerForFaults>
+    <ReferenceAllAssemblies>true</ReferenceAllAssemblies>
+    <ReferencedAssemblies />
+    <ReferencedDataContractTypes />
+    <ServiceContractMappings />
+  </ClientOptions>
+  <MetadataSources>
+    <MetadataSource Address="http://192.168.103.13:766/NextSoftService.svc" Protocol="http" SourceId="1" />
+  </MetadataSources>
+  <Metadata>
+    <MetadataFile FileName="NextSoftService1.wsdl" MetadataType="Wsdl" ID="2b6797e7-647e-4fad-86ff-04e7888a0007" SourceId="1" SourceUrl="http://192.168.103.13:766/NextSoftService.svc?wsdl" />
+    <MetadataFile FileName="NextSoftService6.xsd" MetadataType="Schema" ID="db79362c-64c8-42e0-b4d6-5334ba1aaf57" SourceId="1" SourceUrl="http://192.168.103.13:766/NextSoftService.svc?xsd=xsd5" />
+    <MetadataFile FileName="NextSoftService61.xsd" MetadataType="Schema" ID="becccc3c-43f7-45fc-ac4d-ee5e767f379a" SourceId="1" SourceUrl="http://192.168.103.13:766/NextSoftService.svc?xsd=xsd4" />
+    <MetadataFile FileName="NextSoftService62.xsd" MetadataType="Schema" ID="114c638a-08a2-46b9-bf60-237c80e965ff" SourceId="1" SourceUrl="http://192.168.103.13:766/NextSoftService.svc?xsd=xsd3" />
+    <MetadataFile FileName="NextSoftService63.xsd" MetadataType="Schema" ID="aa39fa6a-f574-4e83-b444-69eb4cda987e" SourceId="1" SourceUrl="http://192.168.103.13:766/NextSoftService.svc?xsd=xsd2" />
+    <MetadataFile FileName="NextSoftService64.xsd" MetadataType="Schema" ID="54604730-1d0e-4658-befe-c90006a7f167" SourceId="1" SourceUrl="http://192.168.103.13:766/NextSoftService.svc?xsd=xsd1" />
+    <MetadataFile FileName="NextSoftService65.xsd" MetadataType="Schema" ID="adff5087-aac7-412d-9494-c5a20c1411d0" SourceId="1" SourceUrl="http://192.168.103.13:766/NextSoftService.svc?xsd=xsd0" />
+    <MetadataFile FileName="NextSoftService1.disco" MetadataType="Disco" ID="254f4ced-3a8a-4279-82da-b999f3d9d6be" SourceId="1" SourceUrl="http://192.168.103.13:766/NextSoftService.svc?disco" />
+  </Metadata>
+  <Extensions>
+    <ExtensionFile FileName="configuration91.svcinfo" Name="configuration91.svcinfo" />
+    <ExtensionFile FileName="configuration.svcinfo" Name="configuration.svcinfo" />
+  </Extensions>
+</ReferenceGroup>

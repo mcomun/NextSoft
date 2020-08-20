@@ -1,0 +1,41 @@
+<?xml version="1.0" encoding="utf-8"?>
+<xs:schema xmlns:tns="http://schemas.datacontract.org/2004/07/Application.BusinessEntities" elementFormDefault="qualified" targetNamespace="http://schemas.datacontract.org/2004/07/Application.BusinessEntities" xmlns:xs="http://www.w3.org/2001/XMLSchema">
+  <xs:complexType name="EntidadVinculada_BE">
+    <xs:sequence>
+      <xs:element minOccurs="0" name="AUDI_FecCrea" type="xs:dateTime" />
+      <xs:element minOccurs="0" name="AUDI_FecMod" type="xs:dateTime" />
+      <xs:element minOccurs="0" name="AUDI_UsrCrea" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="AUDI_UsrMod" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="CodigoTipoVigencia" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="CodigoTipoVinculacion" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="CorreoContacto" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="ENTC_Codigo" type="xs:int" />
+      <xs:element minOccurs="0" name="ENTC_CodigoVinculada" type="xs:int" />
+      <xs:element minOccurs="0" name="ENTC_DocIdenVinculada" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="Estado" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="NombreContacto" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="VigenciaDesde" nillable="true" type="xs:dateTime" />
+      <xs:element minOccurs="0" name="VigenciaHasta" nillable="true" type="xs:dateTime" />
+    </xs:sequence>
+  </xs:complexType>
+  <xs:element name="EntidadVinculada_BE" nillable="true" type="tns:EntidadVinculada_BE" />
+  <xs:complexType name="EntidadRegistro_BE">
+    <xs:sequence>
+      <xs:element minOccurs="0" name="AUDI_FecCrea" type="xs:dateTime" />
+      <xs:element minOccurs="0" name="AUDI_FecMod" type="xs:dateTime" />
+      <xs:element minOccurs="0" name="AUDI_UsrCrea" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="AUDI_UsrMod" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="ENTC_Codigo" type="xs:int" />
+      <xs:element minOccurs="0" name="ENTC_DocIden" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="ENTC_EMail" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="ENTC_EmailReceptorFE" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="ENTC_Origen" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="ENTC_RazonSocial" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="ENTC_Telef1" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="REGI_Codigo" type="xs:int" />
+      <xs:element minOccurs="0" name="REGI_Estado" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="TIPO_CodTDI" nillable="true" type="xs:string" />
+    </xs:sequence>
+  </xs:complexType>
+  <xs:element name="EntidadRegistro_BE" nillable="true" type="tns:EntidadRegistro_BE" />
+</xs:schema>

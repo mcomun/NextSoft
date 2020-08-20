@@ -1,0 +1,216 @@
+﻿@model Delfin.Entities.LoadingList
+
+<script src="~/Scripts/jquery-1.8.2.min.js"></script>
+<script src="~/Scripts/jquery.validate.min.js"></script>
+<script src="~/Scripts/jquery.validate.unobtrusive.min.js"></script>
+
+@using (Html.BeginForm()) {
+    @Html.AntiForgeryToken()
+    @Html.ValidationSummary(true)
+
+    <fieldset>
+        <legend>LoadingList</legend>
+
+        <div class="editor-label">
+            @Html.LabelFor(model => model.LOAD_Shipper)
+        </div>
+        <div class="editor-field">
+            @Html.EditorFor(model => model.LOAD_Shipper)
+            @Html.ValidationMessageFor(model => model.LOAD_Shipper)
+        </div>
+
+        <div class="editor-label">
+            @Html.LabelFor(model => model.LOAD_Consignee)
+        </div>
+        <div class="editor-field">
+            @Html.EditorFor(model => model.LOAD_Consignee)
+            @Html.ValidationMessageFor(model => model.LOAD_Consignee)
+        </div>
+
+        <div class="editor-label">
+            @Html.LabelFor(model => model.LOAD_Notify)
+        </div>
+        <div class="editor-field">
+            @Html.EditorFor(model => model.LOAD_Notify)
+            @Html.ValidationMessageFor(model => model.LOAD_Notify)
+        </div>
+
+        <div class="editor-label">
+            @Html.LabelFor(model => model.LOAD_Carrier)
+        </div>
+        <div class="editor-field">
+            @Html.EditorFor(model => model.LOAD_Carrier)
+            @Html.ValidationMessageFor(model => model.LOAD_Carrier)
+        </div>
+
+        <div class="editor-label">
+            @Html.LabelFor(model => model.LOAD_Booking)
+        </div>
+        <div class="editor-field">
+            @Html.EditorFor(model => model.LOAD_Booking)
+            @Html.ValidationMessageFor(model => model.LOAD_Booking)
+        </div>
+
+        <div class="editor-label">
+            @Html.LabelFor(model => model.LOAD_MBL)
+        </div>
+        <div class="editor-field">
+            @Html.EditorFor(model => model.LOAD_MBL)
+            @Html.ValidationMessageFor(model => model.LOAD_MBL)
+        </div>
+
+        <div class="editor-label">
+            @Html.LabelFor(model => model.LOAD_HBL)
+        </div>
+        <div class="editor-field">
+            @Html.EditorFor(model => model.LOAD_HBL)
+            @Html.ValidationMessageFor(model => model.LOAD_HBL)
+        </div>
+
+        <div class="editor-label">
+            @Html.LabelFor(model => model.LOAD_ETA)
+        </div>
+        <div class="editor-field">
+            @Html.EditorFor(model => model.LOAD_ETA)
+            @Html.ValidationMessageFor(model => model.LOAD_ETA)
+        </div>
+
+        <div class="editor-label">
+            @Html.LabelFor(model => model.LOAD_ETD)
+        </div>
+        <div class="editor-field">
+            @Html.EditorFor(model => model.LOAD_ETD)
+            @Html.ValidationMessageFor(model => model.LOAD_ETD)
+        </div>
+
+        <div class="editor-label">
+            @Html.LabelFor(model => model.LOAD_Payment)
+        </div>
+        <div class="editor-field">
+            @Html.EditorFor(model => model.LOAD_Payment)
+            @Html.ValidationMessageFor(model => model.LOAD_Payment)
+        </div>
+
+        <div class="editor-label">
+            @Html.LabelFor(model => model.LOAD_NaveViaje)
+        </div>
+        <div class="editor-field">
+            @Html.EditorFor(model => model.LOAD_NaveViaje)
+            @Html.ValidationMessageFor(model => model.LOAD_NaveViaje)
+        </div>
+
+        <div class="editor-label">
+            @Html.LabelFor(model => model.LOAD_Codigo)
+        </div>
+        <div class="editor-field">
+            @Html.EditorFor(model => model.LOAD_Codigo)
+            @Html.ValidationMessageFor(model => model.LOAD_Codigo)
+        </div>
+
+        <div class="editor-label">
+            @Html.LabelFor(model => model.CCOT_Numero)
+        </div>
+        <div class="editor-field">
+            @Html.EditorFor(model => model.CCOT_Numero)
+            @Html.ValidationMessageFor(model => model.CCOT_Numero)
+        </div>
+
+        <div class="editor-label">
+            @Html.LabelFor(model => model.CCOT_Tipo)
+        </div>
+        <div class="editor-field">
+            @Html.EditorFor(model => model.CCOT_Tipo)
+            @Html.ValidationMessageFor(model => model.CCOT_Tipo)
+        </div>
+
+        <div class="editor-label">
+            @Html.LabelFor(model => model.LOAD_ContractNRO)
+        </div>
+        <div class="editor-field">
+            @Html.EditorFor(model => model.LOAD_ContractNRO)
+            @Html.ValidationMessageFor(model => model.LOAD_ContractNRO)
+        </div>
+
+        <div class="editor-label">
+            @Html.LabelFor(model => model.LOAD_CargaFecha)
+        </div>
+        <div class="editor-field">
+            @Html.EditorFor(model => model.LOAD_CargaFecha)
+            @Html.ValidationMessageFor(model => model.LOAD_CargaFecha)
+        </div>
+
+        <div class="editor-label">
+            @Html.LabelFor(model => model.PUER_CodOrigen)
+        </div>
+        <div class="editor-field">
+            @Html.EditorFor(model => model.PUER_CodOrigen)
+            @Html.ValidationMessageFor(model => model.PUER_CodOrigen)
+        </div>
+
+        <div class="editor-label">
+            @Html.LabelFor(model => model.PUER_CodDestino)
+        </div>
+        <div class="editor-field">
+            @Html.EditorFor(model => model.PUER_CodDestino)
+            @Html.ValidationMessageFor(model => model.PUER_CodDestino)
+        </div>
+
+        <div class="editor-label">
+            @Html.LabelFor(model => model.NVIA_Codigo)
+        </div>
+        <div class="editor-field">
+            @Html.EditorFor(model => model.NVIA_Codigo)
+            @Html.ValidationMessageFor(model => model.NVIA_Codigo)
+        </div>
+
+        <div class="editor-label">
+            @Html.LabelFor(model => model.CCOT_NumDoc)
+        </div>
+        <div class="editor-field">
+            @Html.EditorFor(model => model.CCOT_NumDoc)
+            @Html.ValidationMessageFor(model => model.CCOT_NumDoc)
+        </div>
+
+        <div class="editor-label">
+            @Html.LabelFor(model => model.NVIA_NroViaje)
+        </div>
+        <div class="editor-field">
+            @Html.EditorFor(model => model.NVIA_NroViaje)
+            @Html.ValidationMessageFor(model => model.NVIA_NroViaje)
+        </div>
+
+        <div class="editor-label">
+            @Html.LabelFor(model => model.NVIA_NroManifiesto)
+        </div>
+        <div class="editor-field">
+            @Html.EditorFor(model => model.NVIA_NroManifiesto)
+            @Html.ValidationMessageFor(model => model.NVIA_NroManifiesto)
+        </div>
+
+        <div class="editor-label">
+            @Html.LabelFor(model => model.PUER_NomOrigen)
+        </div>
+        <div class="editor-field">
+            @Html.EditorFor(model => model.PUER_NomOrigen)
+            @Html.ValidationMessageFor(model => model.PUER_NomOrigen)
+        </div>
+
+        <div class="editor-label">
+            @Html.LabelFor(model => model.PUER_NomDestino)
+        </div>
+        <div class="editor-field">
+            @Html.EditorFor(model => model.PUER_NomDestino)
+            @Html.ValidationMessageFor(model => model.PUER_NomDestino)
+        </div>
+
+        
+
+        <p>
+            <input type="submit" value="Create" />
+        </p>
+    </fieldset>
+}
+
+<div>
+    @Html.ActionLink("Back to List", "Index")
+</div>

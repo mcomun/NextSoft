@@ -1,0 +1,168 @@
+﻿@model IEnumerable<Delfin.Entities.LoadingList>
+
+@{
+    ViewBag.Title = "Index";
+}
+
+<h2>Index</h2>
+
+<p>
+    @Html.ActionLink("Create New", "Create")
+</p>
+<table>
+    <tr>
+        <th>
+            @Html.DisplayNameFor(model => model.LOAD_Shipper)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.LOAD_Consignee)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.LOAD_Notify)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.LOAD_Carrier)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.LOAD_Booking)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.LOAD_MBL)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.LOAD_HBL)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.LOAD_ETA)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.LOAD_ETD)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.LOAD_Payment)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.LOAD_NaveViaje)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.LOAD_Codigo)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.CCOT_Numero)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.CCOT_Tipo)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.LOAD_ContractNRO)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.PUER_CodOrigen)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.PUER_CodDestino)
+        </th>
+        
+        <th>
+            @Html.DisplayNameFor(model => model.NVIA_Codigo)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.CCOT_NumDoc)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.NVIA_NroViaje)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.NVIA_NroManifiesto)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.PUER_NomOrigen)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.PUER_NomDestino)
+        </th>
+        
+        <th></th>
+    </tr>
+
+@foreach (var item in Model) {
+    <tr>
+        <td>
+            @Html.DisplayFor(modelItem => item.LOAD_Shipper)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.LOAD_Consignee)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.LOAD_Notify)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.LOAD_Carrier)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.LOAD_Booking)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.LOAD_MBL)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.LOAD_HBL)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.LOAD_ETA)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.LOAD_ETD)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.LOAD_Payment)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.LOAD_NaveViaje)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.LOAD_Codigo)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.CCOT_Numero)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.CCOT_Tipo)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.LOAD_ContractNRO)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.PUER_CodOrigen)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.PUER_CodDestino)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.NVIA_Codigo)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.CCOT_NumDoc)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.NVIA_NroViaje)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.NVIA_NroManifiesto)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.PUER_NomOrigen)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.PUER_NomDestino)
+        </td>
+        
+        <td>
+            @Html.ActionLink("Edit", "Edit", new { /* id=item.PrimaryKey */ }) |
+            @Html.ActionLink("Details", "Details", new { /* id=item.PrimaryKey */ }) |
+            @Html.ActionLink("Delete", "Delete", new { /* id=item.PrimaryKey */ })
+        </td>
+    </tr>
+}
+
+</table>

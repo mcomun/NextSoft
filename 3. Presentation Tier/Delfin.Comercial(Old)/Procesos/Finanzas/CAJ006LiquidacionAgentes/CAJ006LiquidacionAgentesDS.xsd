@@ -1,0 +1,53 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<xs:schema id="CAJ006LiquidacionAgentesDS" targetNamespace="http://tempuri.org/CAJ006LiquidacionAgentesDS.xsd" xmlns:mstns="http://tempuri.org/CAJ006LiquidacionAgentesDS.xsd" xmlns="http://tempuri.org/CAJ006LiquidacionAgentesDS.xsd" xmlns:xs="http://www.w3.org/2001/XMLSchema" xmlns:msdata="urn:schemas-microsoft-com:xml-msdata" xmlns:msprop="urn:schemas-microsoft-com:xml-msprop" attributeFormDefault="qualified" elementFormDefault="qualified">
+  <xs:annotation>
+    <xs:appinfo source="urn:schemas-microsoft-com:xml-msdatasource">
+      <DataSource DefaultConnectionIndex="0" FunctionsComponentName="QueriesTableAdapter" Modifier="AutoLayout, AnsiClass, Class, Public" SchemaSerializationMode="IncludeSchema" xmlns="urn:schemas-microsoft-com:xml-msdatasource">
+        <Connections />
+        <Tables />
+        <Sources />
+      </DataSource>
+    </xs:appinfo>
+  </xs:annotation>
+  <xs:element name="CAJ006LiquidacionAgentesDS" msdata:IsDataSet="true" msdata:UseCurrentLocale="true" msprop:EnableTableAdapterManager="true" msprop:Generator_DataSetName="CAJ006LiquidacionAgentesDS" msprop:Generator_UserDSName="CAJ006LiquidacionAgentesDS">
+    <xs:complexType>
+      <xs:choice minOccurs="0" maxOccurs="unbounded">
+        <xs:element name="LiquidacionAgentes" msprop:Generator_TableClassName="LiquidacionAgentesDataTable" msprop:Generator_TableVarName="tableLiquidacionAgentes" msprop:Generator_TablePropName="LiquidacionAgentes" msprop:Generator_RowDeletingName="LiquidacionAgentesRowDeleting" msprop:Generator_RowChangingName="LiquidacionAgentesRowChanging" msprop:Generator_RowEvHandlerName="LiquidacionAgentesRowChangeEventHandler" msprop:Generator_RowDeletedName="LiquidacionAgentesRowDeleted" msprop:Generator_UserTableName="LiquidacionAgentes" msprop:Generator_RowChangedName="LiquidacionAgentesRowChanged" msprop:Generator_RowEvArgName="LiquidacionAgentesRowChangeEvent" msprop:Generator_RowClassName="LiquidacionAgentesRow">
+          <xs:complexType>
+            <xs:sequence>
+              <xs:element name="Seleccionar" msprop:Generator_ColumnVarNameInTable="columnSeleccionar" msprop:Generator_ColumnPropNameInRow="Seleccionar" msprop:Generator_ColumnPropNameInTable="SeleccionarColumn" msprop:Generator_UserColumnName="Seleccionar" type="xs:string" minOccurs="0" />
+              <xs:element name="TIPO_TDO" msprop:Generator_ColumnVarNameInTable="columnTIPO_TDO" msprop:Generator_ColumnPropNameInRow="TIPO_TDO" msprop:Generator_ColumnPropNameInTable="TIPO_TDOColumn" msprop:Generator_UserColumnName="TIPO_TDO" type="xs:string" minOccurs="0" />
+              <xs:element name="CCCT_Serie" msprop:Generator_ColumnVarNameInTable="columnCCCT_Serie" msprop:Generator_ColumnPropNameInRow="CCCT_Serie" msprop:Generator_ColumnPropNameInTable="CCCT_SerieColumn" msprop:Generator_UserColumnName="CCCT_Serie" type="xs:string" minOccurs="0" />
+              <xs:element name="CCCT_Numero" msprop:Generator_ColumnVarNameInTable="columnCCCT_Numero" msprop:Generator_ColumnPropNameInRow="CCCT_Numero" msprop:Generator_ColumnPropNameInTable="CCCT_NumeroColumn" msprop:Generator_UserColumnName="CCCT_Numero" type="xs:string" minOccurs="0" />
+              <xs:element name="CCCT_FechaEmision" msprop:Generator_ColumnVarNameInTable="columnCCCT_FechaEmision" msprop:Generator_ColumnPropNameInRow="CCCT_FechaEmision" msprop:Generator_ColumnPropNameInTable="CCCT_FechaEmisionColumn" msprop:Generator_UserColumnName="CCCT_FechaEmision" type="xs:string" minOccurs="0" />
+              <xs:element name="OV_OP" msprop:Generator_ColumnVarNameInTable="columnOV_OP" msprop:Generator_ColumnPropNameInRow="OV_OP" msprop:Generator_ColumnPropNameInTable="OV_OPColumn" msprop:Generator_UserColumnName="OV_OP" type="xs:string" minOccurs="0" />
+              <xs:element name="FEmbarque" msprop:Generator_ColumnVarNameInTable="columnFEmbarque" msprop:Generator_ColumnPropNameInRow="FEmbarque" msprop:Generator_ColumnPropNameInTable="FEmbarqueColumn" msprop:Generator_UserColumnName="FEmbarque" type="xs:string" minOccurs="0" />
+              <xs:element name="FDescarga" msprop:Generator_ColumnVarNameInTable="columnFDescarga" msprop:Generator_ColumnPropNameInRow="FDescarga" msprop:Generator_ColumnPropNameInTable="FDescargaColumn" msprop:Generator_UserColumnName="FDescarga" type="xs:string" minOccurs="0" />
+              <xs:element name="NAVE_Nombre" msprop:Generator_ColumnVarNameInTable="columnNAVE_Nombre" msprop:Generator_ColumnPropNameInRow="NAVE_Nombre" msprop:Generator_ColumnPropNameInTable="NAVE_NombreColumn" msprop:Generator_UserColumnName="NAVE_Nombre" type="xs:string" minOccurs="0" />
+              <xs:element name="DOOV_MBL" msprop:Generator_ColumnVarNameInTable="columnDOOV_MBL" msprop:Generator_ColumnPropNameInRow="DOOV_MBL" msprop:Generator_ColumnPropNameInTable="DOOV_MBLColumn" msprop:Generator_UserColumnName="DOOV_MBL" type="xs:string" minOccurs="0" />
+              <xs:element name="DOOV_HBL" msprop:Generator_ColumnVarNameInTable="columnDOOV_HBL" msprop:Generator_ColumnPropNameInRow="DOOV_HBL" msprop:Generator_ColumnPropNameInTable="DOOV_HBLColumn" msprop:Generator_UserColumnName="DOOV_HBL" type="xs:string" minOccurs="0" />
+              <xs:element name="UNegocio" msprop:Generator_ColumnVarNameInTable="columnUNegocio" msprop:Generator_ColumnPropNameInRow="UNegocio" msprop:Generator_ColumnPropNameInTable="UNegocioColumn" msprop:Generator_UserColumnName="UNegocio" type="xs:string" minOccurs="0" />
+              <xs:element name="TIPO_MND" msprop:Generator_ColumnVarNameInTable="columnTIPO_MND" msprop:Generator_ColumnPropNameInRow="TIPO_MND" msprop:Generator_ColumnPropNameInTable="TIPO_MNDColumn" msprop:Generator_UserColumnName="TIPO_MND" type="xs:string" minOccurs="0" />
+              <xs:element name="Conciliado" msprop:Generator_ColumnVarNameInTable="columnConciliado" msprop:Generator_ColumnPropNameInRow="Conciliado" msprop:Generator_ColumnPropNameInTable="ConciliadoColumn" msprop:Generator_UserColumnName="Conciliado" type="xs:string" minOccurs="0" />
+              <xs:element name="CONC_FecConciliacion" msprop:Generator_ColumnVarNameInTable="columnCONC_FecConciliacion" msprop:Generator_ColumnPropNameInRow="CONC_FecConciliacion" msprop:Generator_ColumnPropNameInTable="CONC_FecConciliacionColumn" msprop:Generator_UserColumnName="CONC_FecConciliacion" type="xs:string" minOccurs="0" />
+              <xs:element name="CCCT_Codigo" msprop:Generator_ColumnVarNameInTable="columnCCCT_Codigo" msprop:Generator_ColumnPropNameInRow="CCCT_Codigo" msprop:Generator_ColumnPropNameInTable="CCCT_CodigoColumn" msprop:Generator_UserColumnName="CCCT_Codigo" type="xs:string" minOccurs="0" />
+              <xs:element name="CCCT_Pendiente_Cargo" msprop:Generator_ColumnVarNameInTable="columnCCCT_Pendiente_Cargo" msprop:Generator_ColumnPropNameInRow="CCCT_Pendiente_Cargo" msprop:Generator_ColumnPropNameInTable="CCCT_Pendiente_CargoColumn" msprop:Generator_UserColumnName="CCCT_Pendiente_Cargo" type="xs:decimal" minOccurs="0" />
+              <xs:element name="CCCT_Pendiente_Abono" msprop:Generator_ColumnVarNameInTable="columnCCCT_Pendiente_Abono" msprop:Generator_ColumnPropNameInRow="CCCT_Pendiente_Abono" msprop:Generator_ColumnPropNameInTable="CCCT_Pendiente_AbonoColumn" msprop:Generator_UserColumnName="CCCT_Pendiente_Abono" type="xs:decimal" minOccurs="0" />
+              <xs:element name="FechaETA" msprop:Generator_ColumnVarNameInTable="columnFechaETA" msprop:Generator_ColumnPropNameInRow="FechaETA" msprop:Generator_ColumnPropNameInTable="FechaETAColumn" msprop:Generator_UserColumnName="FechaETA" type="xs:string" minOccurs="0" />
+              <xs:element name="PagoMNDOriginal" msprop:Generator_ColumnVarNameInTable="columnPagoMNDOriginal" msprop:Generator_ColumnPropNameInRow="PagoMNDOriginal" msprop:Generator_ColumnPropNameInTable="PagoMNDOriginalColumn" msprop:Generator_UserColumnName="PagoMNDOriginal" type="xs:string" minOccurs="0" />
+            </xs:sequence>
+          </xs:complexType>
+        </xs:element>
+        <xs:element name="LiquidacionAgentesTotal" msprop:Generator_TableClassName="LiquidacionAgentesTotalDataTable" msprop:Generator_TableVarName="tableLiquidacionAgentesTotal" msprop:Generator_TablePropName="LiquidacionAgentesTotal" msprop:Generator_RowDeletingName="LiquidacionAgentesTotalRowDeleting" msprop:Generator_RowChangingName="LiquidacionAgentesTotalRowChanging" msprop:Generator_RowEvHandlerName="LiquidacionAgentesTotalRowChangeEventHandler" msprop:Generator_RowDeletedName="LiquidacionAgentesTotalRowDeleted" msprop:Generator_UserTableName="LiquidacionAgentesTotal" msprop:Generator_RowChangedName="LiquidacionAgentesTotalRowChanged" msprop:Generator_RowEvArgName="LiquidacionAgentesTotalRowChangeEvent" msprop:Generator_RowClassName="LiquidacionAgentesTotalRow">
+          <xs:complexType>
+            <xs:sequence>
+              <xs:element name="TIPO_MND" msprop:Generator_ColumnVarNameInTable="columnTIPO_MND" msprop:Generator_ColumnPropNameInRow="TIPO_MND" msprop:Generator_ColumnPropNameInTable="TIPO_MNDColumn" msprop:Generator_UserColumnName="TIPO_MND" type="xs:string" minOccurs="0" />
+              <xs:element name="CCCT_Pendiente_Cargo" msprop:Generator_ColumnVarNameInTable="columnCCCT_Pendiente_Cargo" msprop:Generator_ColumnPropNameInRow="CCCT_Pendiente_Cargo" msprop:Generator_ColumnPropNameInTable="CCCT_Pendiente_CargoColumn" msprop:Generator_UserColumnName="CCCT_Pendiente_Cargo" type="xs:decimal" minOccurs="0" />
+              <xs:element name="CCCT_Pendiente_Abono" msprop:Generator_ColumnVarNameInTable="columnCCCT_Pendiente_Abono" msprop:Generator_ColumnPropNameInRow="CCCT_Pendiente_Abono" msprop:Generator_ColumnPropNameInTable="CCCT_Pendiente_AbonoColumn" msprop:Generator_UserColumnName="CCCT_Pendiente_Abono" type="xs:decimal" minOccurs="0" />
+            </xs:sequence>
+          </xs:complexType>
+        </xs:element>
+      </xs:choice>
+    </xs:complexType>
+  </xs:element>
+</xs:schema>

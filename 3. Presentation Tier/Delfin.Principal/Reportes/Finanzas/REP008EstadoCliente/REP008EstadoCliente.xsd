@@ -1,0 +1,39 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<xs:schema id="REP008EstadoCliente" targetNamespace="http://tempuri.org/REP008EstadoCliente.xsd" xmlns:mstns="http://tempuri.org/REP008EstadoCliente.xsd" xmlns="http://tempuri.org/REP008EstadoCliente.xsd" xmlns:xs="http://www.w3.org/2001/XMLSchema" xmlns:msdata="urn:schemas-microsoft-com:xml-msdata" xmlns:msprop="urn:schemas-microsoft-com:xml-msprop" attributeFormDefault="qualified" elementFormDefault="qualified">
+  <xs:annotation>
+    <xs:appinfo source="urn:schemas-microsoft-com:xml-msdatasource">
+      <DataSource DefaultConnectionIndex="0" FunctionsComponentName="QueriesTableAdapter" Modifier="AutoLayout, AnsiClass, Class, Public" SchemaSerializationMode="IncludeSchema" xmlns="urn:schemas-microsoft-com:xml-msdatasource">
+        <Connections />
+        <Tables />
+        <Sources />
+      </DataSource>
+    </xs:appinfo>
+  </xs:annotation>
+  <xs:element name="REP008EstadoCliente" msdata:IsDataSet="true" msdata:UseCurrentLocale="true" msprop:EnableTableAdapterManager="true" msprop:Generator_DataSetName="REP008EstadoCliente" msprop:Generator_UserDSName="REP008EstadoCliente">
+    <xs:complexType>
+      <xs:choice minOccurs="0" maxOccurs="unbounded">
+        <xs:element name="CAJ_REPOSS_EstadoCuenta" msprop:Generator_TableClassName="CAJ_REPOSS_EstadoCuentaDataTable" msprop:Generator_TableVarName="tableCAJ_REPOSS_EstadoCuenta" msprop:Generator_RowChangedName="CAJ_REPOSS_EstadoCuentaRowChanged" msprop:Generator_TablePropName="CAJ_REPOSS_EstadoCuenta" msprop:Generator_RowDeletingName="CAJ_REPOSS_EstadoCuentaRowDeleting" msprop:Generator_RowChangingName="CAJ_REPOSS_EstadoCuentaRowChanging" msprop:Generator_RowEvHandlerName="CAJ_REPOSS_EstadoCuentaRowChangeEventHandler" msprop:Generator_RowDeletedName="CAJ_REPOSS_EstadoCuentaRowDeleted" msprop:Generator_RowClassName="CAJ_REPOSS_EstadoCuentaRow" msprop:Generator_UserTableName="CAJ_REPOSS_EstadoCuenta" msprop:Generator_RowEvArgName="CAJ_REPOSS_EstadoCuentaRowChangeEvent">
+          <xs:complexType>
+            <xs:sequence>
+              <xs:element name="TIPODOCUMENTO" msprop:Generator_ColumnVarNameInTable="columnTIPODOCUMENTO" msprop:Generator_ColumnPropNameInRow="TIPODOCUMENTO" msprop:Generator_ColumnPropNameInTable="TIPODOCUMENTOColumn" msprop:Generator_UserColumnName="TIPODOCUMENTO" type="xs:string" minOccurs="0" />
+              <xs:element name="SERIE" msprop:Generator_ColumnVarNameInTable="columnSERIE" msprop:Generator_ColumnPropNameInRow="SERIE" msprop:Generator_ColumnPropNameInTable="SERIEColumn" msprop:Generator_UserColumnName="SERIE" type="xs:string" minOccurs="0" />
+              <xs:element name="NUMERO" msprop:Generator_ColumnVarNameInTable="columnNUMERO" msprop:Generator_ColumnPropNameInRow="NUMERO" msprop:Generator_ColumnPropNameInTable="NUMEROColumn" msprop:Generator_UserColumnName="NUMERO" type="xs:string" minOccurs="0" />
+              <xs:element name="TIPO" msprop:Generator_ColumnVarNameInTable="columnTIPO" msprop:Generator_ColumnPropNameInRow="TIPO" msprop:Generator_ColumnPropNameInTable="TIPOColumn" msprop:Generator_UserColumnName="TIPO" type="xs:string" minOccurs="0" />
+              <xs:element name="MOVIMIENTO" msprop:Generator_ColumnVarNameInTable="columnMOVIMIENTO" msprop:Generator_ColumnPropNameInRow="MOVIMIENTO" msprop:Generator_ColumnPropNameInTable="MOVIMIENTOColumn" msprop:Generator_UserColumnName="MOVIMIENTO" type="xs:string" minOccurs="0" />
+              <xs:element name="TIPOMOVIMIENTO" msprop:Generator_ColumnVarNameInTable="columnTIPOMOVIMIENTO" msprop:Generator_ColumnPropNameInRow="TIPOMOVIMIENTO" msprop:Generator_ColumnPropNameInTable="TIPOMOVIMIENTOColumn" msprop:Generator_UserColumnName="TIPOMOVIMIENTO" type="xs:string" minOccurs="0" />
+              <xs:element name="FECHA" msprop:Generator_ColumnVarNameInTable="columnFECHA" msprop:Generator_ColumnPropNameInRow="FECHA" msprop:Generator_ColumnPropNameInTable="FECHAColumn" msprop:Generator_UserColumnName="FECHA" type="xs:string" minOccurs="0" />
+              <xs:element name="MONEDA" msprop:Generator_ColumnVarNameInTable="columnMONEDA" msprop:Generator_ColumnPropNameInRow="MONEDA" msprop:Generator_ColumnPropNameInTable="MONEDAColumn" msprop:Generator_UserColumnName="MONEDA" type="xs:string" minOccurs="0" />
+              <xs:element name="DEBE_SOL" msprop:Generator_ColumnVarNameInTable="columnDEBE_SOL" msprop:Generator_ColumnPropNameInRow="DEBE_SOL" msprop:Generator_ColumnPropNameInTable="DEBE_SOLColumn" msprop:Generator_UserColumnName="DEBE_SOL" type="xs:decimal" minOccurs="0" />
+              <xs:element name="HABER_SOL" msprop:Generator_ColumnVarNameInTable="columnHABER_SOL" msprop:Generator_ColumnPropNameInRow="HABER_SOL" msprop:Generator_ColumnPropNameInTable="HABER_SOLColumn" msprop:Generator_UserColumnName="HABER_SOL" type="xs:decimal" minOccurs="0" />
+              <xs:element name="TIPOCAMBIO" msprop:Generator_ColumnVarNameInTable="columnTIPOCAMBIO" msprop:Generator_ColumnPropNameInRow="TIPOCAMBIO" msprop:Generator_ColumnPropNameInTable="TIPOCAMBIOColumn" msprop:Generator_UserColumnName="TIPOCAMBIO" type="xs:decimal" minOccurs="0" />
+              <xs:element name="DEBE_DOL" msprop:Generator_ColumnVarNameInTable="columnDEBE_DOL" msprop:Generator_ColumnPropNameInRow="DEBE_DOL" msprop:Generator_ColumnPropNameInTable="DEBE_DOLColumn" msprop:Generator_UserColumnName="DEBE_DOL" type="xs:decimal" minOccurs="0" />
+              <xs:element name="HABER_DOL" msprop:Generator_ColumnVarNameInTable="columnHABER_DOL" msprop:Generator_ColumnPropNameInRow="HABER_DOL" msprop:Generator_ColumnPropNameInTable="HABER_DOLColumn" msprop:Generator_UserColumnName="HABER_DOL" type="xs:decimal" minOccurs="0" />
+              <xs:element name="CCCT_Codigo" msprop:Generator_ColumnVarNameInTable="columnCCCT_Codigo" msprop:Generator_ColumnPropNameInRow="CCCT_Codigo" msprop:Generator_ColumnPropNameInTable="CCCT_CodigoColumn" msprop:Generator_UserColumnName="CCCT_Codigo" type="xs:string" minOccurs="0" />
+              <xs:element name="DCCT_Item" msprop:Generator_ColumnVarNameInTable="columnDCCT_Item" msprop:Generator_ColumnPropNameInRow="DCCT_Item" msprop:Generator_ColumnPropNameInTable="DCCT_ItemColumn" msprop:Generator_UserColumnName="DCCT_Item" type="xs:string" minOccurs="0" />
+            </xs:sequence>
+          </xs:complexType>
+        </xs:element>
+      </xs:choice>
+    </xs:complexType>
+  </xs:element>
+</xs:schema>

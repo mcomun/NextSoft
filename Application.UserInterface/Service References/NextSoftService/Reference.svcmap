@@ -1,0 +1,38 @@
+<?xml version="1.0" encoding="utf-8"?>
+<ReferenceGroup xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:xsd="http://www.w3.org/2001/XMLSchema" ID="61fe07bb-522d-45b8-8915-63c5083b9c66" xmlns="urn:schemas-microsoft-com:xml-wcfservicemap">
+  <ClientOptions>
+    <GenerateAsynchronousMethods>false</GenerateAsynchronousMethods>
+    <GenerateTaskBasedAsynchronousMethod>true</GenerateTaskBasedAsynchronousMethod>
+    <EnableDataBinding>true</EnableDataBinding>
+    <ExcludedTypes />
+    <ImportXmlTypes>false</ImportXmlTypes>
+    <GenerateInternalTypes>false</GenerateInternalTypes>
+    <GenerateMessageContracts>false</GenerateMessageContracts>
+    <NamespaceMappings />
+    <CollectionMappings />
+    <GenerateSerializableTypes>true</GenerateSerializableTypes>
+    <Serializer>Auto</Serializer>
+    <UseSerializerForFaults>true</UseSerializerForFaults>
+    <ReferenceAllAssemblies>true</ReferenceAllAssemblies>
+    <ReferencedAssemblies />
+    <ReferencedDataContractTypes />
+    <ServiceContractMappings />
+  </ClientOptions>
+  <MetadataSources>
+    <MetadataSource Address="http://apps.delfingroupco.com.pe:766/NextSoftService.svc" Protocol="http" SourceId="1" />
+  </MetadataSources>
+  <Metadata>
+    <MetadataFile FileName="NextSoftService.xsd" MetadataType="Schema" ID="0f046c5e-50f3-4deb-8a60-9f9b3b972422" SourceId="1" SourceUrl="http://apps.delfingroupco.com.pe:766/NextSoftService.svc?xsd=xsd4" />
+    <MetadataFile FileName="NextSoftService1.xsd" MetadataType="Schema" ID="c121103d-b887-405c-b40a-a24c1bec0cfa" SourceId="1" SourceUrl="http://apps.delfingroupco.com.pe:766/NextSoftService.svc?xsd=xsd5" />
+    <MetadataFile FileName="NextSoftService.disco" MetadataType="Disco" ID="fc1538b3-3156-4b4c-8c21-a877c3407b46" SourceId="1" SourceUrl="http://apps.delfingroupco.com.pe:766/NextSoftService.svc?disco" />
+    <MetadataFile FileName="NextSoftService2.xsd" MetadataType="Schema" ID="bf0127a1-8236-4e4c-9a8c-f2fe1b964ae5" SourceId="1" SourceUrl="http://apps.delfingroupco.com.pe:766/NextSoftService.svc?xsd=xsd3" />
+    <MetadataFile FileName="NextSoftService3.xsd" MetadataType="Schema" ID="254681b6-1795-4f23-8af9-3af2b511d5e3" SourceId="1" SourceUrl="http://apps.delfingroupco.com.pe:766/NextSoftService.svc?xsd=xsd0" />
+    <MetadataFile FileName="NextSoftService4.xsd" MetadataType="Schema" ID="691a6196-a6c9-4b86-8f7e-1a82bf886e28" SourceId="1" SourceUrl="http://apps.delfingroupco.com.pe:766/NextSoftService.svc?xsd=xsd1" />
+    <MetadataFile FileName="NextSoftService5.xsd" MetadataType="Schema" ID="21672fdf-872b-497b-b39a-75dd5831a91e" SourceId="1" SourceUrl="http://apps.delfingroupco.com.pe:766/NextSoftService.svc?xsd=xsd2" />
+    <MetadataFile FileName="NextSoftService.wsdl" MetadataType="Wsdl" ID="4a9689a8-4c45-4985-a66e-75c9b81dbc66" SourceId="1" SourceUrl="http://apps.delfingroupco.com.pe:766/NextSoftService.svc?wsdl" />
+  </Metadata>
+  <Extensions>
+    <ExtensionFile FileName="configuration91.svcinfo" Name="configuration91.svcinfo" />
+    <ExtensionFile FileName="configuration.svcinfo" Name="configuration.svcinfo" />
+  </Extensions>
+</ReferenceGroup>

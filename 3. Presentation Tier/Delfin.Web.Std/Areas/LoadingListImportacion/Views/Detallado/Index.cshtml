@@ -1,0 +1,81 @@
+﻿@using Delfin.Web.Std.Resources.Shared
+@using Delfin.Web.Std.Resources.LoadingListImportacion.Detallado
+@using Delfin.Web.Std.Areas.LoadingListImportacion.Models
+@model LoadingListImportacionModel
+
+@{
+   ViewBag.Title = @Html.Raw(IndexResource.EtiquetaTitulo);
+   Layout = "~/Views/Shared/_Layout.cshtml";
+}
+
+
+
+@section breadcrumb{@Html.Raw(Resource.EtiquetaMenuLoadingListImportacionDetallado)}
+
+<div>
+    <div class="m-b-md">
+        <h4 class="m-b-none col-xs-12 col-sm-9">@Html.Raw(IndexResource.EtiquetaTitulo)</h4>
+    </div>
+      
+   @using (Html.BeginForm("UploadFile", "Detallado", FormMethod.Post, new { enctype = "multipart/form-data" }))
+   {      
+        <section id="divCriterioBusqueda" class="panel panel-default">
+            <header class="panel-heading">
+               <br />
+               <br />
+                  
+               <table>
+                  <tr>
+                     <td style="width:120px;"></td>
+                     <td style="width:20px;"></td>
+                     <td style="width:360px;"></td>
+                  </tr>
+                  @*<tr>
+                     <td>@Html.Label(IndexResource.EtiquetaViaje)</td>
+                     <td>:</td>
+                     <td><input id="txtViaje"   name="Viaje" class="input-s-sm form-control" type="text" placeholder="@Html.Raw(IndexResource.EtiquetaViaje)" style="display: inline;"/></td>
+                  </tr>*@
+                  <tr>
+                     <td>@Html.Label(IndexResource.EtiquetaVia)</td>
+                     <td>:</td>
+                     <td>
+                        @Html.DropDownListFor(model => model.Via, Model.ListContantesVIA)
+                        @*@Html.ValidationMessageFor(model => model.Via)*@
+                     </td>
+                  </tr>
+
+                  <tr>
+                     <td>@Html.Label(IndexResource.EtiquetaFechaCarga)</td>
+                     <td>:</td>
+                     <td>
+                        @Html.TextBoxFor(model => model.CargaFecha)
+                     </td>
+                  </tr>
+                 
+                  <tr>
+                     <td>@Html.Label(IndexResource.EtiquetaArchivo)</td>
+                     <td>:</td>
+                     <td>
+                        @Html.TextBoxFor(model => model.Archivo, new { type = "file" })
+                     </td>
+                  </tr>
+                  <tr>
+                     <td></td>
+                     <td></td>
+                     <td><input id="btnUpload" type="submit" class="btn btn-primary"value='@Html.Raw(GeneralResource.EtiquetaUpload)' /></td>
+                  </tr>
+                   @*<tr>
+                     <td colspan="3">
+                        @Html.ValidationSummary()
+                     </td>
+                  </tr>*@
+                  <tr>
+                     <td colspan="3">
+                        @Html.DisplayFor(model => model.LOAD_MensajeError)
+                     </td>
+                  </tr>
+               </table>
+            </header>
+        </section>
+   }
+</div>

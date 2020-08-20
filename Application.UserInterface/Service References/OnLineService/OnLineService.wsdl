@@ -1,0 +1,518 @@
+<?xml version="1.0" encoding="utf-8"?>
+<wsdl:definitions xmlns:wsap="http://schemas.xmlsoap.org/ws/2004/08/addressing/policy" xmlns:wsa10="http://www.w3.org/2005/08/addressing" xmlns:tns="http://tempuri.org/" xmlns:msc="http://schemas.microsoft.com/ws/2005/12/wsdl/contract" xmlns:soapenc="http://schemas.xmlsoap.org/soap/encoding/" xmlns:wsx="http://schemas.xmlsoap.org/ws/2004/09/mex" xmlns:wsp="http://schemas.xmlsoap.org/ws/2004/09/policy" xmlns:wsam="http://www.w3.org/2007/05/addressing/metadata" xmlns:wsa="http://schemas.xmlsoap.org/ws/2004/08/addressing" xmlns:wsaw="http://www.w3.org/2006/05/addressing/wsdl" xmlns:soap="http://schemas.xmlsoap.org/wsdl/soap/" xmlns:soap12="http://schemas.xmlsoap.org/wsdl/soap12/" xmlns:wsu="http://docs.oasis-open.org/wss/2004/01/oasis-200401-wss-wssecurity-utility-1.0.xsd" xmlns:xsd="http://www.w3.org/2001/XMLSchema" name="OnLineService" targetNamespace="http://tempuri.org/" xmlns:wsdl="http://schemas.xmlsoap.org/wsdl/">
+  <wsdl:types>
+    <xsd:schema targetNamespace="http://tempuri.org/Imports">
+      <xsd:import schemaLocation="http://apps.delfingroupco.com.pe:767/OnLineService.svc?xsd=xsd0" namespace="http://tempuri.org/" />
+      <xsd:import schemaLocation="http://apps.delfingroupco.com.pe:767/OnLineService.svc?xsd=xsd1" namespace="http://schemas.microsoft.com/2003/10/Serialization/" />
+      <xsd:import schemaLocation="http://apps.delfingroupco.com.pe:767/OnLineService.svc?xsd=xsd2" namespace="http://schemas.datacontract.org/2004/07/" />
+      <xsd:import schemaLocation="http://apps.delfingroupco.com.pe:767/OnLineService.svc?xsd=xsd3" />
+      <xsd:import schemaLocation="http://apps.delfingroupco.com.pe:767/OnLineService.svc?xsd=xsd4" namespace="http://schemas.microsoft.com/2003/10/Serialization/Arrays" />
+      <xsd:import schemaLocation="http://apps.delfingroupco.com.pe:767/OnLineService.svc?xsd=xsd5" namespace="http://schemas.datacontract.org/2004/07/System.Data" />
+      <xsd:import schemaLocation="http://apps.delfingroupco.com.pe:767/OnLineService.svc?xsd=xsd6" namespace="http://schemas.datacontract.org/2004/07/Application.BusinessEntities" />
+    </xsd:schema>
+  </wsdl:types>
+  <wsdl:message name="IOnLineService_GetData_InputMessage">
+    <wsdl:part name="parameters" element="tns:GetData" />
+  </wsdl:message>
+  <wsdl:message name="IOnLineService_GetData_OutputMessage">
+    <wsdl:part name="parameters" element="tns:GetDataResponse" />
+  </wsdl:message>
+  <wsdl:message name="IOnLineService_GetDataUsingDataContract_InputMessage">
+    <wsdl:part name="parameters" element="tns:GetDataUsingDataContract" />
+  </wsdl:message>
+  <wsdl:message name="IOnLineService_GetDataUsingDataContract_OutputMessage">
+    <wsdl:part name="parameters" element="tns:GetDataUsingDataContractResponse" />
+  </wsdl:message>
+  <wsdl:message name="IOnLineService_ExecuteSQL_InputMessage">
+    <wsdl:part name="parameters" element="tns:ExecuteSQL" />
+  </wsdl:message>
+  <wsdl:message name="IOnLineService_ExecuteSQL_OutputMessage">
+    <wsdl:part name="parameters" element="tns:ExecuteSQLResponse" />
+  </wsdl:message>
+  <wsdl:message name="IOnLineService_ExecuteSQLNonQuery_InputMessage">
+    <wsdl:part name="parameters" element="tns:ExecuteSQLNonQuery" />
+  </wsdl:message>
+  <wsdl:message name="IOnLineService_ExecuteSQLNonQuery_OutputMessage">
+    <wsdl:part name="parameters" element="tns:ExecuteSQLNonQueryResponse" />
+  </wsdl:message>
+  <wsdl:message name="IOnLineService_VoyageQuery_InputMessage">
+    <wsdl:part name="parameters" element="tns:VoyageQuery" />
+  </wsdl:message>
+  <wsdl:message name="IOnLineService_VoyageQuery_OutputMessage">
+    <wsdl:part name="parameters" element="tns:VoyageQueryResponse" />
+  </wsdl:message>
+  <wsdl:message name="IOnLineService_VoyageQueryList_InputMessage">
+    <wsdl:part name="parameters" element="tns:VoyageQueryList" />
+  </wsdl:message>
+  <wsdl:message name="IOnLineService_VoyageQueryList_OutputMessage">
+    <wsdl:part name="parameters" element="tns:VoyageQueryListResponse" />
+  </wsdl:message>
+  <wsdl:message name="IOnLineService_InvoicingQuery_InputMessage">
+    <wsdl:part name="parameters" element="tns:InvoicingQuery" />
+  </wsdl:message>
+  <wsdl:message name="IOnLineService_InvoicingQuery_OutputMessage">
+    <wsdl:part name="parameters" element="tns:InvoicingQueryResponse" />
+  </wsdl:message>
+  <wsdl:message name="IOnLineService_CargoNoticeQuery_InputMessage">
+    <wsdl:part name="parameters" element="tns:CargoNoticeQuery" />
+  </wsdl:message>
+  <wsdl:message name="IOnLineService_CargoNoticeQuery_OutputMessage">
+    <wsdl:part name="parameters" element="tns:CargoNoticeQueryResponse" />
+  </wsdl:message>
+  <wsdl:message name="IOnLineService_GetVoyageByCustomer_InputMessage">
+    <wsdl:part name="parameters" element="tns:GetVoyageByCustomer" />
+  </wsdl:message>
+  <wsdl:message name="IOnLineService_GetVoyageByCustomer_OutputMessage">
+    <wsdl:part name="parameters" element="tns:GetVoyageByCustomerResponse" />
+  </wsdl:message>
+  <wsdl:message name="IOnLineService_CargoAddressingQuery_InputMessage">
+    <wsdl:part name="parameters" element="tns:CargoAddressingQuery" />
+  </wsdl:message>
+  <wsdl:message name="IOnLineService_CargoAddressingQuery_OutputMessage">
+    <wsdl:part name="parameters" element="tns:CargoAddressingQueryResponse" />
+  </wsdl:message>
+  <wsdl:message name="IOnLineService_CustomerDocumentQuery_InputMessage">
+    <wsdl:part name="parameters" element="tns:CustomerDocumentQuery" />
+  </wsdl:message>
+  <wsdl:message name="IOnLineService_CustomerDocumentQuery_OutputMessage">
+    <wsdl:part name="parameters" element="tns:CustomerDocumentQueryResponse" />
+  </wsdl:message>
+  <wsdl:message name="IOnLineService_CustomerDebtQuery_InputMessage">
+    <wsdl:part name="parameters" element="tns:CustomerDebtQuery" />
+  </wsdl:message>
+  <wsdl:message name="IOnLineService_CustomerDebtQuery_OutputMessage">
+    <wsdl:part name="parameters" element="tns:CustomerDebtQueryResponse" />
+  </wsdl:message>
+  <wsdl:message name="IOnLineService_HBLStatusQuery_InputMessage">
+    <wsdl:part name="parameters" element="tns:HBLStatusQuery" />
+  </wsdl:message>
+  <wsdl:message name="IOnLineService_HBLStatusQuery_OutputMessage">
+    <wsdl:part name="parameters" element="tns:HBLStatusQueryResponse" />
+  </wsdl:message>
+  <wsdl:message name="IOnLineService_RelatedCompanyQuery_InputMessage">
+    <wsdl:part name="parameters" element="tns:RelatedCompanyQuery" />
+  </wsdl:message>
+  <wsdl:message name="IOnLineService_RelatedCompanyQuery_OutputMessage">
+    <wsdl:part name="parameters" element="tns:RelatedCompanyQueryResponse" />
+  </wsdl:message>
+  <wsdl:message name="IOnLineService_InsertRelatedCompany_InputMessage">
+    <wsdl:part name="parameters" element="tns:InsertRelatedCompany" />
+  </wsdl:message>
+  <wsdl:message name="IOnLineService_InsertRelatedCompany_OutputMessage">
+    <wsdl:part name="parameters" element="tns:InsertRelatedCompanyResponse" />
+  </wsdl:message>
+  <wsdl:message name="IOnLineService_UpdateRelatedCompany_InputMessage">
+    <wsdl:part name="parameters" element="tns:UpdateRelatedCompany" />
+  </wsdl:message>
+  <wsdl:message name="IOnLineService_UpdateRelatedCompany_OutputMessage">
+    <wsdl:part name="parameters" element="tns:UpdateRelatedCompanyResponse" />
+  </wsdl:message>
+  <wsdl:message name="IOnLineService_StatusUpdateRelatedCompany_InputMessage">
+    <wsdl:part name="parameters" element="tns:StatusUpdateRelatedCompany" />
+  </wsdl:message>
+  <wsdl:message name="IOnLineService_StatusUpdateRelatedCompany_OutputMessage">
+    <wsdl:part name="parameters" element="tns:StatusUpdateRelatedCompanyResponse" />
+  </wsdl:message>
+  <wsdl:message name="IOnLineService_DeleteRelatedCompany_InputMessage">
+    <wsdl:part name="parameters" element="tns:DeleteRelatedCompany" />
+  </wsdl:message>
+  <wsdl:message name="IOnLineService_DeleteRelatedCompany_OutputMessage">
+    <wsdl:part name="parameters" element="tns:DeleteRelatedCompanyResponse" />
+  </wsdl:message>
+  <wsdl:message name="IOnLineService_GetAllRelatedCompany_InputMessage">
+    <wsdl:part name="parameters" element="tns:GetAllRelatedCompany" />
+  </wsdl:message>
+  <wsdl:message name="IOnLineService_GetAllRelatedCompany_OutputMessage">
+    <wsdl:part name="parameters" element="tns:GetAllRelatedCompanyResponse" />
+  </wsdl:message>
+  <wsdl:message name="IOnLineService_GetAllDataTableRelatedCompany_InputMessage">
+    <wsdl:part name="parameters" element="tns:GetAllDataTableRelatedCompany" />
+  </wsdl:message>
+  <wsdl:message name="IOnLineService_GetAllDataTableRelatedCompany_OutputMessage">
+    <wsdl:part name="parameters" element="tns:GetAllDataTableRelatedCompanyResponse" />
+  </wsdl:message>
+  <wsdl:message name="IOnLineService_GetDataList_InputMessage">
+    <wsdl:part name="parameters" element="tns:GetDataList" />
+  </wsdl:message>
+  <wsdl:message name="IOnLineService_GetDataList_OutputMessage">
+    <wsdl:part name="parameters" element="tns:GetDataListResponse" />
+  </wsdl:message>
+  <wsdl:message name="IOnLineService_GetRelatedCompany_InputMessage">
+    <wsdl:part name="parameters" element="tns:GetRelatedCompany" />
+  </wsdl:message>
+  <wsdl:message name="IOnLineService_GetRelatedCompany_OutputMessage">
+    <wsdl:part name="parameters" element="tns:GetRelatedCompanyResponse" />
+  </wsdl:message>
+  <wsdl:message name="IOnLineService_GetDataByEntityType_InputMessage">
+    <wsdl:part name="parameters" element="tns:GetDataByEntityType" />
+  </wsdl:message>
+  <wsdl:message name="IOnLineService_GetDataByEntityType_OutputMessage">
+    <wsdl:part name="parameters" element="tns:GetDataByEntityTypeResponse" />
+  </wsdl:message>
+  <wsdl:message name="IOnLineService_InsertCustomerRegister_InputMessage">
+    <wsdl:part name="parameters" element="tns:InsertCustomerRegister" />
+  </wsdl:message>
+  <wsdl:message name="IOnLineService_InsertCustomerRegister_OutputMessage">
+    <wsdl:part name="parameters" element="tns:InsertCustomerRegisterResponse" />
+  </wsdl:message>
+  <wsdl:message name="IOnLineService_StatusUpdateCustomerRegister_InputMessage">
+    <wsdl:part name="parameters" element="tns:StatusUpdateCustomerRegister" />
+  </wsdl:message>
+  <wsdl:message name="IOnLineService_StatusUpdateCustomerRegister_OutputMessage">
+    <wsdl:part name="parameters" element="tns:StatusUpdateCustomerRegisterResponse" />
+  </wsdl:message>
+  <wsdl:message name="IOnLineService_GetAllDataTableCustomerRegister_InputMessage">
+    <wsdl:part name="parameters" element="tns:GetAllDataTableCustomerRegister" />
+  </wsdl:message>
+  <wsdl:message name="IOnLineService_GetAllDataTableCustomerRegister_OutputMessage">
+    <wsdl:part name="parameters" element="tns:GetAllDataTableCustomerRegisterResponse" />
+  </wsdl:message>
+  <wsdl:portType name="IOnLineService">
+    <wsdl:operation name="GetData">
+      <wsdl:input wsaw:Action="http://tempuri.org/IOnLineService/GetData" message="tns:IOnLineService_GetData_InputMessage" />
+      <wsdl:output wsaw:Action="http://tempuri.org/IOnLineService/GetDataResponse" message="tns:IOnLineService_GetData_OutputMessage" />
+    </wsdl:operation>
+    <wsdl:operation name="GetDataUsingDataContract">
+      <wsdl:input wsaw:Action="http://tempuri.org/IOnLineService/GetDataUsingDataContract" message="tns:IOnLineService_GetDataUsingDataContract_InputMessage" />
+      <wsdl:output wsaw:Action="http://tempuri.org/IOnLineService/GetDataUsingDataContractResponse" message="tns:IOnLineService_GetDataUsingDataContract_OutputMessage" />
+    </wsdl:operation>
+    <wsdl:operation name="ExecuteSQL">
+      <wsdl:input wsaw:Action="http://tempuri.org/IOnLineService/ExecuteSQL" message="tns:IOnLineService_ExecuteSQL_InputMessage" />
+      <wsdl:output wsaw:Action="http://tempuri.org/IOnLineService/ExecuteSQLResponse" message="tns:IOnLineService_ExecuteSQL_OutputMessage" />
+    </wsdl:operation>
+    <wsdl:operation name="ExecuteSQLNonQuery">
+      <wsdl:input wsaw:Action="http://tempuri.org/IOnLineService/ExecuteSQLNonQuery" message="tns:IOnLineService_ExecuteSQLNonQuery_InputMessage" />
+      <wsdl:output wsaw:Action="http://tempuri.org/IOnLineService/ExecuteSQLNonQueryResponse" message="tns:IOnLineService_ExecuteSQLNonQuery_OutputMessage" />
+    </wsdl:operation>
+    <wsdl:operation name="VoyageQuery">
+      <wsdl:input wsaw:Action="http://tempuri.org/IOnLineService/VoyageQuery" message="tns:IOnLineService_VoyageQuery_InputMessage" />
+      <wsdl:output wsaw:Action="http://tempuri.org/IOnLineService/VoyageQueryResponse" message="tns:IOnLineService_VoyageQuery_OutputMessage" />
+    </wsdl:operation>
+    <wsdl:operation name="VoyageQueryList">
+      <wsdl:input wsaw:Action="http://tempuri.org/IOnLineService/VoyageQueryList" message="tns:IOnLineService_VoyageQueryList_InputMessage" />
+      <wsdl:output wsaw:Action="http://tempuri.org/IOnLineService/VoyageQueryListResponse" message="tns:IOnLineService_VoyageQueryList_OutputMessage" />
+    </wsdl:operation>
+    <wsdl:operation name="InvoicingQuery">
+      <wsdl:input wsaw:Action="http://tempuri.org/IOnLineService/InvoicingQuery" message="tns:IOnLineService_InvoicingQuery_InputMessage" />
+      <wsdl:output wsaw:Action="http://tempuri.org/IOnLineService/InvoicingQueryResponse" message="tns:IOnLineService_InvoicingQuery_OutputMessage" />
+    </wsdl:operation>
+    <wsdl:operation name="CargoNoticeQuery">
+      <wsdl:input wsaw:Action="http://tempuri.org/IOnLineService/CargoNoticeQuery" message="tns:IOnLineService_CargoNoticeQuery_InputMessage" />
+      <wsdl:output wsaw:Action="http://tempuri.org/IOnLineService/CargoNoticeQueryResponse" message="tns:IOnLineService_CargoNoticeQuery_OutputMessage" />
+    </wsdl:operation>
+    <wsdl:operation name="GetVoyageByCustomer">
+      <wsdl:input wsaw:Action="http://tempuri.org/IOnLineService/GetVoyageByCustomer" message="tns:IOnLineService_GetVoyageByCustomer_InputMessage" />
+      <wsdl:output wsaw:Action="http://tempuri.org/IOnLineService/GetVoyageByCustomerResponse" message="tns:IOnLineService_GetVoyageByCustomer_OutputMessage" />
+    </wsdl:operation>
+    <wsdl:operation name="CargoAddressingQuery">
+      <wsdl:input wsaw:Action="http://tempuri.org/IOnLineService/CargoAddressingQuery" message="tns:IOnLineService_CargoAddressingQuery_InputMessage" />
+      <wsdl:output wsaw:Action="http://tempuri.org/IOnLineService/CargoAddressingQueryResponse" message="tns:IOnLineService_CargoAddressingQuery_OutputMessage" />
+    </wsdl:operation>
+    <wsdl:operation name="CustomerDocumentQuery">
+      <wsdl:input wsaw:Action="http://tempuri.org/IOnLineService/CustomerDocumentQuery" message="tns:IOnLineService_CustomerDocumentQuery_InputMessage" />
+      <wsdl:output wsaw:Action="http://tempuri.org/IOnLineService/CustomerDocumentQueryResponse" message="tns:IOnLineService_CustomerDocumentQuery_OutputMessage" />
+    </wsdl:operation>
+    <wsdl:operation name="CustomerDebtQuery">
+      <wsdl:input wsaw:Action="http://tempuri.org/IOnLineService/CustomerDebtQuery" message="tns:IOnLineService_CustomerDebtQuery_InputMessage" />
+      <wsdl:output wsaw:Action="http://tempuri.org/IOnLineService/CustomerDebtQueryResponse" message="tns:IOnLineService_CustomerDebtQuery_OutputMessage" />
+    </wsdl:operation>
+    <wsdl:operation name="HBLStatusQuery">
+      <wsdl:input wsaw:Action="http://tempuri.org/IOnLineService/HBLStatusQuery" message="tns:IOnLineService_HBLStatusQuery_InputMessage" />
+      <wsdl:output wsaw:Action="http://tempuri.org/IOnLineService/HBLStatusQueryResponse" message="tns:IOnLineService_HBLStatusQuery_OutputMessage" />
+    </wsdl:operation>
+    <wsdl:operation name="RelatedCompanyQuery">
+      <wsdl:input wsaw:Action="http://tempuri.org/IOnLineService/RelatedCompanyQuery" message="tns:IOnLineService_RelatedCompanyQuery_InputMessage" />
+      <wsdl:output wsaw:Action="http://tempuri.org/IOnLineService/RelatedCompanyQueryResponse" message="tns:IOnLineService_RelatedCompanyQuery_OutputMessage" />
+    </wsdl:operation>
+    <wsdl:operation name="InsertRelatedCompany">
+      <wsdl:input wsaw:Action="http://tempuri.org/IOnLineService/InsertRelatedCompany" message="tns:IOnLineService_InsertRelatedCompany_InputMessage" />
+      <wsdl:output wsaw:Action="http://tempuri.org/IOnLineService/InsertRelatedCompanyResponse" message="tns:IOnLineService_InsertRelatedCompany_OutputMessage" />
+    </wsdl:operation>
+    <wsdl:operation name="UpdateRelatedCompany">
+      <wsdl:input wsaw:Action="http://tempuri.org/IOnLineService/UpdateRelatedCompany" message="tns:IOnLineService_UpdateRelatedCompany_InputMessage" />
+      <wsdl:output wsaw:Action="http://tempuri.org/IOnLineService/UpdateRelatedCompanyResponse" message="tns:IOnLineService_UpdateRelatedCompany_OutputMessage" />
+    </wsdl:operation>
+    <wsdl:operation name="StatusUpdateRelatedCompany">
+      <wsdl:input wsaw:Action="http://tempuri.org/IOnLineService/StatusUpdateRelatedCompany" message="tns:IOnLineService_StatusUpdateRelatedCompany_InputMessage" />
+      <wsdl:output wsaw:Action="http://tempuri.org/IOnLineService/StatusUpdateRelatedCompanyResponse" message="tns:IOnLineService_StatusUpdateRelatedCompany_OutputMessage" />
+    </wsdl:operation>
+    <wsdl:operation name="DeleteRelatedCompany">
+      <wsdl:input wsaw:Action="http://tempuri.org/IOnLineService/DeleteRelatedCompany" message="tns:IOnLineService_DeleteRelatedCompany_InputMessage" />
+      <wsdl:output wsaw:Action="http://tempuri.org/IOnLineService/DeleteRelatedCompanyResponse" message="tns:IOnLineService_DeleteRelatedCompany_OutputMessage" />
+    </wsdl:operation>
+    <wsdl:operation name="GetAllRelatedCompany">
+      <wsdl:input wsaw:Action="http://tempuri.org/IOnLineService/GetAllRelatedCompany" message="tns:IOnLineService_GetAllRelatedCompany_InputMessage" />
+      <wsdl:output wsaw:Action="http://tempuri.org/IOnLineService/GetAllRelatedCompanyResponse" message="tns:IOnLineService_GetAllRelatedCompany_OutputMessage" />
+    </wsdl:operation>
+    <wsdl:operation name="GetAllDataTableRelatedCompany">
+      <wsdl:input wsaw:Action="http://tempuri.org/IOnLineService/GetAllDataTableRelatedCompany" message="tns:IOnLineService_GetAllDataTableRelatedCompany_InputMessage" />
+      <wsdl:output wsaw:Action="http://tempuri.org/IOnLineService/GetAllDataTableRelatedCompanyResponse" message="tns:IOnLineService_GetAllDataTableRelatedCompany_OutputMessage" />
+    </wsdl:operation>
+    <wsdl:operation name="GetDataList">
+      <wsdl:input wsaw:Action="http://tempuri.org/IOnLineService/GetDataList" message="tns:IOnLineService_GetDataList_InputMessage" />
+      <wsdl:output wsaw:Action="http://tempuri.org/IOnLineService/GetDataListResponse" message="tns:IOnLineService_GetDataList_OutputMessage" />
+    </wsdl:operation>
+    <wsdl:operation name="GetRelatedCompany">
+      <wsdl:input wsaw:Action="http://tempuri.org/IOnLineService/GetRelatedCompany" message="tns:IOnLineService_GetRelatedCompany_InputMessage" />
+      <wsdl:output wsaw:Action="http://tempuri.org/IOnLineService/GetRelatedCompanyResponse" message="tns:IOnLineService_GetRelatedCompany_OutputMessage" />
+    </wsdl:operation>
+    <wsdl:operation name="GetDataByEntityType">
+      <wsdl:input wsaw:Action="http://tempuri.org/IOnLineService/GetDataByEntityType" message="tns:IOnLineService_GetDataByEntityType_InputMessage" />
+      <wsdl:output wsaw:Action="http://tempuri.org/IOnLineService/GetDataByEntityTypeResponse" message="tns:IOnLineService_GetDataByEntityType_OutputMessage" />
+    </wsdl:operation>
+    <wsdl:operation name="InsertCustomerRegister">
+      <wsdl:input wsaw:Action="http://tempuri.org/IOnLineService/InsertCustomerRegister" message="tns:IOnLineService_InsertCustomerRegister_InputMessage" />
+      <wsdl:output wsaw:Action="http://tempuri.org/IOnLineService/InsertCustomerRegisterResponse" message="tns:IOnLineService_InsertCustomerRegister_OutputMessage" />
+    </wsdl:operation>
+    <wsdl:operation name="StatusUpdateCustomerRegister">
+      <wsdl:input wsaw:Action="http://tempuri.org/IOnLineService/StatusUpdateCustomerRegister" message="tns:IOnLineService_StatusUpdateCustomerRegister_InputMessage" />
+      <wsdl:output wsaw:Action="http://tempuri.org/IOnLineService/StatusUpdateCustomerRegisterResponse" message="tns:IOnLineService_StatusUpdateCustomerRegister_OutputMessage" />
+    </wsdl:operation>
+    <wsdl:operation name="GetAllDataTableCustomerRegister">
+      <wsdl:input wsaw:Action="http://tempuri.org/IOnLineService/GetAllDataTableCustomerRegister" message="tns:IOnLineService_GetAllDataTableCustomerRegister_InputMessage" />
+      <wsdl:output wsaw:Action="http://tempuri.org/IOnLineService/GetAllDataTableCustomerRegisterResponse" message="tns:IOnLineService_GetAllDataTableCustomerRegister_OutputMessage" />
+    </wsdl:operation>
+  </wsdl:portType>
+  <wsdl:binding name="BasicHttpBinding_IOnLineService" type="tns:IOnLineService">
+    <soap:binding transport="http://schemas.xmlsoap.org/soap/http" />
+    <wsdl:operation name="GetData">
+      <soap:operation soapAction="http://tempuri.org/IOnLineService/GetData" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="GetDataUsingDataContract">
+      <soap:operation soapAction="http://tempuri.org/IOnLineService/GetDataUsingDataContract" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="ExecuteSQL">
+      <soap:operation soapAction="http://tempuri.org/IOnLineService/ExecuteSQL" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="ExecuteSQLNonQuery">
+      <soap:operation soapAction="http://tempuri.org/IOnLineService/ExecuteSQLNonQuery" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="VoyageQuery">
+      <soap:operation soapAction="http://tempuri.org/IOnLineService/VoyageQuery" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="VoyageQueryList">
+      <soap:operation soapAction="http://tempuri.org/IOnLineService/VoyageQueryList" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="InvoicingQuery">
+      <soap:operation soapAction="http://tempuri.org/IOnLineService/InvoicingQuery" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="CargoNoticeQuery">
+      <soap:operation soapAction="http://tempuri.org/IOnLineService/CargoNoticeQuery" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="GetVoyageByCustomer">
+      <soap:operation soapAction="http://tempuri.org/IOnLineService/GetVoyageByCustomer" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="CargoAddressingQuery">
+      <soap:operation soapAction="http://tempuri.org/IOnLineService/CargoAddressingQuery" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="CustomerDocumentQuery">
+      <soap:operation soapAction="http://tempuri.org/IOnLineService/CustomerDocumentQuery" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="CustomerDebtQuery">
+      <soap:operation soapAction="http://tempuri.org/IOnLineService/CustomerDebtQuery" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="HBLStatusQuery">
+      <soap:operation soapAction="http://tempuri.org/IOnLineService/HBLStatusQuery" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="RelatedCompanyQuery">
+      <soap:operation soapAction="http://tempuri.org/IOnLineService/RelatedCompanyQuery" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="InsertRelatedCompany">
+      <soap:operation soapAction="http://tempuri.org/IOnLineService/InsertRelatedCompany" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="UpdateRelatedCompany">
+      <soap:operation soapAction="http://tempuri.org/IOnLineService/UpdateRelatedCompany" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="StatusUpdateRelatedCompany">
+      <soap:operation soapAction="http://tempuri.org/IOnLineService/StatusUpdateRelatedCompany" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="DeleteRelatedCompany">
+      <soap:operation soapAction="http://tempuri.org/IOnLineService/DeleteRelatedCompany" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="GetAllRelatedCompany">
+      <soap:operation soapAction="http://tempuri.org/IOnLineService/GetAllRelatedCompany" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="GetAllDataTableRelatedCompany">
+      <soap:operation soapAction="http://tempuri.org/IOnLineService/GetAllDataTableRelatedCompany" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="GetDataList">
+      <soap:operation soapAction="http://tempuri.org/IOnLineService/GetDataList" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="GetRelatedCompany">
+      <soap:operation soapAction="http://tempuri.org/IOnLineService/GetRelatedCompany" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="GetDataByEntityType">
+      <soap:operation soapAction="http://tempuri.org/IOnLineService/GetDataByEntityType" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="InsertCustomerRegister">
+      <soap:operation soapAction="http://tempuri.org/IOnLineService/InsertCustomerRegister" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="StatusUpdateCustomerRegister">
+      <soap:operation soapAction="http://tempuri.org/IOnLineService/StatusUpdateCustomerRegister" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="GetAllDataTableCustomerRegister">
+      <soap:operation soapAction="http://tempuri.org/IOnLineService/GetAllDataTableCustomerRegister" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+  </wsdl:binding>
+  <wsdl:service name="OnLineService">
+    <wsdl:port name="BasicHttpBinding_IOnLineService" binding="tns:BasicHttpBinding_IOnLineService">
+      <soap:address location="http://apps.delfingroupco.com.pe:767/OnLineService.svc" />
+    </wsdl:port>
+  </wsdl:service>
+</wsdl:definitions>

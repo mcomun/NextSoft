@@ -1,0 +1,72 @@
+﻿@model Delfin.Web.Models.LoadingListModel
+
+@{
+   ViewBag.Title = "Home Page";
+}
+@section featured {
+    <section class="featured">
+        <div class="content-wrapper">
+            <hgroup class="title">
+                <h1>@ViewBag.Title.</h1>
+            </hgroup>
+        </div>
+    </section>
+}
+
+@using (Html.BeginForm("Import", "Home", FormMethod.Post, new { enctype = "multipart/form-data" }))
+{      
+     
+
+<table>
+   <tr>
+      <td>Nave Viaje</td>
+      <td>:</td>
+      <td><input type="text" name="NVIA_Codigo" /> </td>
+   </tr>
+   @*<tr>
+      <td>Régimen</td>
+      <td>:</td>
+      <td>@Html.DropDownListFor(model => model.CONS_CodRGM, Model.ListContantesRGM)</td>
+   </tr>
+   <tr>
+      <td>Vía</td>
+      <td>:</td>
+      <td>@Html.DropDownListFor(model => model.CONS_CodVIA, Model.ListContantesVIA)</td>
+   </tr>*@
+   <tr>
+      <td>Archivo</td>
+      <td>:</td>
+      <td><input type="file" name="file" /> </td>
+   </tr>
+   <tr>
+      <td></td>
+      <td></td>
+      <td><input type="submit" name="UploadFile" value="Importar"/></td>
+   </tr>
+   <tr>
+      <td colspan="3">@Html.DisplayText("LOAD_Error")</td>
+   </tr>
+</table>
+   
+   <table>
+   @foreach (var item in Model.ListLoadingList) {
+    <tr>
+        <td>
+            @Html.DisplayFor(modelItem => item.LOAD_Codigo)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.CCOT_Tipo)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.CCOT_Numero)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.LOAD_Shipper)
+        </td>
+         <th>
+            @Html.DisplayFor(modelItem => item.LOAD_Consignee)
+        </th>
+    </tr>      
+   }
+   </table>
+}

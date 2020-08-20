@@ -1,0 +1,38 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<xs:schema id="DSOPE005ConsultaServicios" targetNamespace="http://tempuri.org/DSOPE005ConsultaServicios.xsd" xmlns:mstns="http://tempuri.org/DSOPE005ConsultaServicios.xsd" xmlns="http://tempuri.org/DSOPE005ConsultaServicios.xsd" xmlns:xs="http://www.w3.org/2001/XMLSchema" xmlns:msdata="urn:schemas-microsoft-com:xml-msdata" xmlns:msprop="urn:schemas-microsoft-com:xml-msprop" attributeFormDefault="qualified" elementFormDefault="qualified">
+  <xs:annotation>
+    <xs:appinfo source="urn:schemas-microsoft-com:xml-msdatasource">
+      <DataSource DefaultConnectionIndex="0" FunctionsComponentName="QueriesTableAdapter" Modifier="AutoLayout, AnsiClass, Class, Public" SchemaSerializationMode="IncludeSchema" xmlns="urn:schemas-microsoft-com:xml-msdatasource">
+        <Connections />
+        <Tables />
+        <Sources />
+      </DataSource>
+    </xs:appinfo>
+  </xs:annotation>
+  <xs:element name="DSOPE005ConsultaServicios" msdata:IsDataSet="true" msdata:UseCurrentLocale="true" msprop:EnableTableAdapterManager="true" msprop:Generator_DataSetName="DSOPE005ConsultaServicios" msprop:Generator_UserDSName="DSOPE005ConsultaServicios">
+    <xs:complexType>
+      <xs:choice minOccurs="0" maxOccurs="unbounded">
+        <xs:element name="DT_ConsultaServicios" msprop:Generator_TableClassName="DT_ConsultaServiciosDataTable" msprop:Generator_TableVarName="tableDT_ConsultaServicios" msprop:Generator_RowChangedName="DT_ConsultaServiciosRowChanged" msprop:Generator_TablePropName="DT_ConsultaServicios" msprop:Generator_RowDeletingName="DT_ConsultaServiciosRowDeleting" msprop:Generator_RowChangingName="DT_ConsultaServiciosRowChanging" msprop:Generator_RowEvHandlerName="DT_ConsultaServiciosRowChangeEventHandler" msprop:Generator_RowDeletedName="DT_ConsultaServiciosRowDeleted" msprop:Generator_RowClassName="DT_ConsultaServiciosRow" msprop:Generator_UserTableName="DT_ConsultaServicios" msprop:Generator_RowEvArgName="DT_ConsultaServiciosRowChangeEvent">
+          <xs:complexType>
+            <xs:sequence>
+              <xs:element name="ORDEN_VENTA" msprop:Generator_ColumnVarNameInTable="columnORDEN_VENTA" msprop:Generator_ColumnPropNameInRow="ORDEN_VENTA" msprop:Generator_ColumnPropNameInTable="ORDEN_VENTAColumn" msprop:Generator_UserColumnName="ORDEN_VENTA" type="xs:string" minOccurs="0" />
+              <xs:element name="REGIMEN" msprop:Generator_ColumnVarNameInTable="columnREGIMEN" msprop:Generator_ColumnPropNameInRow="REGIMEN" msprop:Generator_ColumnPropNameInTable="REGIMENColumn" msprop:Generator_UserColumnName="REGIMEN" type="xs:string" minOccurs="0" />
+              <xs:element name="VIA" msprop:Generator_ColumnVarNameInTable="columnVIA" msprop:Generator_ColumnPropNameInRow="VIA" msprop:Generator_ColumnPropNameInTable="VIAColumn" msprop:Generator_UserColumnName="VIA" type="xs:string" minOccurs="0" />
+              <xs:element name="FEC_ETA_ETD" msprop:Generator_ColumnVarNameInTable="columnFEC_ETA_ETD" msprop:Generator_ColumnPropNameInRow="FEC_ETA_ETD" msprop:Generator_ColumnPropNameInTable="FEC_ETA_ETDColumn" msprop:Generator_UserColumnName="FEC_ETA_ETD" type="xs:string" minOccurs="0" />
+              <xs:element name="FEC_EMBARQUE_ZARPE" msprop:Generator_ColumnVarNameInTable="columnFEC_EMBARQUE_ZARPE" msprop:Generator_ColumnPropNameInRow="FEC_EMBARQUE_ZARPE" msprop:Generator_ColumnPropNameInTable="FEC_EMBARQUE_ZARPEColumn" msprop:Generator_UserColumnName="FEC_EMBARQUE_ZARPE" type="xs:string" minOccurs="0" />
+              <xs:element name="SERVICIO" msprop:Generator_ColumnVarNameInTable="columnSERVICIO" msprop:Generator_ColumnPropNameInRow="SERVICIO" msprop:Generator_ColumnPropNameInTable="SERVICIOColumn" msprop:Generator_UserColumnName="SERVICIO" type="xs:string" minOccurs="0" />
+              <xs:element name="ENTIDAD" msprop:Generator_ColumnVarNameInTable="columnENTIDAD" msprop:Generator_ColumnPropNameInRow="ENTIDAD" msprop:Generator_ColumnPropNameInTable="ENTIDADColumn" msprop:Generator_UserColumnName="ENTIDAD" type="xs:string" minOccurs="0" />
+              <xs:element name="MONEDA" msprop:Generator_ColumnVarNameInTable="columnMONEDA" msprop:Generator_ColumnPropNameInRow="MONEDA" msprop:Generator_ColumnPropNameInTable="MONEDAColumn" msprop:Generator_UserColumnName="MONEDA" type="xs:string" minOccurs="0" />
+              <xs:element name="TIPO_DOC" msprop:Generator_ColumnVarNameInTable="columnTIPO_DOC" msprop:Generator_ColumnPropNameInRow="TIPO_DOC" msprop:Generator_ColumnPropNameInTable="TIPO_DOCColumn" msprop:Generator_UserColumnName="TIPO_DOC" type="xs:string" minOccurs="0" />
+              <xs:element name="NUMERO" msprop:Generator_ColumnVarNameInTable="columnNUMERO" msprop:Generator_ColumnPropNameInRow="NUMERO" msprop:Generator_ColumnPropNameInTable="NUMEROColumn" msprop:Generator_UserColumnName="NUMERO" type="xs:string" minOccurs="0" />
+              <xs:element name="INGRESO" msprop:Generator_ColumnVarNameInTable="columnINGRESO" msprop:Generator_ColumnPropNameInRow="INGRESO" msprop:Generator_ColumnPropNameInTable="INGRESOColumn" msprop:Generator_UserColumnName="INGRESO" type="xs:string" minOccurs="0" />
+              <xs:element name="EGRESO" msprop:Generator_ColumnVarNameInTable="columnEGRESO" msprop:Generator_ColumnPropNameInRow="EGRESO" msprop:Generator_ColumnPropNameInTable="EGRESOColumn" msprop:Generator_UserColumnName="EGRESO" type="xs:string" minOccurs="0" />
+              <xs:element name="LINEA_NEGOCIO" msprop:Generator_ColumnVarNameInTable="columnLINEA_NEGOCIO" msprop:Generator_ColumnPropNameInRow="LINEA_NEGOCIO" msprop:Generator_ColumnPropNameInTable="LINEA_NEGOCIOColumn" msprop:Generator_UserColumnName="LINEA_NEGOCIO" type="xs:string" minOccurs="0" />
+              <xs:element name="CHANGE_CONTROL" msprop:Generator_ColumnVarNameInTable="columnCHANGE_CONTROL" msprop:Generator_ColumnPropNameInRow="CHANGE_CONTROL" msprop:Generator_ColumnPropNameInTable="CHANGE_CONTROLColumn" msprop:Generator_UserColumnName="CHANGE_CONTROL" type="xs:string" minOccurs="0" />
+            </xs:sequence>
+          </xs:complexType>
+        </xs:element>
+      </xs:choice>
+    </xs:complexType>
+  </xs:element>
+</xs:schema>

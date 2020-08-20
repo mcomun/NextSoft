@@ -1,0 +1,42 @@
+﻿@using System.Configuration;
+@using Delfin.Web.Std.Resources.Shared;
+
+@{
+    ViewBag.Title = "LogOut";
+    Layout = null;
+}
+
+<html lang="es" class="app">
+<head>
+    <meta charset="utf-8" />
+    <title>@Html.Raw(Resource.TitleLabel)</title>
+    <meta name="description" content="Delfin, Sistema de Distribución, Delfin | Dis4Win" />
+    <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1" /> 
+
+    @Styles.Render("~/content/css")
+    @Styles.Render("~/components/css")
+    
+    @Scripts.Render("~/bundles/jquery")
+    @Scripts.Render("~/bundles/jqueryui")
+    @Scripts.Render("~/bundles/jqueryval")
+    @Scripts.Render("~/bundles/knockout")
+    @Scripts.Render("~/bundles/components")
+</head>
+<body>
+    <div class="modal-over">
+      <div class="modal-center animated fadeInUp text-center" style="width:200px;margin:-80px 0 0 -100px;">
+        <h2>LogOut</h2>
+        <br />
+        <div class="thumb-md"><img src="@Url.Content("~/Images/avatar.jpg")" class="img-circle b-a b-light b-3x"></div>
+        <br />
+        <p class="text-white h4 m-t m-b">@ViewBag.Usuario</p>
+      </div>
+    </div>
+</body>
+<script type="text/javascript">
+   function redireccionar() {
+      location.href = '@Url.Action("Index", "IngresoSistema")';
+    }
+    setTimeout("redireccionar()", 5000);
+</script>
+</html>

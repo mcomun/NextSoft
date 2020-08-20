@@ -1,0 +1,37 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<xs:schema id="DSOPE006ConsultarCorrelativos" targetNamespace="http://tempuri.org/DSOPE006ConsultarCorrelativos.xsd" xmlns:mstns="http://tempuri.org/DSOPE006ConsultarCorrelativos.xsd" xmlns="http://tempuri.org/DSOPE006ConsultarCorrelativos.xsd" xmlns:xs="http://www.w3.org/2001/XMLSchema" xmlns:msdata="urn:schemas-microsoft-com:xml-msdata" xmlns:msprop="urn:schemas-microsoft-com:xml-msprop" attributeFormDefault="qualified" elementFormDefault="qualified">
+  <xs:annotation>
+    <xs:appinfo source="urn:schemas-microsoft-com:xml-msdatasource">
+      <DataSource DefaultConnectionIndex="0" FunctionsComponentName="QueriesTableAdapter" Modifier="AutoLayout, AnsiClass, Class, Public" SchemaSerializationMode="IncludeSchema" xmlns="urn:schemas-microsoft-com:xml-msdatasource">
+        <Connections />
+        <Tables />
+        <Sources />
+      </DataSource>
+    </xs:appinfo>
+  </xs:annotation>
+  <xs:element name="DSOPE006ConsultarCorrelativos" msdata:IsDataSet="true" msdata:UseCurrentLocale="true" msprop:EnableTableAdapterManager="true" msprop:Generator_DataSetName="DSOPE006ConsultarCorrelativos" msprop:Generator_UserDSName="DSOPE006ConsultarCorrelativos">
+    <xs:complexType>
+      <xs:choice minOccurs="0" maxOccurs="unbounded">
+        <xs:element name="DT_ConsultarCorrelativos" msprop:Generator_TableClassName="DT_ConsultarCorrelativosDataTable" msprop:Generator_TableVarName="tableDT_ConsultarCorrelativos" msprop:Generator_TablePropName="DT_ConsultarCorrelativos" msprop:Generator_RowDeletingName="DT_ConsultarCorrelativosRowDeleting" msprop:Generator_RowChangingName="DT_ConsultarCorrelativosRowChanging" msprop:Generator_RowEvHandlerName="DT_ConsultarCorrelativosRowChangeEventHandler" msprop:Generator_RowDeletedName="DT_ConsultarCorrelativosRowDeleted" msprop:Generator_UserTableName="DT_ConsultarCorrelativos" msprop:Generator_RowChangedName="DT_ConsultarCorrelativosRowChanged" msprop:Generator_RowEvArgName="DT_ConsultarCorrelativosRowChangeEvent" msprop:Generator_RowClassName="DT_ConsultarCorrelativosRow">
+          <xs:complexType>
+            <xs:sequence>
+              <xs:element name="CORRELATIVO" msprop:Generator_ColumnVarNameInTable="columnCORRELATIVO" msprop:Generator_ColumnPropNameInRow="CORRELATIVO" msprop:Generator_ColumnPropNameInTable="CORRELATIVOColumn" msprop:Generator_UserColumnName="CORRELATIVO" type="xs:string" minOccurs="0" />
+              <xs:element name="NAVE" msprop:Generator_ColumnVarNameInTable="columnNAVE" msprop:Generator_ColumnPropNameInRow="NAVE" msprop:Generator_ColumnPropNameInTable="NAVEColumn" msprop:Generator_UserColumnName="NAVE" type="xs:string" minOccurs="0" />
+              <xs:element name="VIAJE" msprop:Generator_ColumnVarNameInTable="columnVIAJE" msprop:Generator_ColumnPropNameInRow="VIAJE" msprop:Generator_ColumnPropNameInTable="VIAJEColumn" msprop:Generator_UserColumnName="VIAJE" type="xs:string" minOccurs="0" />
+              <xs:element name="ETA_ETD" msprop:Generator_ColumnVarNameInTable="columnETA_ETD" msprop:Generator_ColumnPropNameInRow="ETA_ETD" msprop:Generator_ColumnPropNameInTable="ETA_ETDColumn" msprop:Generator_UserColumnName="ETA_ETD" type="xs:string" minOccurs="0" />
+              <xs:element name="IMPO_EXPO" msprop:Generator_ColumnVarNameInTable="columnIMPO_EXPO" msprop:Generator_ColumnPropNameInRow="IMPO_EXPO" msprop:Generator_ColumnPropNameInTable="IMPO_EXPOColumn" msprop:Generator_UserColumnName="IMPO_EXPO" type="xs:string" minOccurs="0" />
+              <xs:element name="TEUS" msprop:Generator_ColumnVarNameInTable="columnTEUS" msprop:Generator_ColumnPropNameInRow="TEUS" msprop:Generator_ColumnPropNameInTable="TEUSColumn" msprop:Generator_UserColumnName="TEUS" type="xs:string" minOccurs="0" />
+              <xs:element name="BB" msprop:Generator_ColumnVarNameInTable="columnBB" msprop:Generator_ColumnPropNameInRow="BB" msprop:Generator_ColumnPropNameInTable="BBColumn" msprop:Generator_UserColumnName="BB" type="xs:string" minOccurs="0" />
+              <xs:element name="LINEA" msprop:Generator_ColumnVarNameInTable="columnLINEA" msprop:Generator_ColumnPropNameInRow="LINEA" msprop:Generator_ColumnPropNameInTable="LINEAColumn" msprop:Generator_UserColumnName="LINEA" type="xs:string" minOccurs="0" />
+              <xs:element name="INGRESO" msprop:Generator_ColumnVarNameInTable="columnINGRESO" msprop:Generator_ColumnPropNameInRow="INGRESO" msprop:Generator_ColumnPropNameInTable="INGRESOColumn" msprop:Generator_UserColumnName="INGRESO" type="xs:string" minOccurs="0" />
+              <xs:element name="EGRESO" msprop:Generator_ColumnVarNameInTable="columnEGRESO" msprop:Generator_ColumnPropNameInRow="EGRESO" msprop:Generator_ColumnPropNameInTable="EGRESOColumn" msprop:Generator_UserColumnName="EGRESO" type="xs:string" minOccurs="0" />
+              <xs:element name="RENT_TOTAL" msprop:Generator_ColumnVarNameInTable="columnRENT_TOTAL" msprop:Generator_ColumnPropNameInRow="RENT_TOTAL" msprop:Generator_ColumnPropNameInTable="RENT_TOTALColumn" msprop:Generator_UserColumnName="RENT_TOTAL" type="xs:string" minOccurs="0" />
+              <xs:element name="U_STATEMENT" msprop:Generator_ColumnVarNameInTable="columnU_STATEMENT" msprop:Generator_ColumnPropNameInRow="U_STATEMENT" msprop:Generator_ColumnPropNameInTable="U_STATEMENTColumn" msprop:Generator_UserColumnName="U_STATEMENT" type="xs:string" minOccurs="0" />
+              <xs:element name="F_STATEMENT" msprop:Generator_ColumnVarNameInTable="columnF_STATEMENT" msprop:Generator_ColumnPropNameInRow="F_STATEMENT" msprop:Generator_ColumnPropNameInTable="F_STATEMENTColumn" msprop:Generator_UserColumnName="F_STATEMENT" type="xs:string" minOccurs="0" />
+            </xs:sequence>
+          </xs:complexType>
+        </xs:element>
+      </xs:choice>
+    </xs:complexType>
+  </xs:element>
+</xs:schema>

@@ -1,0 +1,80 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<xs:schema id="DSCabOperacion" targetNamespace="http://tempuri.org/DSCabOperacion.xsd" xmlns:mstns="http://tempuri.org/DSCabOperacion.xsd" xmlns="http://tempuri.org/DSCabOperacion.xsd" xmlns:xs="http://www.w3.org/2001/XMLSchema" xmlns:msdata="urn:schemas-microsoft-com:xml-msdata" xmlns:msprop="urn:schemas-microsoft-com:xml-msprop" attributeFormDefault="qualified" elementFormDefault="qualified">
+  <xs:annotation>
+    <xs:appinfo source="urn:schemas-microsoft-com:xml-msdatasource">
+      <DataSource DefaultConnectionIndex="0" FunctionsComponentName="QueriesTableAdapter" Modifier="AutoLayout, AnsiClass, Class, Public" SchemaSerializationMode="IncludeSchema" xmlns="urn:schemas-microsoft-com:xml-msdatasource">
+        <Connections />
+        <Tables />
+        <Sources />
+      </DataSource>
+    </xs:appinfo>
+  </xs:annotation>
+  <xs:element name="DSCabOperacion" msdata:IsDataSet="true" msdata:UseCurrentLocale="true" msprop:EnableTableAdapterManager="true" msprop:Generator_DataSetName="DSCabOperacion" msprop:Generator_UserDSName="DSCabOperacion">
+    <xs:complexType>
+      <xs:choice minOccurs="0" maxOccurs="unbounded">
+        <xs:element name="CabOperacion" msprop:Generator_TableClassName="CabOperacionDataTable" msprop:Generator_TableVarName="tableCabOperacion" msprop:Generator_TablePropName="CabOperacion" msprop:Generator_RowDeletingName="CabOperacionRowDeleting" msprop:Generator_RowChangingName="CabOperacionRowChanging" msprop:Generator_RowEvHandlerName="CabOperacionRowChangeEventHandler" msprop:Generator_RowDeletedName="CabOperacionRowDeleted" msprop:Generator_UserTableName="CabOperacion" msprop:Generator_RowChangedName="CabOperacionRowChanged" msprop:Generator_RowEvArgName="CabOperacionRowChangeEvent" msprop:Generator_RowClassName="CabOperacionRow">
+          <xs:complexType>
+            <xs:sequence>
+              <xs:element name="COPE_FOB" msprop:Generator_ColumnVarNameInTable="columnCOPE_FOB" msprop:Generator_ColumnPropNameInRow="COPE_FOB" msprop:Generator_ColumnPropNameInTable="COPE_FOBColumn" msprop:Generator_UserColumnName="COPE_FOB" type="xs:string" minOccurs="0" />
+              <xs:element name="COPE_SEGURO" msprop:Generator_ColumnVarNameInTable="columnCOPE_SEGURO" msprop:Generator_ColumnPropNameInRow="COPE_SEGURO" msprop:Generator_ColumnPropNameInTable="COPE_SEGUROColumn" msprop:Generator_UserColumnName="COPE_SEGURO" type="xs:string" minOccurs="0" />
+              <xs:element name="COPE_FLETE" msprop:Generator_ColumnVarNameInTable="columnCOPE_FLETE" msprop:Generator_ColumnPropNameInRow="COPE_FLETE" msprop:Generator_ColumnPropNameInTable="COPE_FLETEColumn" msprop:Generator_UserColumnName="COPE_FLETE" type="xs:string" minOccurs="0" />
+              <xs:element name="COPE_CIF" msprop:Generator_ColumnVarNameInTable="columnCOPE_CIF" msprop:Generator_ColumnPropNameInRow="COPE_CIF" msprop:Generator_ColumnPropNameInTable="COPE_CIFColumn" msprop:Generator_UserColumnName="COPE_CIF" type="xs:string" minOccurs="0" />
+              <xs:element name="COPE_IGV" msprop:Generator_ColumnVarNameInTable="columnCOPE_IGV" msprop:Generator_ColumnPropNameInRow="COPE_IGV" msprop:Generator_ColumnPropNameInTable="COPE_IGVColumn" msprop:Generator_UserColumnName="COPE_IGV" type="xs:string" minOccurs="0" />
+              <xs:element name="COPE_IPM" msprop:Generator_ColumnVarNameInTable="columnCOPE_IPM" msprop:Generator_ColumnPropNameInRow="COPE_IPM" msprop:Generator_ColumnPropNameInTable="COPE_IPMColumn" msprop:Generator_UserColumnName="COPE_IPM" type="xs:string" minOccurs="0" />
+              <xs:element name="COPE_PERCEPCION" msprop:Generator_ColumnVarNameInTable="columnCOPE_PERCEPCION" msprop:Generator_ColumnPropNameInRow="COPE_PERCEPCION" msprop:Generator_ColumnPropNameInTable="COPE_PERCEPCIONColumn" msprop:Generator_UserColumnName="COPE_PERCEPCION" type="xs:string" minOccurs="0" />
+              <xs:element name="COPE_TASADESPACHO" msprop:Generator_ColumnVarNameInTable="columnCOPE_TASADESPACHO" msprop:Generator_ColumnPropNameInRow="COPE_TASADESPACHO" msprop:Generator_ColumnPropNameInTable="COPE_TASADESPACHOColumn" msprop:Generator_UserColumnName="COPE_TASADESPACHO" type="xs:string" minOccurs="0" />
+              <xs:element name="TIPC_Compra" msprop:Generator_ColumnVarNameInTable="columnTIPC_Compra" msprop:Generator_ColumnPropNameInRow="TIPC_Compra" msprop:Generator_ColumnPropNameInTable="TIPC_CompraColumn" msprop:Generator_UserColumnName="TIPC_Compra" type="xs:string" minOccurs="0" />
+              <xs:element name="TIPO_Moneda" msprop:Generator_ColumnVarNameInTable="columnTIPO_Moneda" msprop:Generator_ColumnPropNameInRow="TIPO_Moneda" msprop:Generator_ColumnPropNameInTable="TIPO_MonedaColumn" msprop:Generator_UserColumnName="TIPO_Moneda" type="xs:string" minOccurs="0" />
+              <xs:element name="COPE_AdValorem" msprop:Generator_ColumnVarNameInTable="columnCOPE_AdValorem" msprop:Generator_ColumnPropNameInRow="COPE_AdValorem" msprop:Generator_ColumnPropNameInTable="COPE_AdValoremColumn" msprop:Generator_UserColumnName="COPE_AdValorem" type="xs:string" minOccurs="0" />
+              <xs:element name="TIPO_CodMND" msprop:Generator_ColumnVarNameInTable="columnTIPO_CodMND" msprop:Generator_ColumnPropNameInRow="TIPO_CodMND" msprop:Generator_ColumnPropNameInTable="TIPO_CodMNDColumn" msprop:Generator_UserColumnName="TIPO_CodMND" type="xs:string" minOccurs="0" />
+            </xs:sequence>
+          </xs:complexType>
+        </xs:element>
+        <xs:element name="SLI" msprop:Generator_TableClassName="SLIDataTable" msprop:Generator_TableVarName="tableSLI" msprop:Generator_TablePropName="SLI" msprop:Generator_RowDeletingName="SLIRowDeleting" msprop:Generator_RowChangingName="SLIRowChanging" msprop:Generator_RowEvHandlerName="SLIRowChangeEventHandler" msprop:Generator_RowDeletedName="SLIRowDeleted" msprop:Generator_UserTableName="SLI" msprop:Generator_RowChangedName="SLIRowChanged" msprop:Generator_RowEvArgName="SLIRowChangeEvent" msprop:Generator_RowClassName="SLIRow">
+          <xs:complexType>
+            <xs:sequence>
+              <xs:element name="Concepto" msprop:Generator_ColumnVarNameInTable="columnConcepto" msprop:Generator_ColumnPropNameInRow="Concepto" msprop:Generator_ColumnPropNameInTable="ConceptoColumn" msprop:Generator_UserColumnName="Concepto" type="xs:string" minOccurs="0" />
+              <xs:element name="Monto" msprop:Generator_ColumnVarNameInTable="columnMonto" msprop:Generator_ColumnPropNameInRow="Monto" msprop:Generator_ColumnPropNameInTable="MontoColumn" msprop:Generator_UserColumnName="Monto" type="xs:string" minOccurs="0" />
+              <xs:element name="IGV" msprop:Generator_ColumnVarNameInTable="columnIGV" msprop:Generator_ColumnPropNameInRow="IGV" msprop:Generator_ColumnPropNameInTable="IGVColumn" msprop:Generator_UserColumnName="IGV" type="xs:string" minOccurs="0" />
+              <xs:element name="Total" msprop:Generator_ColumnVarNameInTable="columnTotal" msprop:Generator_ColumnPropNameInRow="Total" msprop:Generator_ColumnPropNameInTable="TotalColumn" msprop:Generator_UserColumnName="Total" type="xs:string" minOccurs="0" />
+              <xs:element name="TIPO_DescC" msprop:Generator_ColumnVarNameInTable="columnTIPO_DescC" msprop:Generator_ColumnPropNameInRow="TIPO_DescC" msprop:Generator_ColumnPropNameInTable="TIPO_DescCColumn" msprop:Generator_UserColumnName="TIPO_DescC" type="xs:string" minOccurs="0" />
+            </xs:sequence>
+          </xs:complexType>
+        </xs:element>
+        <xs:element name="SLIAduanero" msprop:Generator_TableClassName="SLIAduaneroDataTable" msprop:Generator_TableVarName="tableSLIAduanero" msprop:Generator_RowChangedName="SLIAduaneroRowChanged" msprop:Generator_TablePropName="SLIAduanero" msprop:Generator_RowDeletingName="SLIAduaneroRowDeleting" msprop:Generator_RowChangingName="SLIAduaneroRowChanging" msprop:Generator_RowEvHandlerName="SLIAduaneroRowChangeEventHandler" msprop:Generator_RowDeletedName="SLIAduaneroRowDeleted" msprop:Generator_RowClassName="SLIAduaneroRow" msprop:Generator_UserTableName="SLIAduanero" msprop:Generator_RowEvArgName="SLIAduaneroRowChangeEvent">
+          <xs:complexType>
+            <xs:sequence>
+              <xs:element name="Concepto" msprop:Generator_ColumnVarNameInTable="columnConcepto" msprop:Generator_ColumnPropNameInRow="Concepto" msprop:Generator_ColumnPropNameInTable="ConceptoColumn" msprop:Generator_UserColumnName="Concepto" type="xs:string" minOccurs="0" />
+              <xs:element name="Monto" msprop:Generator_ColumnVarNameInTable="columnMonto" msprop:Generator_ColumnPropNameInRow="Monto" msprop:Generator_ColumnPropNameInTable="MontoColumn" msprop:Generator_UserColumnName="Monto" type="xs:string" minOccurs="0" />
+              <xs:element name="IGV" msprop:Generator_ColumnVarNameInTable="columnIGV" msprop:Generator_ColumnPropNameInRow="IGV" msprop:Generator_ColumnPropNameInTable="IGVColumn" msprop:Generator_UserColumnName="IGV" type="xs:string" minOccurs="0" />
+              <xs:element name="Total" msprop:Generator_ColumnVarNameInTable="columnTotal" msprop:Generator_ColumnPropNameInRow="Total" msprop:Generator_ColumnPropNameInTable="TotalColumn" msprop:Generator_UserColumnName="Total" type="xs:string" minOccurs="0" />
+              <xs:element name="TIPO_DescC" msprop:Generator_ColumnVarNameInTable="columnTIPO_DescC" msprop:Generator_ColumnPropNameInRow="TIPO_DescC" msprop:Generator_ColumnPropNameInTable="TIPO_DescCColumn" msprop:Generator_UserColumnName="TIPO_DescC" type="xs:string" minOccurs="0" />
+            </xs:sequence>
+          </xs:complexType>
+        </xs:element>
+        <xs:element name="SLITransporte" msprop:Generator_TableClassName="SLITransporteDataTable" msprop:Generator_TableVarName="tableSLITransporte" msprop:Generator_TablePropName="SLITransporte" msprop:Generator_RowDeletingName="SLITransporteRowDeleting" msprop:Generator_RowChangingName="SLITransporteRowChanging" msprop:Generator_RowEvHandlerName="SLITransporteRowChangeEventHandler" msprop:Generator_RowDeletedName="SLITransporteRowDeleted" msprop:Generator_UserTableName="SLITransporte" msprop:Generator_RowChangedName="SLITransporteRowChanged" msprop:Generator_RowEvArgName="SLITransporteRowChangeEvent" msprop:Generator_RowClassName="SLITransporteRow">
+          <xs:complexType>
+            <xs:sequence>
+              <xs:element name="Concepto" msprop:Generator_ColumnVarNameInTable="columnConcepto" msprop:Generator_ColumnPropNameInRow="Concepto" msprop:Generator_ColumnPropNameInTable="ConceptoColumn" msprop:Generator_UserColumnName="Concepto" type="xs:string" minOccurs="0" />
+              <xs:element name="Monto" msprop:Generator_ColumnVarNameInTable="columnMonto" msprop:Generator_ColumnPropNameInRow="Monto" msprop:Generator_ColumnPropNameInTable="MontoColumn" msprop:Generator_UserColumnName="Monto" type="xs:string" minOccurs="0" />
+              <xs:element name="IGV" msprop:Generator_ColumnVarNameInTable="columnIGV" msprop:Generator_ColumnPropNameInRow="IGV" msprop:Generator_ColumnPropNameInTable="IGVColumn" msprop:Generator_UserColumnName="IGV" type="xs:string" minOccurs="0" />
+              <xs:element name="Total" msprop:Generator_ColumnVarNameInTable="columnTotal" msprop:Generator_ColumnPropNameInRow="Total" msprop:Generator_ColumnPropNameInTable="TotalColumn" msprop:Generator_UserColumnName="Total" type="xs:string" minOccurs="0" />
+              <xs:element name="TIPO_DescC" msprop:Generator_ColumnVarNameInTable="columnTIPO_DescC" msprop:Generator_ColumnPropNameInRow="TIPO_DescC" msprop:Generator_ColumnPropNameInTable="TIPO_DescCColumn" msprop:Generator_UserColumnName="TIPO_DescC" type="xs:string" minOccurs="0" />
+            </xs:sequence>
+          </xs:complexType>
+        </xs:element>
+        <xs:element name="SLIAdicional" msprop:Generator_TableClassName="SLIAdicionalDataTable" msprop:Generator_TableVarName="tableSLIAdicional" msprop:Generator_TablePropName="SLIAdicional" msprop:Generator_RowDeletingName="SLIAdicionalRowDeleting" msprop:Generator_RowChangingName="SLIAdicionalRowChanging" msprop:Generator_RowEvHandlerName="SLIAdicionalRowChangeEventHandler" msprop:Generator_RowDeletedName="SLIAdicionalRowDeleted" msprop:Generator_UserTableName="SLIAdicional" msprop:Generator_RowChangedName="SLIAdicionalRowChanged" msprop:Generator_RowEvArgName="SLIAdicionalRowChangeEvent" msprop:Generator_RowClassName="SLIAdicionalRow">
+          <xs:complexType>
+            <xs:sequence>
+              <xs:element name="Concepto" msprop:Generator_ColumnVarNameInTable="columnConcepto" msprop:Generator_ColumnPropNameInRow="Concepto" msprop:Generator_ColumnPropNameInTable="ConceptoColumn" msprop:Generator_UserColumnName="Concepto" type="xs:string" minOccurs="0" />
+              <xs:element name="Monto" msprop:Generator_ColumnVarNameInTable="columnMonto" msprop:Generator_ColumnPropNameInRow="Monto" msprop:Generator_ColumnPropNameInTable="MontoColumn" msprop:Generator_UserColumnName="Monto" type="xs:string" minOccurs="0" />
+              <xs:element name="IGV" msprop:Generator_ColumnVarNameInTable="columnIGV" msprop:Generator_ColumnPropNameInRow="IGV" msprop:Generator_ColumnPropNameInTable="IGVColumn" msprop:Generator_UserColumnName="IGV" type="xs:string" minOccurs="0" />
+              <xs:element name="Total" msprop:Generator_ColumnVarNameInTable="columnTotal" msprop:Generator_ColumnPropNameInRow="Total" msprop:Generator_ColumnPropNameInTable="TotalColumn" msprop:Generator_UserColumnName="Total" type="xs:string" minOccurs="0" />
+              <xs:element name="TIPO_DescC" msprop:Generator_ColumnVarNameInTable="columnTIPO_DescC" msprop:Generator_ColumnPropNameInRow="TIPO_DescC" msprop:Generator_ColumnPropNameInTable="TIPO_DescCColumn" msprop:Generator_UserColumnName="TIPO_DescC" type="xs:string" minOccurs="0" />
+            </xs:sequence>
+          </xs:complexType>
+        </xs:element>
+      </xs:choice>
+    </xs:complexType>
+  </xs:element>
+</xs:schema>

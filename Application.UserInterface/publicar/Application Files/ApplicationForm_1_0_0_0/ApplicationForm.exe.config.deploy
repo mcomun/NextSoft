@@ -1,0 +1,20 @@
+<?xml version="1.0" encoding="utf-8"?>
+<configuration>
+    <startup>
+        <supportedRuntime version="v4.0" sku=".NETFramework,Version=v4.5"/>
+    </startup>
+    <system.serviceModel>
+        <bindings>
+          <basicHttpBinding>
+            <binding name="BasicHttpBinding_IDelfinService" closeTimeout="00:50:00"
+                     openTimeout="00:50:00" receiveTimeout="00:50:00" sendTimeout="00:50:00"
+                     maxBufferPoolSize="2147483647" maxReceivedMessageSize="2147483647" />
+          </basicHttpBinding>
+        </bindings>
+        <client>
+            <endpoint address="http://apps.delfingroupco.com.pe:766/DelfinService.svc"
+                binding="basicHttpBinding" bindingConfiguration="BasicHttpBinding_IDelfinService"
+                contract="AppService.IDelfinService" name="BasicHttpBinding_IDelfinService" />
+        </client>
+    </system.serviceModel>
+</configuration>

@@ -1,0 +1,351 @@
+﻿@using Delfin.Web.Std.Resources.Shared;
+@using Delfin.Web.Std.Util;
+@using System.Configuration;
+
+<!DOCTYPE html>
+<html lang="es" class="app">
+<head>
+    <meta charset="utf-8" />
+    <title>@Resource.TitleLabel</title>
+    <meta name="description" content="Delfin, Sistema de Delfin, Delfin" />
+    <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1" /> 
+
+    @Styles.Render("~/Content/css")
+    @Styles.Render("~/components/css")
+    @*@Styles.Render("~/Content/themes/base/css")*@
+    
+    @Scripts.Render("~/bundles/jquery")
+    @Scripts.Render("~/bundles/jqueryui")
+    @Scripts.Render("~/bundles/jqueryval")
+    @Scripts.Render("~/bundles/knockout")
+    @Scripts.Render("~/bundles/components")
+    <script type="text/javascript">
+       ns('Delfin.Web.Std.Global.Format');
+       Delfin.Web.Std.Global.Format.Date = '@Utilitario.ConvertFormatDatePresentacion(Enumerados.ConfiguracionInicial.FormatoFecha)';
+       Delfin.Web.Std.Global.Format.DatePicker = '@Enumerados.ConfiguracionInicial.FormatoFecha.Replace("y", "0").Replace("M", "0").Replace("d", "0")';
+       Delfin.Web.Std.Global.Format.Timer = 'hh:mm';
+       Delfin.Web.Std.Global.Format.Decimal = '@Enumerados.ConfiguracionInicial.FormatoDecimal';
+       Delfin.Web.Std.Global.Format.DecimalSeparatorDecimal = '@Enumerados.ConfiguracionInicial.FormatoDecimalSeparadorDecimales';
+       Delfin.Web.Std.Global.Format.DecimalSeparatorMiles = '@Enumerados.ConfiguracionInicial.FormatoDecimalSeparadorMiles';
+       Delfin.Web.Std.Global.Format.Integer = '@Enumerados.ConfiguracionInicial.FormatoNumerico';
+       Delfin.Web.Std.Global.Format.IntegerSeparatorMiles = '@Enumerados.ConfiguracionInicial.FormatoEnteroSeparadorMiles';
+       Delfin.Web.Std.Global.Format.Language = '@Enumerados.ConfiguracionInicial.CodigoIdioma.ToLower()';
+       Delfin.Web.Std.Global.Format.LanguageDatePicker = '@Enumerados.ConfiguracionInicial.CodigoIdiomaDatePicker';
+       Delfin.Web.Std.Global.Format.CambiarMes = '@Enumerados.ConfiguracionInicial.CambiarMes';
+       Delfin.Web.Std.Global.Format.CambiarAnio = '@Enumerados.ConfiguracionInicial.CambiarAnio';
+       Delfin.Web.Std.Global.Format.AutoCerrarDP = '@Enumerados.ConfiguracionInicial.AutoCerrarDP';
+
+       ns('Delfin.Web.Std.Global.Url');
+       Delfin.Web.Std.Global.Url.Aplicacion = '@Url.Content("~/")';
+       Delfin.Web.Std.Global.Url.Images = Delfin.Web.Std.Global.Url.Aplicacion + 'Images/';
+
+       ns('Delfin.Web.Std.Shared.General.Resources');
+       Delfin.Web.Std.Shared.General.Resources.EtiquetaCargando = '@Html.Raw(GeneralResource.EtiquetaCargando)';
+       Delfin.Web.Std.Shared.General.Resources.EtiquetaCargarInformacion = '@Html.Raw(GeneralResource.EtiquetaCargarInformacion)';
+       Delfin.Web.Std.Shared.General.Resources.EtiquetaSeleccionar = '@Html.Raw(GeneralResource.EtiquetaSeleccionar)';
+       Delfin.Web.Std.Shared.General.Resources.EtiquetaSeleccionarRegistro = '@Html.Raw(GeneralResource.EtiquetaSeleccionarRegistro)';
+       Delfin.Web.Std.Shared.General.Resources.EtiquetaSeleccionarDeseleccionarTodos = '@Html.Raw(GeneralResource.EtiquetaSeleccionarDeseleccionarTodos)';
+
+       Delfin.Web.Std.Shared.General.Resources.EtiquetaDebeIngresar = '@Html.Raw(GeneralResource.EtiquetaDebeIngresar)';
+       Delfin.Web.Std.Shared.General.Resources.EtiquetaDebeSeleccionar = '@Html.Raw(GeneralResource.EtiquetaDebeSeleccionar)';
+       Delfin.Web.Std.Shared.General.Resources.EtiquetaResultadosBusquedaVacia = '@Html.Raw(GeneralResource.EtiquetaResultadosBusquedaVacia)';
+
+       Delfin.Web.Std.Shared.General.Resources.EtiquetaAceptarConfirmacion = '@Html.Raw(GeneralResource.EtiquetaAceptar)';
+       Delfin.Web.Std.Shared.General.Resources.EtiquetaCancelarConfirmacion = '@Html.Raw(GeneralResource.EtiquetaCancelar)';
+       Delfin.Web.Std.Shared.General.Resources.EtiquetaInformacion = '@Html.Raw(GeneralResource.EtiquetaInformacion)';
+       Delfin.Web.Std.Shared.General.Resources.EtiquetaConfirmacion = '@Html.Raw(GeneralResource.EtiquetaConfirmacion)';
+       Delfin.Web.Std.Shared.General.Resources.EtiquetaAdvertencia = '@Html.Raw(GeneralResource.EtiquetaAdvertencia)';
+
+       Delfin.Web.Std.Shared.General.Resources.EtiquetaAnadirRegistro = '@Html.Raw(GeneralResource.EtiquetaAnadirTooltip)';
+       Delfin.Web.Std.Shared.General.Resources.EtiquetaEditarRegistro = '@Html.Raw(GeneralResource.EtiquetaEditarTooltip)';
+       Delfin.Web.Std.Shared.General.Resources.EtiquetaAnularRegistro = '@Html.Raw(GeneralResource.EtiquetaAnularTooltip)';
+       Delfin.Web.Std.Shared.General.Resources.EtiquetaEliminarRegistro = '@Html.Raw(GeneralResource.EtiquetaEliminarTooltip)';
+
+       //SlickGriPage
+       Delfin.Web.Std.Shared.General.Resources.EtiquetaFilas = '@Html.Raw(GeneralResource.EtiquetaFilas)';
+       Delfin.Web.Std.Shared.General.Resources.EtiquetaPagina = '@Html.Raw(GeneralResource.EtiquetaPagina)';
+       Delfin.Web.Std.Shared.General.Resources.EtiquetaFilasPorPagina = '@Html.Raw(GeneralResource.EtiquetaFilasPorPagina)';
+
+       ns('Delfin.Web.Std.Global.Grid.Options');
+       Delfin.Web.Std.Global.Grid.Options.PagerpageSize = '@Enumerados.ConfiguracionInicial.FilasPorPagina';
+
+        ns('Delfin.Web.Std.Global.Grid.Acciones');
+        Delfin.Web.Std.Global.Grid.Acciones.Seleccionar = {
+           id: 'seleccionar',
+           icon: 'fa fa-arrow-right',
+           title: Delfin.Web.Std.Shared.General.Resources.EtiquetaSeleccionarRegistro
+        };
+
+        Delfin.Web.Std.Global.Grid.Acciones.Anadir = {
+           id: 'anadir',
+           icon: 'fa fa-check-circle-o',
+           title: Delfin.Web.Std.Shared.General.Resources.EtiquetaAnadirRegistro
+        };
+
+        Delfin.Web.Std.Global.Grid.Acciones.Editar = {
+           id: 'editar',
+           icon: 'fa fa-pencil-square-o',
+           title: Delfin.Web.Std.Shared.General.Resources.EtiquetaEditarRegistro
+        };
+
+        Delfin.Web.Std.Global.Grid.Acciones.Eliminar = {
+           id: 'eliminar',
+           icon: 'fa fa-trash-o',
+           title: Delfin.Web.Std.Shared.General.Resources.EtiquetaEliminarRegistro
+        };
+
+        Delfin.Web.Std.Global.Grid.Acciones.Anular = {
+           id: 'anular',
+           icon: 'fa fa-times-circle-o',
+           title: Delfin.Web.Std.Shared.General.Resources.EtiquetaAnularRegistro
+        };
+
+        Delfin.Web.Std.Global.Grid.Acciones.ValidarSeguridad = function (accion, seguridad, title) {
+           var cadena = "";
+
+           if (title == undefined || title == null || title == '') {
+              title = accion.title;
+           }
+
+           if (seguridad.Visible) {
+              cadena += '<a  style="cursor:pointer;margin-left:4px"'
+              var identificador = '';
+
+              if (seguridad.Enabled) {
+                 cadena += ' title="' + title + '" ';
+                 identificador = accion.id;
+              } else {
+                 cadena += ' class="enabled" ';
+              }
+              cadena += '><i class="' + accion.icon + ' ' + identificador + '"></i></a>';
+           }
+           return cadena;
+        };
+
+        Delfin.Web.Std.Global.Grid.Acciones.ValidarSeguridadLink = function (accion, seguridad, title, url, parametro) {
+           var cadena = "";
+
+           if (title == undefined || title == null || title == '') {
+              title = accion.title;
+           }
+
+           if (seguridad.Visible) {
+              cadena += '<a  style="cursor:pointer;margin-left:4px"'
+              var identificador = '';
+
+              if (seguridad.Enabled) {
+                 cadena += ' title="' + title + '" ';
+                 cadena += ' href="' + url + parametro + '" ';
+                 identificador = accion.id;
+              } else {
+                 cadena += ' class="enabled" ';
+              }
+              cadena += '><i class="' + accion.icon + ' ' + identificador + '"></i></a>';
+           }
+
+           return cadena;
+        };
+
+        $.validator.addMethod("Alfhanumeric", function (value, element) {
+           return this.optional(element) || /^[\u00F1A-Za-z0-9\-.\s]+$/i.test(value);
+        }, "");
+
+        $.validator.addMethod("DateTime", function (value, element) {
+           if (this.optional(element)) {
+              return true;
+           }
+
+           var ok = true;
+           if (value.length < 10)
+              ok = false;
+           try {
+              var date = $.datepicker.parseDate(Delfin.Web.Std.Global.Format.Date, value);
+              ok = (date.getFullYear() >= 1900)
+           }
+           catch (err) {
+              ok = false;
+           }
+
+           return ok;
+        });
+
+        $(function () {
+           $.validator.addMethod('date',
+           function (value, element) {
+              if (this.optional(element)) {
+                 return true;
+              }
+              var ok = true;
+              try {
+                 $.datepicker.parseDate('dd/mm/yy', value);
+              }
+              catch (err) {
+                 ok = false;
+              }
+              return ok;
+           });
+           $(".datefield").datepicker({ dateFormat: 'dd/mm/yy', changeYear: true });
+        });
+
+        $(document).ready(function () {
+           @*var controles = $('.datepicker1');
+           controles.bind("blur", function () {
+              return ValidarFechaOnBlur(this);
+           });
+
+           var format = '@Enumerados.ConfiguracionInicial.FormatoFecha.Replace("y", "0").Replace("M", "0").Replace("d", "0")';
+            controles.mask(format);*@
+        });
+    </script>
+
+    <script src="~/Scripts/Views/Layout/Index.js"></script>
+    <script src="~/Scripts/util.js"></script> 
+	<link href="@Url.Content("~/Content/kendo/2013.1.319/kendo.common.min.css")" rel="stylesheet" type="text/css" />
+	<link href="@Url.Content("~/Content/kendo/2013.1.319/kendo.dataviz.min.css")" rel="stylesheet" type="text/css" />
+	<link href="@Url.Content("~/Content/kendo/2013.1.319/kendo.default.min.css")" rel="stylesheet" type="text/css" />
+	<link href="@Url.Content("~/Content/kendo/2013.1.319/kendo.dataviz.default.min.css")" rel="stylesheet" type="text/css" />
+	<script src="@Url.Content("~/Scripts/kendo/2013.1.319/jquery.min.js")"></script>
+	<script src="@Url.Content("~/Scripts/kendo/2013.1.319/kendo.all.min.js")"></script>
+	<script src="@Url.Content("~/Scripts/kendo/2013.1.319/kendo.aspnetmvc.min.js")"></script>
+</head>
+<body>
+    <section class="vbox">
+        <header class="bg-light dk header navbar navbar-fixed-top-xs">
+            <div class="navbar-header aside-md">
+                <a class="btn btn-link visible-xs" data-toggle="class:nav-off-screen,open" data-target="#nav,html">
+                    <i class="fa fa-bars"></i>
+                </a>
+                <a href="@Url.Content("~/Home/Index")" class="navbar-brand">
+                    <img src="@Url.Content("~/Images/logoDelfin.png")" style="display:inline">
+                </a>
+                <a class="btn btn-link visible-xs" data-toggle="dropdown" data-target=".nav-user">
+                    <i class="fa fa-cog"></i>
+                </a>
+            </div>
+            <ul class="nav navbar-nav navbar-right m-n hidden-xs nav-user">
+                <li class="dropdown">
+                    <a href="#" class="dropdown-toggle" data-toggle="dropdown">
+                        <span class="thumb-sm avatar pull-left">
+                            <img src="@Url.Content("~/Images/avatar.jpg")">
+                        </span>
+                        @ViewBag.User
+                        <b class="caret"></b>
+                    </a>
+                    <ul class="dropdown-menu animated fadeInRight">
+                        <span class="arrow top"></span>
+                        <li>
+                            <a href="@Url.Content("~/Home/LogOut")">@Resource.FinalizarSesionLabel</a>
+                        </li>
+                    </ul>
+                </li>
+            </ul>      
+        </header>
+        <section>
+            <section class="hbox stretch">
+                <aside class="bg-dark lter aside-md hidden-print" id="nav">          
+                    <section class="vbox">
+                        <header class="header bg-primary lter text-center clearfix">
+                            <div class="btn-group">
+                                <button type="button" class="btn btn-sm btn-dark btn-icon" title="Sistema de Distribución"><i class="fa fa-desktop"></i></button>
+                                <div class="btn-group hidden-nav-xs">
+                                    <button type="button" class="btn btn-sm btn-primary dropdown-toggle">
+                                        @Resource.FooterLabel
+                                    </button>
+                                </div>
+                            </div>
+                        </header>
+                        <section class="w-f scrollable">
+                            <div class="slim-scroll" data-height="auto" data-disable-fade-out="true" data-distance="0" data-size="5px" data-color="#333333">
+                                <nav class="nav-primary hidden-xs">
+                                    <ul class="nav">
+                                        <li>
+                                            <a href="#Registrar">
+                                                <i class="fa fa-truck icon">
+                                                    <b class="bg-warning"></b>
+                                                </i>
+                                                <span class="pull-right">
+                                                    <i class="fa fa-angle-down text"></i>
+                                                    <i class="fa fa-angle-up text-active"></i>
+                                                </span>
+                                                <span>Delfin</span>
+                                            </a>
+                                            <ul class="nav lt">
+                                                <li>
+                                                    <a href="#Importación Loading List">
+                                                        <i class="fa fa-angle-down text"></i>
+                                                        <i class="fa fa-angle-up text-active"></i>
+                                                        <span>Importación Loading List</span>
+                                                    </a>
+                                                    <ul class="nav bg">
+                                                        <li>
+                                                            <a href="@Url.Content("~/LoadingListImportacion/Resumido/")">
+                                                                <i class="fa fa-angle-right"></i>
+                                                                <span>Loading List Resumido</span>
+                                                            </a>
+                                                        </li>
+                                                       <li>
+                                                            <a href="@Url.Content("~/LoadingListImportacion/Detallado/")">
+                                                                <i class="fa fa-angle-right"></i>
+                                                                <span>Loading List Detallado</span>
+                                                            </a>
+                                                        </li>
+                                                    </ul>
+                                                </li>
+                                                <li>
+                                                    <a href="#Importación Loading List">
+                                                        <i class="fa fa-angle-down text"></i>
+                                                        <i class="fa fa-angle-up text-active"></i>
+                                                        <span>Consulta Loading List</span>
+                                                    </a>
+                                                    <ul class="nav bg">
+                                                        <li>
+                                                            <a href="@Url.Content("~/LoadingListImportacion/Resumido/ListImportacion")">
+                                                                <i class="fa fa-angle-right"></i>
+                                                                <span>Loading List Resumido</span>
+                                                            </a>
+                                                        </li>
+                                                    </ul>
+                                                </li>
+
+                                            </ul>
+                                        </li>
+                                    </ul>
+                                </nav>
+                            </div>
+                        </section>
+                        <footer class="footer lt hidden-xs b-t b-dark">
+                            <a href="#nav" data-toggle="class:nav-xs" class="pull-right btn btn-sm btn-dark btn-icon">
+                                <i class="fa fa-angle-left text"></i>
+                                <i class="fa fa-angle-right text-active"></i>
+                            </a>
+                        </footer>
+                    </section>
+                </aside>
+                <section id="content">
+                    <section class="vbox">
+                        <header class="header bg-white b-b b-light">
+                            <ul class="breadcrumb">
+                                <li><a href="@Url.Content("~/Home/Index")"><i class="fa fa-home"></i> @Html.Raw(Resource.EtiquetaMenuInicio)</a></li>
+                                <li><i class="fa fa-pencil"></i> @RenderSection("breadcrumb", required: false)</li>
+                            </ul>
+                        </header>
+                        @RenderSection("featured", required: false)
+                        <section class="scrollable wrapper w-f">
+                            @RenderBody()
+                        </section>
+                        <footer class="footer bg-white b-t b-light">
+                            <p>© Delfin Web Application @DateTime.Now.Year @ConfigurationManager.AppSettings["VersionAplicacion"]</p>
+                        </footer>
+                    </section>
+                    <a href="#" class="hide nav-off-screen-block" data-toggle="class:nav-off-screen" data-target="#nav"></a>
+                </section>
+                <aside class="bg-light lter b-l aside-md hide" id="notes">
+                    <div class="wrapper">Notification</div>
+                </aside>
+            </section>
+        </section>
+    </section>
+
+    @RenderSection("scripts", required: false)
+</body>
+</html>

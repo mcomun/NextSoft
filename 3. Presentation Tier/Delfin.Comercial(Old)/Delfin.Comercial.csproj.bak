@@ -1,0 +1,2488 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Project ToolsVersion="12.0" DefaultTargets="Build" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
+  <Import Project="$(MSBuildExtensionsPath)\$(MSBuildToolsVersion)\Microsoft.Common.props" Condition="Exists('$(MSBuildExtensionsPath)\$(MSBuildToolsVersion)\Microsoft.Common.props')" />
+  <PropertyGroup>
+    <Configuration Condition=" '$(Configuration)' == '' ">Debug</Configuration>
+    <Platform Condition=" '$(Platform)' == '' ">AnyCPU</Platform>
+    <ProjectGuid>{F5DEB6CA-258D-4951-987F-0E453ABA8948}</ProjectGuid>
+    <OutputType>Library</OutputType>
+    <AppDesignerFolder>Properties</AppDesignerFolder>
+    <RootNamespace>Delfin.Comercial</RootNamespace>
+    <AssemblyName>Delfin.Comercial</AssemblyName>
+    <TargetFrameworkVersion>v4.5.2</TargetFrameworkVersion>
+    <FileAlignment>512</FileAlignment>
+    <TargetFrameworkProfile />
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Debug|AnyCPU' ">
+    <DebugSymbols>true</DebugSymbols>
+    <DebugType>full</DebugType>
+    <Optimize>false</Optimize>
+    <OutputPath>bin\Debug\</OutputPath>
+    <DefineConstants>DEBUG;TRACE</DefineConstants>
+    <ErrorReport>prompt</ErrorReport>
+    <WarningLevel>4</WarningLevel>
+    <PlatformTarget>x86</PlatformTarget>
+    <Prefer32Bit>false</Prefer32Bit>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Release|AnyCPU' ">
+    <DebugType>pdbonly</DebugType>
+    <Optimize>true</Optimize>
+    <OutputPath>bin\Release\</OutputPath>
+    <DefineConstants>TRACE</DefineConstants>
+    <ErrorReport>prompt</ErrorReport>
+    <WarningLevel>4</WarningLevel>
+    <Prefer32Bit>false</Prefer32Bit>
+  </PropertyGroup>
+  <PropertyGroup Condition="'$(Configuration)|$(Platform)' == 'Debug|x86'">
+    <DebugSymbols>true</DebugSymbols>
+    <OutputPath>bin\x86\Debug\</OutputPath>
+    <DefineConstants>DEBUG;TRACE</DefineConstants>
+    <DebugType>full</DebugType>
+    <PlatformTarget>x86</PlatformTarget>
+    <ErrorReport>prompt</ErrorReport>
+    <CodeAnalysisRuleSet>MinimumRecommendedRules.ruleset</CodeAnalysisRuleSet>
+    <Prefer32Bit>false</Prefer32Bit>
+  </PropertyGroup>
+  <PropertyGroup Condition="'$(Configuration)|$(Platform)' == 'Release|x86'">
+    <OutputPath>bin\x86\Release\</OutputPath>
+    <DefineConstants>TRACE</DefineConstants>
+    <Optimize>true</Optimize>
+    <DebugType>pdbonly</DebugType>
+    <PlatformTarget>x86</PlatformTarget>
+    <ErrorReport>prompt</ErrorReport>
+    <CodeAnalysisRuleSet>MinimumRecommendedRules.ruleset</CodeAnalysisRuleSet>
+    <Prefer32Bit>false</Prefer32Bit>
+  </PropertyGroup>
+  <PropertyGroup>
+    <SignAssembly>false</SignAssembly>
+  </PropertyGroup>
+  <PropertyGroup>
+    <AssemblyOriginatorKeyFile>DelfinCert.pfx</AssemblyOriginatorKeyFile>
+  </PropertyGroup>
+  <ItemGroup>
+    <Reference Include="BigStick.Http">
+      <HintPath>..\..\Librerias\BigStick.Http.dll</HintPath>
+    </Reference>
+    <Reference Include="Delfin.Controls, Version=3.0.1.3, Culture=neutral, processorArchitecture=MSIL">
+      <SpecificVersion>False</SpecificVersion>
+      <HintPath>..\..\Librerias\Delfin.Controls.dll</HintPath>
+    </Reference>
+    <Reference Include="DevExpress.Data.v13.1, Version=13.1.12.0, Culture=neutral, PublicKeyToken=b88d1754d700e49a">
+      <Private>True</Private>
+    </Reference>
+    <Reference Include="DevExpress.Printing.v13.1.Core, Version=13.1.12.0, Culture=neutral, PublicKeyToken=b88d1754d700e49a">
+      <Private>True</Private>
+    </Reference>
+    <Reference Include="DevExpress.Sparkline.v13.1.Core, Version=13.1.12.0, Culture=neutral, PublicKeyToken=b88d1754d700e49a">
+      <Private>True</Private>
+    </Reference>
+    <Reference Include="DevExpress.Utils.v13.1, Version=13.1.12.0, Culture=neutral, PublicKeyToken=b88d1754d700e49a">
+      <Private>True</Private>
+    </Reference>
+    <Reference Include="DevExpress.XtraEditors.v13.1, Version=13.1.12.0, Culture=neutral, PublicKeyToken=b88d1754d700e49a, processorArchitecture=MSIL">
+      <Private>True</Private>
+    </Reference>
+    <Reference Include="Impresion">
+      <HintPath>..\..\Librerias\Impresion.dll</HintPath>
+    </Reference>
+    <Reference Include="Infrastructure.Aspect">
+      <HintPath>..\..\Librerias\Infrastructure.Aspect.dll</HintPath>
+    </Reference>
+    <Reference Include="Infrastructure.Client, Version=1.0.0.0, Culture=neutral, processorArchitecture=MSIL">
+      <SpecificVersion>False</SpecificVersion>
+      <HintPath>..\..\Librerias\Infrastructure.Client.dll</HintPath>
+    </Reference>
+    <Reference Include="Infrastructure.WinForms.Controls">
+      <HintPath>..\..\Librerias\Infrastructure.WinForms.Controls.dll</HintPath>
+    </Reference>
+    <Reference Include="Microsoft.Office.Interop.Excel, Version=14.0.0.0, Culture=neutral, PublicKeyToken=71e9bce111e9429c, processorArchitecture=MSIL">
+      <EmbedInteropTypes>True</EmbedInteropTypes>
+    </Reference>
+    <Reference Include="Microsoft.Office.Interop.Outlook, Version=15.0.0.0, Culture=neutral, PublicKeyToken=71e9bce111e9429c, processorArchitecture=MSIL">
+      <SpecificVersion>False</SpecificVersion>
+      <EmbedInteropTypes>True</EmbedInteropTypes>
+      <HintPath>..\..\..\..\Librerias\Microsoft.Office.Interop.Outlook.dll</HintPath>
+    </Reference>
+    <Reference Include="Microsoft.Office.Tools.Excel, Version=10.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a, processorArchitecture=MSIL">
+      <EmbedInteropTypes>True</EmbedInteropTypes>
+    </Reference>
+    <Reference Include="Microsoft.Practices.Unity">
+      <HintPath>..\..\..\..\Librerias\Microsoft.Practices.Unity.dll</HintPath>
+    </Reference>
+    <Reference Include="Microsoft.Practices.Unity.Configuration">
+      <HintPath>..\..\..\..\Librerias\Microsoft.Practices.Unity.Configuration.dll</HintPath>
+    </Reference>
+    <Reference Include="Microsoft.Practices.Unity.Interception">
+      <HintPath>..\..\..\..\Librerias\Microsoft.Practices.Unity.Interception.dll</HintPath>
+    </Reference>
+    <Reference Include="Microsoft.Practices.Unity.Interception.Configuration">
+      <HintPath>..\..\..\..\Librerias\Microsoft.Practices.Unity.Interception.Configuration.dll</HintPath>
+    </Reference>
+    <Reference Include="Microsoft.ReportViewer.Common, Version=11.0.0.0, Culture=neutral, PublicKeyToken=89845dcd8080cc91">
+      <Private>True</Private>
+    </Reference>
+    <Reference Include="Microsoft.ReportViewer.WinForms, Version=11.0.0.0, Culture=neutral, PublicKeyToken=89845dcd8080cc91, processorArchitecture=MSIL">
+      <Private>True</Private>
+    </Reference>
+    <Reference Include="NextAdmin.BusinessLogic">
+      <HintPath>..\..\Librerias\NextAdmin.BusinessLogic.dll</HintPath>
+    </Reference>
+    <Reference Include="NextAdmin.Views, Version=1.0.0.0, Culture=neutral, processorArchitecture=MSIL">
+      <SpecificVersion>False</SpecificVersion>
+      <HintPath>..\..\LibreriasAdmin\NextAdmin.Views.dll</HintPath>
+    </Reference>
+    <Reference Include="Office, Version=15.0.0.0, Culture=neutral, PublicKeyToken=71e9bce111e9429c, processorArchitecture=MSIL">
+      <SpecificVersion>False</SpecificVersion>
+      <EmbedInteropTypes>True</EmbedInteropTypes>
+      <HintPath>C:\Program Files (x86)\Microsoft Visual Studio 11.0\Visual Studio Tools for Office\PIA\Office14\Office.dll</HintPath>
+    </Reference>
+    <Reference Include="System" />
+    <Reference Include="System.configuration" />
+    <Reference Include="System.Core" />
+    <Reference Include="System.Data.Linq" />
+    <Reference Include="System.DirectoryServices" />
+    <Reference Include="System.Net" />
+    <Reference Include="System.Runtime.Serialization" />
+    <Reference Include="System.ServiceModel" />
+    <Reference Include="System.Web" />
+    <Reference Include="System.Web.Extensions" />
+    <Reference Include="System.Web.Services" />
+    <Reference Include="System.Windows.Forms" />
+    <Reference Include="System.Xml.Linq" />
+    <Reference Include="System.Data.DataSetExtensions" />
+    <Reference Include="Microsoft.CSharp" />
+    <Reference Include="System.Data" />
+    <Reference Include="System.Drawing" />
+    <Reference Include="System.Xml" />
+    <Reference Include="TabControlEX">
+      <HintPath>..\..\Librerias\TabControlEX.dll</HintPath>
+    </Reference>
+    <Reference Include="Telerik.WinControls, Version=2011.2.11.712, Culture=neutral, PublicKeyToken=5bb2a467cbec794e, processorArchitecture=MSIL">
+      <SpecificVersion>False</SpecificVersion>
+      <HintPath>..\..\LibreriasAdmin\Telerik.WinControls.dll</HintPath>
+    </Reference>
+    <Reference Include="Telerik.WinControls.GridView, Version=2011.2.11.712, Culture=neutral, PublicKeyToken=5bb2a467cbec794e, processorArchitecture=MSIL">
+      <SpecificVersion>False</SpecificVersion>
+      <HintPath>..\..\LibreriasAdmin\Telerik.WinControls.GridView.dll</HintPath>
+    </Reference>
+    <Reference Include="Telerik.WinControls.UI, Version=2011.2.11.712, Culture=neutral, PublicKeyToken=5bb2a467cbec794e, processorArchitecture=MSIL">
+      <SpecificVersion>False</SpecificVersion>
+      <HintPath>..\..\LibreriasAdmin\Telerik.WinControls.UI.dll</HintPath>
+    </Reference>
+    <Reference Include="Telerik.WinControls.UI.Design, Version=2011.2.11.712, Culture=neutral, PublicKeyToken=5bb2a467cbec794e, processorArchitecture=MSIL">
+      <SpecificVersion>False</SpecificVersion>
+      <HintPath>..\..\LibreriasAdmin\Telerik.WinControls.UI.Design.dll</HintPath>
+    </Reference>
+    <Reference Include="TelerikCommon, Version=2011.2.11.712, Culture=neutral, PublicKeyToken=5bb2a467cbec794e, processorArchitecture=MSIL">
+      <SpecificVersion>False</SpecificVersion>
+      <HintPath>..\..\LibreriasAdmin\TelerikCommon.dll</HintPath>
+    </Reference>
+  </ItemGroup>
+  <ItemGroup>
+    <Compile Include="ActualizaOportunidadCrm.cs" />
+    <Compile Include="Mantenimientos\MAN009Entidad\MAN009SView.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Mantenimientos\MAN009Entidad\MAN009SView.Designer.cs">
+      <DependentUpon>MAN009SView.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Mantenimientos\MAN009Entidad\MAN009TView.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Mantenimientos\MAN009Entidad\MAN009TView.Designer.cs">
+      <DependentUpon>MAN009TView.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Mantenimientos\MAN014Comision\IMAN014View.cs" />
+    <Compile Include="Mantenimientos\MAN014Comision\MAN014LView.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="Mantenimientos\MAN014Comision\MAN014LView.Designer.cs">
+      <DependentUpon>MAN014LView.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Mantenimientos\MAN014Comision\MAN014MView.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Mantenimientos\MAN014Comision\MAN014MView.Designer.cs">
+      <DependentUpon>MAN014MView.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Mantenimientos\MAN014Comision\MAN014Presenter.cs" />
+    <Compile Include="Mantenimientos\MAN000Empresas\IMAN000View.cs" />
+    <Compile Include="Mantenimientos\MAN000Empresas\MAN000LView.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="Mantenimientos\MAN000Empresas\MAN000LView.Designer.cs">
+      <DependentUpon>MAN000LView.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Mantenimientos\MAN000Empresas\MAN000MView.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Mantenimientos\MAN000Empresas\MAN000MView.Designer.cs">
+      <DependentUpon>MAN000MView.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Mantenimientos\MAN000Empresas\MAN000Presenter.cs" />
+    <Compile Include="Mantenimientos\MAN001Sucursales\IMAN001View.cs" />
+    <Compile Include="Mantenimientos\MAN001Sucursales\MAN001LView.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="Mantenimientos\MAN001Sucursales\MAN001LView.Designer.cs">
+      <DependentUpon>MAN001LView.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Mantenimientos\MAN001Sucursales\MAN001MView.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Mantenimientos\MAN001Sucursales\MAN001MView.Designer.cs">
+      <DependentUpon>MAN001MView.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Mantenimientos\MAN001Sucursales\MAN001Presenter.cs" />
+    <Compile Include="Mantenimientos\MAN002Tipos\IMAN002View.cs" />
+    <Compile Include="Mantenimientos\MAN002Tipos\MAN002LView.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="Mantenimientos\MAN002Tipos\MAN002LView.Designer.cs">
+      <DependentUpon>MAN002LView.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Mantenimientos\MAN002Tipos\MAN002MView.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Mantenimientos\MAN002Tipos\MAN002MView.Designer.cs">
+      <DependentUpon>MAN002MView.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Mantenimientos\MAN002Tipos\MAN002Presenter.cs" />
+    <Compile Include="Mantenimientos\MAN003ResultadoGestion\IMAN003View.cs" />
+    <Compile Include="Mantenimientos\MAN003ResultadoGestion\MAN003LView.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="Mantenimientos\MAN003ResultadoGestion\MAN003LView.Designer.cs">
+      <DependentUpon>MAN003LView.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Mantenimientos\MAN003ResultadoGestion\MAN003MView.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Mantenimientos\MAN003ResultadoGestion\MAN003MView.Designer.cs">
+      <DependentUpon>MAN003MView.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Mantenimientos\MAN003ResultadoGestion\MAN003Presenter.cs" />
+    <Compile Include="Mantenimientos\MAN004Servicios\IMAN004View.cs" />
+    <Compile Include="Mantenimientos\MAN004Servicios\MAN004LView.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="Mantenimientos\MAN004Servicios\MAN004LView.Designer.cs">
+      <DependentUpon>MAN004LView.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Mantenimientos\MAN004Servicios\MAN004MView.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Mantenimientos\MAN004Servicios\MAN004MView.Designer.cs">
+      <DependentUpon>MAN004MView.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Mantenimientos\MAN004Servicios\MAN004Presenter.cs" />
+    <Compile Include="Mantenimientos\MAN005Contratos\IMAN005View.cs" />
+    <Compile Include="Mantenimientos\MAN005Contratos\MAN005LView.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="Mantenimientos\MAN005Contratos\MAN005LView.Designer.cs">
+      <DependentUpon>MAN005LView.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Mantenimientos\MAN005Contratos\MAN005MView.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Mantenimientos\MAN005Contratos\MAN005MView.Designer.cs">
+      <DependentUpon>MAN005MView.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Mantenimientos\MAN005Contratos\MAN005Presenter.cs" />
+    <Compile Include="Mantenimientos\MAN006Ubigeos\IMAN006View.cs" />
+    <Compile Include="Mantenimientos\MAN006Ubigeos\MAN006LView.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="Mantenimientos\MAN006Ubigeos\MAN006LView.Designer.cs">
+      <DependentUpon>MAN006LView.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Mantenimientos\MAN006Ubigeos\MAN006MView.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Mantenimientos\MAN006Ubigeos\MAN006MView.Designer.cs">
+      <DependentUpon>MAN006MView.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Mantenimientos\MAN006Ubigeos\MAN006Presenter.cs" />
+    <Compile Include="Mantenimientos\MAN007Puertos\IMAN007View.cs" />
+    <Compile Include="Mantenimientos\MAN007Puertos\MAN007LView.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="Mantenimientos\MAN007Puertos\MAN007LView.Designer.cs">
+      <DependentUpon>MAN007LView.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Mantenimientos\MAN007Puertos\MAN007MView.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Mantenimientos\MAN007Puertos\MAN007MView.Designer.cs">
+      <DependentUpon>MAN007MView.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Mantenimientos\MAN007Puertos\MAN007Presenter.cs" />
+    <Compile Include="Mantenimientos\MAN008Paquetes\IMAN008View.cs" />
+    <Compile Include="Mantenimientos\MAN008Paquetes\MAN008LView.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="Mantenimientos\MAN008Paquetes\MAN008LView.Designer.cs">
+      <DependentUpon>MAN008LView.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Mantenimientos\MAN008Paquetes\MAN008MView.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Mantenimientos\MAN008Paquetes\MAN008MView.Designer.cs">
+      <DependentUpon>MAN008MView.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Mantenimientos\MAN008Paquetes\MAN008Presenter.cs" />
+    <Compile Include="Mantenimientos\MAN009Entidad\IMAN009View.cs" />
+    <Compile Include="Mantenimientos\MAN009Entidad\MAN009DView.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Mantenimientos\MAN009Entidad\MAN009DView.Designer.cs">
+      <DependentUpon>MAN009DView.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Mantenimientos\MAN009Entidad\MAN009DViewCtasBancarias.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Mantenimientos\MAN009Entidad\MAN009DViewCtasBancarias.Designer.cs">
+      <DependentUpon>MAN009DViewCtasBancarias.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Mantenimientos\MAN009Entidad\MAN009DViewLCredito.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Mantenimientos\MAN009Entidad\MAN009DViewLCredito.Designer.cs">
+      <DependentUpon>MAN009DViewLCredito.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Mantenimientos\MAN009Entidad\MAN009LView.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="Mantenimientos\MAN009Entidad\MAN009LView.Designer.cs">
+      <DependentUpon>MAN009LView.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Mantenimientos\MAN009Entidad\MAN009MView.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Mantenimientos\MAN009Entidad\MAN009MView.Designer.cs">
+      <DependentUpon>MAN009MView.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Mantenimientos\MAN009Entidad\MAN009Presenter.cs" />
+    <Compile Include="Mantenimientos\MAN009Entidad\MAN009RView.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Mantenimientos\MAN009Entidad\MAN009RView.Designer.cs">
+      <DependentUpon>MAN009RView.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Mantenimientos\MAN009Entidad\MAN009VViewHistorial.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Mantenimientos\MAN009Entidad\MAN009VViewHistorial.Designer.cs">
+      <DependentUpon>MAN009VViewHistorial.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Mantenimientos\MAN010Nave\IMAN010View.cs" />
+    <Compile Include="Mantenimientos\MAN010Nave\MAN010LView.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="Mantenimientos\MAN010Nave\MAN010LView.Designer.cs">
+      <DependentUpon>MAN010LView.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Mantenimientos\MAN010Nave\MAN010MView.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Mantenimientos\MAN010Nave\MAN010MView.Designer.cs">
+      <DependentUpon>MAN010MView.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Mantenimientos\MAN010Nave\MAN010Presenter.cs" />
+    <Compile Include="Mantenimientos\MAN011NaveViaje\IMAN011View.cs" />
+    <Compile Include="Mantenimientos\MAN011NaveViaje\MAN011LView.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="Mantenimientos\MAN011NaveViaje\MAN011LView.Designer.cs">
+      <DependentUpon>MAN011LView.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Mantenimientos\MAN011NaveViaje\MAN011MView.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Mantenimientos\MAN011NaveViaje\MAN011MView.Designer.cs">
+      <DependentUpon>MAN011MView.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Mantenimientos\MAN011NaveViaje\MAN011Presenter.cs" />
+    <Compile Include="Mantenimientos\MAN012Rebate\IMAN012View.cs" />
+    <Compile Include="Mantenimientos\MAN012Rebate\MAN012LView.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="Mantenimientos\MAN012Rebate\MAN012LView.Designer.cs">
+      <DependentUpon>MAN012LView.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Mantenimientos\MAN012Rebate\MAN012MView.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Mantenimientos\MAN012Rebate\MAN012MView.Designer.cs">
+      <DependentUpon>MAN012MView.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Mantenimientos\MAN012Rebate\MAN012Presenter.cs" />
+    <Compile Include="Mantenimientos\MAN015Series\MAN015SeriesLView.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="Mantenimientos\MAN015Series\MAN015SeriesLView.Designer.cs">
+      <DependentUpon>MAN015SeriesLView.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Mantenimientos\MAN015Series\MAN015SeriesMView.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Mantenimientos\MAN015Series\MAN015SeriesMView.Designer.cs">
+      <DependentUpon>MAN015SeriesMView.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Mantenimientos\MAN015Series\MAN015SeriesPresenter.cs" />
+    <Compile Include="Mantenimientos\MAN015Series\IMAN015SeriesView.cs" />
+    <Compile Include="Mantenimientos\MAN016Flujos\MAN016FlujosLView.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="Mantenimientos\MAN016Flujos\MAN016FlujosLView.Designer.cs">
+      <DependentUpon>MAN016FlujosLView.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Mantenimientos\MAN016Flujos\MAN016FlujosMView.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Mantenimientos\MAN016Flujos\MAN016FlujosMView.Designer.cs">
+      <DependentUpon>MAN016FlujosMView.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Mantenimientos\MAN016Flujos\MAN016FlujosPresenter.cs" />
+    <Compile Include="Mantenimientos\MAN016Flujos\IMAN016FlujosView.cs" />
+    <Compile Include="Mantenimientos\PAR000Parametros\PAR000SView.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Mantenimientos\PAR000Parametros\PAR000SView.Designer.cs">
+      <DependentUpon>PAR000SView.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Mantenimientos\PAR000Parametros\IPAR000View.cs" />
+    <Compile Include="Mantenimientos\PAR000Parametros\PAR000AView.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Mantenimientos\PAR000Parametros\PAR000AView.Designer.cs">
+      <DependentUpon>PAR000AView.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Mantenimientos\PAR000Parametros\PAR000MView.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Mantenimientos\PAR000Parametros\PAR000MView.Designer.cs">
+      <DependentUpon>PAR000MView.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Mantenimientos\PAR000Parametros\PAR000Presenter.cs" />
+    <Compile Include="Procesos\Comercial\COM001ImportacinProspectos\COM001LView.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="Procesos\Comercial\COM001ImportacinProspectos\COM001LView.Designer.cs">
+      <DependentUpon>COM001LView.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Procesos\Comercial\COM001ImportacinProspectos\COM001Presenter.cs" />
+    <Compile Include="Procesos\Comercial\COM001ImportacinProspectos\ICOM001View.cs" />
+    <Compile Include="Procesos\Comercial\COM002AsignacionProspectos\COM002LView.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="Procesos\Comercial\COM002AsignacionProspectos\COM002LView.Designer.cs">
+      <DependentUpon>COM002LView.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Procesos\Comercial\COM002AsignacionProspectos\COM002Presenter.cs" />
+    <Compile Include="Procesos\Comercial\COM002AsignacionProspectos\ICOM002View.cs" />
+    <Compile Include="Procesos\Comercial\COM003GestionVentas\COM003LView.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="Procesos\Comercial\COM003GestionVentas\COM003LView.Designer.cs">
+      <DependentUpon>COM003LView.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Procesos\Comercial\COM003GestionVentas\COM003Presenter.cs" />
+    <Compile Include="Procesos\Comercial\COM003GestionVentas\ICOM003View.cs" />
+    <Compile Include="Procesos\Comercial\COM004KPIContactados\COM004LView.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="Procesos\Comercial\COM004KPIContactados\COM004LView.Designer.cs">
+      <DependentUpon>COM004LView.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Procesos\Comercial\COM004KPIContactados\COM004Presenter.cs" />
+    <Compile Include="Procesos\Comercial\COM004KPIContactados\ICOM004View.cs" />
+    <Compile Include="Procesos\Comercial\COM005KPIReuniones\COM005LView.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="Procesos\Comercial\COM005KPIReuniones\COM005LView.Designer.cs">
+      <DependentUpon>COM005LView.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Procesos\Comercial\COM005KPIReuniones\COM005Presenter.cs" />
+    <Compile Include="Procesos\Comercial\COM005KPIReuniones\ICOM005View.cs" />
+    <Compile Include="Procesos\Comercial\COM006Tarifario\COM006CView.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Procesos\Comercial\COM006Tarifario\COM006CView.Designer.cs">
+      <DependentUpon>COM006CView.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Procesos\Comercial\COM006Tarifario\COM006DView.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Procesos\Comercial\COM006Tarifario\COM006DView.Designer.cs">
+      <DependentUpon>COM006DView.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Procesos\Comercial\COM006Tarifario\COM006LView.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="Procesos\Comercial\COM006Tarifario\COM006LView.Designer.cs">
+      <DependentUpon>COM006LView.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Procesos\Comercial\COM006Tarifario\COM006MView.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Procesos\Comercial\COM006Tarifario\COM006MView.Designer.cs">
+      <DependentUpon>COM006MView.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Procesos\Comercial\COM006Tarifario\COM006Presenter.cs" />
+    <Compile Include="Procesos\Comercial\COM006Tarifario\ICOM006View.cs" />
+    <Compile Include="Procesos\Comercial\COM007Cotizacion\COM007LView.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="Procesos\Comercial\COM007Cotizacion\COM007LView.Designer.cs">
+      <DependentUpon>COM007LView.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Procesos\Comercial\COM007Cotizacion\COM007MView.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Procesos\Comercial\COM007Cotizacion\COM007MView.Designer.cs">
+      <DependentUpon>COM007MView.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Procesos\Comercial\COM007Cotizacion\COM007Presenter.cs" />
+    <Compile Include="Procesos\Comercial\COM007Cotizacion\COM007Presenter.Mailing.cs" />
+    <Compile Include="Procesos\Comercial\COM007Cotizacion\COM007Presenter.Report.cs" />
+    <Compile Include="Procesos\Comercial\COM007Cotizacion\COM007PView.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Procesos\Comercial\COM007Cotizacion\COM007PView.Designer.cs">
+      <DependentUpon>COM007PView.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Procesos\Comercial\COM007Cotizacion\COM007RView.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Procesos\Comercial\COM007Cotizacion\COM007RView.Designer.cs">
+      <DependentUpon>COM007RView.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Procesos\Comercial\COM007Cotizacion\ICOM007View.cs" />
+    <Compile Include="Procesos\Comercial\COM009KPICotizaciones\COM009LView.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="Procesos\Comercial\COM009KPICotizaciones\COM009LView.Designer.cs">
+      <DependentUpon>COM009LView.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Procesos\Comercial\COM009KPICotizaciones\COM009Presenter.cs" />
+    <Compile Include="Procesos\Comercial\COM009KPICotizaciones\ICOM009View.cs" />
+    <Compile Include="Procesos\Comercial\COM010KPIOrdenVentas\COM010LView.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="Procesos\Comercial\COM010KPIOrdenVentas\COM010LView.Designer.cs">
+      <DependentUpon>COM010LView.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Procesos\Comercial\COM010KPIOrdenVentas\COM010Presenter.cs" />
+    <Compile Include="Procesos\Comercial\COM010KPIOrdenVentas\ICOM010View.cs" />
+    <Compile Include="Procesos\Comercial\COM011KPITEUSVendidos\COM011LView.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="Procesos\Comercial\COM011KPITEUSVendidos\COM011LView.Designer.cs">
+      <DependentUpon>COM011LView.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Procesos\Comercial\COM011KPITEUSVendidos\COM011Presenter.cs" />
+    <Compile Include="Procesos\Comercial\COM011KPITEUSVendidos\ICOM011View.cs" />
+    <Compile Include="Procesos\Comercial\COM012Comisiones\COM012LView.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="Procesos\Comercial\COM012Comisiones\COM012LView.Designer.cs">
+      <DependentUpon>COM012LView.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Procesos\Comercial\COM012Comisiones\COM012MView.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Procesos\Comercial\COM012Comisiones\COM012MView.Designer.cs">
+      <DependentUpon>COM012MView.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Procesos\Comercial\COM012Comisiones\COM012Presenter.cs" />
+    <Compile Include="Procesos\Comercial\COM012Comisiones\ICOM012View.cs" />
+    <Compile Include="Procesos\Documentacion\DOC000LoadingList\DOC000LView.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="Procesos\Documentacion\DOC000LoadingList\DOC000LView.Designer.cs">
+      <DependentUpon>DOC000LView.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Procesos\Documentacion\DOC000LoadingList\DOC000MView.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Procesos\Documentacion\DOC000LoadingList\DOC000MView.Designer.cs">
+      <DependentUpon>DOC000MView.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Procesos\Documentacion\DOC000LoadingList\DOC000Presenter.cs" />
+    <Compile Include="Procesos\Documentacion\DOC000LoadingList\IDOC000View.cs" />
+    <Compile Include="Procesos\Documentacion\DOC001MBL\DOC001LView.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="Procesos\Documentacion\DOC001MBL\DOC001LView.Designer.cs">
+      <DependentUpon>DOC001LView.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Procesos\Documentacion\DOC001MBL\DOC001MView.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Procesos\Documentacion\DOC001MBL\DOC001MView.Designer.cs">
+      <DependentUpon>DOC001MView.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Procesos\Documentacion\DOC001MBL\DOC001Presenter.cs" />
+    <Compile Include="Procesos\Documentacion\DOC001MBL\IDOC001View.cs" />
+    <Compile Include="Procesos\Documentacion\DOC002ControlDocumentos\DOC002DView.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Procesos\Documentacion\DOC002ControlDocumentos\DOC002DView.Designer.cs">
+      <DependentUpon>DOC002DView.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Procesos\Documentacion\DOC002ControlDocumentos\DOC002LView.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="Procesos\Documentacion\DOC002ControlDocumentos\DOC002LView.Designer.cs">
+      <DependentUpon>DOC002LView.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Procesos\Documentacion\DOC002ControlDocumentos\DOC002MView.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Procesos\Documentacion\DOC002ControlDocumentos\DOC002MView.Designer.cs">
+      <DependentUpon>DOC002MView.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Procesos\Documentacion\DOC002ControlDocumentos\DOC002Presenter.cs" />
+    <Compile Include="Procesos\Documentacion\DOC002ControlDocumentos\IDOC002View.cs" />
+    <Compile Include="Procesos\Finanzas\CAJ001CuentasBancarias\CAJ001CuentasBancariasCView.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Procesos\Finanzas\CAJ001CuentasBancarias\CAJ001CuentasBancariasCView.Designer.cs">
+      <DependentUpon>CAJ001CuentasBancariasCView.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Procesos\Finanzas\CAJ001CuentasBancarias\CAJ001CuentasBancariasLView.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="Procesos\Finanzas\CAJ001CuentasBancarias\CAJ001CuentasBancariasLView.Designer.cs">
+      <DependentUpon>CAJ001CuentasBancariasLView.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Procesos\Finanzas\CAJ001CuentasBancarias\CAJ001CuentasBancariasMView.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Procesos\Finanzas\CAJ001CuentasBancarias\CAJ001CuentasBancariasMView.Designer.cs">
+      <DependentUpon>CAJ001CuentasBancariasMView.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Procesos\Finanzas\CAJ001CuentasBancarias\CAJ001CuentasBancariasPresenter.cs" />
+    <Compile Include="Procesos\Finanzas\CAJ001CuentasBancarias\ICAJ001CuentasBancariasView.cs" />
+    <Compile Include="Procesos\Finanzas\CAJ002IngresosEgresos\CAJ002IngresosEgresosDView.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Procesos\Finanzas\CAJ002IngresosEgresos\CAJ002IngresosEgresosDView.Designer.cs">
+      <DependentUpon>CAJ002IngresosEgresosDView.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Procesos\Finanzas\CAJ002IngresosEgresos\CAJ002IngresosEgresosDViewDescuadres.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Procesos\Finanzas\CAJ002IngresosEgresos\CAJ002IngresosEgresosDViewDescuadres.Designer.cs">
+      <DependentUpon>CAJ002IngresosEgresosDViewDescuadres.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Procesos\Finanzas\CAJ002IngresosEgresos\CAJ002IngresosEgresosDViewEDiferido.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Procesos\Finanzas\CAJ002IngresosEgresos\CAJ002IngresosEgresosDViewEDiferido.Designer.cs">
+      <DependentUpon>CAJ002IngresosEgresosDViewEDiferido.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Procesos\Finanzas\CAJ002IngresosEgresos\CAJ002IngresosEgresosFlujoDView.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Procesos\Finanzas\CAJ002IngresosEgresos\CAJ002IngresosEgresosFlujoDView.Designer.cs">
+      <DependentUpon>CAJ002IngresosEgresosFlujoDView.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Procesos\Finanzas\CAJ002IngresosEgresos\CAJ002IngresosEgresosFView.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Procesos\Finanzas\CAJ002IngresosEgresos\CAJ002IngresosEgresosFView.Designer.cs">
+      <DependentUpon>CAJ002IngresosEgresosFView.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Procesos\Finanzas\CAJ002IngresosEgresos\CAJ002IngresosEgresosLView.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="Procesos\Finanzas\CAJ002IngresosEgresos\CAJ002IngresosEgresosLView.Designer.cs">
+      <DependentUpon>CAJ002IngresosEgresosLView.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Procesos\Finanzas\CAJ002IngresosEgresos\CAJ002IngresosMView.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Procesos\Finanzas\CAJ002IngresosEgresos\CAJ002IngresosMView.Designer.cs">
+      <DependentUpon>CAJ002IngresosMView.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Procesos\Finanzas\CAJ002IngresosEgresos\CAJ002IngresosEgresosPresenter.cs" />
+    <Compile Include="Procesos\Finanzas\CAJ002IngresosEgresos\CAJ002IngresosEgresosPagos.Designer.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>CAJ002IngresosEgresosPagos.xsd</DependentUpon>
+    </Compile>
+    <Compile Include="Procesos\Finanzas\CAJ002IngresosEgresos\ICAJ002IngresosEgresosView.cs" />
+    <Compile Include="Procesos\Finanzas\CAJ004ChequesEnBlanco\CAJ004ChequesEnBlancoLView.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="Procesos\Finanzas\CAJ004ChequesEnBlanco\CAJ004ChequesEnBlancoLView.Designer.cs">
+      <DependentUpon>CAJ004ChequesEnBlancoLView.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Procesos\Finanzas\CAJ004ChequesEnBlanco\CAJ004ChequesEnBlancoMView.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Procesos\Finanzas\CAJ004ChequesEnBlanco\CAJ004ChequesEnBlancoMView.Designer.cs">
+      <DependentUpon>CAJ004ChequesEnBlancoMView.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Procesos\Finanzas\CAJ004ChequesEnBlanco\CAJ004ChequesEnBlancoPresenter.cs" />
+    <Compile Include="Procesos\Finanzas\CAJ004ChequesEnBlanco\ICAJ004ChequesEnBlancoView.cs" />
+    <Compile Include="Procesos\Finanzas\CAJ005Transferencias\CAJ005TransferenciasGView.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Procesos\Finanzas\CAJ005Transferencias\CAJ005TransferenciasGView.Designer.cs">
+      <DependentUpon>CAJ005TransferenciasGView.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Procesos\Finanzas\CAJ005Transferencias\CAJ005TransferenciasLView.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="Procesos\Finanzas\CAJ005Transferencias\CAJ005TransferenciasLView.Designer.cs">
+      <DependentUpon>CAJ005TransferenciasLView.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Procesos\Finanzas\CAJ005Transferencias\CAJ005TransferenciasMView.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Procesos\Finanzas\CAJ005Transferencias\CAJ005TransferenciasMView.Designer.cs">
+      <DependentUpon>CAJ005TransferenciasMView.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Procesos\Finanzas\CAJ005Transferencias\CAJ005TransferenciasMViewSmall.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Procesos\Finanzas\CAJ005Transferencias\CAJ005TransferenciasMViewSmall.Designer.cs">
+      <DependentUpon>CAJ005TransferenciasMViewSmall.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Procesos\Finanzas\CAJ005Transferencias\CAJ005TransferenciasPresenter.cs" />
+    <Compile Include="Procesos\Finanzas\CAJ005Transferencias\ICAJ005TransferenciasView.cs" />
+    <Compile Include="Procesos\Finanzas\CAJ006LiquidacionAgentes\CAJ006LiquidacionAgentesDS.cs">
+      <DependentUpon>CAJ006LiquidacionAgentesDS.xsd</DependentUpon>
+    </Compile>
+    <Compile Include="Procesos\Finanzas\CAJ006LiquidacionAgentes\CAJ006LiquidacionAgentesDS.Designer.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>CAJ006LiquidacionAgentesDS.xsd</DependentUpon>
+    </Compile>
+    <Compile Include="Procesos\Finanzas\CAJ006LiquidacionAgentes\CAJ006LiquidacionAgentesDViewConciliacion.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Procesos\Finanzas\CAJ006LiquidacionAgentes\CAJ006LiquidacionAgentesDViewConciliacion.Designer.cs">
+      <DependentUpon>CAJ006LiquidacionAgentesDViewConciliacion.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Procesos\Finanzas\CAJ006LiquidacionAgentes\CAJ006LiquidacionAgentesLView.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="Procesos\Finanzas\CAJ006LiquidacionAgentes\CAJ006LiquidacionAgentesLView.Designer.cs">
+      <DependentUpon>CAJ006LiquidacionAgentesLView.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Procesos\Finanzas\CAJ006LiquidacionAgentes\CAJ006LiquidacionAgentesPresenter.cs" />
+    <Compile Include="Procesos\Finanzas\CAJ006LiquidacionAgentes\ICAJ006LiquidacionAgentesView.cs" />
+    <Compile Include="Procesos\Finanzas\CAJ007ExportacionBancos\CAJ007ExportacionBancosLView.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="Procesos\Finanzas\CAJ007ExportacionBancos\CAJ007ExportacionBancosLView.Designer.cs">
+      <DependentUpon>CAJ007ExportacionBancosLView.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Procesos\Finanzas\CAJ007ExportacionBancos\CAJ007ExportacionBancosMView.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Procesos\Finanzas\CAJ007ExportacionBancos\CAJ007ExportacionBancosMView.Designer.cs">
+      <DependentUpon>CAJ007ExportacionBancosMView.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Procesos\Finanzas\CAJ007ExportacionBancos\CAJ007ExportacionBancosPresenter.cs" />
+    <Compile Include="Procesos\Finanzas\CAJ007ExportacionBancos\ICAJ007ExportacionBancosView.cs" />
+    <Compile Include="Procesos\Finanzas\CAJ010Conciliacion\CAJ010ConciliacionLView.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="Procesos\Finanzas\CAJ010Conciliacion\CAJ010ConciliacionLView.Designer.cs">
+      <DependentUpon>CAJ010ConciliacionLView.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Procesos\Finanzas\CAJ010Conciliacion\CAJ010ConciliacionPresenter.cs" />
+    <Compile Include="Procesos\Finanzas\CAJ010Conciliacion\ICAJ010ConciliacionView.cs" />
+    <Compile Include="Procesos\Finanzas\CAJ011AnularDocBancos\CAJ011AnularDocBancosFView.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Procesos\Finanzas\CAJ011AnularDocBancos\CAJ011AnularDocBancosFView.Designer.cs">
+      <DependentUpon>CAJ011AnularDocBancosFView.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Procesos\Finanzas\CAJ011AnularDocBancos\CAJ011AnularDocBancosLView.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="Procesos\Finanzas\CAJ011AnularDocBancos\CAJ011AnularDocBancosLView.Designer.cs">
+      <DependentUpon>CAJ011AnularDocBancosLView.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Procesos\Finanzas\CAJ011AnularDocBancos\CAJ011AnularDocBancosPresenter.cs" />
+    <Compile Include="Procesos\Finanzas\CAJ011AnularDocBancos\ICAJ011AnularDocBancosView.cs" />
+    <Compile Include="Procesos\Finanzas\CAJ012IngresoLibre\CAJ012IngresoLibreAView.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Procesos\Finanzas\CAJ012IngresoLibre\CAJ012IngresoLibreAView.Designer.cs">
+      <DependentUpon>CAJ012IngresoLibreAView.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Procesos\Finanzas\CAJ012IngresoLibre\CAJ012IngresoLibreDView.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Procesos\Finanzas\CAJ012IngresoLibre\CAJ012IngresoLibreDView.Designer.cs">
+      <DependentUpon>CAJ012IngresoLibreDView.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Procesos\Finanzas\CAJ012IngresoLibre\CAJ012IngresoLibreLView.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="Procesos\Finanzas\CAJ012IngresoLibre\CAJ012IngresoLibreLView.Designer.cs">
+      <DependentUpon>CAJ012IngresoLibreLView.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Procesos\Finanzas\CAJ012IngresoLibre\CAJ012IngresoLibreMView.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Procesos\Finanzas\CAJ012IngresoLibre\CAJ012IngresoLibreMView.Designer.cs">
+      <DependentUpon>CAJ012IngresoLibreMView.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Procesos\Finanzas\CAJ012IngresoLibre\CAJ012IngresoLibrePresenter.cs" />
+    <Compile Include="Procesos\Finanzas\CAJ012IngresoLibre\ICAJ012IngresoLibreView.cs" />
+    <Compile Include="Procesos\Finanzas\CAJ013RepuestaDetraccion\CAJ013RespuestaDetraccionLView.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="Procesos\Finanzas\CAJ013RepuestaDetraccion\CAJ013RespuestaDetraccionLView.Designer.cs">
+      <DependentUpon>CAJ013RespuestaDetraccionLView.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Procesos\Finanzas\CAJ013RepuestaDetraccion\CAJ013RespuestaDetraccionPresenter.cs" />
+    <Compile Include="Procesos\Finanzas\CAJ013RepuestaDetraccion\ICAJ013RespuestaDetraccionView.cs" />
+    <Compile Include="Procesos\Finanzas\CAJ014PlantillaAsientos\CAJ014PlantillaAsientosLView.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="Procesos\Finanzas\CAJ014PlantillaAsientos\CAJ014PlantillaAsientosLView.Designer.cs">
+      <DependentUpon>CAJ014PlantillaAsientosLView.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Procesos\Finanzas\CAJ014PlantillaAsientos\CAJ014PlantillaAsientosPresenter.cs" />
+    <Compile Include="Procesos\Finanzas\CAJ014PlantillaAsientos\CAJ014PlantillaAsientosMView.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Procesos\Finanzas\CAJ014PlantillaAsientos\CAJ014PlantillaAsientosMView.Designer.cs">
+      <DependentUpon>CAJ014PlantillaAsientosMView.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Procesos\Finanzas\CAJ014PlantillaAsientos\ICAJ014PlantillaAsientosView.cs" />
+    <Compile Include="Procesos\Finanzas\CAJ015AsientosContables\CAJ015AsientosContablesLView.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="Procesos\Finanzas\CAJ015AsientosContables\CAJ015AsientosContablesLView.Designer.cs">
+      <DependentUpon>CAJ015AsientosContablesLView.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Procesos\Finanzas\CAJ015AsientosContables\CAJ015AsientosContablesPresenter.cs" />
+    <Compile Include="Procesos\Finanzas\CAJ015AsientosContables\ICAJ015AsientosContablesView.cs" />
+    <Compile Include="Procesos\Finanzas\CAJ017AvisosLlegada\CAJ017Presenter.cs" />
+    <Compile Include="Procesos\Finanzas\CAJ017AvisosLlegada\CAJ017View.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Procesos\Finanzas\CAJ017AvisosLlegada\CAJ017View.Designer.cs">
+      <DependentUpon>CAJ017View.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Procesos\Finanzas\CAJ017AvisosLlegada\ICAJ017View.cs" />
+    <Compile Include="Procesos\Finanzas\CAJ018AsientosStatement\CAJ018AsientosStatementLView.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="Procesos\Finanzas\CAJ018AsientosStatement\CAJ018AsientosStatementLView.Designer.cs">
+      <DependentUpon>CAJ018AsientosStatementLView.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Procesos\Finanzas\CAJ018AsientosStatement\CAJ018AsientosStatementPresenter.cs" />
+    <Compile Include="Procesos\Finanzas\CAJ018AsientosStatement\ICAJ018AsientosStatementView.cs" />
+    <Compile Include="Procesos\Operaciones\OPE009StatmentChangeControl\IOPE009View.cs" />
+    <Compile Include="Procesos\Operaciones\OPE009StatmentChangeControl\OPE009Presenter.cs" />
+    <Compile Include="Procesos\Operaciones\OPE009StatmentChangeControl\OPE009View.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Procesos\Operaciones\OPE009StatmentChangeControl\OPE009View.Designer.cs">
+      <DependentUpon>OPE009View.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Procesos\Operaciones\OPE007FleteCosto\IOPE007View.cs" />
+    <Compile Include="Procesos\Operaciones\OPE007FleteCosto\OPE007LView.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="Procesos\Operaciones\OPE007FleteCosto\OPE007LView.Designer.cs">
+      <DependentUpon>OPE007LView.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Procesos\Operaciones\OPE007FleteCosto\OPE007Presenter.cs" />
+    <Compile Include="Procesos\Operaciones\OPE008CierreChangeControl\IOPE008View.cs" />
+    <Compile Include="Procesos\Operaciones\OPE008CierreChangeControl\OPE008LView.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="Procesos\Operaciones\OPE008CierreChangeControl\OPE008LView.Designer.cs">
+      <DependentUpon>OPE008LView.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Procesos\Operaciones\OPE008CierreChangeControl\OPE008Presenter.cs" />
+    <Compile Include="Procesos\Operaciones\OPE010CalculaRebate\IOPE010View.cs" />
+    <Compile Include="Procesos\Operaciones\OPE010CalculaRebate\OPE010Presenter.cs" />
+    <Compile Include="Procesos\Operaciones\OPE010CalculaRebate\OPE010View.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Procesos\Operaciones\OPE010CalculaRebate\OPE010View.Designer.cs">
+      <DependentUpon>OPE010View.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Reportes\DataSet\DSOPE006ConsultarCorrelativos.Designer.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>DSOPE006ConsultarCorrelativos.xsd</DependentUpon>
+    </Compile>
+    <Compile Include="Procesos\Operaciones\OPE006ConsultaCorrelativo\IOPE006View.cs" />
+    <Compile Include="Procesos\Operaciones\OPE006ConsultaCorrelativo\OPE006LView.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="Procesos\Operaciones\OPE006ConsultaCorrelativo\OPE006LView.Designer.cs">
+      <DependentUpon>OPE006LView.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Procesos\Operaciones\OPE006ConsultaCorrelativo\OPE006Presenter.cs" />
+    <Compile Include="Reportes\DataSet\DSOPE005ConsultaServicios.Designer.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>DSOPE005ConsultaServicios.xsd</DependentUpon>
+    </Compile>
+    <Compile Include="Procesos\Operaciones\OPE005ConsultaServicios\OPE005LView.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="Procesos\Operaciones\OPE005ConsultaServicios\OPE005LView.Designer.cs">
+      <DependentUpon>OPE005LView.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Procesos\Operaciones\OPE005ConsultaServicios\OPE005Presenter.cs" />
+    <Compile Include="Procesos\Operaciones\OPE005ConsultaServicios\IOPE005View.cs" />
+    <Compile Include="Procesos\Operaciones\OPE001Cotizacion\OPE001DView.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Procesos\Operaciones\OPE001Cotizacion\OPE001DView.Designer.cs">
+      <DependentUpon>OPE001DView.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Procesos\Operaciones\OPE001Cotizacion\OPE001Presenter.GuiaAerea.cs" />
+    <Compile Include="Procesos\Operaciones\OPE001Cotizacion\OPE001TView.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Procesos\Operaciones\OPE001Cotizacion\OPE001TView.Designer.cs">
+      <DependentUpon>OPE001TView.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Procesos\Operaciones\OPE004Aduana\IOPE004View.cs" />
+    <Compile Include="Procesos\Operaciones\OPE004Aduana\OPE004Presenter.cs" />
+    <Compile Include="Procesos\Operaciones\OPE004Aduana\OPE004View.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Procesos\Operaciones\OPE004Aduana\OPE004View.Designer.cs">
+      <DependentUpon>OPE004View.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Procesos\Operaciones\OPE001Cotizacion\IOPE001View.cs" />
+    <Compile Include="Procesos\Operaciones\OPE001Cotizacion\OPE001LView.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="Procesos\Operaciones\OPE001Cotizacion\OPE001LView.Designer.cs">
+      <DependentUpon>OPE001LView.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Procesos\Operaciones\OPE001Cotizacion\OPE001MView.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Procesos\Operaciones\OPE001Cotizacion\OPE001MView.Designer.cs">
+      <DependentUpon>OPE001MView.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Procesos\Operaciones\OPE001Cotizacion\OPE001Presenter.cs" />
+    <Compile Include="Procesos\Operaciones\OPE001Cotizacion\OPE001Presenter.Mailing.cs" />
+    <Compile Include="Procesos\Operaciones\OPE001Cotizacion\OPE001Presenter.MatrizDraft.cs" />
+    <Compile Include="Procesos\Operaciones\OPE002Statment\IOPE002View.cs" />
+    <Compile Include="Procesos\Operaciones\OPE002Statment\OPE002Presenter.cs" />
+    <Compile Include="Procesos\Operaciones\OPE002Statment\OPE002View.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Procesos\Operaciones\OPE002Statment\OPE002View.Designer.cs">
+      <DependentUpon>OPE002View.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Procesos\Operaciones\OPE003Reportes\IOPE003View.cs" />
+    <Compile Include="Procesos\Operaciones\OPE003Reportes\OPE003Presenter.cs" />
+    <Compile Include="Procesos\Operaciones\OPE003Reportes\OPE003View.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Procesos\Operaciones\OPE003Reportes\OPE003View.Designer.cs">
+      <DependentUpon>OPE003View.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Reportes\Finanzas\REP009FlujoCaja\IREP009FlujoCaja.cs" />
+    <Compile Include="Reportes\Finanzas\REP009FlujoCaja\REP009FlujoCajaLView.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="Reportes\Finanzas\REP009FlujoCaja\REP009FlujoCajaLView.Designer.cs">
+      <DependentUpon>REP009FlujoCajaLView.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Reportes\Finanzas\REP009FlujoCaja\REP009FlujoCajaPresenter.cs" />
+    <Compile Include="Reportes\Finanzas\REP010DocumentosContabilizados\IREP010DocumentosContabilizadosView.cs" />
+    <Compile Include="Reportes\Finanzas\REP010DocumentosContabilizados\REP010DocumentosContabilizadosLView.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="Reportes\Finanzas\REP010DocumentosContabilizados\REP010DocumentosContabilizadosLView.Designer.cs">
+      <DependentUpon>REP010DocumentosContabilizadosLView.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Reportes\Finanzas\REP010DocumentosContabilizados\REP010DocumentosContabilizadosPresenter.cs" />
+    <Compile Include="Reportes\REP014ReporteControlTransmisiones\IREP014View.cs" />
+    <Compile Include="Reportes\REP014ReporteControlTransmisiones\REP014Presenter.cs" />
+    <Compile Include="Reportes\REP014ReporteControlTransmisiones\REP014View.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Reportes\REP014ReporteControlTransmisiones\REP014View.Designer.cs">
+      <DependentUpon>REP014View.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Reportes\REP013ReporteComEjecutivo\IREP013View.cs" />
+    <Compile Include="Reportes\REP013ReporteComEjecutivo\REP013LView.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="Reportes\REP013ReporteComEjecutivo\REP013LView.Designer.cs">
+      <DependentUpon>REP013LView.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Reportes\REP013ReporteComEjecutivo\REP013Presenter.cs" />
+    <Compile Include="Reportes\Finanzas\REP001AuxiliarBancos\REP001AuxiliarBancos.cs">
+      <DependentUpon>REP001AuxiliarBancos.xsd</DependentUpon>
+    </Compile>
+    <Compile Include="Reportes\Finanzas\REP003PlanillaExportacion\REP003PlanillaExportacion.cs">
+      <DependentUpon>REP003PlanillaExportacion.xsd</DependentUpon>
+    </Compile>
+    <Compile Include="Reportes\Finanzas\REP004DocRecepcionados\REP004DocRecepcionados.cs">
+      <DependentUpon>REP004DocRecepcionados.xsd</DependentUpon>
+    </Compile>
+    <Compile Include="Reportes\OPE001Etiqueta\DSEtiqueta.Designer.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>DSEtiqueta.xsd</DependentUpon>
+    </Compile>
+    <Compile Include="Reportes\REP012ReporteProfitNegativos\IREP012View.cs" />
+    <Compile Include="Reportes\REP012ReporteProfitNegativos\REP012LView.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="Reportes\REP012ReporteProfitNegativos\REP012LView.Designer.cs">
+      <DependentUpon>REP012LView.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Reportes\REP012ReporteProfitNegativos\REP012Presenter.cs" />
+    <Compile Include="Reportes\REP011ReporteNavesTeus\IREP011View.cs" />
+    <Compile Include="Reportes\REP011ReporteNavesTeus\REP011LView.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="Reportes\REP011ReporteNavesTeus\REP011LView.Designer.cs">
+      <DependentUpon>REP011LView.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Reportes\REP011ReporteNavesTeus\REP011Presenter.cs" />
+    <Compile Include="Reportes\Finanzas\REP001AuxiliarBancos\IREP001AuxiliarBancos.cs" />
+    <Compile Include="Reportes\Finanzas\REP001AuxiliarBancos\REP001AuxiliarBancosPresenter.cs" />
+    <Compile Include="Reportes\Finanzas\REP002Cheques\IREP002ChequesBancos.cs" />
+    <Compile Include="Reportes\Finanzas\REP002Cheques\REP002ChequesPresenter.cs" />
+    <Compile Include="Reportes\Finanzas\REP003PlanillaExportacion\IREP003PlanillaExportacion.cs" />
+    <Compile Include="Reportes\Finanzas\REP003PlanillaExportacion\REP003PlanillaExportacionPresenter.cs" />
+    <Compile Include="Reportes\Finanzas\REP004DocRecepcionados\IREP004DocRecepcionados.cs" />
+    <Compile Include="Reportes\Finanzas\REP004DocRecepcionados\REP004DocRecepcionadosPresenter.cs" />
+    <Compile Include="Reportes\Finanzas\REP007AntiguedadDeuda\IREP007AntiguedadDeuda.cs" />
+    <Compile Include="Reportes\Finanzas\REP007AntiguedadDeuda\REP007AntiguedadDeudaPresenter.cs" />
+    <Compile Include="Reportes\Finanzas\REP008EstadoCliente\IREP008EstadoCliente.cs" />
+    <Compile Include="Reportes\Finanzas\REP008EstadoCliente\REP008EstadoClientePresenter.cs" />
+    <Compile Include="Reportes\OPE001MatrizDraft\DSMatrizDraft.Designer.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>DSMatrizDraft.xsd</DependentUpon>
+    </Compile>
+    <Compile Include="Reportes\REP010ReporteHapagHsud\IREP010View.cs" />
+    <Compile Include="Reportes\REP010ReporteHapagHsud\REP010LView.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="Reportes\REP010ReporteHapagHsud\REP010LView.Designer.cs">
+      <DependentUpon>REP010LView.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Reportes\REP010ReporteHapagHsud\REP010Presenter.cs" />
+    <Compile Include="Reportes\Comercial\DSCotizacionOV.Designer.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>DSCotizacionOV.xsd</DependentUpon>
+    </Compile>
+    <Compile Include="Properties\AssemblyInfo.cs" />
+    <Compile Include="Properties\Resources.Designer.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>Resources.resx</DependentUpon>
+    </Compile>
+    <Compile Include="Reportes\Comercial\DSReportes.Designer.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>DSReportes.xsd</DependentUpon>
+    </Compile>
+    <Compile Include="Reportes\Finanzas\REP001AuxiliarBancos\REP001AuxiliarBancos.Designer.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>REP001AuxiliarBancos.xsd</DependentUpon>
+    </Compile>
+    <Compile Include="Reportes\Finanzas\REP001AuxiliarBancos\REP001AuxiliarBancosLView.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="Reportes\Finanzas\REP001AuxiliarBancos\REP001AuxiliarBancosLView.Designer.cs">
+      <DependentUpon>REP001AuxiliarBancosLView.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Reportes\Finanzas\REP002Cheques\REP002ChequesLView.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="Reportes\Finanzas\REP002Cheques\REP002ChequesLView.Designer.cs">
+      <DependentUpon>REP002ChequesLView.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Reportes\Finanzas\REP002Cheques\REP002Cheques.Designer.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>REP002Cheques.xsd</DependentUpon>
+    </Compile>
+    <Compile Include="Reportes\Finanzas\REP003PlanillaExportacion\REP003PlanillaExportacionLView.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="Reportes\Finanzas\REP003PlanillaExportacion\REP003PlanillaExportacionLView.Designer.cs">
+      <DependentUpon>REP003PlanillaExportacionLView.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Reportes\Finanzas\REP003PlanillaExportacion\REP003PlanillaExportacion.Designer.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>REP003PlanillaExportacion.xsd</DependentUpon>
+    </Compile>
+    <Compile Include="Reportes\Finanzas\REP004DocRecepcionados\REP004DocRecepcionadosLView.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="Reportes\Finanzas\REP004DocRecepcionados\REP004DocRecepcionadosLView.Designer.cs">
+      <DependentUpon>REP004DocRecepcionadosLView.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Reportes\Finanzas\REP004DocRecepcionados\REP004DocRecepcionados.Designer.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>REP004DocRecepcionados.xsd</DependentUpon>
+    </Compile>
+    <Compile Include="Reportes\Finanzas\REP007AntiguedadDeuda\REP007AntiguedadDeudaLView.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="Reportes\Finanzas\REP007AntiguedadDeuda\REP007AntiguedadDeudaLView.Designer.cs">
+      <DependentUpon>REP007AntiguedadDeudaLView.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Reportes\Finanzas\REP007AntiguedadDeuda\REP007AntiguedadDeuda.Designer.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>REP007AntiguedadDeuda.xsd</DependentUpon>
+    </Compile>
+    <Compile Include="Reportes\Finanzas\REP008EstadoCliente\REP008EstadoClienteLView.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="Reportes\Finanzas\REP008EstadoCliente\REP008EstadoClienteLView.Designer.cs">
+      <DependentUpon>REP008EstadoClienteLView.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Reportes\Finanzas\REP008EstadoCliente\REP008EstadoCliente.Designer.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>REP008EstadoCliente.xsd</DependentUpon>
+    </Compile>
+    <Compile Include="Reportes\OPE001Anexos\DSAnexos.Designer.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>DSAnexos.xsd</DependentUpon>
+    </Compile>
+    <Compile Include="Reportes\OPE001Cotizacion\DSOPE001MBL.Designer.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>DSOPE001MBL.xsd</DependentUpon>
+    </Compile>
+    <Compile Include="Reportes\REP001ReporteFletamento\IREP001View.cs" />
+    <Compile Include="Reportes\REP001ReporteFletamento\REP001LView.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="Reportes\REP001ReporteFletamento\REP001LView.Designer.cs">
+      <DependentUpon>REP001LView.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Reportes\REP001ReporteFletamento\REP001Presenter.cs" />
+    <Compile Include="Reportes\REP002ReporteTarifas\IREP002View.cs" />
+    <Compile Include="Reportes\REP002ReporteTarifas\REP002LView.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="Reportes\REP002ReporteTarifas\REP002LView.Designer.cs">
+      <DependentUpon>REP002LView.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Reportes\REP002ReporteTarifas\REP002Presenter.cs" />
+    <Compile Include="Reportes\REP003ReporteOrdenVenta\IREP003View.cs" />
+    <Compile Include="Reportes\REP003ReporteOrdenVenta\REP003LView.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="Reportes\REP003ReporteOrdenVenta\REP003LView.Designer.cs">
+      <DependentUpon>REP003LView.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Reportes\REP003ReporteOrdenVenta\REP003Presenter.cs" />
+    <Compile Include="Reportes\REP004ReporteTarifasCosto\IREP004View.cs" />
+    <Compile Include="Reportes\REP004ReporteTarifasCosto\REP004LView.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="Reportes\REP004ReporteTarifasCosto\REP004LView.Designer.cs">
+      <DependentUpon>REP004LView.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Reportes\REP004ReporteTarifasCosto\REP004Presenter.cs" />
+    <Compile Include="Reportes\REP009ReportePlanillaBuque\IREP009View.cs" />
+    <Compile Include="Reportes\REP009ReportePlanillaBuque\REP009LView.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="Reportes\REP009ReportePlanillaBuque\REP009LView.Designer.cs">
+      <DependentUpon>REP009LView.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Reportes\REP009ReportePlanillaBuque\REP009Presenter.cs" />
+    <Compile Include="Reportes\REP015StatusComprobantes\IREP015StatusComprobantesView.cs" />
+    <Compile Include="Reportes\REP015StatusComprobantes\REP015StatusComprobantesLView.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="Reportes\REP015StatusComprobantes\REP015StatusComprobantesLView.Designer.cs">
+      <DependentUpon>REP015StatusComprobantesLView.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Reportes\REP015StatusComprobantes\REP015StatusComprobantesPresenter.cs" />
+    <Compile Include="Reportes\Visualizador.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Reportes\Visualizador.Designer.cs">
+      <DependentUpon>Visualizador.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Service References\AppService\Reference.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>Reference.svcmap</DependentUpon>
+    </Compile>
+    <Compile Include="Service References\NextSoftService\Reference.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>Reference.svcmap</DependentUpon>
+    </Compile>
+    <Compile Include="Tools\MotivoAnulacion.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Tools\MotivoAnulacion.Designer.cs">
+      <DependentUpon>MotivoAnulacion.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Tools\Template\COM000LView.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="Tools\Template\COM000LView.Designer.cs">
+      <DependentUpon>COM000LView.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Tools\Template\COM000Presenter.cs" />
+    <Compile Include="Tools\Template\COM000MView.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Tools\Template\COM000MView.Designer.cs">
+      <DependentUpon>COM000MView.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Tools\Template\ICOM000View.cs" />
+    <Compile Include="Tools\Template\REP000LView.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="Tools\Template\REP000LView.Designer.cs">
+      <DependentUpon>REP000LView.cs</DependentUpon>
+    </Compile>
+    <Service Include="{94E38DFF-614B-4cbd-B67C-F211BB35CE8B}" />
+  </ItemGroup>
+  <ItemGroup>
+    <ProjectReference Include="..\..\1. Business Tier\Delfin.Entities\Delfin.Entities.csproj">
+      <Project>{f32cdd23-0d2e-4b37-99fc-7a072be8b5f5}</Project>
+      <Name>Delfin.Entities</Name>
+    </ProjectReference>
+    <ProjectReference Include="..\..\2. Services Tier\Delfin.ServiceContracts\Delfin.ServiceContracts.csproj">
+      <Project>{15b3e0d2-6217-493a-a690-158c497f5318}</Project>
+      <Name>Delfin.ServiceContracts</Name>
+    </ProjectReference>
+    <ProjectReference Include="..\..\2. Services Tier\Delfin.ServiceProxy\Delfin.ServiceProxy.csproj">
+      <Project>{e6205c17-c9da-42c9-81e7-721505073e2d}</Project>
+      <Name>Delfin.ServiceProxy</Name>
+    </ProjectReference>
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Service References\NextSoftService\NextSoftService1.disco" />
+    <None Include="Properties\DataSources\System.Data.DataTable.datasource" />
+    <None Include="Service References\NextSoftService\Delfin.Comercial.NextSoftService.COM_DetSobrestadia_BE.datasource">
+      <DependentUpon>Reference.svcmap</DependentUpon>
+    </None>
+    <None Include="Service References\NextSoftService\Delfin.Comercial.NextSoftService.COM_Sobrestadia_BE.datasource">
+      <DependentUpon>Reference.svcmap</DependentUpon>
+    </None>
+    <None Include="Service References\NextSoftService\NextSoftService1.wsdl" />
+    <None Include="Service References\NextSoftService\NextSoftService4.xsd">
+      <SubType>Designer</SubType>
+    </None>
+    <None Include="Service References\NextSoftService\NextSoftService41.xsd">
+      <SubType>Designer</SubType>
+    </None>
+    <None Include="Service References\NextSoftService\NextSoftService42.xsd">
+      <SubType>Designer</SubType>
+    </None>
+    <None Include="Service References\NextSoftService\NextSoftService43.xsd">
+      <SubType>Designer</SubType>
+    </None>
+    <None Include="Service References\NextSoftService\NextSoftService44.xsd">
+      <SubType>Designer</SubType>
+    </None>
+    <None Include="Service References\NextSoftService\NextSoftService45.xsd">
+      <SubType>Designer</SubType>
+    </None>
+    <None Include="Service References\NextSoftService\Reference.svcmap">
+      <Generator>WCF Proxy Generator</Generator>
+      <LastGenOutput>Reference.cs</LastGenOutput>
+    </None>
+    <None Include="Service References\NextSoftService\configuration.svcinfo" />
+    <None Include="Service References\NextSoftService\configuration91.svcinfo" />
+    <None Include="Service References\AppService\DelfinService.disco" />
+    <None Include="Properties\DataSources\System.Data.DataSet.datasource" />
+    <None Include="Service References\AppService\DelfinService.wsdl" />
+    <None Include="Service References\AppService\DelfinService.xsd">
+      <SubType>Designer</SubType>
+    </None>
+    <None Include="Service References\AppService\DelfinService1.xsd">
+      <SubType>Designer</SubType>
+    </None>
+    <None Include="Service References\AppService\DelfinService2.xsd">
+      <SubType>Designer</SubType>
+    </None>
+    <None Include="Service References\AppService\DelfinService3.xsd">
+      <SubType>Designer</SubType>
+    </None>
+    <None Include="Service References\AppService\DelfinService4.xsd">
+      <SubType>Designer</SubType>
+    </None>
+    <None Include="Service References\AppService\Reference.svcmap">
+      <Generator>WCF Proxy Generator</Generator>
+      <LastGenOutput>Reference.cs</LastGenOutput>
+    </None>
+    <None Include="Service References\AppService\configuration.svcinfo" />
+    <None Include="Service References\AppService\configuration91.svcinfo" />
+    <EmbeddedResource Include="Mantenimientos\MAN009Entidad\MAN009SView.resx">
+      <DependentUpon>MAN009SView.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Mantenimientos\MAN009Entidad\MAN009TView.resx">
+      <DependentUpon>MAN009TView.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Mantenimientos\MAN014Comision\MAN014LView.resx">
+      <DependentUpon>MAN014LView.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Mantenimientos\MAN014Comision\MAN014MView.resx">
+      <DependentUpon>MAN014MView.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Mantenimientos\MAN000Empresas\MAN000LView.resx">
+      <DependentUpon>MAN000LView.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Mantenimientos\MAN000Empresas\MAN000MView.resx">
+      <DependentUpon>MAN000MView.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Mantenimientos\MAN001Sucursales\MAN001LView.resx">
+      <DependentUpon>MAN001LView.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Mantenimientos\MAN001Sucursales\MAN001MView.resx">
+      <DependentUpon>MAN001MView.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Mantenimientos\MAN002Tipos\MAN002LView.resx">
+      <DependentUpon>MAN002LView.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Mantenimientos\MAN002Tipos\MAN002MView.resx">
+      <DependentUpon>MAN002MView.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Mantenimientos\MAN003ResultadoGestion\MAN003LView.resx">
+      <DependentUpon>MAN003LView.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Mantenimientos\MAN003ResultadoGestion\MAN003MView.resx">
+      <DependentUpon>MAN003MView.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Mantenimientos\MAN004Servicios\MAN004LView.resx">
+      <DependentUpon>MAN004LView.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Mantenimientos\MAN004Servicios\MAN004MView.resx">
+      <DependentUpon>MAN004MView.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Mantenimientos\MAN005Contratos\MAN005LView.resx">
+      <DependentUpon>MAN005LView.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Mantenimientos\MAN005Contratos\MAN005MView.resx">
+      <DependentUpon>MAN005MView.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Mantenimientos\MAN006Ubigeos\MAN006LView.resx">
+      <DependentUpon>MAN006LView.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Mantenimientos\MAN006Ubigeos\MAN006MView.resx">
+      <DependentUpon>MAN006MView.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Mantenimientos\MAN007Puertos\MAN007LView.resx">
+      <DependentUpon>MAN007LView.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Mantenimientos\MAN007Puertos\MAN007MView.resx">
+      <DependentUpon>MAN007MView.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Mantenimientos\MAN008Paquetes\MAN008LView.resx">
+      <DependentUpon>MAN008LView.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Mantenimientos\MAN008Paquetes\MAN008MView.resx">
+      <DependentUpon>MAN008MView.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Mantenimientos\MAN009Entidad\MAN009DView.resx">
+      <DependentUpon>MAN009DView.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Mantenimientos\MAN009Entidad\MAN009DViewCtasBancarias.resx">
+      <DependentUpon>MAN009DViewCtasBancarias.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Mantenimientos\MAN009Entidad\MAN009DViewLCredito.resx">
+      <DependentUpon>MAN009DViewLCredito.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Mantenimientos\MAN009Entidad\MAN009LView.resx">
+      <DependentUpon>MAN009LView.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Mantenimientos\MAN009Entidad\MAN009MView.resx">
+      <DependentUpon>MAN009MView.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Mantenimientos\MAN009Entidad\MAN009RView.resx">
+      <DependentUpon>MAN009RView.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Mantenimientos\MAN009Entidad\MAN009VViewHistorial.resx">
+      <DependentUpon>MAN009VViewHistorial.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Mantenimientos\MAN010Nave\MAN010LView.resx">
+      <DependentUpon>MAN010LView.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Mantenimientos\MAN010Nave\MAN010MView.resx">
+      <DependentUpon>MAN010MView.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Mantenimientos\MAN011NaveViaje\MAN011LView.resx">
+      <DependentUpon>MAN011LView.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Mantenimientos\MAN011NaveViaje\MAN011MView.resx">
+      <DependentUpon>MAN011MView.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Mantenimientos\MAN012Rebate\MAN012LView.resx">
+      <DependentUpon>MAN012LView.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Mantenimientos\MAN012Rebate\MAN012MView.resx">
+      <DependentUpon>MAN012MView.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Mantenimientos\MAN015Series\MAN015SeriesLView.resx">
+      <DependentUpon>MAN015SeriesLView.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Mantenimientos\MAN015Series\MAN015SeriesMView.resx">
+      <DependentUpon>MAN015SeriesMView.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Mantenimientos\MAN016Flujos\MAN016FlujosLView.resx">
+      <DependentUpon>MAN016FlujosLView.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Mantenimientos\MAN016Flujos\MAN016FlujosMView.resx">
+      <DependentUpon>MAN016FlujosMView.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Mantenimientos\PAR000Parametros\PAR000SView.resx">
+      <DependentUpon>PAR000SView.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Mantenimientos\PAR000Parametros\PAR000AView.resx">
+      <DependentUpon>PAR000AView.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Mantenimientos\PAR000Parametros\PAR000MView.resx">
+      <DependentUpon>PAR000MView.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Procesos\Comercial\COM001ImportacinProspectos\COM001LView.resx">
+      <DependentUpon>COM001LView.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Procesos\Comercial\COM002AsignacionProspectos\COM002LView.resx">
+      <DependentUpon>COM002LView.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Procesos\Comercial\COM003GestionVentas\COM003LView.resx">
+      <DependentUpon>COM003LView.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Procesos\Comercial\COM004KPIContactados\COM004LView.resx">
+      <DependentUpon>COM004LView.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Procesos\Comercial\COM005KPIReuniones\COM005LView.resx">
+      <DependentUpon>COM005LView.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Procesos\Comercial\COM006Tarifario\COM006CView.resx">
+      <DependentUpon>COM006CView.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Procesos\Comercial\COM006Tarifario\COM006DView.resx">
+      <DependentUpon>COM006DView.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Procesos\Comercial\COM006Tarifario\COM006LView.resx">
+      <DependentUpon>COM006LView.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Procesos\Comercial\COM006Tarifario\COM006MView.resx">
+      <DependentUpon>COM006MView.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Procesos\Comercial\COM007Cotizacion\COM007LView.resx">
+      <DependentUpon>COM007LView.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Procesos\Comercial\COM007Cotizacion\COM007MView.resx">
+      <DependentUpon>COM007MView.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Procesos\Comercial\COM007Cotizacion\COM007PView.resx">
+      <DependentUpon>COM007PView.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Procesos\Comercial\COM007Cotizacion\COM007RView.resx">
+      <DependentUpon>COM007RView.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Procesos\Comercial\COM009KPICotizaciones\COM009LView.resx">
+      <DependentUpon>COM009LView.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Procesos\Comercial\COM010KPIOrdenVentas\COM010LView.resx">
+      <DependentUpon>COM010LView.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Procesos\Comercial\COM011KPITEUSVendidos\COM011LView.resx">
+      <DependentUpon>COM011LView.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Procesos\Comercial\COM012Comisiones\COM012LView.resx">
+      <DependentUpon>COM012LView.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Procesos\Comercial\COM012Comisiones\COM012MView.resx">
+      <DependentUpon>COM012MView.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Procesos\Documentacion\DOC000LoadingList\DOC000LView.resx">
+      <DependentUpon>DOC000LView.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Procesos\Documentacion\DOC001MBL\DOC001LView.resx">
+      <DependentUpon>DOC001LView.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Procesos\Documentacion\DOC001MBL\DOC001MView.resx">
+      <DependentUpon>DOC001MView.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Procesos\Documentacion\DOC002ControlDocumentos\DOC002DView.resx">
+      <DependentUpon>DOC002DView.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Procesos\Documentacion\DOC002ControlDocumentos\DOC002LView.resx">
+      <DependentUpon>DOC002LView.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Procesos\Documentacion\DOC002ControlDocumentos\DOC002MView.resx">
+      <DependentUpon>DOC002MView.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Procesos\Finanzas\CAJ001CuentasBancarias\CAJ001CuentasBancariasCView.resx">
+      <DependentUpon>CAJ001CuentasBancariasCView.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Procesos\Finanzas\CAJ001CuentasBancarias\CAJ001CuentasBancariasLView.resx">
+      <DependentUpon>CAJ001CuentasBancariasLView.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Procesos\Finanzas\CAJ001CuentasBancarias\CAJ001CuentasBancariasMView.resx">
+      <DependentUpon>CAJ001CuentasBancariasMView.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Procesos\Finanzas\CAJ002IngresosEgresos\CAJ002IngresosEgresosDView.resx">
+      <DependentUpon>CAJ002IngresosEgresosDView.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Procesos\Finanzas\CAJ002IngresosEgresos\CAJ002IngresosEgresosDViewDescuadres.resx">
+      <DependentUpon>CAJ002IngresosEgresosDViewDescuadres.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Procesos\Finanzas\CAJ002IngresosEgresos\CAJ002IngresosEgresosDViewEDiferido.resx">
+      <DependentUpon>CAJ002IngresosEgresosDViewEDiferido.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Procesos\Finanzas\CAJ002IngresosEgresos\CAJ002IngresosEgresosFlujoDView.resx">
+      <DependentUpon>CAJ002IngresosEgresosFlujoDView.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Procesos\Finanzas\CAJ002IngresosEgresos\CAJ002IngresosEgresosFView.resx">
+      <DependentUpon>CAJ002IngresosEgresosFView.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Procesos\Finanzas\CAJ002IngresosEgresos\CAJ002IngresosEgresosLView.resx">
+      <DependentUpon>CAJ002IngresosEgresosLView.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Procesos\Finanzas\CAJ002IngresosEgresos\CAJ002IngresosMView.resx">
+      <DependentUpon>CAJ002IngresosMView.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Procesos\Finanzas\CAJ004ChequesEnBlanco\CAJ004ChequesEnBlancoLView.resx">
+      <DependentUpon>CAJ004ChequesEnBlancoLView.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Procesos\Finanzas\CAJ004ChequesEnBlanco\CAJ004ChequesEnBlancoMView.resx">
+      <DependentUpon>CAJ004ChequesEnBlancoMView.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Procesos\Finanzas\CAJ005Transferencias\CAJ005TransferenciasGView.resx">
+      <DependentUpon>CAJ005TransferenciasGView.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Procesos\Finanzas\CAJ005Transferencias\CAJ005TransferenciasLView.resx">
+      <DependentUpon>CAJ005TransferenciasLView.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Procesos\Finanzas\CAJ005Transferencias\CAJ005TransferenciasMView.resx">
+      <DependentUpon>CAJ005TransferenciasMView.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Procesos\Finanzas\CAJ005Transferencias\CAJ005TransferenciasMViewSmall.resx">
+      <DependentUpon>CAJ005TransferenciasMViewSmall.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Procesos\Finanzas\CAJ006LiquidacionAgentes\CAJ006LiquidacionAgentesDViewConciliacion.resx">
+      <DependentUpon>CAJ006LiquidacionAgentesDViewConciliacion.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Procesos\Finanzas\CAJ006LiquidacionAgentes\CAJ006LiquidacionAgentesLView.resx">
+      <DependentUpon>CAJ006LiquidacionAgentesLView.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Procesos\Finanzas\CAJ007ExportacionBancos\CAJ007ExportacionBancosLView.resx">
+      <DependentUpon>CAJ007ExportacionBancosLView.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Procesos\Finanzas\CAJ007ExportacionBancos\CAJ007ExportacionBancosMView.resx">
+      <DependentUpon>CAJ007ExportacionBancosMView.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Procesos\Finanzas\CAJ010Conciliacion\CAJ010ConciliacionLView.resx">
+      <DependentUpon>CAJ010ConciliacionLView.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Procesos\Finanzas\CAJ011AnularDocBancos\CAJ011AnularDocBancosFView.resx">
+      <DependentUpon>CAJ011AnularDocBancosFView.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Procesos\Finanzas\CAJ011AnularDocBancos\CAJ011AnularDocBancosLView.resx">
+      <DependentUpon>CAJ011AnularDocBancosLView.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Procesos\Finanzas\CAJ012IngresoLibre\CAJ012IngresoLibreAView.resx">
+      <DependentUpon>CAJ012IngresoLibreAView.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Procesos\Finanzas\CAJ012IngresoLibre\CAJ012IngresoLibreDView.resx">
+      <DependentUpon>CAJ012IngresoLibreDView.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Procesos\Finanzas\CAJ012IngresoLibre\CAJ012IngresoLibreLView.resx">
+      <DependentUpon>CAJ012IngresoLibreLView.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Procesos\Finanzas\CAJ012IngresoLibre\CAJ012IngresoLibreMView.resx">
+      <DependentUpon>CAJ012IngresoLibreMView.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Procesos\Finanzas\CAJ013RepuestaDetraccion\CAJ013RespuestaDetraccionLView.resx">
+      <DependentUpon>CAJ013RespuestaDetraccionLView.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Procesos\Finanzas\CAJ014PlantillaAsientos\CAJ014PlantillaAsientosLView.resx">
+      <DependentUpon>CAJ014PlantillaAsientosLView.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Procesos\Finanzas\CAJ014PlantillaAsientos\CAJ014PlantillaAsientosMView.resx">
+      <DependentUpon>CAJ014PlantillaAsientosMView.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Procesos\Finanzas\CAJ015AsientosContables\CAJ015AsientosContablesLView.resx">
+      <DependentUpon>CAJ015AsientosContablesLView.cs</DependentUpon>
+    </EmbeddedResource>
+    <Content Include="Reportes\rptOPE006ConsultarCorrelativos.rdlc">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </Content>
+    <Content Include="Reportes\rptOPE005ConsultaServicios.rdlc">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </Content>
+    <EmbeddedResource Include="Procesos\Finanzas\CAJ017AvisosLlegada\CAJ017View.resx">
+      <DependentUpon>CAJ017View.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Procesos\Finanzas\CAJ018AsientosStatement\CAJ018AsientosStatementLView.resx">
+      <DependentUpon>CAJ018AsientosStatementLView.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Procesos\Operaciones\OPE009StatmentChangeControl\OPE009View.resx">
+      <DependentUpon>OPE009View.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Procesos\Operaciones\OPE006ConsultaCorrelativo\OPE006LView.resx">
+      <DependentUpon>OPE006LView.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Procesos\Operaciones\OPE005ConsultaServicios\OPE005LView.resx">
+      <DependentUpon>OPE005LView.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Procesos\Operaciones\OPE001Cotizacion\OPE001DView.resx">
+      <DependentUpon>OPE001DView.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Procesos\Operaciones\OPE001Cotizacion\OPE001TView.resx">
+      <DependentUpon>OPE001TView.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Procesos\Operaciones\OPE004Aduana\OPE004View.resx">
+      <DependentUpon>OPE004View.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Procesos\Operaciones\OPE001Cotizacion\OPE001LView.resx">
+      <DependentUpon>OPE001LView.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Procesos\Operaciones\OPE001Cotizacion\OPE001MView.resx">
+      <DependentUpon>OPE001MView.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Procesos\Operaciones\OPE002Statment\OPE002View.resx">
+      <DependentUpon>OPE002View.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Procesos\Operaciones\OPE003Reportes\OPE003View.resx">
+      <DependentUpon>OPE003View.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Procesos\Operaciones\OPE007FleteCosto\OPE007LView.resx">
+      <DependentUpon>OPE007LView.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Procesos\Operaciones\OPE008CierreChangeControl\OPE008LView.resx">
+      <DependentUpon>OPE008LView.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Procesos\Operaciones\OPE010CalculaRebate\OPE010View.resx">
+      <DependentUpon>OPE010View.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Properties\Resources.resx">
+      <Generator>ResXFileCodeGenerator</Generator>
+      <LastGenOutput>Resources.Designer.cs</LastGenOutput>
+    </EmbeddedResource>
+    <Content Include="Reportes\rptCOM007Cotizacion.rdlc">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </Content>
+    <Content Include="Reportes\rptCOM007CotizacionFlete.rdlc">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </Content>
+    <Content Include="Reportes\rptCOM007CotizacionServicios.rdlc">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </Content>
+    <Content Include="Reportes\rptCOM007OrdenVentaExpo.rdlc">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </Content>
+    <Content Include="Reportes\rptCOM007OrdenVentaImpo.rdlc">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </Content>
+    <Content Include="Reportes\OPE001MBL_Contenedor.rdlc">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </Content>
+    <Content Include="Reportes\OPE001MBL_Detalle.rdlc">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </Content>
+    <Content Include="Reportes\CAJ006LiquidacionAgentes.rdlc">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </Content>
+    <Content Include="Reportes\REP004DocRecepcionadosProveedor.rdlc">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </Content>
+    <Content Include="Reportes\REP004DocRecepcionadosClientes.rdlc">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </Content>
+    <Content Include="Reportes\REP004DocRecepcionadosAgente.rdlc">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </Content>
+    <Content Include="Reportes\REP004DocRecepcionadosLineas.rdlc">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </Content>
+    <Content Include="Reportes\CAJ006LiquidacionAgentesTotal.rdlc">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </Content>
+    <Content Include="Reportes\rptAnexo2.rdlc">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </Content>
+    <EmbeddedResource Include="Reportes\Finanzas\REP010DocumentosContabilizados\REP010DocumentosContabilizadosLView.resx">
+      <DependentUpon>REP010DocumentosContabilizadosLView.cs</DependentUpon>
+    </EmbeddedResource>
+    <Content Include="Reportes\REP004DocRecepcionadosClientesTotal.rdlc">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </Content>
+    <EmbeddedResource Include="Reportes\Finanzas\REP009FlujoCaja\REP009FlujoCajaLView.resx">
+      <DependentUpon>REP009FlujoCajaLView.cs</DependentUpon>
+    </EmbeddedResource>
+    <Content Include="Reportes\CAJ002IngresosEgresosPagos.rdlc">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </Content>
+    <Content Include="Reportes\REP004DocRecepcionadosAgenteTodos.rdlc">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </Content>
+    <Content Include="Reportes\REP004DocRecepcionadosAgenteTotal.rdlc">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </Content>
+    <Content Include="Reportes\REP004DocRecepcionadosClientesTodos.rdlc">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </Content>
+    <Content Include="Reportes\REP004DocRecepcionadosLineasTodos.rdlc">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </Content>
+    <Content Include="Reportes\REP004DocRecepcionadosProveedorTodos.rdlc">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </Content>
+    <Content Include="Reportes\REP004DocRecepcionadosTodos.rdlc">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </Content>
+    <Content Include="Reportes\REP004DocRecepcionadosLineasTotal.rdlc">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </Content>
+    <EmbeddedResource Include="Reportes\REP014ReporteControlTransmisiones\REP014View.resx">
+      <DependentUpon>REP014View.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Reportes\REP013ReporteComEjecutivo\REP013LView.resx">
+      <DependentUpon>REP013LView.cs</DependentUpon>
+    </EmbeddedResource>
+    <Content Include="Reportes\REP006DetraccionPendientes.rdlc">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </Content>
+    <Content Include="Reportes\rtpEtiqueta.rdlc">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </Content>
+    <EmbeddedResource Include="Reportes\REP012ReporteProfitNegativos\REP012LView.resx">
+      <DependentUpon>REP012LView.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Reportes\REP011ReporteNavesTeus\REP011LView.resx">
+      <DependentUpon>REP011LView.cs</DependentUpon>
+    </EmbeddedResource>
+    <Content Include="Reportes\rptMatrizDraft.rdlc">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </Content>
+    <EmbeddedResource Include="Reportes\REP010ReporteHapagHsud\REP010LView.resx">
+      <DependentUpon>REP010LView.cs</DependentUpon>
+    </EmbeddedResource>
+    <Content Include="Reportes\REP001AuxiliarBancos.rdlc">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </Content>
+    <EmbeddedResource Include="Reportes\Finanzas\REP001AuxiliarBancos\REP001AuxiliarBancosLView.resx">
+      <DependentUpon>REP001AuxiliarBancosLView.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Reportes\Finanzas\REP002Cheques\REP002ChequesLView.resx">
+      <DependentUpon>REP002ChequesLView.cs</DependentUpon>
+    </EmbeddedResource>
+    <Content Include="Reportes\REP002Cheques.rdlc">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </Content>
+    <EmbeddedResource Include="Reportes\Finanzas\REP003PlanillaExportacion\REP003PlanillaExportacionLView.resx">
+      <DependentUpon>REP003PlanillaExportacionLView.cs</DependentUpon>
+    </EmbeddedResource>
+    <Content Include="Reportes\REP003PlanillaExportacion.rdlc">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </Content>
+    <EmbeddedResource Include="Reportes\Finanzas\REP004DocRecepcionados\REP004DocRecepcionadosLView.resx">
+      <DependentUpon>REP004DocRecepcionadosLView.cs</DependentUpon>
+    </EmbeddedResource>
+    <Content Include="Reportes\REP004DocRecepcionados.rdlc">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </Content>
+    <EmbeddedResource Include="Reportes\Finanzas\REP007AntiguedadDeuda\REP007AntiguedadDeudaLView.resx">
+      <DependentUpon>REP007AntiguedadDeudaLView.cs</DependentUpon>
+    </EmbeddedResource>
+    <Content Include="Reportes\REP007AntiguedadDeuda.rdlc">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </Content>
+    <EmbeddedResource Include="Reportes\Finanzas\REP008EstadoCliente\REP008EstadoClienteLView.resx">
+      <DependentUpon>REP008EstadoClienteLView.cs</DependentUpon>
+    </EmbeddedResource>
+    <Content Include="Reportes\REP008EstadoCliente.rdlc">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </Content>
+    <Content Include="Reportes\rptAnexo1.rdlc">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </Content>
+    <Content Include="Reportes\OPE001MBL.rdlc">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </Content>
+    <Content Include="Reportes\rptKPI001Contactados.rdlc">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </Content>
+    <Content Include="Reportes\rptKPI001ContactadosEjecutivo.rdlc">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </Content>
+    <Content Include="Reportes\rptKPI002Reuniones.rdlc">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </Content>
+    <Content Include="Reportes\rptKPI002ReunionesEjecutivo.rdlc">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </Content>
+    <Content Include="Reportes\rptKPI003Cotizaciones.rdlc">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </Content>
+    <Content Include="Reportes\rptKPI003CotizacionesEjecutivo.rdlc">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </Content>
+    <Content Include="Reportes\rptKPI004OrdenesVenta.rdlc">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </Content>
+    <Content Include="Reportes\rptKPI004OrdenesVentaEjecutivo.rdlc">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </Content>
+    <Content Include="Reportes\rptKPI005TEUSVendidos.rdlc">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </Content>
+    <Content Include="Reportes\rptKPI005TEUSVendidosEjecutivo.rdlc">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </Content>
+    <EmbeddedResource Include="Reportes\REP001ReporteFletamento\REP001LView.resx">
+      <DependentUpon>REP001LView.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Reportes\REP002ReporteTarifas\REP002LView.resx">
+      <DependentUpon>REP002LView.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Reportes\REP003ReporteOrdenVenta\REP003LView.resx">
+      <DependentUpon>REP003LView.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Reportes\REP004ReporteTarifasCosto\REP004LView.resx">
+      <DependentUpon>REP004LView.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Reportes\REP009ReportePlanillaBuque\REP009LView.resx">
+      <DependentUpon>REP009LView.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Reportes\REP015StatusComprobantes\REP015StatusComprobantesLView.resx">
+      <DependentUpon>REP015StatusComprobantesLView.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Reportes\Visualizador.resx">
+      <DependentUpon>Visualizador.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Tools\MotivoAnulacion.resx">
+      <DependentUpon>MotivoAnulacion.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Tools\Template\COM000LView.resx">
+      <DependentUpon>COM000LView.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Tools\Template\COM000MView.resx">
+      <DependentUpon>COM000MView.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Tools\Template\REP000LView.resx">
+      <DependentUpon>REP000LView.cs</DependentUpon>
+    </EmbeddedResource>
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="app.config" />
+    <None Include="DelfinCert.pfx" />
+    <None Include="Procesos\Finanzas\CAJ002IngresosEgresos\CAJ002IngresosEgresosPagos.xsc">
+      <DependentUpon>CAJ002IngresosEgresosPagos.xsd</DependentUpon>
+    </None>
+    <None Include="Procesos\Finanzas\CAJ002IngresosEgresos\CAJ002IngresosEgresosPagos.xsd">
+      <SubType>Designer</SubType>
+      <Generator>MSDataSetGenerator</Generator>
+      <LastGenOutput>CAJ002IngresosEgresosPagos.Designer.cs</LastGenOutput>
+    </None>
+    <None Include="Procesos\Finanzas\CAJ002IngresosEgresos\CAJ002IngresosEgresosPagos.xss">
+      <DependentUpon>CAJ002IngresosEgresosPagos.xsd</DependentUpon>
+    </None>
+    <None Include="Procesos\Finanzas\CAJ006LiquidacionAgentes\CAJ006LiquidacionAgentesDS.xsc">
+      <DependentUpon>CAJ006LiquidacionAgentesDS.xsd</DependentUpon>
+    </None>
+    <None Include="Procesos\Finanzas\CAJ006LiquidacionAgentes\CAJ006LiquidacionAgentesDS.xsd">
+      <SubType>Designer</SubType>
+      <Generator>MSDataSetGenerator</Generator>
+      <LastGenOutput>CAJ006LiquidacionAgentesDS.Designer.cs</LastGenOutput>
+    </None>
+    <None Include="Procesos\Finanzas\CAJ006LiquidacionAgentes\CAJ006LiquidacionAgentesDS.xss">
+      <DependentUpon>CAJ006LiquidacionAgentesDS.xsd</DependentUpon>
+    </None>
+    <None Include="Reportes\DataSet\DSOPE005ConsultaServicios.xsc">
+      <DependentUpon>DSOPE005ConsultaServicios.xsd</DependentUpon>
+    </None>
+    <None Include="Reportes\DataSet\DSOPE005ConsultaServicios.xsd">
+      <SubType>Designer</SubType>
+      <Generator>MSDataSetGenerator</Generator>
+      <LastGenOutput>DSOPE005ConsultaServicios.Designer.cs</LastGenOutput>
+    </None>
+    <None Include="Reportes\DataSet\DSOPE005ConsultaServicios.xss">
+      <DependentUpon>DSOPE005ConsultaServicios.xsd</DependentUpon>
+    </None>
+    <None Include="Reportes\DataSet\DSOPE006ConsultarCorrelativos.xsc">
+      <DependentUpon>DSOPE006ConsultarCorrelativos.xsd</DependentUpon>
+    </None>
+    <None Include="Reportes\DataSet\DSOPE006ConsultarCorrelativos.xsd">
+      <SubType>Designer</SubType>
+      <Generator>MSDataSetGenerator</Generator>
+      <LastGenOutput>DSOPE006ConsultarCorrelativos.Designer.cs</LastGenOutput>
+    </None>
+    <None Include="Reportes\DataSet\DSOPE006ConsultarCorrelativos.xss">
+      <DependentUpon>DSOPE006ConsultarCorrelativos.xsd</DependentUpon>
+    </None>
+    <None Include="Reportes\Comercial\DSCotizacionOV.xsc">
+      <DependentUpon>DSCotizacionOV.xsd</DependentUpon>
+    </None>
+    <None Include="Reportes\Comercial\DSCotizacionOV.xsd">
+      <SubType>Designer</SubType>
+      <Generator>MSDataSetGenerator</Generator>
+      <LastGenOutput>DSCotizacionOV.Designer.cs</LastGenOutput>
+    </None>
+    <None Include="Reportes\Comercial\DSCotizacionOV.xss">
+      <DependentUpon>DSCotizacionOV.xsd</DependentUpon>
+    </None>
+    <None Include="Reportes\Comercial\DSReportes.xsc">
+      <DependentUpon>DSReportes.xsd</DependentUpon>
+    </None>
+    <None Include="Reportes\Comercial\DSReportes.xsd">
+      <SubType>Designer</SubType>
+      <Generator>MSDataSetGenerator</Generator>
+      <LastGenOutput>DSReportes.Designer.cs</LastGenOutput>
+    </None>
+    <None Include="Reportes\Comercial\DSReportes.xss">
+      <DependentUpon>DSReportes.xsd</DependentUpon>
+    </None>
+    <None Include="Reportes\Finanzas\REP001AuxiliarBancos\REP001AuxiliarBancos.xsc">
+      <DependentUpon>REP001AuxiliarBancos.xsd</DependentUpon>
+    </None>
+    <None Include="Reportes\Finanzas\REP001AuxiliarBancos\REP001AuxiliarBancos.xsd">
+      <SubType>Designer</SubType>
+      <Generator>MSDataSetGenerator</Generator>
+      <LastGenOutput>REP001AuxiliarBancos.Designer.cs</LastGenOutput>
+    </None>
+    <None Include="Reportes\Finanzas\REP001AuxiliarBancos\REP001AuxiliarBancos.xss">
+      <DependentUpon>REP001AuxiliarBancos.xsd</DependentUpon>
+    </None>
+    <None Include="Reportes\Finanzas\REP002Cheques\REP002Cheques.xsc">
+      <DependentUpon>REP002Cheques.xsd</DependentUpon>
+    </None>
+    <None Include="Reportes\Finanzas\REP002Cheques\REP002Cheques.xsd">
+      <SubType>Designer</SubType>
+      <Generator>MSDataSetGenerator</Generator>
+      <LastGenOutput>REP002Cheques.Designer.cs</LastGenOutput>
+    </None>
+    <None Include="Reportes\Finanzas\REP002Cheques\REP002Cheques.xss">
+      <DependentUpon>REP002Cheques.xsd</DependentUpon>
+    </None>
+    <None Include="Reportes\Finanzas\REP003PlanillaExportacion\REP003PlanillaExportacion.xsc">
+      <DependentUpon>REP003PlanillaExportacion.xsd</DependentUpon>
+    </None>
+    <None Include="Reportes\Finanzas\REP003PlanillaExportacion\REP003PlanillaExportacion.xsd">
+      <SubType>Designer</SubType>
+      <Generator>MSDataSetGenerator</Generator>
+      <LastGenOutput>REP003PlanillaExportacion.Designer.cs</LastGenOutput>
+    </None>
+    <None Include="Reportes\Finanzas\REP003PlanillaExportacion\REP003PlanillaExportacion.xss">
+      <DependentUpon>REP003PlanillaExportacion.xsd</DependentUpon>
+    </None>
+    <None Include="Reportes\Finanzas\REP004DocRecepcionados\REP004DocRecepcionados.xsc">
+      <DependentUpon>REP004DocRecepcionados.xsd</DependentUpon>
+    </None>
+    <None Include="Reportes\Finanzas\REP004DocRecepcionados\REP004DocRecepcionados.xsd">
+      <SubType>Designer</SubType>
+      <Generator>MSDataSetGenerator</Generator>
+      <LastGenOutput>REP004DocRecepcionados.Designer.cs</LastGenOutput>
+    </None>
+    <None Include="Reportes\Finanzas\REP004DocRecepcionados\REP004DocRecepcionados.xss">
+      <DependentUpon>REP004DocRecepcionados.xsd</DependentUpon>
+    </None>
+    <None Include="Reportes\Finanzas\REP007AntiguedadDeuda\REP007AntiguedadDeuda.xsc">
+      <DependentUpon>REP007AntiguedadDeuda.xsd</DependentUpon>
+    </None>
+    <None Include="Reportes\Finanzas\REP007AntiguedadDeuda\REP007AntiguedadDeuda.xsd">
+      <SubType>Designer</SubType>
+      <Generator>MSDataSetGenerator</Generator>
+      <LastGenOutput>REP007AntiguedadDeuda.Designer.cs</LastGenOutput>
+    </None>
+    <None Include="Reportes\Finanzas\REP007AntiguedadDeuda\REP007AntiguedadDeuda.xss">
+      <DependentUpon>REP007AntiguedadDeuda.xsd</DependentUpon>
+    </None>
+    <None Include="Reportes\Finanzas\REP008EstadoCliente\REP008EstadoCliente.xsc">
+      <DependentUpon>REP008EstadoCliente.xsd</DependentUpon>
+    </None>
+    <None Include="Reportes\Finanzas\REP008EstadoCliente\REP008EstadoCliente.xsd">
+      <SubType>Designer</SubType>
+      <Generator>MSDataSetGenerator</Generator>
+      <LastGenOutput>REP008EstadoCliente.Designer.cs</LastGenOutput>
+    </None>
+    <None Include="Reportes\Finanzas\REP008EstadoCliente\REP008EstadoCliente.xss">
+      <DependentUpon>REP008EstadoCliente.xsd</DependentUpon>
+    </None>
+    <None Include="Reportes\OPE001Anexos\DSAnexos.xsc">
+      <DependentUpon>DSAnexos.xsd</DependentUpon>
+    </None>
+    <None Include="Reportes\OPE001Anexos\DSAnexos.xsd">
+      <SubType>Designer</SubType>
+      <Generator>MSDataSetGenerator</Generator>
+      <LastGenOutput>DSAnexos.Designer.cs</LastGenOutput>
+    </None>
+    <None Include="Reportes\OPE001Anexos\DSAnexos.xss">
+      <DependentUpon>DSAnexos.xsd</DependentUpon>
+    </None>
+    <None Include="Reportes\OPE001Cotizacion\DSOPE001MBL.xsc">
+      <DependentUpon>DSOPE001MBL.xsd</DependentUpon>
+    </None>
+    <None Include="Reportes\OPE001Cotizacion\DSOPE001MBL.xsd">
+      <SubType>Designer</SubType>
+      <Generator>MSDataSetGenerator</Generator>
+      <LastGenOutput>DSOPE001MBL.Designer.cs</LastGenOutput>
+    </None>
+    <None Include="Reportes\OPE001Cotizacion\DSOPE001MBL.xss">
+      <DependentUpon>DSOPE001MBL.xsd</DependentUpon>
+    </None>
+    <None Include="Reportes\OPE001Etiqueta\DSEtiqueta.xsc">
+      <DependentUpon>DSEtiqueta.xsd</DependentUpon>
+    </None>
+    <None Include="Reportes\OPE001Etiqueta\DSEtiqueta.xsd">
+      <SubType>Designer</SubType>
+      <Generator>MSDataSetGenerator</Generator>
+      <LastGenOutput>DSEtiqueta.Designer.cs</LastGenOutput>
+    </None>
+    <None Include="Reportes\OPE001Etiqueta\DSEtiqueta.xss">
+      <DependentUpon>DSEtiqueta.xsd</DependentUpon>
+    </None>
+    <None Include="Reportes\OPE001MatrizDraft\DSMatrizDraft.xsc">
+      <DependentUpon>DSMatrizDraft.xsd</DependentUpon>
+    </None>
+    <None Include="Reportes\OPE001MatrizDraft\DSMatrizDraft.xsd">
+      <SubType>Designer</SubType>
+      <Generator>MSDataSetGenerator</Generator>
+      <LastGenOutput>DSMatrizDraft.Designer.cs</LastGenOutput>
+    </None>
+    <None Include="Reportes\OPE001MatrizDraft\DSMatrizDraft.xss">
+      <DependentUpon>DSMatrizDraft.xsd</DependentUpon>
+    </None>
+    <Content Include="Resources\add24x24.png">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </Content>
+  </ItemGroup>
+  <ItemGroup>
+    <Content Include="Resources\add.png">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </Content>
+  </ItemGroup>
+  <ItemGroup>
+    <Content Include="Resources\delete.png">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </Content>
+  </ItemGroup>
+  <ItemGroup>
+    <Content Include="Resources\export.png">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </Content>
+  </ItemGroup>
+  <ItemGroup>
+    <Content Include="Resources\save.png">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </Content>
+  </ItemGroup>
+  <ItemGroup>
+    <Content Include="Resources\search.png">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </Content>
+  </ItemGroup>
+  <ItemGroup>
+    <Content Include="Resources\undo.png">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </Content>
+  </ItemGroup>
+  <ItemGroup>
+    <Content Include="Resources\index_up.png">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </Content>
+  </ItemGroup>
+  <ItemGroup>
+    <Content Include="Resources\index_preferences.png">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </Content>
+  </ItemGroup>
+  <ItemGroup>
+    <Content Include="Resources\editar16x16.png">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </Content>
+  </ItemGroup>
+  <ItemGroup>
+    <Content Include="Resources\add16x16.png">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </Content>
+  </ItemGroup>
+  <ItemGroup>
+    <Content Include="Resources\navigate_left.png">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </Content>
+  </ItemGroup>
+  <ItemGroup>
+    <Content Include="Resources\navigate_right.png">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </Content>
+  </ItemGroup>
+  <ItemGroup>
+    <Content Include="Resources\data_refresh.png">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </Content>
+  </ItemGroup>
+  <ItemGroup>
+    <Content Include="Resources\printer2.png">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </Content>
+  </ItemGroup>
+  <ItemGroup>
+    <Content Include="Resources\book_blue_next.png">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </Content>
+  </ItemGroup>
+  <ItemGroup>
+    <Content Include="Resources\money2.png">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </Content>
+  </ItemGroup>
+  <ItemGroup>
+    <Content Include="Resources\disk_blue_window.png">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </Content>
+  </ItemGroup>
+  <ItemGroup>
+    <Content Include="Resources\copy.png">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </Content>
+  </ItemGroup>
+  <ItemGroup>
+    <Content Include="Resources\delete1.png">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </Content>
+  </ItemGroup>
+  <ItemGroup>
+    <Content Include="Resources\disk_blue_ok.png">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </Content>
+  </ItemGroup>
+  <ItemGroup>
+    <Content Include="Resources\undo1.png">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </Content>
+  </ItemGroup>
+  <ItemGroup>
+    <Content Include="Resources\mail_forward.png">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </Content>
+  </ItemGroup>
+  <ItemGroup>
+    <Content Include="Resources\arrow_up_green.png">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </Content>
+  </ItemGroup>
+  <ItemGroup>
+    <Content Include="Resources\arrow_down_blue.png">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </Content>
+  </ItemGroup>
+  <ItemGroup>
+    <Content Include="Resources\check.png">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </Content>
+  </ItemGroup>
+  <ItemGroup>
+    <Content Include="Resources\document_into.png">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </Content>
+  </ItemGroup>
+  <ItemGroup>
+    <Content Include="Resources\contract.png">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </Content>
+  </ItemGroup>
+  <ItemGroup>
+    <Content Include="Resources\forbidden.png">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </Content>
+  </ItemGroup>
+  <ItemGroup>
+    <Content Include="Resources\replace2.png">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </Content>
+  </ItemGroup>
+  <ItemGroup>
+    <Content Include="Resources\replace14x14.png">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </Content>
+  </ItemGroup>
+  <ItemGroup>
+    <Content Include="Resources\replace21.png">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </Content>
+  </ItemGroup>
+  <ItemGroup>
+    <Content Include="Resources\data_up.png">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </Content>
+  </ItemGroup>
+  <ItemGroup>
+    <Content Include="Resources\refresh.png">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </Content>
+  </ItemGroup>
+  <ItemGroup>
+    <Content Include="Resources\add2.png">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </Content>
+  </ItemGroup>
+  <ItemGroup>
+    <Content Include="Resources\clean24x24.png">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </Content>
+  </ItemGroup>
+  <ItemGroup>
+    <Content Include="Resources\box_new.ico">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </Content>
+  </ItemGroup>
+  <ItemGroup>
+    <Content Include="Resources\box_preferences.ico">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </Content>
+  </ItemGroup>
+  <ItemGroup>
+    <Content Include="Resources\note_edit.ico">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </Content>
+  </ItemGroup>
+  <ItemGroup>
+    <Content Include="Resources\view.png">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </Content>
+  </ItemGroup>
+  <ItemGroup>
+    <Content Include="Resources\document_edit.png">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </Content>
+  </ItemGroup>
+  <ItemGroup>
+    <Content Include="Resources\abrir.png">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </Content>
+    <Content Include="Resources\scroll_error_16x16.png">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </Content>
+    <Content Include="Resources\scroll_warning_16x16.png">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </Content>
+    <Content Include="Resources\folder_view_16x16.png">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </Content>
+    <Content Include="Resources\printer2_32x32.png">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </Content>
+    <Content Include="Resources\printer2_24x24.png">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </Content>
+    <Content Include="Resources\printer2_16x16.png">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </Content>
+    <Content Include="Resources\forbidden_24x24.png">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </Content>
+    <Content Include="Resources\folder_closed_32x32.png">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </Content>
+    <Content Include="Resources\folder_closed_24x24.png">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </Content>
+    <Content Include="Resources\folder_closed_16x16.png">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </Content>
+    <Content Include="Resources\information_32x32.png">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </Content>
+    <Content Include="Resources\information_24x24.png">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </Content>
+    <Content Include="Resources\information_16x16.png">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </Content>
+    <Content Include="Resources\numeral.png">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </Content>
+    <Content Include="Resources\forbidden_16x16.png">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </Content>
+    <Content Include="Resources\history2_16x16.png">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </Content>
+    <Content Include="Resources\import2_32x32.png">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </Content>
+    <Content Include="Resources\import2_24x24.png">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </Content>
+    <Content Include="Resources\import2_16x16.png">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </Content>
+    <Content Include="Resources\document_check_16x16.png">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </Content>
+    <Content Include="Resources\document_check_24x24.png">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </Content>
+    <Content Include="Resources\document_check_32x32.png">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </Content>
+    <Content Include="Resources\document_exchange_16x16.png">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </Content>
+    <Content Include="Resources\document_exchange_24x24.png">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </Content>
+    <Content Include="Resources\document_exchange_32x32.png">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </Content>
+    <Content Include="Resources\cube_molecule_preferences_16x16.png">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </Content>
+    <Content Include="Resources\cube_molecule_preferences_24x24.png">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </Content>
+    <Content Include="Resources\cube_molecule_preferences_32x32.png">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </Content>
+    <Content Include="Resources\document_out_16x16.png">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </Content>
+    <Content Include="Resources\document_out_24x24.png">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </Content>
+    <Content Include="Resources\document_out_32x32.png">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </Content>
+    <Content Include="Resources\arrow_up_green_16x16.png">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </Content>
+    <Content Include="Resources\arrow_up_green_24x24.png">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </Content>
+    <Content Include="Resources\arrow_up_green_32x32.png">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </Content>
+    <Content Include="Resources\book_blue_next_16x16.png">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </Content>
+    <Content Include="Resources\book_blue_next_24x24.png">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </Content>
+    <Content Include="Resources\book_blue_next_32x32.png">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </Content>
+    <Content Include="Resources\businessman_preferences_16x16.png">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </Content>
+    <Content Include="Resources\businessman_preferences_24x24.png">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </Content>
+    <Content Include="Resources\businessman_preferences_32x32.png">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </Content>
+    <Content Include="Resources\correo.png">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </Content>
+    <Content Include="Resources\Cancel_24x24.png">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </Content>
+    <Content Include="Resources\currency_dollar_32x32.png">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </Content>
+    <Content Include="Resources\currency_dollar_16x16.png">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </Content>
+    <Content Include="Resources\currency_dollar_24x24.png">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </Content>
+    <Content Include="Resources\document_attachment_16x16.png">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </Content>
+    <Content Include="Resources\document_attachment_24x24.png">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </Content>
+    <Content Include="Resources\document_attachment_32x32.png">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </Content>
+    <Content Include="Resources\document_pinned_16x16.png">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </Content>
+    <Content Include="Resources\document_pinned_24x24.png">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </Content>
+    <Content Include="Resources\document_pinned_32x32.png">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </Content>
+    <Content Include="Resources\calculator_16x16.png">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </Content>
+    <Content Include="Resources\document_ok_24x24.png">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </Content>
+    <Content Include="Resources\businessman_view.png">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </Content>
+    <Content Include="Resources\copy_16x16.png">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </Content>
+    <Content Include="Resources\arrow_left_green_16x16.png">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </Content>
+    <Content Include="Resources\check_16x16.png">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </Content>
+    <Content Include="Resources\edit_16x16.png">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </Content>
+    <Content Include="Resources\egreso.ico">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </Content>
+    <Content Include="Resources\egreso.png">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </Content>
+    <Content Include="Resources\server_document_32x32.png">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </Content>
+    <Content Include="Resources\server_document_24x24.png">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </Content>
+    <Content Include="Resources\server_document_16x16.png">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </Content>
+    <Content Include="Resources\Sign 07.png">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </Content>
+  </ItemGroup>
+  <ItemGroup>
+    <WCFMetadata Include="Service References\" />
+  </ItemGroup>
+  <ItemGroup>
+    <WCFMetadataStorage Include="Service References\AppService\" />
+    <WCFMetadataStorage Include="Service References\NextSoftService\" />
+  </ItemGroup>
+  <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
+  <!-- To modify your build process, add your task inside one of the targets below and uncomment it. 
+       Other similar extension points exist, see Microsoft.Common.targets.
+  <Target Name="BeforeBuild">
+  </Target>
+  <Target Name="AfterBuild">
+  </Target>
+  -->
+</Project>

@@ -1,0 +1,78 @@
+﻿@using Delfin.Web.Std.Resources.Shared
+@using Delfin.Web.Std.Resources.LoadingListImportacion.Resumido
+@using Delfin.Web.Std.Areas.LoadingListImportacion.Models
+@using Kendo.Mvc.UI
+@model LoadingListImportacionModel
+
+@{
+   ViewBag.Title = @Html.Raw(IndexResource.EtiquetaTitulo);
+   Layout = "~/Views/Shared/_Layout.cshtml";
+}
+
+@section breadcrumb{@Html.Raw(Resource.EtiquetaMenuLoadingListImportacionResumido)}
+
+<div>
+       <div class="m-b-md">
+           <h4 class="m-b-none col-xs-12 col-sm-9">@Html.Raw(IndexResource.EtiquetaTitulo)</h4>
+       </div>
+      @using (Html.BeginForm("ListImportacion", "Resumido", FormMethod.Get))
+      { 
+      <section id="divCriterioBusqueda" class="panel panel-default">
+               <header class="panel-heading">
+                  <br />
+                  <br />
+                  
+                  <table>
+                     <tr>
+                        <td style="width:30px;"></td>
+                        <td style="width:200px;"></td>
+                        <td style="width:360px;"></td>
+                     </tr>
+                     @*<tr>
+                        <td></td>
+                        <td>@Html.Label(IndexResource.EtiquetaViaje)</td>
+                        <td>@Html.TextBoxFor(model => model.Viaje, new Dictionary<string, object>(){{"readonly", "true"}})</td>
+                     </tr>*@
+                     
+                     <tr>
+                     <td colspan="3">
+                        @Html.DisplayFor(model => model.LOAD_MensajeError)
+                     </td>
+                  </tr>
+
+                     <tr>
+                        <td></td>
+                        <td>@Html.Label(IndexResource.EtiquetaFechaCarga)</td>
+                        <td>@Html.EditorFor(model => model.CargaFecha)</td>
+                     </tr>
+
+                     <tr>
+                        <td>@Html.CheckBoxFor(model => model.ShowLoadingListAsociado, new { @checked = "checked" })</td>
+                        <td>@Html.Label(IndexResource.EtiquetaLoadingListAsociado)</td>
+                        <td><strong>@Model.LoadingListAsociado</strong></td>
+                     </tr>
+                     <tr>
+                        <td>@Html.CheckBoxFor(model => model.ShowLoadingListNoAsociado, new { @checked = "checked" })</td>
+                        <td>@Html.Label(IndexResource.EtiquetaLoadingListNoAsociado)</td>
+                        <td><strong>@Model.LoadingListNoAsociado</strong></td>
+                     </tr>
+                     @*<tr>
+                        <td>@Html.CheckBoxFor(model => model.ShowOrdenVentaAsociada, new { @checked = "checked" })</td>
+                        <td>@Html.Label(IndexResource.EtiquetaOrdenVentaNoAsociada)</td>
+                        <td><strong>@Model.OrdenVentaAsociada</strong></td>
+                     </tr>*@
+                     <tr>
+                        <td></td>
+                        <td></td>
+                        <td><input id="btnFilter" type="submit" class="btn btn-primary" value='@Html.Raw(GeneralResource.EtiquetaFiltrar)' /></td>
+                     </tr>
+                     
+                  </table>
+               </header>
+           </section>
+      }
+</div>
+
+@if (Model != null) {
+   @Html.Partial("_GridLoadingList", Model.ListLoadingListModel)
+}

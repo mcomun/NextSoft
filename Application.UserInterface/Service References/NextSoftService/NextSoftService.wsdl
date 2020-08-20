@@ -1,0 +1,251 @@
+<?xml version="1.0" encoding="utf-8"?>
+<wsdl:definitions xmlns:wsap="http://schemas.xmlsoap.org/ws/2004/08/addressing/policy" xmlns:wsa10="http://www.w3.org/2005/08/addressing" xmlns:tns="http://tempuri.org/" xmlns:msc="http://schemas.microsoft.com/ws/2005/12/wsdl/contract" xmlns:soapenc="http://schemas.xmlsoap.org/soap/encoding/" xmlns:wsx="http://schemas.xmlsoap.org/ws/2004/09/mex" xmlns:wsp="http://schemas.xmlsoap.org/ws/2004/09/policy" xmlns:wsam="http://www.w3.org/2007/05/addressing/metadata" xmlns:wsa="http://schemas.xmlsoap.org/ws/2004/08/addressing" xmlns:wsaw="http://www.w3.org/2006/05/addressing/wsdl" xmlns:soap="http://schemas.xmlsoap.org/wsdl/soap/" xmlns:soap12="http://schemas.xmlsoap.org/wsdl/soap12/" xmlns:wsu="http://docs.oasis-open.org/wss/2004/01/oasis-200401-wss-wssecurity-utility-1.0.xsd" xmlns:xsd="http://www.w3.org/2001/XMLSchema" name="NextSoftService" targetNamespace="http://tempuri.org/" xmlns:wsdl="http://schemas.xmlsoap.org/wsdl/">
+  <wsdl:types>
+    <xsd:schema targetNamespace="http://tempuri.org/Imports">
+      <xsd:import schemaLocation="http://apps.delfingroupco.com.pe:766/NextSoftService.svc?xsd=xsd0" namespace="http://tempuri.org/" />
+      <xsd:import schemaLocation="http://apps.delfingroupco.com.pe:766/NextSoftService.svc?xsd=xsd1" namespace="http://schemas.microsoft.com/2003/10/Serialization/" />
+      <xsd:import schemaLocation="http://apps.delfingroupco.com.pe:766/NextSoftService.svc?xsd=xsd2" />
+      <xsd:import schemaLocation="http://apps.delfingroupco.com.pe:766/NextSoftService.svc?xsd=xsd3" namespace="http://schemas.microsoft.com/2003/10/Serialization/Arrays" />
+      <xsd:import schemaLocation="http://apps.delfingroupco.com.pe:766/NextSoftService.svc?xsd=xsd4" namespace="http://schemas.datacontract.org/2004/07/Application.BusinessEntities" />
+      <xsd:import schemaLocation="http://apps.delfingroupco.com.pe:766/NextSoftService.svc?xsd=xsd5" namespace="http://schemas.datacontract.org/2004/07/System.Data" />
+    </xsd:schema>
+  </wsdl:types>
+  <wsdl:message name="INextSoftService_ExecuteSQL_InputMessage">
+    <wsdl:part name="parameters" element="tns:ExecuteSQL" />
+  </wsdl:message>
+  <wsdl:message name="INextSoftService_ExecuteSQL_OutputMessage">
+    <wsdl:part name="parameters" element="tns:ExecuteSQLResponse" />
+  </wsdl:message>
+  <wsdl:message name="INextSoftService_ExecuteSQLNonQuery_InputMessage">
+    <wsdl:part name="parameters" element="tns:ExecuteSQLNonQuery" />
+  </wsdl:message>
+  <wsdl:message name="INextSoftService_ExecuteSQLNonQuery_OutputMessage">
+    <wsdl:part name="parameters" element="tns:ExecuteSQLNonQueryResponse" />
+  </wsdl:message>
+  <wsdl:message name="INextSoftService_InsertSobrestadia_InputMessage">
+    <wsdl:part name="parameters" element="tns:InsertSobrestadia" />
+  </wsdl:message>
+  <wsdl:message name="INextSoftService_InsertSobrestadia_OutputMessage">
+    <wsdl:part name="parameters" element="tns:InsertSobrestadiaResponse" />
+  </wsdl:message>
+  <wsdl:message name="INextSoftService_UpdateSobrestadia_InputMessage">
+    <wsdl:part name="parameters" element="tns:UpdateSobrestadia" />
+  </wsdl:message>
+  <wsdl:message name="INextSoftService_UpdateSobrestadia_OutputMessage">
+    <wsdl:part name="parameters" element="tns:UpdateSobrestadiaResponse" />
+  </wsdl:message>
+  <wsdl:message name="INextSoftService_DeleteSobrestadia_InputMessage">
+    <wsdl:part name="parameters" element="tns:DeleteSobrestadia" />
+  </wsdl:message>
+  <wsdl:message name="INextSoftService_DeleteSobrestadia_OutputMessage">
+    <wsdl:part name="parameters" element="tns:DeleteSobrestadiaResponse" />
+  </wsdl:message>
+  <wsdl:message name="INextSoftService_GetAllSobrestadia_InputMessage">
+    <wsdl:part name="parameters" element="tns:GetAllSobrestadia" />
+  </wsdl:message>
+  <wsdl:message name="INextSoftService_GetAllSobrestadia_OutputMessage">
+    <wsdl:part name="parameters" element="tns:GetAllSobrestadiaResponse" />
+  </wsdl:message>
+  <wsdl:message name="INextSoftService_GetSobrestadiaByFilter_InputMessage">
+    <wsdl:part name="parameters" element="tns:GetSobrestadiaByFilter" />
+  </wsdl:message>
+  <wsdl:message name="INextSoftService_GetSobrestadiaByFilter_OutputMessage">
+    <wsdl:part name="parameters" element="tns:GetSobrestadiaByFilterResponse" />
+  </wsdl:message>
+  <wsdl:message name="INextSoftService_InsertDetSobrestadia_InputMessage">
+    <wsdl:part name="parameters" element="tns:InsertDetSobrestadia" />
+  </wsdl:message>
+  <wsdl:message name="INextSoftService_InsertDetSobrestadia_OutputMessage">
+    <wsdl:part name="parameters" element="tns:InsertDetSobrestadiaResponse" />
+  </wsdl:message>
+  <wsdl:message name="INextSoftService_UpdateDetSobrestadia_InputMessage">
+    <wsdl:part name="parameters" element="tns:UpdateDetSobrestadia" />
+  </wsdl:message>
+  <wsdl:message name="INextSoftService_UpdateDetSobrestadia_OutputMessage">
+    <wsdl:part name="parameters" element="tns:UpdateDetSobrestadiaResponse" />
+  </wsdl:message>
+  <wsdl:message name="INextSoftService_DeleteDetSobrestadia_InputMessage">
+    <wsdl:part name="parameters" element="tns:DeleteDetSobrestadia" />
+  </wsdl:message>
+  <wsdl:message name="INextSoftService_DeleteDetSobrestadia_OutputMessage">
+    <wsdl:part name="parameters" element="tns:DeleteDetSobrestadiaResponse" />
+  </wsdl:message>
+  <wsdl:message name="INextSoftService_GetAllDetSobrestadia_InputMessage">
+    <wsdl:part name="parameters" element="tns:GetAllDetSobrestadia" />
+  </wsdl:message>
+  <wsdl:message name="INextSoftService_GetAllDetSobrestadia_OutputMessage">
+    <wsdl:part name="parameters" element="tns:GetAllDetSobrestadiaResponse" />
+  </wsdl:message>
+  <wsdl:message name="INextSoftService_GetDetSobrestadiaByFilter_InputMessage">
+    <wsdl:part name="parameters" element="tns:GetDetSobrestadiaByFilter" />
+  </wsdl:message>
+  <wsdl:message name="INextSoftService_GetDetSobrestadiaByFilter_OutputMessage">
+    <wsdl:part name="parameters" element="tns:GetDetSobrestadiaByFilterResponse" />
+  </wsdl:message>
+  <wsdl:portType name="INextSoftService">
+    <wsdl:operation name="ExecuteSQL">
+      <wsdl:input wsaw:Action="http://tempuri.org/INextSoftService/ExecuteSQL" message="tns:INextSoftService_ExecuteSQL_InputMessage" />
+      <wsdl:output wsaw:Action="http://tempuri.org/INextSoftService/ExecuteSQLResponse" message="tns:INextSoftService_ExecuteSQL_OutputMessage" />
+    </wsdl:operation>
+    <wsdl:operation name="ExecuteSQLNonQuery">
+      <wsdl:input wsaw:Action="http://tempuri.org/INextSoftService/ExecuteSQLNonQuery" message="tns:INextSoftService_ExecuteSQLNonQuery_InputMessage" />
+      <wsdl:output wsaw:Action="http://tempuri.org/INextSoftService/ExecuteSQLNonQueryResponse" message="tns:INextSoftService_ExecuteSQLNonQuery_OutputMessage" />
+    </wsdl:operation>
+    <wsdl:operation name="InsertSobrestadia">
+      <wsdl:input wsaw:Action="http://tempuri.org/INextSoftService/InsertSobrestadia" message="tns:INextSoftService_InsertSobrestadia_InputMessage" />
+      <wsdl:output wsaw:Action="http://tempuri.org/INextSoftService/InsertSobrestadiaResponse" message="tns:INextSoftService_InsertSobrestadia_OutputMessage" />
+    </wsdl:operation>
+    <wsdl:operation name="UpdateSobrestadia">
+      <wsdl:input wsaw:Action="http://tempuri.org/INextSoftService/UpdateSobrestadia" message="tns:INextSoftService_UpdateSobrestadia_InputMessage" />
+      <wsdl:output wsaw:Action="http://tempuri.org/INextSoftService/UpdateSobrestadiaResponse" message="tns:INextSoftService_UpdateSobrestadia_OutputMessage" />
+    </wsdl:operation>
+    <wsdl:operation name="DeleteSobrestadia">
+      <wsdl:input wsaw:Action="http://tempuri.org/INextSoftService/DeleteSobrestadia" message="tns:INextSoftService_DeleteSobrestadia_InputMessage" />
+      <wsdl:output wsaw:Action="http://tempuri.org/INextSoftService/DeleteSobrestadiaResponse" message="tns:INextSoftService_DeleteSobrestadia_OutputMessage" />
+    </wsdl:operation>
+    <wsdl:operation name="GetAllSobrestadia">
+      <wsdl:input wsaw:Action="http://tempuri.org/INextSoftService/GetAllSobrestadia" message="tns:INextSoftService_GetAllSobrestadia_InputMessage" />
+      <wsdl:output wsaw:Action="http://tempuri.org/INextSoftService/GetAllSobrestadiaResponse" message="tns:INextSoftService_GetAllSobrestadia_OutputMessage" />
+    </wsdl:operation>
+    <wsdl:operation name="GetSobrestadiaByFilter">
+      <wsdl:input wsaw:Action="http://tempuri.org/INextSoftService/GetSobrestadiaByFilter" message="tns:INextSoftService_GetSobrestadiaByFilter_InputMessage" />
+      <wsdl:output wsaw:Action="http://tempuri.org/INextSoftService/GetSobrestadiaByFilterResponse" message="tns:INextSoftService_GetSobrestadiaByFilter_OutputMessage" />
+    </wsdl:operation>
+    <wsdl:operation name="InsertDetSobrestadia">
+      <wsdl:input wsaw:Action="http://tempuri.org/INextSoftService/InsertDetSobrestadia" message="tns:INextSoftService_InsertDetSobrestadia_InputMessage" />
+      <wsdl:output wsaw:Action="http://tempuri.org/INextSoftService/InsertDetSobrestadiaResponse" message="tns:INextSoftService_InsertDetSobrestadia_OutputMessage" />
+    </wsdl:operation>
+    <wsdl:operation name="UpdateDetSobrestadia">
+      <wsdl:input wsaw:Action="http://tempuri.org/INextSoftService/UpdateDetSobrestadia" message="tns:INextSoftService_UpdateDetSobrestadia_InputMessage" />
+      <wsdl:output wsaw:Action="http://tempuri.org/INextSoftService/UpdateDetSobrestadiaResponse" message="tns:INextSoftService_UpdateDetSobrestadia_OutputMessage" />
+    </wsdl:operation>
+    <wsdl:operation name="DeleteDetSobrestadia">
+      <wsdl:input wsaw:Action="http://tempuri.org/INextSoftService/DeleteDetSobrestadia" message="tns:INextSoftService_DeleteDetSobrestadia_InputMessage" />
+      <wsdl:output wsaw:Action="http://tempuri.org/INextSoftService/DeleteDetSobrestadiaResponse" message="tns:INextSoftService_DeleteDetSobrestadia_OutputMessage" />
+    </wsdl:operation>
+    <wsdl:operation name="GetAllDetSobrestadia">
+      <wsdl:input wsaw:Action="http://tempuri.org/INextSoftService/GetAllDetSobrestadia" message="tns:INextSoftService_GetAllDetSobrestadia_InputMessage" />
+      <wsdl:output wsaw:Action="http://tempuri.org/INextSoftService/GetAllDetSobrestadiaResponse" message="tns:INextSoftService_GetAllDetSobrestadia_OutputMessage" />
+    </wsdl:operation>
+    <wsdl:operation name="GetDetSobrestadiaByFilter">
+      <wsdl:input wsaw:Action="http://tempuri.org/INextSoftService/GetDetSobrestadiaByFilter" message="tns:INextSoftService_GetDetSobrestadiaByFilter_InputMessage" />
+      <wsdl:output wsaw:Action="http://tempuri.org/INextSoftService/GetDetSobrestadiaByFilterResponse" message="tns:INextSoftService_GetDetSobrestadiaByFilter_OutputMessage" />
+    </wsdl:operation>
+  </wsdl:portType>
+  <wsdl:binding name="BasicHttpBinding_INextSoftService" type="tns:INextSoftService">
+    <soap:binding transport="http://schemas.xmlsoap.org/soap/http" />
+    <wsdl:operation name="ExecuteSQL">
+      <soap:operation soapAction="http://tempuri.org/INextSoftService/ExecuteSQL" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="ExecuteSQLNonQuery">
+      <soap:operation soapAction="http://tempuri.org/INextSoftService/ExecuteSQLNonQuery" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="InsertSobrestadia">
+      <soap:operation soapAction="http://tempuri.org/INextSoftService/InsertSobrestadia" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="UpdateSobrestadia">
+      <soap:operation soapAction="http://tempuri.org/INextSoftService/UpdateSobrestadia" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="DeleteSobrestadia">
+      <soap:operation soapAction="http://tempuri.org/INextSoftService/DeleteSobrestadia" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="GetAllSobrestadia">
+      <soap:operation soapAction="http://tempuri.org/INextSoftService/GetAllSobrestadia" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="GetSobrestadiaByFilter">
+      <soap:operation soapAction="http://tempuri.org/INextSoftService/GetSobrestadiaByFilter" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="InsertDetSobrestadia">
+      <soap:operation soapAction="http://tempuri.org/INextSoftService/InsertDetSobrestadia" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="UpdateDetSobrestadia">
+      <soap:operation soapAction="http://tempuri.org/INextSoftService/UpdateDetSobrestadia" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="DeleteDetSobrestadia">
+      <soap:operation soapAction="http://tempuri.org/INextSoftService/DeleteDetSobrestadia" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="GetAllDetSobrestadia">
+      <soap:operation soapAction="http://tempuri.org/INextSoftService/GetAllDetSobrestadia" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="GetDetSobrestadiaByFilter">
+      <soap:operation soapAction="http://tempuri.org/INextSoftService/GetDetSobrestadiaByFilter" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+  </wsdl:binding>
+  <wsdl:service name="NextSoftService">
+    <wsdl:port name="BasicHttpBinding_INextSoftService" binding="tns:BasicHttpBinding_INextSoftService">
+      <soap:address location="http://apps.delfingroupco.com.pe:766/NextSoftService.svc" />
+    </wsdl:port>
+  </wsdl:service>
+</wsdl:definitions>

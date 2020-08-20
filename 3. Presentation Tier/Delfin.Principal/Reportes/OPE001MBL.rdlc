@@ -1,0 +1,2770 @@
+<?xml version="1.0" encoding="utf-8"?>
+<Report xmlns="http://schemas.microsoft.com/sqlserver/reporting/2008/01/reportdefinition" xmlns:rd="http://schemas.microsoft.com/SQLServer/reporting/reportdesigner">
+  <Body>
+    <ReportItems>
+      <Subreport Name="Subreport1">
+        <ReportName>OPE001MBL_Detalle</ReportName>
+        <Parameters>
+          <Parameter Name="TipoContenedor">
+            <Value>=Parameters!TipoContenedor.Value</Value>
+          </Parameter>
+          <Parameter Name="parSinFormato">
+            <Value>=Parameters!parSinFormato.Value</Value>
+          </Parameter>
+        </Parameters>
+        <Left>0.02646cm</Left>
+        <Height>1.40875cm</Height>
+        <Width>18.96472cm</Width>
+        <Style>
+          <Border>
+            <Style>None</Style>
+          </Border>
+        </Style>
+      </Subreport>
+      <Subreport Name="Subreport2">
+        <ReportName>OPE001MBL_Contenedor</ReportName>
+        <Top>1.40875cm</Top>
+        <Left>0.02646cm</Left>
+        <Height>1.40875cm</Height>
+        <Width>18.96472cm</Width>
+        <ZIndex>1</ZIndex>
+        <Visibility>
+          <Hidden>=Not(Parameters!parContenedores.Value)</Hidden>
+        </Visibility>
+        <Style>
+          <Border>
+            <Style>None</Style>
+          </Border>
+        </Style>
+      </Subreport>
+    </ReportItems>
+    <Height>1.10925in</Height>
+    <Style />
+  </Body>
+  <Width>7.50462in</Width>
+  <Page>
+    <PageHeader>
+      <Height>10.05868cm</Height>
+      <PrintOnFirstPage>true</PrintOnFirstPage>
+      <PrintOnLastPage>true</PrintOnLastPage>
+      <ReportItems>
+        <Image Name="Logo">
+          <Source>External</Source>
+          <Value>=Parameters!parLogo.Value</Value>
+          <Sizing>FitProportional</Sizing>
+          <Top>2.42056cm</Top>
+          <Left>9.50271cm</Left>
+          <Height>2.61778cm</Height>
+          <Width>9.48847cm</Width>
+          <Visibility>
+            <Hidden>=CBool(Parameters!parSinLogo.Value)</Hidden>
+          </Visibility>
+          <Style>
+            <Border>
+              <Style>None</Style>
+            </Border>
+            <PaddingLeft>10pt</PaddingLeft>
+          </Style>
+        </Image>
+        <Textbox Name="Textbox1">
+          <CanGrow>true</CanGrow>
+          <KeepTogether>true</KeepTogether>
+          <Paragraphs>
+            <Paragraph>
+              <TextRuns>
+                <TextRun>
+                  <Value>=Iif(Parameters!parSinFormato.Value, "", "Shipper")</Value>
+                  <Style>
+                    <FontSize>7pt</FontSize>
+                    <FontWeight>Bold</FontWeight>
+                  </Style>
+                </TextRun>
+              </TextRuns>
+              <Style />
+            </Paragraph>
+          </Paragraphs>
+          <rd:DefaultName>Textbox1</rd:DefaultName>
+          <Left>0.02646cm</Left>
+          <Height>0.45cm</Height>
+          <Width>9cm</Width>
+          <ZIndex>1</ZIndex>
+          <Style>
+            <Border>
+              <Style>=iif(CBool(Parameters!parSinFormato.Value),"None", "Solid")</Style>
+            </Border>
+            <BottomBorder>
+              <Style>None</Style>
+            </BottomBorder>
+            <LeftBorder>
+              <Style>None</Style>
+            </LeftBorder>
+            <PaddingLeft>2pt</PaddingLeft>
+            <PaddingRight>2pt</PaddingRight>
+            <PaddingTop>2pt</PaddingTop>
+            <PaddingBottom>2pt</PaddingBottom>
+          </Style>
+        </Textbox>
+        <Textbox Name="Textbox2">
+          <KeepTogether>true</KeepTogether>
+          <Paragraphs>
+            <Paragraph>
+              <TextRuns>
+                <TextRun>
+                  <Value>=First(Fields!DDOV_DescConsignee.Value, "DSOPE001HBL").ToString()</Value>
+                  <Style>
+                    <FontSize>7pt</FontSize>
+                  </Style>
+                </TextRun>
+              </TextRuns>
+              <Style />
+            </Paragraph>
+          </Paragraphs>
+          <rd:DefaultName>Textbox1</rd:DefaultName>
+          <Top>2.87056cm</Top>
+          <Left>0.02646cm</Left>
+          <Height>1.98222cm</Height>
+          <Width>9cm</Width>
+          <ZIndex>2</ZIndex>
+          <Style>
+            <Border>
+              <Style>=iif(CBool(Parameters!parSinFormato.Value),"None", "Solid")</Style>
+            </Border>
+            <TopBorder>
+              <Style>None</Style>
+            </TopBorder>
+            <LeftBorder>
+              <Style>None</Style>
+            </LeftBorder>
+            <PaddingLeft>2pt</PaddingLeft>
+            <PaddingRight>2pt</PaddingRight>
+            <PaddingTop>6pt</PaddingTop>
+            <PaddingBottom>2pt</PaddingBottom>
+          </Style>
+        </Textbox>
+        <Textbox Name="Textbox3">
+          <KeepTogether>true</KeepTogether>
+          <Paragraphs>
+            <Paragraph>
+              <TextRuns>
+                <TextRun>
+                  <Value>=First(Fields!DDOV_DescNotify.Value, "DSOPE001HBL").ToString()</Value>
+                  <Style>
+                    <FontSize>7pt</FontSize>
+                  </Style>
+                </TextRun>
+              </TextRuns>
+              <Style />
+            </Paragraph>
+          </Paragraphs>
+          <rd:DefaultName>Textbox1</rd:DefaultName>
+          <Top>5.32056cm</Top>
+          <Left>0.02646cm</Left>
+          <Height>2.00284cm</Height>
+          <Width>9cm</Width>
+          <ZIndex>3</ZIndex>
+          <Style>
+            <Border>
+              <Style>=iif(CBool(Parameters!parSinFormato.Value),"None", "Solid")</Style>
+            </Border>
+            <TopBorder>
+              <Style>None</Style>
+            </TopBorder>
+            <LeftBorder>
+              <Style>None</Style>
+            </LeftBorder>
+            <PaddingLeft>2pt</PaddingLeft>
+            <PaddingRight>2pt</PaddingRight>
+            <PaddingTop>4pt</PaddingTop>
+            <PaddingBottom>2pt</PaddingBottom>
+          </Style>
+        </Textbox>
+        <Textbox Name="Textbox4">
+          <KeepTogether>true</KeepTogether>
+          <Paragraphs>
+            <Paragraph>
+              <TextRuns>
+                <TextRun>
+                  <Value>=First(Fields!DOOV_HBL.Value, "DSOPE001HBL")</Value>
+                  <Style>
+                    <FontSize>6pt</FontSize>
+                  </Style>
+                </TextRun>
+              </TextRuns>
+              <Style>
+                <TextAlign>Center</TextAlign>
+              </Style>
+            </Paragraph>
+          </Paragraphs>
+          <rd:DefaultName>Textbox4</rd:DefaultName>
+          <Top>0.5cm</Top>
+          <Left>15.57938cm</Left>
+          <Height>0.6cm</Height>
+          <Width>3.4118cm</Width>
+          <ZIndex>4</ZIndex>
+          <Style>
+            <Border>
+              <Style>=iif(CBool(Parameters!parSinFormato.Value),"None", "Solid")</Style>
+            </Border>
+            <TopBorder>
+              <Style>None</Style>
+            </TopBorder>
+            <RightBorder>
+              <Style>None</Style>
+            </RightBorder>
+            <PaddingLeft>1pt</PaddingLeft>
+            <PaddingRight>1pt</PaddingRight>
+            <PaddingTop>2pt</PaddingTop>
+            <PaddingBottom>2pt</PaddingBottom>
+          </Style>
+        </Textbox>
+        <Textbox Name="Textbox5">
+          <KeepTogether>true</KeepTogether>
+          <Paragraphs>
+            <Paragraph>
+              <TextRuns>
+                <TextRun>
+                  <Value EvaluationMode="Constant" />
+                  <Style>
+                    <FontSize>8pt</FontSize>
+                  </Style>
+                </TextRun>
+              </TextRuns>
+              <Style />
+            </Paragraph>
+          </Paragraphs>
+          <rd:DefaultName>Textbox4</rd:DefaultName>
+          <Top>0.5cm</Top>
+          <Left>12.07938cm</Left>
+          <Height>0.6cm</Height>
+          <Width>3.5cm</Width>
+          <ZIndex>5</ZIndex>
+          <Style>
+            <Border>
+              <Style>=iif(CBool(Parameters!parSinFormato.Value),"None", "Solid")</Style>
+            </Border>
+            <TopBorder>
+              <Style>None</Style>
+            </TopBorder>
+            <PaddingLeft>7pt</PaddingLeft>
+            <PaddingRight>2pt</PaddingRight>
+            <PaddingTop>2pt</PaddingTop>
+            <PaddingBottom>2pt</PaddingBottom>
+          </Style>
+        </Textbox>
+        <Textbox Name="Textbox6">
+          <KeepTogether>true</KeepTogether>
+          <Paragraphs>
+            <Paragraph>
+              <TextRuns>
+                <TextRun>
+                  <Value>=First(Fields!DOOV_PreCarriage.Value, "DSOPE001HBL").ToString()</Value>
+                  <Style>
+                    <FontSize>7pt</FontSize>
+                  </Style>
+                </TextRun>
+              </TextRuns>
+              <Style />
+            </Paragraph>
+          </Paragraphs>
+          <rd:DefaultName>Textbox4</rd:DefaultName>
+          <Top>7.7734cm</Top>
+          <Left>0.02646cm</Left>
+          <Height>0.45cm</Height>
+          <Width>4.5cm</Width>
+          <ZIndex>6</ZIndex>
+          <Style>
+            <Border>
+              <Style>=iif(CBool(Parameters!parSinFormato.Value),"None", "Solid")</Style>
+            </Border>
+            <TopBorder>
+              <Style>None</Style>
+            </TopBorder>
+            <LeftBorder>
+              <Style>None</Style>
+            </LeftBorder>
+            <RightBorder>
+              <Style>None</Style>
+            </RightBorder>
+            <PaddingLeft>2pt</PaddingLeft>
+            <PaddingRight>2pt</PaddingRight>
+            <PaddingTop>2pt</PaddingTop>
+            <PaddingBottom>2pt</PaddingBottom>
+          </Style>
+        </Textbox>
+        <Textbox Name="Textbox7">
+          <KeepTogether>true</KeepTogether>
+          <Paragraphs>
+            <Paragraph>
+              <TextRuns>
+                <TextRun>
+                  <Value>=First(Fields!DOOV_PlaceReceipt.Value, "DSOPE001HBL").ToString()</Value>
+                  <Style>
+                    <FontSize>7pt</FontSize>
+                  </Style>
+                </TextRun>
+              </TextRuns>
+              <Style>
+                <TextAlign>Center</TextAlign>
+              </Style>
+            </Paragraph>
+          </Paragraphs>
+          <rd:DefaultName>Textbox4</rd:DefaultName>
+          <Top>7.7734cm</Top>
+          <Left>4.52646cm</Left>
+          <Height>0.45cm</Height>
+          <Width>4.5cm</Width>
+          <ZIndex>7</ZIndex>
+          <Style>
+            <Border>
+              <Style>None</Style>
+            </Border>
+            <PaddingLeft>2pt</PaddingLeft>
+            <PaddingRight>2pt</PaddingRight>
+            <PaddingTop>2pt</PaddingTop>
+            <PaddingBottom>2pt</PaddingBottom>
+          </Style>
+        </Textbox>
+        <Textbox Name="Textbox8">
+          <KeepTogether>true</KeepTogether>
+          <Paragraphs>
+            <Paragraph>
+              <TextRuns>
+                <TextRun>
+                  <Value>=First(Fields!DOOV_Vessel.Value, "DSOPE001HBL").ToString()</Value>
+                  <Style>
+                    <FontSize>6pt</FontSize>
+                  </Style>
+                </TextRun>
+              </TextRuns>
+              <Style />
+            </Paragraph>
+          </Paragraphs>
+          <rd:DefaultName>Textbox4</rd:DefaultName>
+          <Top>8.6734cm</Top>
+          <Left>0.02646cm</Left>
+          <Height>0.45cm</Height>
+          <Width>2.80698cm</Width>
+          <ZIndex>8</ZIndex>
+          <Style>
+            <Border>
+              <Style>=iif(CBool(Parameters!parSinFormato.Value),"None", "Solid")</Style>
+            </Border>
+            <TopBorder>
+              <Style>None</Style>
+            </TopBorder>
+            <LeftBorder>
+              <Style>None</Style>
+            </LeftBorder>
+            <RightBorder>
+              <Style>None</Style>
+            </RightBorder>
+            <PaddingTop>1pt</PaddingTop>
+            <PaddingBottom>1pt</PaddingBottom>
+          </Style>
+        </Textbox>
+        <Textbox Name="Textbox9">
+          <KeepTogether>true</KeepTogether>
+          <Paragraphs>
+            <Paragraph>
+              <TextRuns>
+                <TextRun>
+                  <Value>=First(Fields!PUER_NomPOL.Value, "DSOPE001HBL").ToString()</Value>
+                  <Style>
+                    <FontSize>7pt</FontSize>
+                  </Style>
+                </TextRun>
+              </TextRuns>
+              <Style>
+                <TextAlign>Center</TextAlign>
+              </Style>
+            </Paragraph>
+          </Paragraphs>
+          <rd:DefaultName>Textbox4</rd:DefaultName>
+          <Top>8.6734cm</Top>
+          <Left>4.52646cm</Left>
+          <Height>0.45cm</Height>
+          <Width>4.5cm</Width>
+          <ZIndex>9</ZIndex>
+          <Style>
+            <Border>
+              <Style>None</Style>
+            </Border>
+            <PaddingLeft>2pt</PaddingLeft>
+            <PaddingRight>2pt</PaddingRight>
+            <PaddingTop>2pt</PaddingTop>
+            <PaddingBottom>2pt</PaddingBottom>
+          </Style>
+        </Textbox>
+        <Textbox Name="Textbox10">
+          <KeepTogether>true</KeepTogether>
+          <Paragraphs>
+            <Paragraph>
+              <TextRuns>
+                <TextRun>
+                  <Value>=First(Fields!PUER_NomPOD.Value, "DSOPE001HBL").ToString()</Value>
+                  <Style>
+                    <FontSize>7pt</FontSize>
+                  </Style>
+                </TextRun>
+              </TextRuns>
+              <Style />
+            </Paragraph>
+          </Paragraphs>
+          <rd:DefaultName>Textbox4</rd:DefaultName>
+          <Top>9.5734cm</Top>
+          <Left>0.02646cm</Left>
+          <Height>0.45cm</Height>
+          <Width>4.5cm</Width>
+          <ZIndex>10</ZIndex>
+          <Style>
+            <Border>
+              <Style>=iif(CBool(Parameters!parSinFormato.Value),"None", "Solid")</Style>
+            </Border>
+            <TopBorder>
+              <Style>None</Style>
+            </TopBorder>
+            <LeftBorder>
+              <Style>None</Style>
+            </LeftBorder>
+            <RightBorder>
+              <Style>None</Style>
+            </RightBorder>
+            <PaddingLeft>2pt</PaddingLeft>
+            <PaddingRight>2pt</PaddingRight>
+            <PaddingTop>2pt</PaddingTop>
+            <PaddingBottom>2pt</PaddingBottom>
+          </Style>
+        </Textbox>
+        <Textbox Name="Textbox12">
+          <KeepTogether>true</KeepTogether>
+          <Paragraphs>
+            <Paragraph>
+              <TextRuns>
+                <TextRun>
+                  <Value>=First(Fields!DOOV_VoyNo.Value, "DSOPE001HBL").ToString()</Value>
+                  <Style>
+                    <FontSize>7pt</FontSize>
+                  </Style>
+                </TextRun>
+              </TextRuns>
+              <Style>
+                <TextAlign>Center</TextAlign>
+              </Style>
+            </Paragraph>
+          </Paragraphs>
+          <rd:DefaultName>Textbox4</rd:DefaultName>
+          <Top>8.6734cm</Top>
+          <Left>2.83344cm</Left>
+          <Height>0.45cm</Height>
+          <Width>1.69302cm</Width>
+          <ZIndex>11</ZIndex>
+          <Style>
+            <Border>
+              <Style>=iif(CBool(Parameters!parSinFormato.Value),"None", "Solid")</Style>
+            </Border>
+            <TopBorder>
+              <Style>None</Style>
+            </TopBorder>
+            <LeftBorder>
+              <Style>None</Style>
+            </LeftBorder>
+            <RightBorder>
+              <Style>None</Style>
+            </RightBorder>
+            <PaddingLeft>2pt</PaddingLeft>
+            <PaddingRight>2pt</PaddingRight>
+            <PaddingTop>2pt</PaddingTop>
+            <PaddingBottom>2pt</PaddingBottom>
+          </Style>
+        </Textbox>
+        <Textbox Name="Textbox13">
+          <CanGrow>true</CanGrow>
+          <KeepTogether>true</KeepTogether>
+          <Paragraphs>
+            <Paragraph>
+              <TextRuns>
+                <TextRun>
+                  <Value>=First(Fields!DDOV_ApplyTo.Value, "DSOPE001HBL").ToString()</Value>
+                  <Style>
+                    <FontSize>7pt</FontSize>
+                  </Style>
+                </TextRun>
+              </TextRuns>
+              <Style />
+            </Paragraph>
+          </Paragraphs>
+          <rd:DefaultName>Textbox1</rd:DefaultName>
+          <Top>7.80868cm</Top>
+          <Left>9.02646cm</Left>
+          <Height>2.25cm</Height>
+          <Width>9.96472cm</Width>
+          <ZIndex>12</ZIndex>
+          <Style>
+            <Border>
+              <Style>=iif(CBool(Parameters!parSinFormato.Value),"None", "Solid")</Style>
+            </Border>
+            <TopBorder>
+              <Style>None</Style>
+            </TopBorder>
+            <RightBorder>
+              <Style>None</Style>
+            </RightBorder>
+            <PaddingLeft>10pt</PaddingLeft>
+            <PaddingRight>2pt</PaddingRight>
+            <PaddingTop>2pt</PaddingTop>
+            <PaddingBottom>2pt</PaddingBottom>
+          </Style>
+        </Textbox>
+        <Textbox Name="Textbox29">
+          <KeepTogether>true</KeepTogether>
+          <Paragraphs>
+            <Paragraph>
+              <TextRuns>
+                <TextRun>
+                  <Value>=First(Fields!DDOV_DescShipper.Value, "DSOPE001HBL").ToString()</Value>
+                  <Style>
+                    <FontSize>7pt</FontSize>
+                  </Style>
+                </TextRun>
+              </TextRuns>
+              <Style />
+            </Paragraph>
+          </Paragraphs>
+          <rd:DefaultName>Textbox1</rd:DefaultName>
+          <Top>0.45cm</Top>
+          <Left>0.02646cm</Left>
+          <Height>1.97056cm</Height>
+          <Width>9cm</Width>
+          <ZIndex>13</ZIndex>
+          <Style>
+            <Border>
+              <Style>=iif(CBool(Parameters!parSinFormato.Value),"None", "Solid")</Style>
+            </Border>
+            <TopBorder>
+              <Style>None</Style>
+            </TopBorder>
+            <BottomBorder>
+              <Style>None</Style>
+            </BottomBorder>
+            <LeftBorder>
+              <Style>None</Style>
+            </LeftBorder>
+            <PaddingLeft>2pt</PaddingLeft>
+            <PaddingRight>2pt</PaddingRight>
+            <PaddingTop>7pt</PaddingTop>
+            <PaddingBottom>2pt</PaddingBottom>
+          </Style>
+        </Textbox>
+        <Textbox Name="Textbox30">
+          <CanGrow>true</CanGrow>
+          <KeepTogether>true</KeepTogether>
+          <Paragraphs>
+            <Paragraph>
+              <TextRuns>
+                <TextRun>
+                  <Value>=Iif(Parameters!parSinFormato.Value, "", "Consignee")</Value>
+                  <Style>
+                    <FontSize>7pt</FontSize>
+                    <FontWeight>Bold</FontWeight>
+                  </Style>
+                </TextRun>
+              </TextRuns>
+              <Style />
+            </Paragraph>
+          </Paragraphs>
+          <rd:DefaultName>Textbox1</rd:DefaultName>
+          <Top>2.42056cm</Top>
+          <Left>0.02646cm</Left>
+          <Height>0.45cm</Height>
+          <Width>9cm</Width>
+          <ZIndex>14</ZIndex>
+          <Style>
+            <Border>
+              <Style>=iif(CBool(Parameters!parSinFormato.Value),"None", "Solid")</Style>
+            </Border>
+            <BottomBorder>
+              <Style>None</Style>
+            </BottomBorder>
+            <LeftBorder>
+              <Style>None</Style>
+            </LeftBorder>
+            <PaddingLeft>2pt</PaddingLeft>
+            <PaddingRight>2pt</PaddingRight>
+            <PaddingTop>2pt</PaddingTop>
+            <PaddingBottom>2pt</PaddingBottom>
+          </Style>
+        </Textbox>
+        <Textbox Name="Textbox31">
+          <CanGrow>true</CanGrow>
+          <KeepTogether>true</KeepTogether>
+          <Paragraphs>
+            <Paragraph>
+              <TextRuns>
+                <TextRun>
+                  <Value>=Iif(Parameters!parSinFormato.Value, "", "Notify party")</Value>
+                  <Style>
+                    <FontSize>7pt</FontSize>
+                    <FontWeight>Bold</FontWeight>
+                  </Style>
+                </TextRun>
+              </TextRuns>
+              <Style />
+            </Paragraph>
+          </Paragraphs>
+          <rd:DefaultName>Textbox1</rd:DefaultName>
+          <Top>4.85278cm</Top>
+          <Left>0.02646cm</Left>
+          <Height>0.46778cm</Height>
+          <Width>9cm</Width>
+          <ZIndex>15</ZIndex>
+          <Style>
+            <Border>
+              <Style>=iif(CBool(Parameters!parSinFormato.Value),"None", "Solid")</Style>
+            </Border>
+            <BottomBorder>
+              <Style>None</Style>
+            </BottomBorder>
+            <LeftBorder>
+              <Style>None</Style>
+            </LeftBorder>
+            <PaddingLeft>2pt</PaddingLeft>
+            <PaddingRight>2pt</PaddingRight>
+            <PaddingTop>2pt</PaddingTop>
+            <PaddingBottom>2pt</PaddingBottom>
+          </Style>
+        </Textbox>
+        <Textbox Name="Textbox32">
+          <CanGrow>true</CanGrow>
+          <KeepTogether>true</KeepTogether>
+          <Paragraphs>
+            <Paragraph>
+              <TextRuns>
+                <TextRun>
+                  <Value>=Iif(Parameters!parSinFormato.Value, "", "Pre-carriage by")</Value>
+                  <Style>
+                    <FontSize>7pt</FontSize>
+                    <FontWeight>Bold</FontWeight>
+                  </Style>
+                </TextRun>
+              </TextRuns>
+              <Style />
+            </Paragraph>
+          </Paragraphs>
+          <rd:DefaultName>Textbox1</rd:DefaultName>
+          <Top>7.3234cm</Top>
+          <Left>0.02646cm</Left>
+          <Height>0.45cm</Height>
+          <Width>4.5cm</Width>
+          <ZIndex>16</ZIndex>
+          <Style>
+            <Border>
+              <Style>=iif(CBool(Parameters!parSinFormato.Value),"None", "Solid")</Style>
+            </Border>
+            <BottomBorder>
+              <Style>None</Style>
+            </BottomBorder>
+            <LeftBorder>
+              <Style>None</Style>
+            </LeftBorder>
+            <PaddingLeft>2pt</PaddingLeft>
+            <PaddingRight>2pt</PaddingRight>
+            <PaddingTop>2pt</PaddingTop>
+            <PaddingBottom>2pt</PaddingBottom>
+          </Style>
+        </Textbox>
+        <Textbox Name="Textbox33">
+          <CanGrow>true</CanGrow>
+          <KeepTogether>true</KeepTogether>
+          <Paragraphs>
+            <Paragraph>
+              <TextRuns>
+                <TextRun>
+                  <Value>=Iif(Parameters!parSinFormato.Value, "", "M B/L Number")</Value>
+                  <Style>
+                    <FontSize>8pt</FontSize>
+                    <FontWeight>Bold</FontWeight>
+                  </Style>
+                </TextRun>
+              </TextRuns>
+              <Style />
+            </Paragraph>
+          </Paragraphs>
+          <rd:DefaultName>Textbox1</rd:DefaultName>
+          <Left>12.07938cm</Left>
+          <Height>0.5cm</Height>
+          <Width>3.5cm</Width>
+          <ZIndex>17</ZIndex>
+          <Style>
+            <Border>
+              <Style>=iif(CBool(Parameters!parSinFormato.Value),"None", "Solid")</Style>
+            </Border>
+            <BottomBorder>
+              <Style>None</Style>
+            </BottomBorder>
+            <PaddingLeft>7pt</PaddingLeft>
+            <PaddingRight>2pt</PaddingRight>
+            <PaddingTop>2pt</PaddingTop>
+            <PaddingBottom>2pt</PaddingBottom>
+          </Style>
+        </Textbox>
+        <Textbox Name="Textbox34">
+          <CanGrow>true</CanGrow>
+          <KeepTogether>true</KeepTogether>
+          <Paragraphs>
+            <Paragraph>
+              <TextRuns>
+                <TextRun>
+                  <Value>=Iif(Parameters!parSinFormato.Value, "", "H B/L Number")</Value>
+                  <Style>
+                    <FontSize>8pt</FontSize>
+                    <FontWeight>Bold</FontWeight>
+                  </Style>
+                </TextRun>
+              </TextRuns>
+              <Style />
+            </Paragraph>
+          </Paragraphs>
+          <rd:DefaultName>Textbox1</rd:DefaultName>
+          <Left>15.57938cm</Left>
+          <Height>0.5cm</Height>
+          <Width>3.4118cm</Width>
+          <ZIndex>18</ZIndex>
+          <Style>
+            <Border>
+              <Style>=iif(CBool(Parameters!parSinFormato.Value),"None", "Solid")</Style>
+            </Border>
+            <BottomBorder>
+              <Style>None</Style>
+            </BottomBorder>
+            <RightBorder>
+              <Style>None</Style>
+            </RightBorder>
+            <PaddingLeft>7pt</PaddingLeft>
+            <PaddingRight>2pt</PaddingRight>
+            <PaddingTop>2pt</PaddingTop>
+            <PaddingBottom>2pt</PaddingBottom>
+          </Style>
+        </Textbox>
+        <Textbox Name="Textbox35">
+          <CanGrow>true</CanGrow>
+          <KeepTogether>true</KeepTogether>
+          <Paragraphs>
+            <Paragraph>
+              <TextRuns>
+                <TextRun>
+                  <Value>=Iif(Parameters!parSinFormato.Value, "", "Place of receipt")</Value>
+                  <Style>
+                    <FontSize>7pt</FontSize>
+                    <FontWeight>Bold</FontWeight>
+                  </Style>
+                </TextRun>
+              </TextRuns>
+              <Style>
+                <TextAlign>Center</TextAlign>
+              </Style>
+            </Paragraph>
+          </Paragraphs>
+          <rd:DefaultName>Textbox1</rd:DefaultName>
+          <Top>7.3234cm</Top>
+          <Left>4.52646cm</Left>
+          <Height>0.45cm</Height>
+          <Width>4.5cm</Width>
+          <ZIndex>19</ZIndex>
+          <Style>
+            <Border>
+              <Style>=iif(CBool(Parameters!parSinFormato.Value),"None", "Solid")</Style>
+            </Border>
+            <BottomBorder>
+              <Style>None</Style>
+            </BottomBorder>
+            <PaddingLeft>2pt</PaddingLeft>
+            <PaddingRight>2pt</PaddingRight>
+            <PaddingTop>2pt</PaddingTop>
+            <PaddingBottom>2pt</PaddingBottom>
+          </Style>
+        </Textbox>
+        <Textbox Name="Textbox36">
+          <CanGrow>true</CanGrow>
+          <KeepTogether>true</KeepTogether>
+          <Paragraphs>
+            <Paragraph>
+              <TextRuns>
+                <TextRun>
+                  <Value>=Iif(Parameters!parSinFormato.Value, "", "For Delivery of goods please aply to:")</Value>
+                  <Style>
+                    <FontSize>7pt</FontSize>
+                    <FontWeight>Bold</FontWeight>
+                  </Style>
+                </TextRun>
+              </TextRuns>
+              <Style />
+            </Paragraph>
+          </Paragraphs>
+          <rd:DefaultName>Textbox1</rd:DefaultName>
+          <Top>7.35889cm</Top>
+          <Left>9.02646cm</Left>
+          <Height>0.4325cm</Height>
+          <Width>9.96472cm</Width>
+          <ZIndex>20</ZIndex>
+          <Style>
+            <Border>
+              <Style>=iif(CBool(Parameters!parSinFormato.Value),"None", "Solid")</Style>
+            </Border>
+            <BottomBorder>
+              <Style>None</Style>
+            </BottomBorder>
+            <RightBorder>
+              <Style>None</Style>
+            </RightBorder>
+            <PaddingLeft>10pt</PaddingLeft>
+            <PaddingRight>2pt</PaddingRight>
+            <PaddingTop>2pt</PaddingTop>
+            <PaddingBottom>2pt</PaddingBottom>
+          </Style>
+        </Textbox>
+        <Textbox Name="Textbox37">
+          <CanGrow>true</CanGrow>
+          <KeepTogether>true</KeepTogether>
+          <Paragraphs>
+            <Paragraph>
+              <TextRuns>
+                <TextRun>
+                  <Value>=Iif(Parameters!parSinFormato.Value, "", "Ocean Vesssel")</Value>
+                  <Style>
+                    <FontSize>7pt</FontSize>
+                    <FontWeight>Bold</FontWeight>
+                  </Style>
+                </TextRun>
+              </TextRuns>
+              <Style />
+            </Paragraph>
+          </Paragraphs>
+          <rd:DefaultName>Textbox1</rd:DefaultName>
+          <Top>8.2234cm</Top>
+          <Left>0.02646cm</Left>
+          <Height>0.45cm</Height>
+          <Width>2.80698cm</Width>
+          <ZIndex>21</ZIndex>
+          <Style>
+            <Border>
+              <Style>=iif(CBool(Parameters!parSinFormato.Value),"None", "Solid")</Style>
+            </Border>
+            <BottomBorder>
+              <Style>None</Style>
+            </BottomBorder>
+            <LeftBorder>
+              <Style>None</Style>
+            </LeftBorder>
+            <RightBorder>
+              <Style>None</Style>
+            </RightBorder>
+            <PaddingLeft>2pt</PaddingLeft>
+            <PaddingRight>2pt</PaddingRight>
+            <PaddingTop>2pt</PaddingTop>
+            <PaddingBottom>2pt</PaddingBottom>
+          </Style>
+        </Textbox>
+        <Textbox Name="Textbox38">
+          <CanGrow>true</CanGrow>
+          <KeepTogether>true</KeepTogether>
+          <Paragraphs>
+            <Paragraph>
+              <TextRuns>
+                <TextRun>
+                  <Value>=Iif(Parameters!parSinFormato.Value, "", "Port of loading")</Value>
+                  <Style>
+                    <FontSize>7pt</FontSize>
+                    <FontWeight>Bold</FontWeight>
+                  </Style>
+                </TextRun>
+              </TextRuns>
+              <Style>
+                <TextAlign>Center</TextAlign>
+              </Style>
+            </Paragraph>
+          </Paragraphs>
+          <rd:DefaultName>Textbox1</rd:DefaultName>
+          <Top>8.2234cm</Top>
+          <Left>4.52646cm</Left>
+          <Height>0.45cm</Height>
+          <Width>4.5cm</Width>
+          <ZIndex>22</ZIndex>
+          <Style>
+            <Border>
+              <Style>=iif(CBool(Parameters!parSinFormato.Value),"None", "Solid")</Style>
+            </Border>
+            <BottomBorder>
+              <Style>None</Style>
+            </BottomBorder>
+            <PaddingLeft>2pt</PaddingLeft>
+            <PaddingRight>2pt</PaddingRight>
+            <PaddingTop>2pt</PaddingTop>
+            <PaddingBottom>2pt</PaddingBottom>
+          </Style>
+        </Textbox>
+        <Textbox Name="Textbox39">
+          <CanGrow>true</CanGrow>
+          <KeepTogether>true</KeepTogether>
+          <Paragraphs>
+            <Paragraph>
+              <TextRuns>
+                <TextRun>
+                  <Value>=Iif(Parameters!parSinFormato.Value, "", "Voy.No.")</Value>
+                  <Style>
+                    <FontSize>7pt</FontSize>
+                    <FontWeight>Bold</FontWeight>
+                  </Style>
+                </TextRun>
+              </TextRuns>
+              <Style>
+                <TextAlign>Center</TextAlign>
+              </Style>
+            </Paragraph>
+          </Paragraphs>
+          <rd:DefaultName>Textbox1</rd:DefaultName>
+          <Top>8.2234cm</Top>
+          <Left>2.83344cm</Left>
+          <Height>0.45cm</Height>
+          <Width>1.69302cm</Width>
+          <ZIndex>23</ZIndex>
+          <Style>
+            <Border>
+              <Style>=iif(CBool(Parameters!parSinFormato.Value),"None", "Solid")</Style>
+            </Border>
+            <BottomBorder>
+              <Style>None</Style>
+            </BottomBorder>
+            <LeftBorder>
+              <Style>None</Style>
+            </LeftBorder>
+            <PaddingLeft>2pt</PaddingLeft>
+            <PaddingRight>2pt</PaddingRight>
+            <PaddingTop>2pt</PaddingTop>
+            <PaddingBottom>2pt</PaddingBottom>
+          </Style>
+        </Textbox>
+        <Textbox Name="Textbox40">
+          <CanGrow>true</CanGrow>
+          <KeepTogether>true</KeepTogether>
+          <Paragraphs>
+            <Paragraph>
+              <TextRuns>
+                <TextRun>
+                  <Value>=Iif(Parameters!parSinFormato.Value, "", "Port of discharge")</Value>
+                  <Style>
+                    <FontSize>7pt</FontSize>
+                    <FontWeight>Bold</FontWeight>
+                  </Style>
+                </TextRun>
+              </TextRuns>
+              <Style />
+            </Paragraph>
+          </Paragraphs>
+          <rd:DefaultName>Textbox1</rd:DefaultName>
+          <Top>9.1234cm</Top>
+          <Left>0.02646cm</Left>
+          <Height>0.45cm</Height>
+          <Width>4.5cm</Width>
+          <ZIndex>24</ZIndex>
+          <Style>
+            <Border>
+              <Style>=iif(CBool(Parameters!parSinFormato.Value),"None", "Solid")</Style>
+            </Border>
+            <BottomBorder>
+              <Style>None</Style>
+            </BottomBorder>
+            <LeftBorder>
+              <Style>None</Style>
+            </LeftBorder>
+            <PaddingLeft>2pt</PaddingLeft>
+            <PaddingRight>2pt</PaddingRight>
+            <PaddingTop>2pt</PaddingTop>
+            <PaddingBottom>2pt</PaddingBottom>
+          </Style>
+        </Textbox>
+        <Textbox Name="Textbox41">
+          <CanGrow>true</CanGrow>
+          <KeepTogether>true</KeepTogether>
+          <Paragraphs>
+            <Paragraph>
+              <TextRuns>
+                <TextRun>
+                  <Value>=Iif(Parameters!parSinFormato.Value, "", "Place of delivery")</Value>
+                  <Style>
+                    <FontSize>7pt</FontSize>
+                    <FontWeight>Bold</FontWeight>
+                  </Style>
+                </TextRun>
+              </TextRuns>
+              <Style>
+                <TextAlign>Center</TextAlign>
+              </Style>
+            </Paragraph>
+          </Paragraphs>
+          <rd:DefaultName>Textbox1</rd:DefaultName>
+          <Top>9.1234cm</Top>
+          <Left>4.52646cm</Left>
+          <Height>0.45cm</Height>
+          <Width>4.5cm</Width>
+          <ZIndex>25</ZIndex>
+          <Style>
+            <Border>
+              <Style>=iif(CBool(Parameters!parSinFormato.Value),"None", "Solid")</Style>
+            </Border>
+            <BottomBorder>
+              <Style>None</Style>
+            </BottomBorder>
+            <PaddingLeft>2pt</PaddingLeft>
+            <PaddingRight>2pt</PaddingRight>
+            <PaddingTop>2pt</PaddingTop>
+            <PaddingBottom>2pt</PaddingBottom>
+          </Style>
+        </Textbox>
+        <Textbox Name="Textbox59">
+          <CanGrow>true</CanGrow>
+          <KeepTogether>true</KeepTogether>
+          <Paragraphs>
+            <Paragraph>
+              <TextRuns>
+                <TextRun>
+                  <Value>=Iif(Parameters!parSinFormato.Value, "", "OCEAN BILL OF LADING")</Value>
+                  <Style>
+                    <FontFamily>Arial Black</FontFamily>
+                    <FontSize>9pt</FontSize>
+                    <FontWeight>Bold</FontWeight>
+                  </Style>
+                </TextRun>
+              </TextRuns>
+              <Style>
+                <TextAlign>Center</TextAlign>
+              </Style>
+            </Paragraph>
+          </Paragraphs>
+          <rd:DefaultName>Textbox1</rd:DefaultName>
+          <Top>1.46195cm</Top>
+          <Left>9.02646cm</Left>
+          <Height>0.7cm</Height>
+          <Width>9.96472cm</Width>
+          <ZIndex>26</ZIndex>
+          <Style>
+            <Border>
+              <Style>None</Style>
+            </Border>
+            <BottomBorder>
+              <Style>None</Style>
+            </BottomBorder>
+            <PaddingLeft>2pt</PaddingLeft>
+            <PaddingRight>2pt</PaddingRight>
+            <PaddingTop>2pt</PaddingTop>
+            <PaddingBottom>2pt</PaddingBottom>
+          </Style>
+        </Textbox>
+        <Textbox Name="Textbox62">
+          <CanGrow>true</CanGrow>
+          <KeepTogether>true</KeepTogether>
+          <Paragraphs>
+            <Paragraph>
+              <TextRuns>
+                <TextRun>
+                  <Value>The goods and instructions are accepted and dealt with subject to the Standard Conditions </Value>
+                  <Style>
+                    <FontSize>6pt</FontSize>
+                  </Style>
+                </TextRun>
+              </TextRuns>
+              <Style>
+                <LineHeight>1pt</LineHeight>
+              </Style>
+            </Paragraph>
+            <Paragraph>
+              <TextRuns>
+                <TextRun>
+                  <Value>printed overleaf.</Value>
+                  <Style>
+                    <FontSize>6pt</FontSize>
+                  </Style>
+                </TextRun>
+              </TextRuns>
+              <Style>
+                <LineHeight>1pt</LineHeight>
+              </Style>
+            </Paragraph>
+            <Paragraph>
+              <TextRuns>
+                <TextRun>
+                  <Value>Taken in Charge in apparent good order and condition, unless otherwise noted herein, at the </Value>
+                  <Style>
+                    <FontSize>6pt</FontSize>
+                  </Style>
+                </TextRun>
+              </TextRuns>
+              <Style>
+                <LineHeight>1pt</LineHeight>
+              </Style>
+            </Paragraph>
+            <Paragraph>
+              <TextRuns>
+                <TextRun>
+                  <Value>place of receipt for transport and delivery as mentioned below.</Value>
+                  <Style>
+                    <FontSize>6pt</FontSize>
+                  </Style>
+                </TextRun>
+              </TextRuns>
+              <Style>
+                <LineHeight>1pt</LineHeight>
+              </Style>
+            </Paragraph>
+            <Paragraph>
+              <TextRuns>
+                <TextRun>
+                  <Value>one of these Combined Transport Bills of Lading must be surrendered duly endorsed in </Value>
+                  <Style>
+                    <FontSize>6pt</FontSize>
+                  </Style>
+                </TextRun>
+              </TextRuns>
+              <Style>
+                <LineHeight>1pt</LineHeight>
+              </Style>
+            </Paragraph>
+            <Paragraph>
+              <TextRuns>
+                <TextRun>
+                  <Value>exchange for the goods. In Witness where of the original Combined. Transport Bill of Lading </Value>
+                  <Style>
+                    <FontSize>6pt</FontSize>
+                  </Style>
+                </TextRun>
+              </TextRuns>
+              <Style>
+                <LineHeight>1pt</LineHeight>
+              </Style>
+            </Paragraph>
+            <Paragraph>
+              <TextRuns>
+                <TextRun>
+                  <Value>all of this tenor and date have been signed in the number stated below, one of which being </Value>
+                  <Style>
+                    <FontSize>6pt</FontSize>
+                  </Style>
+                </TextRun>
+              </TextRuns>
+              <Style>
+                <LineHeight>1pt</LineHeight>
+              </Style>
+            </Paragraph>
+            <Paragraph>
+              <TextRuns>
+                <TextRun>
+                  <Value>accomplished the other(s) to be void.</Value>
+                  <Style>
+                    <FontSize>6pt</FontSize>
+                  </Style>
+                </TextRun>
+              </TextRuns>
+              <Style>
+                <LineHeight>1pt</LineHeight>
+              </Style>
+            </Paragraph>
+          </Paragraphs>
+          <rd:DefaultName>Textbox62</rd:DefaultName>
+          <Top>5.03834cm</Top>
+          <Left>9.02646cm</Left>
+          <Height>2.32055cm</Height>
+          <Width>9.96472cm</Width>
+          <ZIndex>27</ZIndex>
+          <Visibility>
+            <Hidden>=CBool(Parameters!parSinFormato.Value)</Hidden>
+          </Visibility>
+          <Style>
+            <Border>
+              <Style>None</Style>
+            </Border>
+            <PaddingLeft>10pt</PaddingLeft>
+            <PaddingRight>2pt</PaddingRight>
+            <PaddingTop>2pt</PaddingTop>
+            <PaddingBottom>2pt</PaddingBottom>
+          </Style>
+        </Textbox>
+        <Textbox Name="Textbox11">
+          <KeepTogether>true</KeepTogether>
+          <Paragraphs>
+            <Paragraph>
+              <TextRuns>
+                <TextRun>
+                  <Value>=First(Fields!PUER_PlaceDelivery.Value, "DSOPE001HBL").ToString()</Value>
+                  <Style>
+                    <FontSize>7pt</FontSize>
+                  </Style>
+                </TextRun>
+              </TextRuns>
+              <Style>
+                <TextAlign>Center</TextAlign>
+              </Style>
+            </Paragraph>
+          </Paragraphs>
+          <rd:DefaultName>Textbox4</rd:DefaultName>
+          <Top>9.5734cm</Top>
+          <Left>4.52646cm</Left>
+          <Height>0.45cm</Height>
+          <Width>4.5cm</Width>
+          <ZIndex>28</ZIndex>
+          <Style>
+            <Border>
+              <Style>=iif(CBool(Parameters!parSinFormato.Value),"None", "Solid")</Style>
+            </Border>
+            <TopBorder>
+              <Style>None</Style>
+            </TopBorder>
+            <LeftBorder>
+              <Style>None</Style>
+            </LeftBorder>
+            <RightBorder>
+              <Style>None</Style>
+            </RightBorder>
+            <PaddingLeft>2pt</PaddingLeft>
+            <PaddingRight>2pt</PaddingRight>
+            <PaddingTop>2pt</PaddingTop>
+            <PaddingBottom>2pt</PaddingBottom>
+          </Style>
+        </Textbox>
+      </ReportItems>
+      <Style>
+        <Border>
+          <Style>None</Style>
+        </Border>
+      </Style>
+    </PageHeader>
+    <PageFooter>
+      <Height>9.10007cm</Height>
+      <PrintOnFirstPage>true</PrintOnFirstPage>
+      <PrintOnLastPage>true</PrintOnLastPage>
+      <ReportItems>
+        <Textbox Name="Textbox14">
+          <CanGrow>true</CanGrow>
+          <KeepTogether>true</KeepTogether>
+          <Paragraphs>
+            <Paragraph>
+              <TextRuns>
+                <TextRun>
+                  <Value>=Parameters!parCantidadLetras.Value</Value>
+                  <Style>
+                    <FontSize>7pt</FontSize>
+                  </Style>
+                </TextRun>
+              </TextRuns>
+              <Style />
+            </Paragraph>
+            <Paragraph>
+              <TextRuns>
+                <TextRun>
+                  <Value>=Parameters!DHBL_CantBultos.Value</Value>
+                  <Style>
+                    <FontSize>7.5pt</FontSize>
+                  </Style>
+                </TextRun>
+              </TextRuns>
+              <Style />
+            </Paragraph>
+          </Paragraphs>
+          <rd:DefaultName>Textbox4</rd:DefaultName>
+          <Top>0.39998cm</Top>
+          <Left>4.72646cm</Left>
+          <Height>1cm</Height>
+          <Width>8.82861cm</Width>
+          <Style>
+            <Border>
+              <Style>=iif(CBool(Parameters!parSinFormato.Value),"None", "Solid")</Style>
+            </Border>
+            <LeftBorder>
+              <Style>None</Style>
+            </LeftBorder>
+            <RightBorder>
+              <Style>None</Style>
+            </RightBorder>
+            <PaddingLeft>1pt</PaddingLeft>
+            <PaddingRight>1pt</PaddingRight>
+            <PaddingTop>1pt</PaddingTop>
+            <PaddingBottom>1pt</PaddingBottom>
+          </Style>
+        </Textbox>
+        <Textbox Name="Textbox15">
+          <CanGrow>true</CanGrow>
+          <KeepTogether>true</KeepTogether>
+          <Paragraphs>
+            <Paragraph>
+              <TextRuns>
+                <TextRun>
+                  <Value>=First(Fields!CCOT_PagoHBL.Value, "DSOPE001HBL").ToString()</Value>
+                  <Style>
+                    <FontSize>7pt</FontSize>
+                  </Style>
+                </TextRun>
+              </TextRuns>
+              <Style />
+            </Paragraph>
+          </Paragraphs>
+          <rd:DefaultName>Textbox4</rd:DefaultName>
+          <Top>1.79998cm</Top>
+          <Left>0.02646cm</Left>
+          <Height>4.02361cm</Height>
+          <Width>4.84111cm</Width>
+          <ZIndex>1</ZIndex>
+          <Style>
+            <Border>
+              <Style>=iif(CBool(Parameters!parSinFormato.Value),"None", "Solid")</Style>
+            </Border>
+            <TopBorder>
+              <Style>None</Style>
+            </TopBorder>
+            <LeftBorder>
+              <Style>None</Style>
+            </LeftBorder>
+            <PaddingLeft>1pt</PaddingLeft>
+            <PaddingRight>1pt</PaddingRight>
+            <PaddingTop>1pt</PaddingTop>
+            <PaddingBottom>1pt</PaddingBottom>
+          </Style>
+        </Textbox>
+        <Textbox Name="Textbox16">
+          <CanGrow>true</CanGrow>
+          <KeepTogether>true</KeepTogether>
+          <Paragraphs>
+            <Paragraph>
+              <TextRuns>
+                <TextRun>
+                  <Value>=First(Fields!DOOV_RevenueTons.Value, "DSOPE001HBL").ToString()</Value>
+                  <Style>
+                    <FontSize>7pt</FontSize>
+                  </Style>
+                </TextRun>
+              </TextRuns>
+              <Style />
+            </Paragraph>
+          </Paragraphs>
+          <rd:DefaultName>Textbox4</rd:DefaultName>
+          <Top>1.79998cm</Top>
+          <Left>4.86757cm</Left>
+          <Height>4.02361cm</Height>
+          <Width>3.16764cm</Width>
+          <ZIndex>2</ZIndex>
+          <Style>
+            <Border>
+              <Style>=iif(CBool(Parameters!parSinFormato.Value),"None", "Solid")</Style>
+            </Border>
+            <TopBorder>
+              <Style>None</Style>
+            </TopBorder>
+            <PaddingLeft>5pt</PaddingLeft>
+            <PaddingRight>1pt</PaddingRight>
+            <PaddingTop>1pt</PaddingTop>
+            <PaddingBottom>1pt</PaddingBottom>
+          </Style>
+        </Textbox>
+        <Textbox Name="Textbox17">
+          <CanGrow>true</CanGrow>
+          <KeepTogether>true</KeepTogether>
+          <Paragraphs>
+            <Paragraph>
+              <TextRuns>
+                <TextRun>
+                  <Value>=First(Fields!DOOV_Rate.Value, "DSOPE001HBL").ToString()</Value>
+                  <Style>
+                    <FontSize>7pt</FontSize>
+                  </Style>
+                </TextRun>
+              </TextRuns>
+              <Style />
+            </Paragraph>
+          </Paragraphs>
+          <rd:DefaultName>Textbox4</rd:DefaultName>
+          <Top>1.79998cm</Top>
+          <Left>8.03521cm</Left>
+          <Height>4.02361cm</Height>
+          <Width>3.89708cm</Width>
+          <ZIndex>3</ZIndex>
+          <Style>
+            <Border>
+              <Style>=iif(CBool(Parameters!parSinFormato.Value),"None", "Solid")</Style>
+            </Border>
+            <TopBorder>
+              <Style>None</Style>
+            </TopBorder>
+            <PaddingLeft>5pt</PaddingLeft>
+            <PaddingRight>1pt</PaddingRight>
+            <PaddingTop>1pt</PaddingTop>
+            <PaddingBottom>1pt</PaddingBottom>
+          </Style>
+        </Textbox>
+        <Textbox Name="Textbox18">
+          <CanGrow>true</CanGrow>
+          <KeepTogether>true</KeepTogether>
+          <Paragraphs>
+            <Paragraph>
+              <TextRuns>
+                <TextRun>
+                  <Value>=Iif(Parameters!parSinFlete.Value,"",First(IIF(Fields!DOOV_Prepaid.Value = 0, "",Fields!TIPO_MND.Value.ToString() + " " +  FormatNumber(Fields!DOOV_Prepaid.Value,2).ToString()), "DSOPE001HBL"))</Value>
+                  <Style>
+                    <FontSize>7pt</FontSize>
+                  </Style>
+                </TextRun>
+              </TextRuns>
+              <Style />
+            </Paragraph>
+          </Paragraphs>
+          <rd:DefaultName>Textbox4</rd:DefaultName>
+          <Top>1.79998cm</Top>
+          <Left>11.93229cm</Left>
+          <Height>4.02361cm</Height>
+          <Width>3.4cm</Width>
+          <ZIndex>4</ZIndex>
+          <Style>
+            <Border>
+              <Style>=iif(CBool(Parameters!parSinFormato.Value),"None", "Solid")</Style>
+            </Border>
+            <TopBorder>
+              <Style>None</Style>
+            </TopBorder>
+            <PaddingLeft>5pt</PaddingLeft>
+            <PaddingRight>1pt</PaddingRight>
+            <PaddingTop>1pt</PaddingTop>
+            <PaddingBottom>1pt</PaddingBottom>
+          </Style>
+        </Textbox>
+        <Textbox Name="Textbox19">
+          <CanGrow>true</CanGrow>
+          <KeepTogether>true</KeepTogether>
+          <Paragraphs>
+            <Paragraph>
+              <TextRuns>
+                <TextRun>
+                  <Value>=IIf(Parameters!parSinFlete.Value,"",First(IIF(Fields!DOOV_Collect.Value = 0 , "",Fields!TIPO_MND.Value.ToString() + " " + FormatNumber(Fields!DOOV_Collect.Value,2).ToString()), "DSOPE001HBL"))</Value>
+                  <Style>
+                    <FontSize>7pt</FontSize>
+                  </Style>
+                </TextRun>
+              </TextRuns>
+              <Style />
+            </Paragraph>
+          </Paragraphs>
+          <rd:DefaultName>Textbox4</rd:DefaultName>
+          <Top>1.79998cm</Top>
+          <Left>15.33229cm</Left>
+          <Height>4.02361cm</Height>
+          <Width>3.65889cm</Width>
+          <ZIndex>5</ZIndex>
+          <Style>
+            <Border>
+              <Style>=iif(CBool(Parameters!parSinFormato.Value),"None", "Solid")</Style>
+            </Border>
+            <TopBorder>
+              <Style>None</Style>
+            </TopBorder>
+            <RightBorder>
+              <Style>None</Style>
+            </RightBorder>
+            <PaddingLeft>5pt</PaddingLeft>
+            <PaddingRight>1pt</PaddingRight>
+            <PaddingTop>1pt</PaddingTop>
+            <PaddingBottom>1pt</PaddingBottom>
+          </Style>
+        </Textbox>
+        <Textbox Name="Textbox20">
+          <CanGrow>true</CanGrow>
+          <KeepTogether>true</KeepTogether>
+          <Paragraphs>
+            <Paragraph>
+              <TextRuns>
+                <TextRun>
+                  <Value>=First(Fields!DOOV_PrepaidAt.Value, "DSOPE001HBL").ToString()</Value>
+                  <Style>
+                    <FontSize>7pt</FontSize>
+                  </Style>
+                </TextRun>
+              </TextRuns>
+              <Style />
+            </Paragraph>
+          </Paragraphs>
+          <rd:DefaultName>Textbox4</rd:DefaultName>
+          <Top>6.22359cm</Top>
+          <Left>2.27354cm</Left>
+          <Height>0.4cm</Height>
+          <Width>5.05875cm</Width>
+          <ZIndex>6</ZIndex>
+          <Style>
+            <Border>
+              <Style>=iif(CBool(Parameters!parSinFormato.Value),"None", "Solid")</Style>
+            </Border>
+            <TopBorder>
+              <Style>None</Style>
+            </TopBorder>
+            <PaddingLeft>10pt</PaddingLeft>
+            <PaddingRight>1pt</PaddingRight>
+            <PaddingTop>1pt</PaddingTop>
+            <PaddingBottom>1pt</PaddingBottom>
+          </Style>
+        </Textbox>
+        <Textbox Name="Textbox21">
+          <CanGrow>true</CanGrow>
+          <KeepTogether>true</KeepTogether>
+          <Paragraphs>
+            <Paragraph>
+              <TextRuns>
+                <TextRun>
+                  <Value>=First(Fields!DOOV_TotalPrepaid.Value, "DSOPE001HBL").ToString()</Value>
+                  <Style>
+                    <FontSize>7pt</FontSize>
+                  </Style>
+                </TextRun>
+              </TextRuns>
+              <Style />
+            </Paragraph>
+          </Paragraphs>
+          <rd:DefaultName>Textbox4</rd:DefaultName>
+          <Top>7.0236cm</Top>
+          <Left>2.27354cm</Left>
+          <Height>0.4cm</Height>
+          <Width>5.05875cm</Width>
+          <ZIndex>7</ZIndex>
+          <Style>
+            <Border>
+              <Style>=iif(CBool(Parameters!parSinFormato.Value),"None", "Solid")</Style>
+            </Border>
+            <TopBorder>
+              <Style>None</Style>
+            </TopBorder>
+            <PaddingLeft>10pt</PaddingLeft>
+            <PaddingRight>1pt</PaddingRight>
+            <PaddingTop>1pt</PaddingTop>
+            <PaddingBottom>1pt</PaddingBottom>
+          </Style>
+        </Textbox>
+        <Textbox Name="Textbox22">
+          <CanGrow>true</CanGrow>
+          <KeepTogether>true</KeepTogether>
+          <Paragraphs>
+            <Paragraph>
+              <TextRuns>
+                <TextRun>
+                  <Value>=First(Fields!DOOV_PayableAt.Value, "DSOPE001HBL").ToString()</Value>
+                  <Style>
+                    <FontSize>7pt</FontSize>
+                  </Style>
+                </TextRun>
+              </TextRuns>
+              <Style />
+            </Paragraph>
+          </Paragraphs>
+          <rd:DefaultName>Textbox4</rd:DefaultName>
+          <Top>6.22359cm</Top>
+          <Left>7.33229cm</Left>
+          <Height>0.4cm</Height>
+          <Width>4.6cm</Width>
+          <ZIndex>8</ZIndex>
+          <Style>
+            <Border>
+              <Style>=iif(CBool(Parameters!parSinFormato.Value),"None", "Solid")</Style>
+            </Border>
+            <TopBorder>
+              <Style>None</Style>
+            </TopBorder>
+            <PaddingLeft>10pt</PaddingLeft>
+            <PaddingRight>1pt</PaddingRight>
+            <PaddingTop>1pt</PaddingTop>
+            <PaddingBottom>1pt</PaddingBottom>
+          </Style>
+        </Textbox>
+        <Textbox Name="Textbox23">
+          <CanGrow>true</CanGrow>
+          <KeepTogether>true</KeepTogether>
+          <Paragraphs>
+            <Paragraph>
+              <TextRuns>
+                <TextRun>
+                  <Value>=First(Fields!DOOV_NumberOriginalBL.Value, "DSOPE001HBL").ToString()</Value>
+                  <Style>
+                    <FontSize>7pt</FontSize>
+                  </Style>
+                </TextRun>
+              </TextRuns>
+              <Style />
+            </Paragraph>
+          </Paragraphs>
+          <rd:DefaultName>Textbox4</rd:DefaultName>
+          <Top>7.0236cm</Top>
+          <Left>7.33229cm</Left>
+          <Height>0.4cm</Height>
+          <Width>4.6cm</Width>
+          <ZIndex>9</ZIndex>
+          <Style>
+            <Border>
+              <Style>=iif(CBool(Parameters!parSinFormato.Value),"None", "Solid")</Style>
+            </Border>
+            <TopBorder>
+              <Style>None</Style>
+            </TopBorder>
+            <PaddingLeft>10pt</PaddingLeft>
+            <PaddingRight>1pt</PaddingRight>
+            <PaddingTop>1pt</PaddingTop>
+            <PaddingBottom>1pt</PaddingBottom>
+          </Style>
+        </Textbox>
+        <Textbox Name="Textbox24">
+          <CanGrow>true</CanGrow>
+          <KeepTogether>true</KeepTogether>
+          <Paragraphs>
+            <Paragraph>
+              <TextRuns>
+                <TextRun>
+                  <Value>=First(Fields!DOOV_PlaceIssue.Value, "DSOPE001HBL").ToString() + "          " + FormatDateTime(First(Fields!DOOV_DateIssue.Value, "DSOPE001HBL"), DateFormat.ShortDate).ToString()</Value>
+                  <Style>
+                    <FontSize>7pt</FontSize>
+                  </Style>
+                </TextRun>
+              </TextRuns>
+              <Style />
+            </Paragraph>
+          </Paragraphs>
+          <rd:DefaultName>Textbox4</rd:DefaultName>
+          <Top>6.22358cm</Top>
+          <Left>11.93229cm</Left>
+          <Height>0.4cm</Height>
+          <Width>7.05889cm</Width>
+          <ZIndex>10</ZIndex>
+          <Style>
+            <Border>
+              <Style>=iif(CBool(Parameters!parSinFormato.Value),"None", "Solid")</Style>
+            </Border>
+            <TopBorder>
+              <Style>None</Style>
+            </TopBorder>
+            <RightBorder>
+              <Style>None</Style>
+            </RightBorder>
+            <PaddingLeft>10pt</PaddingLeft>
+            <PaddingRight>1pt</PaddingRight>
+            <PaddingTop>1pt</PaddingTop>
+            <PaddingBottom>1pt</PaddingBottom>
+          </Style>
+        </Textbox>
+        <Textbox Name="Textbox25">
+          <CanGrow>true</CanGrow>
+          <KeepTogether>true</KeepTogether>
+          <Paragraphs>
+            <Paragraph>
+              <TextRuns>
+                <TextRun>
+                  <Value>=First(Fields!DOOV_ExchanerRate.Value, "DSOPE001HBL").ToString()</Value>
+                  <Style>
+                    <FontSize>7pt</FontSize>
+                  </Style>
+                </TextRun>
+              </TextRuns>
+              <Style />
+            </Paragraph>
+          </Paragraphs>
+          <rd:DefaultName>Textbox4</rd:DefaultName>
+          <Top>6.22359cm</Top>
+          <Left>0.02646cm</Left>
+          <Height>1.2cm</Height>
+          <Width>2.24708cm</Width>
+          <ZIndex>11</ZIndex>
+          <Style>
+            <Border>
+              <Style>=iif(CBool(Parameters!parSinFormato.Value),"None", "Solid")</Style>
+            </Border>
+            <TopBorder>
+              <Style>None</Style>
+            </TopBorder>
+            <LeftBorder>
+              <Style>None</Style>
+            </LeftBorder>
+            <PaddingLeft>1pt</PaddingLeft>
+            <PaddingRight>1pt</PaddingRight>
+            <PaddingTop>1pt</PaddingTop>
+            <PaddingBottom>1pt</PaddingBottom>
+          </Style>
+        </Textbox>
+        <Textbox Name="Textbox26">
+          <CanGrow>true</CanGrow>
+          <KeepTogether>true</KeepTogether>
+          <Paragraphs>
+            <Paragraph>
+              <TextRuns>
+                <TextRun>
+                  <Value>="LOADED ON BOARD THE VESSEL"</Value>
+                  <Style>
+                    <FontSize>7pt</FontSize>
+                    <Format>d</Format>
+                  </Style>
+                </TextRun>
+              </TextRuns>
+              <Style />
+            </Paragraph>
+          </Paragraphs>
+          <rd:DefaultName>Textbox4</rd:DefaultName>
+          <Top>7.42359cm</Top>
+          <Left>0.02646cm</Left>
+          <Height>1.17639cm</Height>
+          <Width>5.9cm</Width>
+          <ZIndex>12</ZIndex>
+          <Style>
+            <Border>
+              <Style>=iif(CBool(Parameters!parSinFormato.Value),"None", "Solid")</Style>
+            </Border>
+            <BottomBorder>
+              <Style>None</Style>
+            </BottomBorder>
+            <LeftBorder>
+              <Style>None</Style>
+            </LeftBorder>
+            <RightBorder>
+              <Style>None</Style>
+            </RightBorder>
+            <VerticalAlign>Middle</VerticalAlign>
+            <PaddingLeft>1pt</PaddingLeft>
+            <PaddingRight>1pt</PaddingRight>
+            <PaddingTop>1pt</PaddingTop>
+            <PaddingBottom>1pt</PaddingBottom>
+          </Style>
+        </Textbox>
+        <Textbox Name="Textbox27">
+          <CanGrow>true</CanGrow>
+          <KeepTogether>true</KeepTogether>
+          <Paragraphs>
+            <Paragraph>
+              <TextRuns>
+                <TextRun>
+                  <Value>=First(Fields!DOOV_Signature.Value, "DSOPE001HBL").ToString()</Value>
+                  <Style>
+                    <FontSize>7pt</FontSize>
+                  </Style>
+                </TextRun>
+              </TextRuns>
+              <Style />
+            </Paragraph>
+          </Paragraphs>
+          <rd:DefaultName>Textbox4</rd:DefaultName>
+          <Top>7.42359cm</Top>
+          <Left>5.92646cm</Left>
+          <Height>1.17639cm</Height>
+          <Width>6.00583cm</Width>
+          <ZIndex>13</ZIndex>
+          <Style>
+            <Border>
+              <Style>=iif(CBool(Parameters!parSinFormato.Value),"None", "Solid")</Style>
+            </Border>
+            <BottomBorder>
+              <Style>None</Style>
+            </BottomBorder>
+            <LeftBorder>
+              <Style>None</Style>
+            </LeftBorder>
+            <VerticalAlign>Middle</VerticalAlign>
+            <PaddingLeft>10pt</PaddingLeft>
+            <PaddingRight>1pt</PaddingRight>
+            <PaddingTop>1pt</PaddingTop>
+            <PaddingBottom>1pt</PaddingBottom>
+          </Style>
+        </Textbox>
+        <Textbox Name="Textbox28">
+          <CanGrow>true</CanGrow>
+          <KeepTogether>true</KeepTogether>
+          <Paragraphs>
+            <Paragraph>
+              <TextRuns>
+                <TextRun>
+                  <Value EvaluationMode="Constant" />
+                  <Style>
+                    <FontSize>7pt</FontSize>
+                  </Style>
+                </TextRun>
+              </TextRuns>
+              <Style />
+            </Paragraph>
+          </Paragraphs>
+          <rd:DefaultName>Textbox4</rd:DefaultName>
+          <Top>6.62358cm</Top>
+          <Left>11.93229cm</Left>
+          <Height>2.47647cm</Height>
+          <Width>7.05889cm</Width>
+          <ZIndex>14</ZIndex>
+          <Style>
+            <Border>
+              <Style>=iif(CBool(Parameters!parSinFormato.Value),"None", "Solid")</Style>
+            </Border>
+            <RightBorder>
+              <Style>None</Style>
+            </RightBorder>
+            <PaddingLeft>1pt</PaddingLeft>
+            <PaddingRight>1pt</PaddingRight>
+            <PaddingTop>1pt</PaddingTop>
+            <PaddingBottom>1pt</PaddingBottom>
+          </Style>
+        </Textbox>
+        <Textbox Name="Textbox42">
+          <CanGrow>true</CanGrow>
+          <KeepTogether>true</KeepTogether>
+          <Paragraphs>
+            <Paragraph>
+              <TextRuns>
+                <TextRun>
+                  <Value>=Iif(Parameters!parSinFormato.Value, "", "Freight and charges")</Value>
+                  <Style>
+                    <FontSize>7pt</FontSize>
+                  </Style>
+                </TextRun>
+              </TextRuns>
+              <Style />
+            </Paragraph>
+          </Paragraphs>
+          <rd:DefaultName>Textbox1</rd:DefaultName>
+          <Top>1.39998cm</Top>
+          <Left>0.02646cm</Left>
+          <Height>0.4cm</Height>
+          <Width>4.84111cm</Width>
+          <ZIndex>15</ZIndex>
+          <Style>
+            <Border>
+              <Style>=iif(CBool(Parameters!parSinFormato.Value),"None", "Solid")</Style>
+            </Border>
+            <BottomBorder>
+              <Style>None</Style>
+            </BottomBorder>
+            <LeftBorder>
+              <Style>None</Style>
+            </LeftBorder>
+            <PaddingLeft>1pt</PaddingLeft>
+            <PaddingRight>1pt</PaddingRight>
+            <PaddingTop>1pt</PaddingTop>
+            <PaddingBottom>1pt</PaddingBottom>
+          </Style>
+        </Textbox>
+        <Textbox Name="Textbox43">
+          <CanGrow>true</CanGrow>
+          <KeepTogether>true</KeepTogether>
+          <Paragraphs>
+            <Paragraph>
+              <TextRuns>
+                <TextRun>
+                  <Value>=Iif(Parameters!parSinFormato.Value, "", "Revenue tons")</Value>
+                  <Style>
+                    <FontSize>7pt</FontSize>
+                  </Style>
+                </TextRun>
+              </TextRuns>
+              <Style>
+                <TextAlign>Left</TextAlign>
+              </Style>
+            </Paragraph>
+          </Paragraphs>
+          <rd:DefaultName>Textbox1</rd:DefaultName>
+          <Top>1.39998cm</Top>
+          <Left>4.86757cm</Left>
+          <Height>0.4cm</Height>
+          <Width>3.16764cm</Width>
+          <ZIndex>16</ZIndex>
+          <Style>
+            <Border>
+              <Style>=iif(CBool(Parameters!parSinFormato.Value),"None", "Solid")</Style>
+            </Border>
+            <BottomBorder>
+              <Style>None</Style>
+            </BottomBorder>
+            <PaddingLeft>5pt</PaddingLeft>
+            <PaddingRight>1pt</PaddingRight>
+            <PaddingTop>1pt</PaddingTop>
+            <PaddingBottom>1pt</PaddingBottom>
+          </Style>
+        </Textbox>
+        <Textbox Name="Textbox44">
+          <CanGrow>true</CanGrow>
+          <KeepTogether>true</KeepTogether>
+          <Paragraphs>
+            <Paragraph>
+              <TextRuns>
+                <TextRun>
+                  <Value>=Iif(Parameters!parSinFormato.Value, "", "Rate                   per")</Value>
+                  <Style>
+                    <FontSize>7pt</FontSize>
+                  </Style>
+                </TextRun>
+              </TextRuns>
+              <Style />
+            </Paragraph>
+          </Paragraphs>
+          <rd:DefaultName>Textbox1</rd:DefaultName>
+          <Top>1.39998cm</Top>
+          <Left>8.03521cm</Left>
+          <Height>0.4cm</Height>
+          <Width>3.89708cm</Width>
+          <ZIndex>17</ZIndex>
+          <Style>
+            <Border>
+              <Style>=iif(CBool(Parameters!parSinFormato.Value),"None", "Solid")</Style>
+            </Border>
+            <BottomBorder>
+              <Style>None</Style>
+            </BottomBorder>
+            <PaddingLeft>5pt</PaddingLeft>
+            <PaddingRight>1pt</PaddingRight>
+            <PaddingTop>1pt</PaddingTop>
+            <PaddingBottom>1pt</PaddingBottom>
+          </Style>
+        </Textbox>
+        <Textbox Name="Textbox45">
+          <CanGrow>true</CanGrow>
+          <KeepTogether>true</KeepTogether>
+          <Paragraphs>
+            <Paragraph>
+              <TextRuns>
+                <TextRun>
+                  <Value>=Iif(Parameters!parSinFormato.Value, "", "Prepaid")</Value>
+                  <Style>
+                    <FontSize>7pt</FontSize>
+                  </Style>
+                </TextRun>
+              </TextRuns>
+              <Style>
+                <TextAlign>Left</TextAlign>
+              </Style>
+            </Paragraph>
+          </Paragraphs>
+          <rd:DefaultName>Textbox1</rd:DefaultName>
+          <Top>1.39998cm</Top>
+          <Left>11.93229cm</Left>
+          <Height>0.4cm</Height>
+          <Width>3.4cm</Width>
+          <ZIndex>18</ZIndex>
+          <Style>
+            <Border>
+              <Style>=iif(CBool(Parameters!parSinFormato.Value),"None", "Solid")</Style>
+            </Border>
+            <BottomBorder>
+              <Style>None</Style>
+            </BottomBorder>
+            <PaddingLeft>5pt</PaddingLeft>
+            <PaddingRight>1pt</PaddingRight>
+            <PaddingTop>1pt</PaddingTop>
+            <PaddingBottom>1pt</PaddingBottom>
+          </Style>
+        </Textbox>
+        <Textbox Name="Textbox46">
+          <CanGrow>true</CanGrow>
+          <KeepTogether>true</KeepTogether>
+          <Paragraphs>
+            <Paragraph>
+              <TextRuns>
+                <TextRun>
+                  <Value>=Iif(Parameters!parSinFormato.Value, "", "Collect")</Value>
+                  <Style>
+                    <FontSize>7pt</FontSize>
+                  </Style>
+                </TextRun>
+              </TextRuns>
+              <Style>
+                <TextAlign>Left</TextAlign>
+              </Style>
+            </Paragraph>
+          </Paragraphs>
+          <rd:DefaultName>Textbox1</rd:DefaultName>
+          <Top>1.39998cm</Top>
+          <Left>15.33229cm</Left>
+          <Height>0.4cm</Height>
+          <Width>3.65889cm</Width>
+          <ZIndex>19</ZIndex>
+          <Style>
+            <Border>
+              <Style>=iif(CBool(Parameters!parSinFormato.Value),"None", "Solid")</Style>
+            </Border>
+            <BottomBorder>
+              <Style>None</Style>
+            </BottomBorder>
+            <RightBorder>
+              <Style>None</Style>
+            </RightBorder>
+            <PaddingLeft>5pt</PaddingLeft>
+            <PaddingRight>1pt</PaddingRight>
+            <PaddingTop>1pt</PaddingTop>
+            <PaddingBottom>1pt</PaddingBottom>
+          </Style>
+        </Textbox>
+        <Textbox Name="Textbox47">
+          <CanGrow>true</CanGrow>
+          <KeepTogether>true</KeepTogether>
+          <Paragraphs>
+            <Paragraph>
+              <TextRuns>
+                <TextRun>
+                  <Value>=Iif(Parameters!parSinFormato.Value, "", "Exchaner rate")</Value>
+                  <Style>
+                    <FontSize>7pt</FontSize>
+                  </Style>
+                </TextRun>
+              </TextRuns>
+              <Style />
+            </Paragraph>
+          </Paragraphs>
+          <rd:DefaultName>Textbox1</rd:DefaultName>
+          <Top>5.82359cm</Top>
+          <Left>0.02646cm</Left>
+          <Height>0.4cm</Height>
+          <Width>2.24708cm</Width>
+          <ZIndex>20</ZIndex>
+          <Style>
+            <Border>
+              <Style>=iif(CBool(Parameters!parSinFormato.Value),"None", "Solid")</Style>
+            </Border>
+            <BottomBorder>
+              <Style>None</Style>
+            </BottomBorder>
+            <LeftBorder>
+              <Style>None</Style>
+            </LeftBorder>
+            <PaddingLeft>1pt</PaddingLeft>
+            <PaddingRight>1pt</PaddingRight>
+            <PaddingTop>1pt</PaddingTop>
+            <PaddingBottom>1pt</PaddingBottom>
+          </Style>
+        </Textbox>
+        <Textbox Name="Textbox48">
+          <CanGrow>true</CanGrow>
+          <KeepTogether>true</KeepTogether>
+          <Paragraphs>
+            <Paragraph>
+              <TextRuns>
+                <TextRun>
+                  <Value>=Iif(Parameters!parSinFormato.Value, "", "Prepaid at")</Value>
+                  <Style>
+                    <FontSize>7pt</FontSize>
+                  </Style>
+                </TextRun>
+              </TextRuns>
+              <Style>
+                <TextAlign>Left</TextAlign>
+              </Style>
+            </Paragraph>
+          </Paragraphs>
+          <rd:DefaultName>Textbox1</rd:DefaultName>
+          <Top>5.82358cm</Top>
+          <Left>2.27354cm</Left>
+          <Height>0.4cm</Height>
+          <Width>5.05875cm</Width>
+          <ZIndex>21</ZIndex>
+          <Style>
+            <Border>
+              <Style>=iif(CBool(Parameters!parSinFormato.Value),"None", "Solid")</Style>
+            </Border>
+            <BottomBorder>
+              <Style>None</Style>
+            </BottomBorder>
+            <PaddingLeft>10pt</PaddingLeft>
+            <PaddingRight>1pt</PaddingRight>
+            <PaddingTop>1pt</PaddingTop>
+            <PaddingBottom>1pt</PaddingBottom>
+          </Style>
+        </Textbox>
+        <Textbox Name="Textbox49">
+          <CanGrow>true</CanGrow>
+          <KeepTogether>true</KeepTogether>
+          <Paragraphs>
+            <Paragraph>
+              <TextRuns>
+                <TextRun>
+                  <Value>=Iif(Parameters!parSinFormato.Value, "", "Payable at")</Value>
+                  <Style>
+                    <FontSize>7pt</FontSize>
+                  </Style>
+                </TextRun>
+              </TextRuns>
+              <Style />
+            </Paragraph>
+          </Paragraphs>
+          <rd:DefaultName>Textbox1</rd:DefaultName>
+          <Top>5.82358cm</Top>
+          <Left>7.33229cm</Left>
+          <Height>0.4cm</Height>
+          <Width>4.6cm</Width>
+          <ZIndex>22</ZIndex>
+          <Style>
+            <Border>
+              <Style>=iif(CBool(Parameters!parSinFormato.Value),"None", "Solid")</Style>
+            </Border>
+            <BottomBorder>
+              <Style>None</Style>
+            </BottomBorder>
+            <PaddingLeft>10pt</PaddingLeft>
+            <PaddingRight>1pt</PaddingRight>
+            <PaddingTop>1pt</PaddingTop>
+            <PaddingBottom>1pt</PaddingBottom>
+          </Style>
+        </Textbox>
+        <Textbox Name="Textbox50">
+          <CanGrow>true</CanGrow>
+          <KeepTogether>true</KeepTogether>
+          <Paragraphs>
+            <Paragraph>
+              <TextRuns>
+                <TextRun>
+                  <Value>=Iif(Parameters!parSinFormato.Value, "", "Place and date of issue")</Value>
+                  <Style>
+                    <FontSize>7pt</FontSize>
+                  </Style>
+                </TextRun>
+              </TextRuns>
+              <Style>
+                <TextAlign>Left</TextAlign>
+              </Style>
+            </Paragraph>
+          </Paragraphs>
+          <rd:DefaultName>Textbox1</rd:DefaultName>
+          <Top>5.82358cm</Top>
+          <Left>11.93229cm</Left>
+          <Height>0.4cm</Height>
+          <Width>7.05889cm</Width>
+          <ZIndex>23</ZIndex>
+          <Style>
+            <Border>
+              <Style>=iif(CBool(Parameters!parSinFormato.Value),"None", "Solid")</Style>
+            </Border>
+            <BottomBorder>
+              <Style>None</Style>
+            </BottomBorder>
+            <RightBorder>
+              <Style>None</Style>
+            </RightBorder>
+            <PaddingLeft>10pt</PaddingLeft>
+            <PaddingRight>1pt</PaddingRight>
+            <PaddingTop>1pt</PaddingTop>
+            <PaddingBottom>1pt</PaddingBottom>
+          </Style>
+        </Textbox>
+        <Textbox Name="Textbox51">
+          <CanGrow>true</CanGrow>
+          <KeepTogether>true</KeepTogether>
+          <Paragraphs>
+            <Paragraph>
+              <TextRuns>
+                <TextRun>
+                  <Value>=Iif(Parameters!parSinFormato.Value, "", "Total prepaid")</Value>
+                  <Style>
+                    <FontSize>7pt</FontSize>
+                  </Style>
+                </TextRun>
+              </TextRuns>
+              <Style>
+                <TextAlign>Left</TextAlign>
+              </Style>
+            </Paragraph>
+          </Paragraphs>
+          <rd:DefaultName>Textbox1</rd:DefaultName>
+          <Top>6.62358cm</Top>
+          <Left>2.27354cm</Left>
+          <Height>0.4cm</Height>
+          <Width>5.05875cm</Width>
+          <ZIndex>24</ZIndex>
+          <Style>
+            <Border>
+              <Style>=iif(CBool(Parameters!parSinFormato.Value),"None", "Solid")</Style>
+            </Border>
+            <BottomBorder>
+              <Style>None</Style>
+            </BottomBorder>
+            <PaddingLeft>10pt</PaddingLeft>
+            <PaddingRight>1pt</PaddingRight>
+            <PaddingTop>1pt</PaddingTop>
+            <PaddingBottom>1pt</PaddingBottom>
+          </Style>
+        </Textbox>
+        <Textbox Name="Textbox52">
+          <CanGrow>true</CanGrow>
+          <KeepTogether>true</KeepTogether>
+          <Paragraphs>
+            <Paragraph>
+              <TextRuns>
+                <TextRun>
+                  <Value>=Iif(Parameters!parSinFormato.Value, "", "Number of original B(s)/L")</Value>
+                  <Style>
+                    <FontSize>7pt</FontSize>
+                  </Style>
+                </TextRun>
+              </TextRuns>
+              <Style />
+            </Paragraph>
+          </Paragraphs>
+          <rd:DefaultName>Textbox1</rd:DefaultName>
+          <Top>6.62358cm</Top>
+          <Left>7.33229cm</Left>
+          <Height>0.4cm</Height>
+          <Width>4.6cm</Width>
+          <ZIndex>25</ZIndex>
+          <Style>
+            <Border>
+              <Style>=iif(CBool(Parameters!parSinFormato.Value),"None", "Solid")</Style>
+            </Border>
+            <BottomBorder>
+              <Style>None</Style>
+            </BottomBorder>
+            <PaddingLeft>10pt</PaddingLeft>
+            <PaddingRight>1pt</PaddingRight>
+            <PaddingTop>1pt</PaddingTop>
+            <PaddingBottom>1pt</PaddingBottom>
+          </Style>
+        </Textbox>
+        <Textbox Name="Textbox53">
+          <CanGrow>true</CanGrow>
+          <KeepTogether>true</KeepTogether>
+          <Paragraphs>
+            <Paragraph>
+              <TextRuns>
+                <TextRun>
+                  <Value>=Iif(Parameters!parSinFormato.Value, "", "Date")</Value>
+                  <Style>
+                    <FontSize>7pt</FontSize>
+                  </Style>
+                </TextRun>
+              </TextRuns>
+              <Style />
+            </Paragraph>
+          </Paragraphs>
+          <rd:DefaultName>Textbox4</rd:DefaultName>
+          <Top>8.59999cm</Top>
+          <Left>0.02646cm</Left>
+          <Height>0.5cm</Height>
+          <Width>2.24708cm</Width>
+          <ZIndex>26</ZIndex>
+          <Style>
+            <Border>
+              <Style>=iif(CBool(Parameters!parSinFormato.Value),"None", "Solid")</Style>
+            </Border>
+            <TopBorder>
+              <Style>None</Style>
+            </TopBorder>
+            <LeftBorder>
+              <Style>None</Style>
+            </LeftBorder>
+            <RightBorder>
+              <Style>None</Style>
+            </RightBorder>
+            <PaddingLeft>1pt</PaddingLeft>
+            <PaddingRight>1pt</PaddingRight>
+            <PaddingTop>1pt</PaddingTop>
+            <PaddingBottom>1pt</PaddingBottom>
+          </Style>
+        </Textbox>
+        <Textbox Name="Textbox54">
+          <CanGrow>true</CanGrow>
+          <KeepTogether>true</KeepTogether>
+          <Paragraphs>
+            <Paragraph>
+              <TextRuns>
+                <TextRun>
+                  <Value>=Iif(Parameters!parSinFormato.Value, "", "Signature")</Value>
+                  <Style>
+                    <FontSize>7pt</FontSize>
+                  </Style>
+                </TextRun>
+              </TextRuns>
+              <Style />
+            </Paragraph>
+          </Paragraphs>
+          <rd:DefaultName>Textbox4</rd:DefaultName>
+          <Top>8.59999cm</Top>
+          <Left>5.92646cm</Left>
+          <Height>0.5cm</Height>
+          <Width>6.00583cm</Width>
+          <ZIndex>27</ZIndex>
+          <Style>
+            <Border>
+              <Style>=iif(CBool(Parameters!parSinFormato.Value),"None", "Solid")</Style>
+            </Border>
+            <TopBorder>
+              <Style>None</Style>
+            </TopBorder>
+            <LeftBorder>
+              <Style>None</Style>
+            </LeftBorder>
+            <PaddingLeft>10pt</PaddingLeft>
+            <PaddingRight>1pt</PaddingRight>
+            <PaddingTop>1pt</PaddingTop>
+            <PaddingBottom>1pt</PaddingBottom>
+          </Style>
+        </Textbox>
+        <Textbox Name="Textbox55">
+          <CanGrow>true</CanGrow>
+          <KeepTogether>true</KeepTogether>
+          <Paragraphs>
+            <Paragraph>
+              <TextRuns>
+                <TextRun>
+                  <Value>=Iif(Parameters!parSinFormato.Value, "", "* Total number of Containers or other packages(in words).")</Value>
+                  <Style>
+                    <FontSize>7pt</FontSize>
+                    <FontWeight>Bold</FontWeight>
+                  </Style>
+                </TextRun>
+              </TextRuns>
+              <Style />
+            </Paragraph>
+          </Paragraphs>
+          <rd:DefaultName>Textbox1</rd:DefaultName>
+          <Top>0.39998cm</Top>
+          <Left>0.02646cm</Left>
+          <Height>1cm</Height>
+          <Width>4.66472cm</Width>
+          <ZIndex>28</ZIndex>
+          <Style>
+            <Border>
+              <Style>=iif(CBool(Parameters!parSinFormato.Value),"None", "Solid")</Style>
+            </Border>
+            <LeftBorder>
+              <Style>None</Style>
+            </LeftBorder>
+            <RightBorder>
+              <Style>None</Style>
+            </RightBorder>
+            <PaddingLeft>1pt</PaddingLeft>
+            <PaddingRight>1pt</PaddingRight>
+            <PaddingTop>1pt</PaddingTop>
+            <PaddingBottom>1pt</PaddingBottom>
+          </Style>
+        </Textbox>
+        <Textbox Name="Textbox56">
+          <CanGrow>true</CanGrow>
+          <KeepTogether>true</KeepTogether>
+          <Paragraphs>
+            <Paragraph>
+              <TextRuns>
+                <TextRun>
+                  <Value>="SHIPPER'S LOAD, STOW, COUNT AND SEALED."</Value>
+                  <Style>
+                    <FontSize>7pt</FontSize>
+                  </Style>
+                </TextRun>
+              </TextRuns>
+              <Style>
+                <TextAlign>Center</TextAlign>
+              </Style>
+            </Paragraph>
+          </Paragraphs>
+          <rd:DefaultName>Textbox1</rd:DefaultName>
+          <Left>0.02646cm</Left>
+          <Height>0.4cm</Height>
+          <Width>18.96472cm</Width>
+          <ZIndex>29</ZIndex>
+          <Style>
+            <Border>
+              <Style>None</Style>
+            </Border>
+            <BottomBorder>
+              <Style>None</Style>
+            </BottomBorder>
+            <PaddingLeft>1pt</PaddingLeft>
+            <PaddingRight>1pt</PaddingRight>
+            <PaddingTop>1pt</PaddingTop>
+            <PaddingBottom>1pt</PaddingBottom>
+          </Style>
+        </Textbox>
+        <Textbox Name="Textbox57">
+          <CanGrow>true</CanGrow>
+          <KeepTogether>true</KeepTogether>
+          <Paragraphs>
+            <Paragraph>
+              <TextRuns>
+                <TextRun>
+                  <Value>=Parameters!DHBL_PesoBruto.Value</Value>
+                  <Style>
+                    <FontSize>7pt</FontSize>
+                    <Format>#,###,##0.000</Format>
+                  </Style>
+                </TextRun>
+                <TextRun>
+                  <Value> Kgs</Value>
+                  <Style>
+                    <FontSize>7pt</FontSize>
+                  </Style>
+                </TextRun>
+              </TextRuns>
+              <Style>
+                <TextAlign>Right</TextAlign>
+              </Style>
+            </Paragraph>
+          </Paragraphs>
+          <rd:DefaultName>Textbox4</rd:DefaultName>
+          <Top>0.39998cm</Top>
+          <Left>13.55507cm</Left>
+          <Height>1cm</Height>
+          <Width>2.49174cm</Width>
+          <ZIndex>30</ZIndex>
+          <Style>
+            <Border>
+              <Style>=iif(CBool(Parameters!parSinFormato.Value),"None", "Solid")</Style>
+            </Border>
+            <LeftBorder>
+              <Style>None</Style>
+            </LeftBorder>
+            <RightBorder>
+              <Style>None</Style>
+            </RightBorder>
+            <PaddingLeft>1pt</PaddingLeft>
+            <PaddingRight>1pt</PaddingRight>
+            <PaddingTop>1pt</PaddingTop>
+            <PaddingBottom>1pt</PaddingBottom>
+          </Style>
+        </Textbox>
+        <Textbox Name="Textbox58">
+          <CanGrow>true</CanGrow>
+          <KeepTogether>true</KeepTogether>
+          <Paragraphs>
+            <Paragraph>
+              <TextRuns>
+                <TextRun>
+                  <Value>=IIf(Parameters!DHBL_Volumen.Value=0, "", str(Parameters!DHBL_Volumen.Value) + "CBM")</Value>
+                  <Style>
+                    <FontSize>7pt</FontSize>
+                    <Format>#,###,##0.000</Format>
+                  </Style>
+                </TextRun>
+                <TextRun>
+                  <Value xml:space="preserve"> </Value>
+                  <Style>
+                    <FontSize>7pt</FontSize>
+                  </Style>
+                </TextRun>
+              </TextRuns>
+              <Style>
+                <TextAlign>Right</TextAlign>
+              </Style>
+            </Paragraph>
+          </Paragraphs>
+          <rd:DefaultName>Textbox4</rd:DefaultName>
+          <Top>0.39645cm</Top>
+          <Left>16.04681cm</Left>
+          <Height>1cm</Height>
+          <Width>2.94437cm</Width>
+          <ZIndex>31</ZIndex>
+          <Style>
+            <Border>
+              <Style>=iif(CBool(Parameters!parSinFormato.Value),"None", "Solid")</Style>
+            </Border>
+            <LeftBorder>
+              <Style>None</Style>
+            </LeftBorder>
+            <RightBorder>
+              <Style>None</Style>
+            </RightBorder>
+            <PaddingLeft>1pt</PaddingLeft>
+            <PaddingRight>1pt</PaddingRight>
+            <PaddingTop>1pt</PaddingTop>
+            <PaddingBottom>1pt</PaddingBottom>
+          </Style>
+        </Textbox>
+        <Textbox Name="Textbox60">
+          <CanGrow>true</CanGrow>
+          <KeepTogether>true</KeepTogether>
+          <Paragraphs>
+            <Paragraph>
+              <TextRuns>
+                <TextRun>
+                  <Value>=FormatDateTime(First(Fields!DOOV_Date.Value, "DSOPE001HBL"), DateFormat.ShortDate).ToString()</Value>
+                  <Style>
+                    <FontSize>7pt</FontSize>
+                  </Style>
+                </TextRun>
+              </TextRuns>
+              <Style />
+            </Paragraph>
+          </Paragraphs>
+          <rd:DefaultName>Textbox4</rd:DefaultName>
+          <Top>8.59999cm</Top>
+          <Left>2.30882cm</Left>
+          <Height>0.5cm</Height>
+          <Width>3.65292cm</Width>
+          <ZIndex>32</ZIndex>
+          <Style>
+            <Border>
+              <Style>=iif(CBool(Parameters!parSinFormato.Value),"None", "Solid")</Style>
+            </Border>
+            <TopBorder>
+              <Style>None</Style>
+            </TopBorder>
+            <LeftBorder>
+              <Style>None</Style>
+            </LeftBorder>
+            <RightBorder>
+              <Style>None</Style>
+            </RightBorder>
+            <PaddingLeft>10pt</PaddingLeft>
+            <PaddingRight>1pt</PaddingRight>
+            <PaddingTop>1pt</PaddingTop>
+            <PaddingBottom>1pt</PaddingBottom>
+          </Style>
+        </Textbox>
+      </ReportItems>
+      <Style>
+        <Border>
+          <Style>None</Style>
+        </Border>
+      </Style>
+    </PageFooter>
+    <PageHeight>29.7cm</PageHeight>
+    <PageWidth>21cm</PageWidth>
+    <LeftMargin>1.5cm</LeftMargin>
+    <RightMargin>0cm</RightMargin>
+    <TopMargin>0.9cm</TopMargin>
+    <BottomMargin>1.1cm</BottomMargin>
+    <ColumnSpacing>0.13cm</ColumnSpacing>
+    <Style />
+  </Page>
+  <AutoRefresh>0</AutoRefresh>
+  <DataSources>
+    <DataSource Name="DSOPE001MBL">
+      <ConnectionProperties>
+        <DataProvider>System.Data.DataSet</DataProvider>
+        <ConnectString>/* Local Connection */</ConnectString>
+      </ConnectionProperties>
+      <rd:DataSourceID>f48734dd-a938-4d93-b88f-29724dffdd65</rd:DataSourceID>
+    </DataSource>
+  </DataSources>
+  <DataSets>
+    <DataSet Name="DSOPE001HBL">
+      <Query>
+        <DataSourceName>DSOPE001MBL</DataSourceName>
+        <CommandText>/* Local Query */</CommandText>
+      </Query>
+      <Fields>
+        <Field Name="CCOT_Tipo">
+          <DataField>CCOT_Tipo</DataField>
+          <rd:TypeName>System.String</rd:TypeName>
+        </Field>
+        <Field Name="CCOT_Numero">
+          <DataField>CCOT_Numero</DataField>
+          <rd:TypeName>System.String</rd:TypeName>
+        </Field>
+        <Field Name="DOOV_MBL">
+          <DataField>DOOV_MBL</DataField>
+          <rd:TypeName>System.String</rd:TypeName>
+        </Field>
+        <Field Name="DOOV_HBL">
+          <DataField>DOOV_HBL</DataField>
+          <rd:TypeName>System.String</rd:TypeName>
+        </Field>
+        <Field Name="DDOV_DescShipper">
+          <DataField>DDOV_DescShipper</DataField>
+          <rd:TypeName>System.String</rd:TypeName>
+        </Field>
+        <Field Name="DDOV_DescConsignee">
+          <DataField>DDOV_DescConsignee</DataField>
+          <rd:TypeName>System.String</rd:TypeName>
+        </Field>
+        <Field Name="DDOV_DescNotify">
+          <DataField>DDOV_DescNotify</DataField>
+          <rd:TypeName>System.String</rd:TypeName>
+        </Field>
+        <Field Name="DOOV_PreCarriage">
+          <DataField>DOOV_PreCarriage</DataField>
+          <rd:TypeName>System.String</rd:TypeName>
+        </Field>
+        <Field Name="DOOV_PlaceReceipt">
+          <DataField>DOOV_PlaceReceipt</DataField>
+          <rd:TypeName>System.String</rd:TypeName>
+        </Field>
+        <Field Name="DOOV_Vessel">
+          <DataField>DOOV_Vessel</DataField>
+          <rd:TypeName>System.String</rd:TypeName>
+        </Field>
+        <Field Name="DOOV_VoyNo">
+          <DataField>DOOV_VoyNo</DataField>
+          <rd:TypeName>System.String</rd:TypeName>
+        </Field>
+        <Field Name="PUER_NomPOL">
+          <DataField>PUER_NomPOL</DataField>
+          <rd:TypeName>System.String</rd:TypeName>
+        </Field>
+        <Field Name="PUER_NomPOD">
+          <DataField>PUER_NomPOD</DataField>
+          <rd:TypeName>System.String</rd:TypeName>
+        </Field>
+        <Field Name="PUER_PlaceDelivery">
+          <DataField>PUER_PlaceDelivery</DataField>
+          <rd:TypeName>System.String</rd:TypeName>
+        </Field>
+        <Field Name="DDOV_ApplyTo">
+          <DataField>DDOV_ApplyTo</DataField>
+          <rd:TypeName>System.String</rd:TypeName>
+        </Field>
+        <Field Name="CCOT_PagoMBL">
+          <DataField>CCOT_PagoMBL</DataField>
+          <rd:TypeName>System.String</rd:TypeName>
+        </Field>
+        <Field Name="CCOT_PagoHBL">
+          <DataField>CCOT_PagoHBL</DataField>
+          <rd:TypeName>System.String</rd:TypeName>
+        </Field>
+        <Field Name="DOOV_RevenueTons">
+          <DataField>DOOV_RevenueTons</DataField>
+          <rd:TypeName>System.String</rd:TypeName>
+        </Field>
+        <Field Name="DOOV_Rate">
+          <DataField>DOOV_Rate</DataField>
+          <rd:TypeName>System.String</rd:TypeName>
+        </Field>
+        <Field Name="DOOV_Prepaid">
+          <DataField>DOOV_Prepaid</DataField>
+          <rd:TypeName>System.String</rd:TypeName>
+        </Field>
+        <Field Name="DOOV_Collect">
+          <DataField>DOOV_Collect</DataField>
+          <rd:TypeName>System.String</rd:TypeName>
+        </Field>
+        <Field Name="DOOV_ExchanerRate">
+          <DataField>DOOV_ExchanerRate</DataField>
+          <rd:TypeName>System.String</rd:TypeName>
+        </Field>
+        <Field Name="DOOV_PrepaidAt">
+          <DataField>DOOV_PrepaidAt</DataField>
+          <rd:TypeName>System.String</rd:TypeName>
+        </Field>
+        <Field Name="DOOV_TotalPrepaid">
+          <DataField>DOOV_TotalPrepaid</DataField>
+          <rd:TypeName>System.String</rd:TypeName>
+        </Field>
+        <Field Name="DOOV_PayableAt">
+          <DataField>DOOV_PayableAt</DataField>
+          <rd:TypeName>System.String</rd:TypeName>
+        </Field>
+        <Field Name="DOOV_PlaceIssue">
+          <DataField>DOOV_PlaceIssue</DataField>
+          <rd:TypeName>System.String</rd:TypeName>
+        </Field>
+        <Field Name="DOOV_DateIssue">
+          <DataField>DOOV_DateIssue</DataField>
+          <rd:TypeName>System.String</rd:TypeName>
+        </Field>
+        <Field Name="DOOV_NumberOriginalBL">
+          <DataField>DOOV_NumberOriginalBL</DataField>
+          <rd:TypeName>System.String</rd:TypeName>
+        </Field>
+        <Field Name="DOOV_Date">
+          <DataField>DOOV_Date</DataField>
+          <rd:TypeName>System.String</rd:TypeName>
+        </Field>
+        <Field Name="DOOV_Signature">
+          <DataField>DOOV_Signature</DataField>
+          <rd:TypeName>System.String</rd:TypeName>
+        </Field>
+        <Field Name="DHBL_TotalBultos">
+          <DataField>DHBL_TotalBultos</DataField>
+          <rd:TypeName>System.String</rd:TypeName>
+        </Field>
+        <Field Name="DHBL_TotalPesoBruto">
+          <DataField>DHBL_TotalPesoBruto</DataField>
+          <rd:TypeName>System.String</rd:TypeName>
+        </Field>
+        <Field Name="DHBL_TotalVolumen">
+          <DataField>DHBL_TotalVolumen</DataField>
+          <rd:TypeName>System.String</rd:TypeName>
+        </Field>
+        <Field Name="DHBL_TotalBultosDesc">
+          <DataField>DHBL_TotalBultosDesc</DataField>
+          <rd:TypeName>System.String</rd:TypeName>
+        </Field>
+        <Field Name="TIPO_MND">
+          <DataField>TIPO_MND</DataField>
+          <rd:TypeName>System.String</rd:TypeName>
+        </Field>
+      </Fields>
+      <rd:DataSetInfo>
+        <rd:DataSetName>DSOPE001MBL</rd:DataSetName>
+        <rd:SchemaPath>D:\NEXTSOFT\DELFIN\DELFIN\Fuentes\DelfinLogisitco_V2.1\Fuentes\3. Presentation Tier\Delfin.Principal\Reportes\OPE001Cotizacion\DSOPE001MBL.xsd</rd:SchemaPath>
+        <rd:TableName>CAB_HBL</rd:TableName>
+        <rd:TableAdapterFillMethod />
+        <rd:TableAdapterGetDataMethod />
+        <rd:TableAdapterName />
+      </rd:DataSetInfo>
+    </DataSet>
+  </DataSets>
+  <ReportParameters>
+    <ReportParameter Name="parLogo">
+      <DataType>String</DataType>
+      <Prompt>ReportParameter1</Prompt>
+    </ReportParameter>
+    <ReportParameter Name="parSinLogo">
+      <DataType>Boolean</DataType>
+      <Prompt>ReportParameter1</Prompt>
+    </ReportParameter>
+    <ReportParameter Name="parSinFormato">
+      <DataType>Boolean</DataType>
+      <Prompt>ReportParameter1</Prompt>
+    </ReportParameter>
+    <ReportParameter Name="parCantidadLetras">
+      <DataType>String</DataType>
+      <Nullable>true</Nullable>
+      <AllowBlank>true</AllowBlank>
+      <Prompt>ReportParameter1</Prompt>
+    </ReportParameter>
+    <ReportParameter Name="parContenedores">
+      <DataType>Boolean</DataType>
+      <Prompt>ReportParameter1</Prompt>
+    </ReportParameter>
+    <ReportParameter Name="parSinFlete">
+      <DataType>Boolean</DataType>
+      <Prompt>ReportParameter1</Prompt>
+    </ReportParameter>
+    <ReportParameter Name="DHBL_PesoBruto">
+      <DataType>String</DataType>
+      <Prompt>ReportParameter1</Prompt>
+    </ReportParameter>
+    <ReportParameter Name="DHBL_Volumen">
+      <DataType>String</DataType>
+      <Prompt>ReportParameter1</Prompt>
+    </ReportParameter>
+    <ReportParameter Name="DHBL_CantBultos">
+      <DataType>String</DataType>
+      <Prompt>ReportParameter1</Prompt>
+    </ReportParameter>
+    <ReportParameter Name="TipoContenedor">
+      <DataType>String</DataType>
+      <Prompt>ReportParameter1</Prompt>
+    </ReportParameter>
+  </ReportParameters>
+  <EmbeddedImages>
+    <EmbeddedImage Name="logoDelfin">
+      <MIMEType>image/png</MIMEType>
+      <ImageData>iVBORw0KGgoAAAANSUhEUgAAARgAAABsCAYAAACxSq3vAAAAGXRFWHRTb2Z0d2FyZQBBZG9iZSBJbWFnZVJlYWR5ccllPAAAAyJpVFh0WE1MOmNvbS5hZG9iZS54bXAAAAAAADw/eHBhY2tldCBiZWdpbj0i77u/IiBpZD0iVzVNME1wQ2VoaUh6cmVTek5UY3prYzlkIj8+IDx4OnhtcG1ldGEgeG1sbnM6eD0iYWRvYmU6bnM6bWV0YS8iIHg6eG1wdGs9IkFkb2JlIFhNUCBDb3JlIDUuMC1jMDYwIDYxLjEzNDc3NywgMjAxMC8wMi8xMi0xNzozMjowMCAgICAgICAgIj4gPHJkZjpSREYgeG1sbnM6cmRmPSJodHRwOi8vd3d3LnczLm9yZy8xOTk5LzAyLzIyLXJkZi1zeW50YXgtbnMjIj4gPHJkZjpEZXNjcmlwdGlvbiByZGY6YWJvdXQ9IiIgeG1sbnM6eG1wPSJodHRwOi8vbnMuYWRvYmUuY29tL3hhcC8xLjAvIiB4bWxuczp4bXBNTT0iaHR0cDovL25zLmFkb2JlLmNvbS94YXAvMS4wL21tLyIgeG1sbnM6c3RSZWY9Imh0dHA6Ly9ucy5hZG9iZS5jb20veGFwLzEuMC9zVHlwZS9SZXNvdXJjZVJlZiMiIHhtcDpDcmVhdG9yVG9vbD0iQWRvYmUgUGhvdG9zaG9wIENTNSBNYWNpbnRvc2giIHhtcE1NOkluc3RhbmNlSUQ9InhtcC5paWQ6RDc4RUNDQUM1NzIzMTFFMDg4QzRCMTg4MDg5NjQwQzUiIHhtcE1NOkRvY3VtZW50SUQ9InhtcC5kaWQ6RERCNUI2MTY1NzI1MTFFMDg4QzRCMTg4MDg5NjQwQzUiPiA8eG1wTU06RGVyaXZlZEZyb20gc3RSZWY6aW5zdGFuY2VJRD0ieG1wLmlpZDpENzhFQ0NBQTU3MjMxMUUwODhDNEIxODgwODk2
+NDBDNSIgc3RSZWY6ZG9jdW1lbnRJRD0ieG1wLmRpZDpENzhFQ0NBQjU3MjMxMUUwODhDNEIxODgwODk2NDBDNSIvPiA8L3JkZjpEZXNjcmlwdGlvbj4gPC9yZGY6UkRGPiA8L3g6eG1wbWV0YT4gPD94cGFja2V0IGVuZD0iciI/PkFAdaIAAFIYSURBVHja7F0HfNVU209ub/cuXZTSxShlr7KXDAUZIooLAQEXThyv6IsTxT3ADYooiIKAC5SNyEb2Hi0dQPfe8958z5Mml3NzT5KTtqC+X/P7pXelycnJOf/zfzbPMWyCIPCKr3iObRNoX/I8L3BNW9PWtP3Pb7wBYOEbCWBUwaUJeJq2pu3/AcCoAItRsBFUAEXvs7EbaAKlpq1p+3cAjA6wkK88A5MRNIBGaADAMB3fBDxNW9P2DwIYDXDhVT7rgQwJLAID6LCCh1Df35tAp2lr2v5+gFEDE9xNjCCjBBdBB3BYwENo5O+aAKdpa9quBcBogItJ8d6kAzQcBUSsjCBTX7AQDL6nftcENk1b03Z1AUYNXEwauxrICJTdqsFo9ABBDzgEht+YRbMmsGnamrZGAhgFe1EDFyfi1UkDaGgAY9UAmPoCjaAiirF8xwpMTUDTtDVtjQQwNF2LSQEquJsVn2lMhgYwVh2wYQEYLRARNJgTp3EME+g0AU3T1rTVbzOriE28AlzMip0EGxqLoQGMVYfNsDINLTCp7648tx1rklleE9A0bU2bcYBhYTAysDhLuxJsSJAhGYcMJBYGkGkMQLFq6HysOvogGug4AE0TyDRtTVv9GYweuLgQIEOCjZMKwCgZjIVBJ8MCMFYdPY+V8T2Lnki+Nt8EMk1b01Z/gKGxGFJEkgGG3J0pTEYLYLTEJY5Rb6IGDGrnNrLzlPNyTSDTtDVtjS8iOamIR67STgINqfxV08NY6gkwaqKQFohYVD6rvSrf8wS4CDSwaQKZpq1paxwRicZgEGDcCKBx1mAx
+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</ImageData>
+    </EmbeddedImage>
+  </EmbeddedImages>
+  <Language>es-PE</Language>
+  <rd:ReportUnitType>Cm</rd:ReportUnitType>
+  <rd:ReportID>c980efa1-4876-4fd7-b332-3b5697ce66a0</rd:ReportID>
+</Report>

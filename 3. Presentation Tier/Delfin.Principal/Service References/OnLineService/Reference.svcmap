@@ -1,0 +1,39 @@
+<?xml version="1.0" encoding="utf-8"?>
+<ReferenceGroup xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:xsd="http://www.w3.org/2001/XMLSchema" ID="6a51b896-718d-4b33-939d-7d4d98e3d8ca" xmlns="urn:schemas-microsoft-com:xml-wcfservicemap">
+  <ClientOptions>
+    <GenerateAsynchronousMethods>false</GenerateAsynchronousMethods>
+    <GenerateTaskBasedAsynchronousMethod>true</GenerateTaskBasedAsynchronousMethod>
+    <EnableDataBinding>true</EnableDataBinding>
+    <ExcludedTypes />
+    <ImportXmlTypes>false</ImportXmlTypes>
+    <GenerateInternalTypes>false</GenerateInternalTypes>
+    <GenerateMessageContracts>false</GenerateMessageContracts>
+    <NamespaceMappings />
+    <CollectionMappings />
+    <GenerateSerializableTypes>true</GenerateSerializableTypes>
+    <Serializer>Auto</Serializer>
+    <UseSerializerForFaults>true</UseSerializerForFaults>
+    <ReferenceAllAssemblies>true</ReferenceAllAssemblies>
+    <ReferencedAssemblies />
+    <ReferencedDataContractTypes />
+    <ServiceContractMappings />
+  </ClientOptions>
+  <MetadataSources>
+    <MetadataSource Address="http://192.168.103.13:767/OnLineService.svc" Protocol="http" SourceId="1" />
+  </MetadataSources>
+  <Metadata>
+    <MetadataFile FileName="OnLineService7.xsd" MetadataType="Schema" ID="c40735a5-e343-44d1-8883-9096db1389a9" SourceId="1" SourceUrl="http://192.168.103.13:767/OnLineService.svc?xsd=xsd4" />
+    <MetadataFile FileName="OnLineService71.xsd" MetadataType="Schema" ID="3b6c6548-09ce-426a-aca9-c751b311ce42" SourceId="1" SourceUrl="http://192.168.103.13:767/OnLineService.svc?xsd=xsd5" />
+    <MetadataFile FileName="OnLineService72.xsd" MetadataType="Schema" ID="7bcf283a-94ad-4e98-9afa-8996a692b93b" SourceId="1" SourceUrl="http://192.168.103.13:767/OnLineService.svc?xsd=xsd6" />
+    <MetadataFile FileName="OnLineService73.xsd" MetadataType="Schema" ID="5058d9ad-1856-437c-bbd6-4265fd6b1142" SourceId="1" SourceUrl="http://192.168.103.13:767/OnLineService.svc?xsd=xsd1" />
+    <MetadataFile FileName="OnLineService1.wsdl" MetadataType="Wsdl" ID="ce3b7e5a-4449-44c4-bb02-fa15e9c8a2f8" SourceId="1" SourceUrl="http://192.168.103.13:767/OnLineService.svc?wsdl" />
+    <MetadataFile FileName="OnLineService74.xsd" MetadataType="Schema" ID="71fc2214-e9e1-4d8c-b745-f942c14e8a13" SourceId="1" SourceUrl="http://192.168.103.13:767/OnLineService.svc?xsd=xsd0" />
+    <MetadataFile FileName="OnLineService1.disco" MetadataType="Disco" ID="5f9f69b4-efa7-46bc-8f6d-a905abb636c1" SourceId="1" SourceUrl="http://192.168.103.13:767/OnLineService.svc?disco" />
+    <MetadataFile FileName="OnLineService75.xsd" MetadataType="Schema" ID="f7662aba-b794-4c59-91a1-16c35e7e9ce5" SourceId="1" SourceUrl="http://192.168.103.13:767/OnLineService.svc?xsd=xsd2" />
+    <MetadataFile FileName="OnLineService76.xsd" MetadataType="Schema" ID="843ff7fd-d847-4515-8667-32779ad2e03a" SourceId="1" SourceUrl="http://192.168.103.13:767/OnLineService.svc?xsd=xsd3" />
+  </Metadata>
+  <Extensions>
+    <ExtensionFile FileName="configuration91.svcinfo" Name="configuration91.svcinfo" />
+    <ExtensionFile FileName="configuration.svcinfo" Name="configuration.svcinfo" />
+  </Extensions>
+</ReferenceGroup>
